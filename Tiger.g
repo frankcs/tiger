@@ -5,8 +5,6 @@ options
 	language=Java;
 }
 
-
-
 tokens
 {
 	//Reserved words
@@ -81,10 +79,6 @@ tokens
 	*/
 }
 
-
-
-
-
 ID  :	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
     ;
 
@@ -122,4 +116,69 @@ ASCII_ESC
     |   '0' ('0'..'9') ('0'..'9')
     ;
 
-program	:	ID EOF;
+program	:	expr EOF;
+
+expr: 	  STRING
+	| INT
+	| NIL
+	| lvalue
+	| MINUS expr
+	| expr binary_operator expr
+	| lvalue ASSIGN expr
+	| ID OPEN_PARENTHESIS expr_list? CLOSE_PARENTHESIS
+	| OPEN_PARENTHESIS expr_seq CLOSE_PARENTHESIS
+	| type_id field_list?
+	| type_id OPEN_BRACKET expr CLOSE_BRACKET OF expr
+	| IF expr THEN expr
+	| IF expr THEN expr ELSE expr
+	| WHILE expr DO expr
+	| FOR ID:= expr TO expr DO expr
+	| BREAK
+	| LET declaration_list IN expr_seq? END;
+
+binary_operator
+	: PLUS
+	;
+
+
+type_id	:  ID
+	;
+	
+type_declaration:
+		type type_id EQUAL type;
+
+type:		type_id
+	|	OPEN_BRACE type_fields CLOSE_BRACE
+	|	ARRAY OF type_id;
+	
+type_fields:
+		type_field (COMMA type_field)*;
+	
+type_field:
+		ID COLON type_id;
+
+	
+expr_seq: 	expr (SEMICOLON expr)*;
+
+expr_list:
+		(expr) (COMMA expr)*;
+field_list:
+		(ID EQUAL expr) (COMMA ID EQUAL expr)*;
+
+lvalue:
+	(ID) (DOT ID | OPEN_BRACKET expr CLOSE_BRACKET)*;
+	
+declaration_list:
+		(declaration) (declaration)*;
+declaration:
+		type_declaration
+	|	variable_declaration
+	|	function_declaration;
+	
+variable_declaration:
+		VAR ID ASSIGN expr
+	|	VAR ID COLON type_id ASSIGN expr;
+
+function_declaration:
+		FUNCTION ID OPEN_PARENTHESIS type_fields? CLOSE_PARENTHESIS EQUAL expr
+	|	FUNCTION ID OPEN_PARENTHESIS type_fields? CLOSE_PARENTHESIS COLON type_id EQUAL expr;
