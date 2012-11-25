@@ -30,12 +30,12 @@ tokens
 	COMMA = ',';
 	COLON = ':';
 	SEMICOLON = ';';
-	OPEN_PARENTHESIS = '(';
-	CLOSE_PARENTHESIS = ')';
-	OPEN_BRACKET = '[';
-	CLOSE_BRACKET = ']';
-	OPEN_BRACE = '{';
-	CLOSE_BRACE = '}';	
+	LPAR = '(';
+	RPAR = ')';
+	LBRACKET = '[';
+	RBRACKET = ']';
+	LBRACE = '{';
+	RBRACE = '}';	
 	DOT = '.';
 	PLUS = '+';
 	MINUS = '-';
@@ -94,7 +94,7 @@ WS  :   ( ' '
 
 // Probar los comentarios anidados.
 COMMENT
-    :   '/*' ( options {greedy=false;} :COMMENT|. )* '*/'
+    :   '/*' ( options {greedy=false;} :COMMENT|. )* '*/' {$channel = HIDDEN;}
     ;
     
 STRING
@@ -121,21 +121,18 @@ expr: 	  	(STRING
 		| INT 
 		| NIL 
 		| MINUS expr 
-		| ID ((OPEN_PARENTHESIS expr_list? CLOSE_PARENTHESIS)| (OPEN_BRACE field_list? CLOSE_BRACE) | (OPEN_BRACKET expr CLOSE_BRACKET OF expr))
-		| lvalue (ASSIGN expr)?
-		| OPEN_PARENTHESIS expr_seq CLOSE_PARENTHESIS 
-		| IF expr THEN expr (ELSE expr)?
+		| (ID LBRACKET expr RBRACKET OF) => ID LBRACKET expr RBRACKET OF expr
+		| ID 		( LPAR expr_list? RPAR
+			| 	( LBRACE field_list? RBRACE)
+			|	((DOT ID | LBRACKET expr RBRACKET)*) (ASSIGN expr)?)
+		| LPAR expr_seq RPAR 
+		| (IF expr THEN expr ELSE) => (IF expr THEN expr ELSE expr)
+		| IF expr THEN expr
 		| WHILE expr DO expr 
 		| FOR ID ASSIGN expr TO expr DO expr 
 		| BREAK 
 		| LET declaration_list IN expr_seq? END) 
-		
-		(binary_operator expr)*;
-
-binary_operator
-	: '+'
-	;
-
+		;
 
 type_id	:  ID
 	;
@@ -144,7 +141,7 @@ type_declaration:
 		TYPE type_id EQUAL type;
 
 type:		type_id
-	|	OPEN_BRACE type_fields CLOSE_BRACE
+	|	LBRACE type_fields RBRACE
 	|	ARRAY OF type_id;
 	
 type_fields:
@@ -163,7 +160,7 @@ field_list:
 		(ID EQUAL expr) (COMMA ID EQUAL expr)*;
 
 lvalue:
-	(ID) (DOT ID | OPEN_BRACKET expr CLOSE_BRACKET)*;
+	;
 	
 declaration_list:
 		(declaration) (declaration)*;
@@ -177,6 +174,6 @@ variable_declaration:
 	|	VAR ID COLON type_id ASSIGN expr;
 
 function_declaration:
-		FUNCTION ID OPEN_PARENTHESIS type_fields? CLOSE_PARENTHESIS EQUAL expr
-	|	FUNCTION ID OPEN_PARENTHESIS type_fields? CLOSE_PARENTHESIS COLON type_id EQUAL expr;
+		FUNCTION ID LPAR type_fields? RPAR EQUAL expr
+	|	FUNCTION ID LPAR type_fields? RPAR COLON type_id EQUAL expr;
 
