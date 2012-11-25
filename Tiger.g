@@ -106,7 +106,6 @@ ESC_SEQ
     :   '\\' ('n'|'r'|'t'|'\"'|ASCII_ESC|WS?'\\')
     ;
 
-// '\' es el 92. Importa?
 fragment
 PRINTABLE_CHARACTER	: ((' '.. '[')|(']'..'~')) ;// printable characters [32-126]
 
@@ -115,29 +114,26 @@ ASCII_ESC
     :   '1' (('2' ('0'..'7')) | (('0'|'1') ('0'..'9')))
     |   '0' ('0'..'9') ('0'..'9')
     ;
-
+    
 program	:	expr EOF;
 
-expr: 	  STRING
-	| INT
-	| NIL
-	| lvalue
-	| MINUS expr
-	| expr binary_operator expr
-	| lvalue ASSIGN expr
-	| ID OPEN_PARENTHESIS expr_list? CLOSE_PARENTHESIS
-	| OPEN_PARENTHESIS expr_seq CLOSE_PARENTHESIS
-	| type_id field_list?
-	| type_id OPEN_BRACKET expr CLOSE_BRACKET OF expr
-	| IF expr THEN expr
-	| IF expr THEN expr ELSE expr
-	| WHILE expr DO expr
-	| FOR ID:= expr TO expr DO expr
-	| BREAK
-	| LET declaration_list IN expr_seq? END;
+expr: 	  	(STRING 
+		| INT 
+		| NIL 
+		| MINUS expr 
+		| ID ((OPEN_PARENTHESIS expr_list? CLOSE_PARENTHESIS)| (OPEN_BRACE field_list? CLOSE_BRACE) | (OPEN_BRACKET expr CLOSE_BRACKET OF expr))
+		| lvalue (ASSIGN expr)?
+		| OPEN_PARENTHESIS expr_seq CLOSE_PARENTHESIS 
+		| IF expr THEN expr (ELSE expr)?
+		| WHILE expr DO expr 
+		| FOR ID ASSIGN expr TO expr DO expr 
+		| BREAK 
+		| LET declaration_list IN expr_seq? END) 
+		
+		(binary_operator expr)*;
 
 binary_operator
-	: PLUS
+	: '+'
 	;
 
 
@@ -145,7 +141,7 @@ type_id	:  ID
 	;
 	
 type_declaration:
-		type type_id EQUAL type;
+		TYPE type_id EQUAL type;
 
 type:		type_id
 	|	OPEN_BRACE type_fields CLOSE_BRACE
@@ -162,6 +158,7 @@ expr_seq: 	expr (SEMICOLON expr)*;
 
 expr_list:
 		(expr) (COMMA expr)*;
+		
 field_list:
 		(ID EQUAL expr) (COMMA ID EQUAL expr)*;
 
@@ -182,3 +179,4 @@ variable_declaration:
 function_declaration:
 		FUNCTION ID OPEN_PARENTHESIS type_fields? CLOSE_PARENTHESIS EQUAL expr
 	|	FUNCTION ID OPEN_PARENTHESIS type_fields? CLOSE_PARENTHESIS COLON type_id EQUAL expr;
+
