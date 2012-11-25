@@ -117,22 +117,56 @@ ASCII_ESC
     
 program	:	expr EOF;
 
-expr: 	  	(STRING 
+expr	:	or_expr;
+
+or_expr	:	and_exp ((OR) => OR and_exp)*
+	;
+
+and_exp :	comp_expr ((AND) => AND comp_expr)*
+	;
+
+comp_expr
+	:	arith_expr
+	(
+			(EQUAL)=> EQUAL arith_expr
+		|	(NON_EQUAL) => NON_EQUAL arith_expr
+		|	(LT)=>LT arith_expr
+		|	(GT)=>GT arith_expr
+		|	(LT_EQUAL)=>LT_EQUAL arith_expr
+		|	(GT_EQUAL)=>GT_EQUAL arith_expr
+	)*
+	;
+
+arith_expr
+	:	term(
+		(PLUS)=>PLUS term
+	|	(MINUS)=>MINUS term
+	)*
+	;
+
+term	:	texpr(
+			(MUL)=>MUL texpr
+		|	(DIV)=>DIV texpr
+)*
+	;
+
+texpr: 	  	STRING 
 		| INT 
 		| NIL 
-		| MINUS expr 
 		| (ID LBRACKET expr RBRACKET OF) => ID LBRACKET expr RBRACKET OF expr
 		| ID 		( LPAR expr_list? RPAR
 			| 	( LBRACE field_list? RBRACE)
-			|	((DOT ID | LBRACKET expr RBRACKET)*) (ASSIGN expr)?)
-		| LPAR expr_seq RPAR 
-		| (IF expr THEN expr ELSE) => (IF expr THEN expr ELSE expr)
+			|	((DOT ID | LBRACKET texpr RBRACKET)*) (ASSIGN texpr)?)
+		| LPAR expr_seq? RPAR 
+		| (IF expr THEN expr ELSE) => (IF texpr THEN texpr ELSE texpr)
 		| IF expr THEN expr
 		| WHILE expr DO expr 
 		| FOR ID ASSIGN expr TO expr DO expr 
 		| BREAK 
-		| LET declaration_list IN expr_seq? END) 
+		| LET declaration_list IN expr_seq? END 
+		| MINUS expr 
 		;
+
 
 type_id	:  ID
 	;
