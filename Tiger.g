@@ -58,11 +58,14 @@ tokens
 	FUNCTION_CALL;
 	RECORD_CREATION;
 	AT;
+	EXPRESSION_SEQ;
 	EXPRESSION_LIST;
 	IF_THEN_ELSE;
 	IF_THEN;
 	TYPE_ID;
-	TYPE_DECLARATION;
+	TYPE_DECL;
+	FUNCTION_DECL;
+	VAR_DECL;
 	
 }
 
@@ -156,12 +159,12 @@ term	:	texpr((MUL^|DIV^) texpr)*
 texpr: 	  	STRING
 		| INT
 		| NIL
-		| (ID LBRACKET expr RBRACKET OF) => ID LBRACKET e1=expr RBRACKET OF e2=expr -> ^(ARRAY_CREATION ID $e1 $e2) 
-		| (ID LPAR)=>(ID LPAR expr_list? RPAR) -> ^(FUNCTION_CALL ID expr_list?)
+		| (ID LBRACKET expr RBRACKET OF) => type_id LBRACKET e1=expr RBRACKET OF e2=expr -> ^(ARRAY_CREATION type_id $e1 $e2) 
+		| (ID LPAR)=>(ID LPAR expr_list? RPAR) -> ^(FUNCTION_CALL ID ^(EXPRESSION_LIST expr_list?))
 		| (ID LBRACE) => (ID LBRACE field_list? RBRACE) -> ^(RECORD_CREATION ID field_list?)
 		| (lvalue ASSIGN) => (lvalue ASSIGN expr) -> ^(ASSIGN lvalue expr)
 		| lvalue
-		| LPAR expr_seq? RPAR -> ^(EXPRESSION_LIST expr_seq)
+		| LPAR expr_seq? RPAR -> ^(EXPRESSION_SEQ expr_seq?)
 		| (IF expr THEN expr ELSE) => (IF ifx=expr THEN thenx=expr ELSE elsex=expr) -> ^(IF_THEN_ELSE $ifx $thenx $elsex)
 		| IF ifx=expr THEN elsex=expr -> ^(IF_THEN $ifx $elsex)
 		| WHILE condition=expr DO something=expr -> ^(WHILE $condition $something)
@@ -176,7 +179,7 @@ type_id	:  ID -> ^(TYPE_ID ID)
 	;
 	
 type_declaration:
-		TYPE type_id EQUAL type -> ^(TYPE_DECLARATION type_id type);
+		TYPE type_id EQUAL type -> ^(TYPE_DECL type_id type);
 
 type:		type_id
 	|	LBRACE type_fields RBRACE
@@ -195,18 +198,6 @@ expr_list:	expr (COMMA! expr)*;
 		
 field_list:
 		(ID EQUAL! expr) (COMMA! ID EQUAL! expr)*;
-
-//lvalue_rpart:
-//	((DOT ID | LBRACKET expr RBRACKET)*)
-//	;
-
-/*	
-lvalue	:	ID ( 
-			DOT ID
-			| LBRACKET expr RBRACKET
-		   )*
-	;
-*/
 	
 lvalue	:	ID array_or_member_access? -> ^(ID array_or_member_access?)
 	;
@@ -231,8 +222,8 @@ declaration:
 	|	function_declaration;
 	
 variable_declaration:
-		VAR ID (COLON type_id)? ASSIGN expr -> ^(VAR ID type_id? expr);
+		VAR ID (COLON type_id)? ASSIGN expr -> ^(VAR_DECL ID type_id? expr);
 
 function_declaration:
-		FUNCTION ID LPAR type_fields? RPAR (COLON type_id)? EQUAL expr -> ^(FUNCTION ID type_fields? type_id? expr);
+		FUNCTION ID LPAR type_fields? RPAR (COLON type_id)? EQUAL expr -> ^(FUNCTION_DECL ID type_fields? type_id? expr);
 
