@@ -2,42 +2,20 @@ grammar Tiger;
 
 options
 {
-	language=Java;
+	language=CSharp3;
 	output=AST;
 }
 
 tokens
 {
 	//Reserved words
-	ARRAY = 'array';
 	BREAK = 'break';
-	DO = 'do';
-	ELSE = 'else';
-	END = 'end';
 	FOR = 'for';
-	FUNCTION = 'function';
-	IF = 'if';
-	IN = 'in';
 	LET = 'let';
 	NIL = 'nil';
-	OF = 'of';
-	THEN = 'then';
-	TO = 'to';
-	TYPE = 'type';
-	VAR = 'var';
 	WHILE = 'while';
 	
-	//punctuation marks and symbols	
-	COMMA = ',';
-	COLON = ':';
-	SEMICOLON = ';';
-	LPAR = '(';
-	RPAR = ')';
-	LBRACKET = '[';
-	RBRACKET = ']';
-	LBRACE = '{';
-	RBRACE = '}';	
-	DOT = '.';
+	// Operators
 	PLUS = '+';
 	MINUS = '-';
 	MUL = '*';
@@ -54,46 +32,29 @@ tokens
 	
 	//Imaginary nodes
 	PROGRAM;
+	TYPE_ID;
+	
 	ARRAY_CREATION;
-	FUNCTION_CALL;
 	RECORD_CREATION;
+	
+	FUNCTION_CALL;
+
 	AT;
 	EXPRESSION_SEQ;
 	EXPRESSION_LIST;
+	
 	IF_THEN_ELSE;
 	IF_THEN;
-	TYPE_ID;
+		
 	TYPE_DECL;
+		ARRAY_TYPE_DECL;
+		RECORD_DECL;
+		ALIAS_DECL;
 	FUNCTION_DECL;
 	VAR_DECL;
 	
-}
-
-@header
-{
-//using System;
-//using System.IO;
-}
-
-@members{
-/*
-	static void Main(string[] args)
-	{
-	    if (args.Length > 0 && File.Exists(args[0]))
-	    {
-	        ICharStream characters = new ANTLRFileStream(args[0]);
-	        TigerLexer lexer = new TigerLexer(characters);
-	        ITokenStream tokens = new CommonTokenStream(lexer);
-	        TigerParser parser = new TigerParser(tokens);
-	        parser.TraceDestination = Console.Out;
-	        parser.program();
-	        if (parser.NumberOfSyntaxErrors > 0)
-	            Console.WriteLine("Entrada incorrecta. {0} error(es) cometido(s)", parser.NumberOfSyntaxErrors);
-	    }
-	    else
-	        Console.WriteLine("La ruta no es valida o el archivo no existe");
-	}
-	*/
+	UMINUS;
+	
 }
 
 ID  :	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
@@ -109,12 +70,12 @@ WS  :   ( ' '
         | '\t'
         | '\n'
         | '\r'
-        )+ {$channel=HIDDEN;}
+        )+ {$channel=Hidden;}
     ;
 
 // Probar los comentarios anidados.
 COMMENT
-    :   '/*' ( options {greedy=false;} :COMMENT|. )* '*/' {$channel = HIDDEN;}
+    :   '/*' ( options {greedy=false;} :COMMENT|. )* '*/' {$channel = Hidden;}
     ;
     
 STRING
@@ -159,19 +120,19 @@ term	:	texpr((MUL^|DIV^) texpr)*
 texpr: 	  	STRING
 		| INT
 		| NIL
-		| (ID LBRACKET expr RBRACKET OF) => type_id LBRACKET e1=expr RBRACKET OF e2=expr -> ^(ARRAY_CREATION type_id $e1 $e2) 
-		| (ID LPAR)=>(ID LPAR expr_list? RPAR) -> ^(FUNCTION_CALL ID ^(EXPRESSION_LIST expr_list?))
-		| (ID LBRACE) => (ID LBRACE field_list? RBRACE) -> ^(RECORD_CREATION ID field_list?)
+		| (ID '[' expr ']' 'of') => type_id '[' e1=expr ']' 'of' e2=expr -> ^(ARRAY_CREATION type_id $e1 $e2) 
+		| (ID '(')=>(ID '(' expr_list? ')') -> ^(FUNCTION_CALL ID ^(EXPRESSION_LIST expr_list?))
+		| (ID '{') => (ID '{' field_list? '}') -> ^(RECORD_CREATION ID field_list?)
 		| (lvalue ASSIGN) => (lvalue ASSIGN expr) -> ^(ASSIGN lvalue expr)
 		| lvalue
-		| LPAR expr_seq? RPAR -> ^(EXPRESSION_SEQ expr_seq?)
-		| (IF expr THEN expr ELSE) => (IF ifx=expr THEN thenx=expr ELSE elsex=expr) -> ^(IF_THEN_ELSE $ifx $thenx $elsex)
-		| IF ifx=expr THEN elsex=expr -> ^(IF_THEN $ifx $elsex)
-		| WHILE condition=expr DO something=expr -> ^(WHILE $condition $something)
-		| FOR var=ID ASSIGN init=expr TO limit=expr DO something=expr -> ^(FOR $var $init $limit $something)
+		| '(' expr_seq? ')' -> ^(EXPRESSION_SEQ expr_seq?)
+		| ('if' expr 'then' expr 'else') => ('if' ifx=expr 'then' thenx=expr 'else' elsex=expr) -> ^(IF_THEN_ELSE $ifx $thenx $elsex)
+		| 'if' ifx=expr 'then' elsex=expr -> ^(IF_THEN $ifx $elsex)
+		| WHILE condition=expr 'do' something=expr -> ^(WHILE $condition $something)
+		| FOR var=ID ASSIGN init=expr 'to' limit=expr 'do' something=expr -> ^(FOR $var $init $limit $something)
 		| BREAK
-		| LET declaration_list IN expr_seq? END -> ^(LET declaration_list expr_seq?)
-		| MINUS texpr -> ^(MINUS texpr)
+		| LET declaration_list 'in' expr_seq? 'end' -> ^(LET declaration_list expr_seq?)
+		| MINUS texpr -> ^(UMINUS texpr)
 		;
 
 
@@ -179,25 +140,25 @@ type_id	:  ID -> ^(TYPE_ID ID)
 	;
 	
 type_declaration:
-		TYPE type_id EQUAL type -> ^(TYPE_DECL type_id type);
+		'type' type_id EQUAL type -> ^(TYPE_DECL type_id type);
 
-type:		type_id
-	|	LBRACE type_fields RBRACE
-	|	ARRAY OF type_id -> ^(ARRAY type_id);
+type:		type_id -> ALIAS_DECL
+	|	'{' type_fields '}' -> ^(RECORD_DECL type_fields)
+	|	'array' 'of' type_id -> ^(ARRAY_TYPE_DECL type_id);
 	
 type_fields:
-		type_field (COMMA type_field)*;
+		type_field (',' type_field)*;
 	
 type_field:
-		ID COLON type_id;
+		ID ':' type_id;
 
 	
-expr_seq: 	expr (SEMICOLON! expr)*;
+expr_seq: 	expr (';'! expr)*;
 
-expr_list:	expr (COMMA! expr)*;
+expr_list:	expr (','! expr)*;
 		
 field_list:
-		(ID EQUAL! expr) (COMMA! ID EQUAL! expr)*;
+		(ID EQUAL! expr) (','! ID EQUAL! expr)*;
 	
 lvalue	:	ID array_or_member_access? -> ^(ID array_or_member_access?)
 	;
@@ -207,7 +168,7 @@ array_or_member_access
 	;
 	
 member_access
-	:	DOT ID -> ^(DOT ID)
+	:	'.' ID -> ^('.' ID)
 	;
 	
 array_access
@@ -222,8 +183,8 @@ declaration:
 	|	function_declaration;
 	
 variable_declaration:
-		VAR ID (COLON type_id)? ASSIGN expr -> ^(VAR_DECL ID type_id? expr);
+		'var' ID (':' type_id)? ASSIGN expr -> ^(VAR_DECL ID type_id? expr);
 
 function_declaration:
-		FUNCTION ID LPAR type_fields? RPAR (COLON type_id)? EQUAL expr -> ^(FUNCTION_DECL ID type_fields? type_id? expr);
+		'function' ID '(' type_fields? ')' (':' type_id)? EQUAL expr -> ^(FUNCTION_DECL ID type_fields? type_id? expr);
 
