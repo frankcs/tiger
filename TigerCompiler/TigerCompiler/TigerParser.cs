@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\Frank\\Desktop\\Compilación\\TigerCompiler\\Tiger.g 2012-12-07 14:30:31
+// $ANTLR 3.4 C:\\Users\\Frank\\Desktop\\Compilación\\TigerCompiler\\Tiger.g 2012-12-07 13:56:58
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -148,7 +148,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	// $ANTLR start "program"
 	// C:\\Users\\Frank\\Desktop\\Compilación\\TigerCompiler\\Tiger.g:102:1: program : expr EOF -> ^( PROGRAM expr ) ;
 	[GrammarRule("program")]
-	private AstParserRuleReturnScope<object, IToken> program()
+	public AstParserRuleReturnScope<object, IToken> program()
 	{
 		EnterRule_program();
 		EnterRule("program", 1);
@@ -1488,7 +1488,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: e2, e1, type_id
+				// elements: e1, type_id, e2
 				// token labels: 
 				// rule labels: retval, e1, e2
 				// token list labels: 
@@ -1774,7 +1774,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: lvalue, expr, ASSIGN
+				// elements: ASSIGN, expr, lvalue
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -1959,7 +1959,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: elsex, thenx, ifx
+				// elements: elsex, ifx, thenx
 				// token labels: 
 				// rule labels: ifx, retval, thenx, elsex
 				// token list labels: 
@@ -2094,7 +2094,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: WHILE, condition, something
+				// elements: condition, WHILE, something
 				// token labels: 
 				// rule labels: retval, condition, something
 				// token list labels: 
@@ -2178,7 +2178,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: var, init, FOR, limit, something
+				// elements: limit, something, var, FOR, init
 				// token labels: var
 				// rule labels: limit, retval, init, something
 				// token list labels: 
@@ -3515,7 +3515,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: ID, array_or_member_access
+			// elements: array_or_member_access, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4251,7 +4251,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: type_id, ID, expr
+			// elements: expr, type_id, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4468,7 +4468,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: type_fields, type_id, expr, ID
+			// elements: type_fields, ID, expr, type_id
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 

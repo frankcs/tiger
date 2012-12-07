@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Antlr.Runtime;
+
+namespace TigerCompiler
+{
+    public abstract class FlowControlNode : InstructionNode
+    {
+        public FlowControlNode(IToken payload) : base(payload)
+        {
+        }
+    }
+}

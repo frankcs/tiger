@@ -28,7 +28,8 @@ tokens
 	GT_EQUAL = '>=';	
 	AND = '&';
 	OR = '|';
-	ASSIGN = ':=';		
+	ASSIGN = ':=';
+	DOT = '.';
 	
 	//Imaginary nodes
 	PROGRAM;
@@ -38,6 +39,8 @@ tokens
 	RECORD_CREATION;
 	
 	FUNCTION_CALL;
+	
+	LVALUE;
 
 	AT;
 	EXPRESSION_SEQ;
@@ -160,7 +163,7 @@ expr_list:	expr (','! expr)*;
 field_list:
 		(ID EQUAL! expr) (','! ID EQUAL! expr)*;
 	
-lvalue	:	ID array_or_member_access? -> ^(ID array_or_member_access?)
+lvalue	:	ID array_or_member_access? -> ^(LVALUE ID array_or_member_access?)
 	;
 	
 array_or_member_access
@@ -168,7 +171,7 @@ array_or_member_access
 	;
 	
 member_access
-	:	'.' ID -> ^('.' ID)
+	:	DOT^ ID
 	;
 	
 array_access

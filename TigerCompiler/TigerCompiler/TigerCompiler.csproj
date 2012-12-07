@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\..\02 Antlr 3.4 &amp; AntlrWorks 1.4.3\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,8 +46,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AST\Nodes\ArithmeticOperationNode.cs" />
+    <Compile Include="AST\Nodes\LValueNode.cs" />
+    <Compile Include="AST\Nodes\AliasDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\AndNode.cs" />
+    <Compile Include="AST\Nodes\ArrayCreationNode.cs" />
+    <Compile Include="AST\Nodes\ArrayTypeDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\AssignNode.cs" />
+    <Compile Include="AST\Nodes\BreakNode.cs" />
+    <Compile Include="AST\Nodes\DivisionNode.cs" />
+    <Compile Include="AST\Nodes\EqualNode.cs" />
+    <Compile Include="AST\Nodes\ExpressionListNode.cs" />
+    <Compile Include="AST\Nodes\ExpressionSequenceNode.cs" />
+    <Compile Include="AST\Nodes\ForNode.cs" />
+    <Compile Include="AST\Nodes\FunctionCallNode.cs" />
+    <Compile Include="AST\Nodes\FunctionDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\GreaterThanNode.cs" />
+    <Compile Include="AST\Nodes\GreaterThanOrEqualNode.cs" />
+    <Compile Include="AST\Nodes\IdNode.cs" />
+    <Compile Include="AST\Nodes\IfThenElseNode.cs" />
+    <Compile Include="AST\Nodes\IfThenNode.cs" />
+    <Compile Include="AST\Nodes\IndexingNode.cs" />
+    <Compile Include="AST\Nodes\IntNode.cs" />
+    <Compile Include="AST\Nodes\LessThanNode.cs" />
+    <Compile Include="AST\Nodes\LessThanOrEqualNode.cs" />
+    <Compile Include="AST\Nodes\LetNode.cs" />
+    <Compile Include="AST\Nodes\MinusNode.cs" />
+    <Compile Include="AST\Nodes\MultiplyNode.cs" />
+    <Compile Include="AST\Nodes\NilNode.cs" />
+    <Compile Include="AST\Nodes\NotEqualNode.cs" />
+    <Compile Include="AST\Nodes\OrNode.cs" />
+    <Compile Include="AST\Nodes\OurASTNode.cs" />
+    <Compile Include="AST\OurTreeAdaptor.cs" />
+    <Compile Include="AST\Nodes\PlusNode.cs" />
+    <Compile Include="AST\Nodes\ProgramNode.cs" />
+    <Compile Include="AST\Nodes\RecordCreationNode.cs" />
+    <Compile Include="AST\Nodes\RecordDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\StringNode.cs" />
+    <Compile Include="AST\TigerTokenTypes.cs" />
+    <Compile Include="AST\Nodes\TypeDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\TypeIDNode.cs" />
+    <Compile Include="AST\Nodes\UnaryMinusNode.cs" />
+    <Compile Include="AST\Nodes\VariableDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\WhileNode.cs" />
+    <Compile Include="AST\Nodes\ASTNode.cs" />
+    <Compile Include="AST\Nodes\BinaryOperationNode.cs" />
+    <Compile Include="AST\Nodes\ConstantNode.cs" />
+    <Compile Include="AST\Nodes\DeclarationNode.cs" />
+    <Compile Include="AST\Nodes\FlowControlNode.cs" />
+    <Compile Include="AST\Nodes\HelperNode.cs" />
+    <Compile Include="AST\Nodes\InstructionNode.cs" />
+    <Compile Include="AST\Nodes\LogicalOperationNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TigerLexer.cs" />
+    <Compile Include="TigerParser.cs" />
+    <Compile Include="AST\Nodes\RelationalOperationNode.cs" />
+    <Compile Include="AST\Nodes\UnaryOperationNode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ASTDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="test.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
