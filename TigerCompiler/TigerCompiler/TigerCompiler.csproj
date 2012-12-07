@@ -83,6 +83,11 @@
     <Compile Include="AST\Nodes\RecordCreationNode.cs" />
     <Compile Include="AST\Nodes\RecordDeclarationNode.cs" />
     <Compile Include="AST\Nodes\StringNode.cs" />
+    <Compile Include="AST\Semantic\TigerInfo.cs" />
+    <Compile Include="AST\Semantic\FunctionInfo.cs" />
+    <Compile Include="AST\Semantic\TigerScope.cs" />
+    <Compile Include="AST\Semantic\TypeInfo.cs" />
+    <Compile Include="AST\Semantic\VariableInfo.cs" />
     <Compile Include="AST\TigerTokenTypes.cs" />
     <Compile Include="AST\Nodes\TypeDeclarationNode.cs" />
     <Compile Include="AST\Nodes\TypeIDNode.cs" />

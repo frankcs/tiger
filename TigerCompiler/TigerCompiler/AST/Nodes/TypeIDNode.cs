@@ -6,7 +6,7 @@ using Antlr.Runtime;
 
 namespace TigerCompiler.AST
 {
-    class TypeIDNode : TigerCompiler.HelperNode
+    public class TypeIDNode : TigerCompiler.HelperNode
     {
         public TypeIDNode(IToken payload) : base(payload)
         {
