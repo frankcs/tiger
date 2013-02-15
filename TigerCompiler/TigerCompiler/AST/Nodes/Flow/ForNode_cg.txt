@@ -1,0 +1,15 @@
+﻿*********for id:=expr0 to expr1 do expr2**********
+-Crear la Etiqueta para el inicio: "boclabel" y fin de ciclo: "eoclabel"
+-Guardar una referencia en el nodo a eoclabel(para los break)
+-Crear la variable local0 para expr0 y local1 para la eval de expr1
+-Generar código para la expr0
+-Guardar en local0
+-Generar código para la expr1
+-Guardar en local1
+-Marcar la línea con boclabel para inicio de ciclo
+-Comparar si local0 > local1
+-True goto eoclabel:
+-Generar código para expr2
+-Aumentar en 1 el valor de local0
+-saltar a boclabel
+-marcar con eoclabel

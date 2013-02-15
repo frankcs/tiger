@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TigerCompiler.Semantic.ErrorReporter">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAgIAA=</HashCode>
+      <FileName>Semantic\ErrorReporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.Scope">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAEAAAAAAAwAgABAAIAACAQAAAAgBCRAA=</HashCode>
+      <FileName>Semantic\Scope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.Types.TypeInfo">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAQRAAAAAQAAAAAAAAAEAAEBAACABA=</HashCode>
+      <FileName>Semantic\Types\TypeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.Types.ArrayTypeInfo">
+    <Position X="8" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAgAAAAIA=</HashCode>
+      <FileName>Semantic\Types\ArrayTypeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.RecordTypeInfo">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAQAAQAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Semantic\RecordTypeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.Types.PrimitiveTypeInfo">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Semantic\Types\PrimitiveTypeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.VariableInfo" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Semantic\VariableInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="VariableType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.FunctionInfo" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAACAAAAAAAAAIAAAAAEAAA=</HashCode>
+      <FileName>Semantic\FunctionInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ReturnType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.Symbols.Symbol" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Semantic\ISymbol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TigerCompiler.Semantic.Types.AliasTypeInfo">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAgAAAAIA=</HashCode>
+      <FileName>Semantic\Types\AliasTypeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TigerCompiler.TypeResolutionStatus">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAABCAAAAAA=</HashCode>
+      <FileName>Semantic\Types\TypeResolutionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

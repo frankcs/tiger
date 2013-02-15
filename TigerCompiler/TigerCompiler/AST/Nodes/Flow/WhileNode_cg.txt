@@ -1,0 +1,10 @@
+﻿*********while expr0 do expr1**********
+-Crear la Etiqueta para el inicio: "boclabel" y fin de ciclo: "eoclabel"
+-Guardar una refernecia en el nodo a eoclabel(para los break)
+-Marcar la línea con boclabel para inicio de ciclo
+-Generar código para la expr0
+-Comparar si lo que queda en el stack es 0
+-True goto eoclabel:
+-Generar código para expr1
+-saltar a boclabel
+-marcar con eoclabel

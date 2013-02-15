@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TigerCompiler.TigerCompiler</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\..\..\02 Antlr 3.4 &amp; AntlrWorks 1.4.3\Antlr3.Runtime.dll</HintPath>
@@ -46,75 +49,94 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AST\Nodes\ArithmeticOperationNode.cs" />
-    <Compile Include="AST\Nodes\LValueNode.cs" />
-    <Compile Include="AST\Nodes\AliasDeclarationNode.cs" />
-    <Compile Include="AST\Nodes\AndNode.cs" />
-    <Compile Include="AST\Nodes\ArrayCreationNode.cs" />
-    <Compile Include="AST\Nodes\ArrayTypeDeclarationNode.cs" />
-    <Compile Include="AST\Nodes\AssignNode.cs" />
-    <Compile Include="AST\Nodes\BreakNode.cs" />
-    <Compile Include="AST\Nodes\DivisionNode.cs" />
-    <Compile Include="AST\Nodes\EqualNode.cs" />
-    <Compile Include="AST\Nodes\ExpressionListNode.cs" />
-    <Compile Include="AST\Nodes\ExpressionSequenceNode.cs" />
-    <Compile Include="AST\Nodes\ForNode.cs" />
-    <Compile Include="AST\Nodes\FunctionCallNode.cs" />
-    <Compile Include="AST\Nodes\FunctionDeclarationNode.cs" />
-    <Compile Include="AST\Nodes\GreaterThanNode.cs" />
-    <Compile Include="AST\Nodes\GreaterThanOrEqualNode.cs" />
-    <Compile Include="AST\Nodes\IdNode.cs" />
-    <Compile Include="AST\Nodes\IfThenElseNode.cs" />
-    <Compile Include="AST\Nodes\IfThenNode.cs" />
-    <Compile Include="AST\Nodes\IndexingNode.cs" />
-    <Compile Include="AST\Nodes\IntNode.cs" />
-    <Compile Include="AST\Nodes\LessThanNode.cs" />
-    <Compile Include="AST\Nodes\LessThanOrEqualNode.cs" />
-    <Compile Include="AST\Nodes\LetNode.cs" />
-    <Compile Include="AST\Nodes\MinusNode.cs" />
-    <Compile Include="AST\Nodes\MultiplyNode.cs" />
-    <Compile Include="AST\Nodes\NilNode.cs" />
-    <Compile Include="AST\Nodes\NotEqualNode.cs" />
-    <Compile Include="AST\Nodes\OrNode.cs" />
-    <Compile Include="AST\Nodes\OurASTNode.cs" />
+    <Compile Include="AST\Nodes\Helpers\DeclarationListNode.cs" />
+    <Compile Include="AST\TypeFieldsNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\Blocks\FunctionDeclarationBlockNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\Blocks\TypeDeclarationBlockNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\Blocks\VariableDeclarationBlockNode.cs" />
+    <Compile Include="CodeGeneration\CodeGenerator.cs" />
+    <Compile Include="Semantic\Types\AliasTypeInfo.cs" />
+    <Compile Include="Semantic\Types\TypeResolutionStatus.cs" />
+    <Compile Include="Semantic\Types\ArrayTypeInfo.cs" />
+    <Compile Include="AST\Nodes\Instructions\ExpressionSequenceNode.cs" />
+    <Compile Include="Semantic\FunctionInfo.cs" />
+    <Compile Include="Semantic\Types\PrimitiveTypeInfo.cs" />
+    <Compile Include="Semantic\Types\RecordTypeInfo.cs" />
+    <Compile Include="AST\Nodes\Operations\OperationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\ComparisonNode.cs" />
+    <Compile Include="AST\Nodes\LValue\DotNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Arithmetic\ArithmeticOperationNode.cs" />
+    <Compile Include="AST\Nodes\LValue\LValueNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\Types\AliasDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\AndNode.cs" />
+    <Compile Include="AST\Nodes\Instructions\ArrayCreationNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\Types\ArrayTypeDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\Instructions\AssignNode.cs" />
+    <Compile Include="AST\Nodes\Flow\BreakNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Arithmetic\DivisionNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\EqualNode.cs" />
+    <Compile Include="AST\Nodes\Helpers\ExpressionListNode.cs" />
+    <Compile Include="AST\Nodes\Flow\ForNode.cs" />
+    <Compile Include="AST\Nodes\Instructions\FunctionCallNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\FunctionDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\GreaterThanNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\GreaterThanOrEqualNode.cs" />
+    <Compile Include="AST\Nodes\Helpers\IdNode.cs" />
+    <Compile Include="AST\Nodes\Flow\IfThenElseNode.cs" />
+    <Compile Include="AST\Nodes\Flow\IfThenNode.cs" />
+    <Compile Include="AST\Nodes\LValue\IndexingNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Constants\IntNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\LessThanNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\LessThanOrEqualNode.cs" />
+    <Compile Include="AST\Nodes\Instructions\LetNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Arithmetic\MinusNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Arithmetic\MultiplyNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Constants\NilNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\NotEqualNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\OrNode.cs" />
     <Compile Include="AST\OurTreeAdaptor.cs" />
-    <Compile Include="AST\Nodes\PlusNode.cs" />
-    <Compile Include="AST\Nodes\ProgramNode.cs" />
-    <Compile Include="AST\Nodes\RecordCreationNode.cs" />
-    <Compile Include="AST\Nodes\RecordDeclarationNode.cs" />
-    <Compile Include="AST\Nodes\StringNode.cs" />
-    <Compile Include="AST\Semantic\TigerInfo.cs" />
-    <Compile Include="AST\Semantic\FunctionInfo.cs" />
-    <Compile Include="AST\Semantic\TigerScope.cs" />
-    <Compile Include="AST\Semantic\TypeInfo.cs" />
-    <Compile Include="AST\Semantic\VariableInfo.cs" />
+    <Compile Include="AST\Nodes\Operations\Arithmetic\PlusNode.cs" />
+    <Compile Include="AST\Nodes\Helpers\ProgramNode.cs" />
+    <Compile Include="AST\Nodes\Instructions\RecordCreationNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\Types\RecordDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Constants\StringNode.cs" />
     <Compile Include="AST\TigerTokenTypes.cs" />
-    <Compile Include="AST\Nodes\TypeDeclarationNode.cs" />
-    <Compile Include="AST\Nodes\TypeIDNode.cs" />
-    <Compile Include="AST\Nodes\UnaryMinusNode.cs" />
-    <Compile Include="AST\Nodes\VariableDeclarationNode.cs" />
-    <Compile Include="AST\Nodes\WhileNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\Types\TypeDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\Helpers\TypeIDNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Arithmetic\UnaryMinusNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\VariableDeclarationNode.cs" />
+    <Compile Include="AST\Nodes\Flow\WhileNode.cs" />
     <Compile Include="AST\Nodes\ASTNode.cs" />
-    <Compile Include="AST\Nodes\BinaryOperationNode.cs" />
-    <Compile Include="AST\Nodes\ConstantNode.cs" />
-    <Compile Include="AST\Nodes\DeclarationNode.cs" />
-    <Compile Include="AST\Nodes\FlowControlNode.cs" />
-    <Compile Include="AST\Nodes\HelperNode.cs" />
-    <Compile Include="AST\Nodes\InstructionNode.cs" />
-    <Compile Include="AST\Nodes\LogicalOperationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\BinaryOperationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Constants\ConstantNode.cs" />
+    <Compile Include="AST\Nodes\Declarations\DeclarationsNode.cs" />
+    <Compile Include="AST\Nodes\Flow\FlowControlNode.cs" />
+    <Compile Include="AST\Nodes\Helpers\HelperNode.cs" />
+    <Compile Include="AST\Nodes\Instructions\InstructionNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\LogicalOperationNode.cs" />
+    <Compile Include="Semantic\ErrorReporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Semantic\ISymbol.cs" />
+    <Compile Include="Semantic\Scope.cs" />
+    <Compile Include="TigerCompiler.cs" />
     <Compile Include="TigerLexer.cs" />
     <Compile Include="TigerParser.cs" />
-    <Compile Include="AST\Nodes\RelationalOperationNode.cs" />
-    <Compile Include="AST\Nodes\UnaryOperationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\RelationalOperationNode.cs" />
+    <Compile Include="AST\Nodes\Operations\UnaryOperationNode.cs" />
+    <Compile Include="Semantic\Types\TypeInfo.cs" />
+    <Compile Include="Semantic\VariableInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ASTDiagram.cd" />
+    <None Include="AST\ASTDiagram.cd" />
+    <None Include="Semantic\SemanticCheckDiagram.cd" />
+    <None Include="AST\Tiger.tokens" />
+    <None Include="Tiger.tokens" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeGeneration\Ideas.txt" />
     <Content Include="test.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

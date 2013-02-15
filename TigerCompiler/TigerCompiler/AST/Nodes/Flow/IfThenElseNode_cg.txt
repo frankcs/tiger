@@ -1,0 +1,10 @@
+﻿************if expr0 then expr1 else expr2*********************
+-Crear la Etiqueta para el else: "elselabel" y para el fin de bloque: "endofiflabel"
+-Generar código para expr0
+-Si el resultado es cero or null goto elselabel
+-Generar código para la expr1
+-goto endofiflabel
+-marcar la línea con elselabel
+-Generar código para la expr2
+-marcar con endoiflabel
+

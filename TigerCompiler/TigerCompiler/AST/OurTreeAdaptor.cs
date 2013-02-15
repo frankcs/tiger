@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Antlr.Runtime;
+﻿using Antlr.Runtime;
 using Antlr.Runtime.Tree;
+using TigerCompiler.AST.Nodes.Declarations;
+using TigerCompiler.AST.Nodes.Declarations.Blocks;
+using TigerCompiler.AST.Nodes.Declarations.Types;
+using TigerCompiler.AST.Nodes.Flow;
+using TigerCompiler.AST.Nodes.Helpers;
+using TigerCompiler.AST.Nodes.Instructions;
+using TigerCompiler.AST.Nodes.LValue;
+using TigerCompiler.AST.Nodes.Operations.Arithmetic;
+using TigerCompiler.AST.Nodes.Operations.Constants;
+using TigerCompiler.AST.Nodes.Operations.Logical;
 
 namespace TigerCompiler.AST
 {
@@ -13,80 +19,11 @@ namespace TigerCompiler.AST
         {
             if (payload == null)
             {
-                return base.Create(payload);
+                return base.Create(null);
             }
-            
+
             switch ((TigerTokenTypes)payload.Type)
             {
-                #region Old
-                //case TigerParser.PROGRAM:
-                //    return new
-
-                //#region Declarations
-
-                //case TigerParser.TYPE_DECL:
-                //    return new
-                //case TigerParser.VAR_DECL:
-                //    return new
-                //case TigerParser.ARRAY_TYPE_DECL:
-                //    return new
-                //case TigerParser.ALIAS_DECL:
-                //    return new
-                //case TigerParser.FUNCTION_DECL:
-                //    return new
-
-                //#endregion
-
-                //#region Operators
-                //case TigerParser.OR:
-                //    return new
-                //case TigerParser.AND:
-                //    return new
-                //case TigerParser.ASSIGN:
-                //    return new
-                //case TigerParser.GT:
-                //    return new
-                //case TigerParser.GT_EQUAL:
-                //    return new
-                //case TigerParser.LT:
-                //    return new
-                //case TigerParser.LT_EQUAL:
-                //    return new
-                //case TigerParser.EQUAL:
-                //    return new
-                //case TigerParser.NON_EQUAL:
-                //    return new
-                //case TigerParser.PLUS:
-                //    return new
-                //case TigerParser.MINUS:
-                //    return new
-                //case TigerParser.MUL:
-                //    return new
-                //case TigerParser.DIV:
-                //    return new
-                //case TigerParser.UMINUS:
-                //    return new 
-                //#endregion
-
-                //#region Creation
-                //case TigerParser.ARRAY_CREATION:
-                //    return new
-                //case TigerParser.RECORD_CREATION:
-                //    return new
-
-
-
-
-                //#endregion
-
-
-
-
-                //default:
-                //    throw new ArgumentOutOfRangeException("Unrecognized token.");
-
-                #endregion
-                    
                 case TigerTokenTypes.ALIAS_DECL:
                     return new AliasDeclarationNode(payload);
                 case TigerTokenTypes.AND:
@@ -153,8 +90,6 @@ namespace TigerCompiler.AST
                     return new RecordDeclarationNode(payload);
                 case TigerTokenTypes.STRING:
                     return new StringNode(payload);
-                case TigerTokenTypes.TYPE_DECL:
-                    return new TypeDeclarationNode(payload);
                 case TigerTokenTypes.TYPE_ID:
                     return new TypeIDNode(payload);
                 case TigerTokenTypes.UMINUS:
@@ -165,13 +100,22 @@ namespace TigerCompiler.AST
                     return new WhileNode(payload);
                 case TigerTokenTypes.LVALUE:
                     return new LValueNode(payload);
+                case TigerTokenTypes.DOT:
+                    return new DotNode(payload);
+                case TigerTokenTypes.FUNC_DECL_BLOCK:
+                    return new FunctionDeclarationBlockNode(payload);
+                case TigerTokenTypes.VAR_DECL_BLOCK:
+                    return new VariableDeclarationBlockNode(payload);
+                case TigerTokenTypes.TYPE_DECL_BLOCK:
+                    return new TypeDeclarationBlockNode(payload);
+                case TigerTokenTypes.TYPE_FIELDS:
+                    return new TypeFieldsNode(payload);
+                case TigerTokenTypes.DECL_LIST:
+                    return new DeclarationListNode(payload);
+
                 default:
                     return base.Create(payload);
             }
         }
-    }
-
-    internal class DummyNode : CommonTree
-    {
     }
 }

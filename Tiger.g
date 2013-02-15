@@ -48,13 +48,20 @@ tokens
 	
 	IF_THEN_ELSE;
 	IF_THEN;
-		
-	TYPE_DECL;
-		ARRAY_TYPE_DECL;
-		RECORD_DECL;
-		ALIAS_DECL;
+	
+	ARRAY_TYPE_DECL;
+	RECORD_DECL;
+	ALIAS_DECL;
+	
 	FUNCTION_DECL;
 	VAR_DECL;
+	
+	TYPE_DECL_BLOCK;
+	FUNC_DECL_BLOCK;
+	VAR_DECL_BLOCK;
+	
+	DECL_LIST;
+	TYPE_FIELDS;
 	
 	UMINUS;
 	
@@ -73,7 +80,7 @@ WS  :   ( ' '
         | '\t'
         | '\n'
         | '\r'
-        )+ {$channel=Hidden;}
+        )+ {$channel = Hidden;}
     ;
 
 // Probar los comentarios anidados.
@@ -98,6 +105,7 @@ ASCII_ESC
     :   '1' (('2' ('0'..'7')) | (('0'|'1') ('0'..'9')))
     |   '0' ('0'..'9') ('0'..'9')
     ;
+
     
 program	:	expr EOF -> ^(PROGRAM expr);
 
@@ -138,25 +146,7 @@ texpr: 	  	STRING
 		| MINUS texpr -> ^(UMINUS texpr)
 		;
 
-
-type_id	:  ID -> ^(TYPE_ID ID)
-	;
-	
-type_declaration:
-		'type' type_id EQUAL type -> ^(TYPE_DECL type_id type);
-
-type:		type_id -> ALIAS_DECL
-	|	'{' type_fields '}' -> ^(RECORD_DECL type_fields)
-	|	'array' 'of' type_id -> ^(ARRAY_TYPE_DECL type_id);
-	
-type_fields:
-		type_field (',' type_field)*;
-	
-type_field:
-		ID ':' type_id;
-
-	
-expr_seq: 	expr (';'! expr)*;
+expr_seq: 	expr (';'! expr)* ;
 
 expr_list:	expr (','! expr)*;
 		
@@ -179,15 +169,30 @@ array_access
 	;
 	
 declaration_list:
-		(declaration)+;
+		(declaration)+ -> ^(DECL_LIST declaration+);
+		
+// ALEX: Comprobar que esto agrupa correctamente los bloques de declaraciones.
 declaration:
-		type_declaration
-	|	variable_declaration
-	|	function_declaration;
-	
+		type_declaration+ -> ^(TYPE_DECL_BLOCK type_declaration+)
+	|	variable_declaration+ -> ^(VAR_DECL_BLOCK variable_declaration+)
+	|	function_declaration+ -> ^(FUNC_DECL_BLOCK function_declaration+);
+
+//ALEX: Desfactorizé esto para que reescribir las reglas fuera más fácil.
+type_declaration:
+			'type' type_id EQUAL type_id -> ^(ALIAS_DECL type_id type_id)
+		|	'type' type_id EQUAL '{' type_fields '}' -> ^(RECORD_DECL type_id type_fields)
+		|	'type' type_id EQUAL 'array' 'of' type_id -> ^(ARRAY_TYPE_DECL type_id type_id)
+		;
+
 variable_declaration:
 		'var' ID (':' type_id)? ASSIGN expr -> ^(VAR_DECL ID type_id? expr);
 
 function_declaration:
-		'function' ID '(' type_fields? ')' (':' type_id)? EQUAL expr -> ^(FUNCTION_DECL ID type_fields? type_id? expr);
+		'function' ID '(' type_fields? ')' (':' type_id)? EQUAL expr -> ^(FUNCTION_DECL ID ^(TYPE_FIELDS type_fields?) type_id? expr);
 
+type_id	:  ID -> ^(TYPE_ID ID);
+	
+// ALEX: Tuve que cambiar esto para poder recorrer bien la declaracion de una funcion.
+type_fields:	type_field (','! type_field)*;
+	
+type_field:	ID ':' type_id -> ^(ID type_id);

@@ -1,0 +1,5 @@
+﻿-Genera un salto hacia la etiqueta el 
+fin del ciclo al que está conectado, 
+lo obtiene por una referencia a este ciclo y 
+un campo del mismo que se llena en la 
+generación de código
