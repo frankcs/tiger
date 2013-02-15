@@ -1,4 +1,5 @@
-﻿using Antlr.Runtime;
+﻿using System.Reflection.Emit;
+using Antlr.Runtime;
 using TigerCompiler.Semantic.Types;
 
 namespace TigerCompiler.AST.Nodes.Flow
@@ -32,5 +33,17 @@ namespace TigerCompiler.AST.Nodes.Flow
             get { return (ASTNode)Children[1]; }
         }
 
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            Label beginofwhile = cg.IlGenerator.DefineLabel();
+            EndofCicle = cg.IlGenerator.DefineLabel();
+
+            cg.IlGenerator.MarkLabel(beginofwhile);
+            ConditionExpression.GenerateCode(cg);
+            cg.IlGenerator.Emit(OpCodes.Brfalse, EndofCicle);
+            BodyExpression.GenerateCode(cg);
+            cg.IlGenerator.Emit(OpCodes.Br,beginofwhile);
+            cg.IlGenerator.MarkLabel(EndofCicle);
+        }
     }
 }

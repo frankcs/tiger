@@ -65,6 +65,12 @@ namespace TigerCompiler.AST.Nodes.Declarations
             // The function body semantic check will be done by the parent block.
         }
 
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            var funcinfo= (FunctionInfo) Scope.ResolveVarOrFunction(FunctionName);
+            var parameters = funcinfo.Parameters.Values;
+            funcinfo.ILMethod= cg.CreateFunction(FunctionReturnType.GetILType(),funcinfo.Parameters.Keys)
+        }
         
 
     }

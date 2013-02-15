@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using TigerCompiler.Semantic.Types;
 
 namespace TigerCompiler.Semantic
@@ -75,5 +76,7 @@ namespace TigerCompiler.Semantic
             var exit = scope.DefineFunction("exit", true);
             exit.AddParameter("i", TypeInfo.Int);
         }
+
+        public MethodBuilder ILMethod { get; set; }
     }
 }
