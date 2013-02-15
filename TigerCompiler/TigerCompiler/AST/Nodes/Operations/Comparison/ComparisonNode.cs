@@ -2,7 +2,7 @@
 using TigerCompiler.Semantic;
 using TigerCompiler.Semantic.Types;
 
-namespace TigerCompiler.AST.Nodes.Operations.Logical
+namespace TigerCompiler.AST.Nodes.Operations.Comparison
 {
     abstract public class ComparisonNode : BinaryOperationNode
     {

@@ -8,7 +8,9 @@ using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.AST.Nodes.Instructions;
 using TigerCompiler.AST.Nodes.LValue;
 using TigerCompiler.AST.Nodes.Operations.Arithmetic;
+using TigerCompiler.AST.Nodes.Operations.Comparison;
 using TigerCompiler.AST.Nodes.Operations.Constants;
+using TigerCompiler.AST.Nodes.Operations.Equality;
 using TigerCompiler.AST.Nodes.Operations.Logical;
 
 namespace TigerCompiler.AST
