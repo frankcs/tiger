@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TigerCompiler.AST.Nodes;
 
 namespace TigerCompiler.Semantic.Types
 {
@@ -20,7 +21,6 @@ namespace TigerCompiler.Semantic.Types
             {
                 _preFields.Add(memberName, memberTypeName);
                 return true;
-                // TODO: Pasar un ErrorReporter por si hay dos miembros con el mismo nombre?
             }
             return false;
         }
@@ -30,20 +30,26 @@ namespace TigerCompiler.Semantic.Types
             throw new NotImplementedException(); // FRANK
         }
 
-        public override void ResolveReferencedTypes(Scope scope)
+        public override bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter)
         {
+            bool ok = true;
+
             ResolutionStatus = TypeResolutionStatus.Resolving;
 
             foreach (var nameTypeTuple in _preFields)
             {
                 var tmp = scope.ResolveType(nameTypeTuple.Value);
-                if (tmp.ResolutionStatus == TypeResolutionStatus.NotResolved)
-                    tmp.ResolveReferencedTypes(scope);
-                
-                Fields.Add(nameTypeTuple.Key, tmp);
+                if (tmp != null)
+                {
+                    if (tmp.ResolutionStatus == TypeResolutionStatus.NotResolved)
+                        tmp.ResolveReferencedTypes(node, scope, reporter);
+                    Fields.Add(nameTypeTuple.Key, tmp);
+                }else ok = false;
             }
 
-            ResolutionStatus = TypeResolutionStatus.OK;
+            ResolutionStatus = ok? TypeResolutionStatus.OK : TypeResolutionStatus.Error;
+            return ok;
         }
+
     }
 }

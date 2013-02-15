@@ -20,7 +20,7 @@ namespace TigerCompiler.AST.Nodes.Flow
             report.Assert(this,IfCondition.ReturnType == TypeInfo.Int,"An if expression must return int, not {0}.",IfCondition.ReturnType);
             report.Assert(this,ThenExpression.ReturnType == ElseExpression.ReturnType,"The if and else expression types do not match ({0};{1}).",ThenExpression.ReturnType,ElseExpression.ReturnType);
 
-            ReturnType = IfCondition.ReturnType;
+            ReturnType = ThenExpression.ReturnType;
         }
 
         private ASTNode IfCondition

@@ -9,7 +9,7 @@ namespace TigerCompiler
     {
         NotResolved,
         Resolving,
-        HasCycles,
+        Error,
         OK,
     }
 }

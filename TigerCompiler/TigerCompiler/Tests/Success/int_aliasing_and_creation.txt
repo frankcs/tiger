@@ -1,0 +1,8 @@
+﻿let 
+	type a = b
+	type b = c
+	type c = int
+	var c : a := 3
+in
+end
+	

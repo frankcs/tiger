@@ -22,9 +22,9 @@ namespace TigerCompiler.AST.Nodes.Instructions
 
             var arrayType = scope.ResolveType(TypeNode.TypeName);
             if (arrayType == null)
-                report.AddError("Unknown type: {0}", TypeNode.TypeName);
+                report.AddError(this,"Unknown type: {0}", TypeNode.TypeName);
             else if (!(arrayType is ArrayTypeInfo))
-                report.AddError("The type {0} is not an array.", TypeNode.TypeName);
+                report.AddError(this,"The type {0} is not an array.", TypeNode.TypeName);
             else
                 report.Assert(this, ((ArrayTypeInfo) arrayType).TargetType == InitExpression.ReturnType,
                               "Initialization expression and array types do not match ({0},{1})",

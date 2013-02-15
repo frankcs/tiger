@@ -1,4 +1,5 @@
 ﻿using System;
+using TigerCompiler.AST.Nodes;
 using TigerCompiler.Semantic.Symbols;
 
 namespace TigerCompiler.Semantic.Types
@@ -43,7 +44,30 @@ namespace TigerCompiler.Semantic.Types
         /// <summary>
         /// Resolves types.
         /// </summary>
+        /// <param name="node"> </param>
         /// <param name="scope">The scope to resolve in.</param>
-        public abstract void ResolveReferencedTypes(Scope scope);
+        /// <param name="reporter"> </param>
+        public abstract bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter);
+
+        public static bool operator == (TypeInfo t1, TypeInfo t2)
+        {
+            var tt1 = t1 as AliasTypeInfo;
+            var tt2 = t2 as AliasTypeInfo;
+
+            t1 = !ReferenceEquals(tt1,null) ? tt1.TargetType : t1;
+            t2 = !ReferenceEquals(tt2,null) ? tt2.TargetType : t2;
+
+            return ReferenceEquals(t1,t2);
+        }
+
+        public static bool operator !=(TypeInfo t1, TypeInfo t2)
+        {
+            return !(t1 == t2);
+        }
+
+        public static bool IsNull(TypeInfo t)
+        {
+             return ReferenceEquals(t, null); 
+        }
     }
 }

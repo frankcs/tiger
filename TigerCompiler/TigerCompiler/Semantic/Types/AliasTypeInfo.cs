@@ -1,4 +1,5 @@
 ﻿using System;
+using TigerCompiler.AST.Nodes;
 
 namespace TigerCompiler.Semantic.Types
 {
@@ -18,29 +19,35 @@ namespace TigerCompiler.Semantic.Types
             return TargetType.GetILType();
         }
 
-        public override void ResolveReferencedTypes(Scope scope)
+        public override bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter)
         {
-            if (ResolutionStatus != TypeResolutionStatus.NotResolved) return;
+            if (ResolutionStatus != TypeResolutionStatus.NotResolved) return ResolutionStatus == TypeResolutionStatus.OK;
 
             ResolutionStatus = TypeResolutionStatus.Resolving;
 
             TargetType = scope.ResolveType(_targetTypeName);
-            switch (TargetType.ResolutionStatus)
-            {
-                case TypeResolutionStatus.NotResolved:
-                case TypeResolutionStatus.Resolving:
-                case TypeResolutionStatus.HasCycles:
-                    ResolutionStatus = TypeResolutionStatus.HasCycles;
-                    scope.Reporter.AddError("Cycle detected.");
-                    return;
-                case TypeResolutionStatus.OK:
-                    TargetType = (TargetType is AliasTypeInfo) ? ((AliasTypeInfo)TargetType).TargetType : TargetType;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+
+            if (reporter.Assert(node,!ReferenceEquals(TargetType,null),"Unknown type in the current context: {0}",_targetTypeName))
+            { 
+                if (TargetType.ResolutionStatus == TypeResolutionStatus.NotResolved)
+                    TargetType.ResolveReferencedTypes(node, scope, reporter);
+                switch (TargetType.ResolutionStatus)
+                {
+                    case TypeResolutionStatus.Resolving:
+                    case TypeResolutionStatus.Error:
+                        ResolutionStatus = TypeResolutionStatus.Error;
+                        return false;
+                    case TypeResolutionStatus.OK:
+                        TargetType = (TargetType is AliasTypeInfo) ? ((AliasTypeInfo)TargetType).TargetType : TargetType;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                ResolutionStatus = TypeResolutionStatus.OK;
+                return true;
             }
-                
-            ResolutionStatus = TypeResolutionStatus.OK;
+            return false;
         }
     }
 }

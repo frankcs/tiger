@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using TigerCompiler.AST.Nodes;
@@ -8,17 +9,26 @@ namespace TigerCompiler.Semantic
 {
     public class ErrorReporter
     {
-        public List<Exception> errors = new List<Exception>();
+        public readonly List<string> Errors = new List<string>();
 
-        public void Assert(ASTNode node, bool condition, string errorMsg, params object[] args)
+        public bool Assert(ASTNode node, bool condition, string errorMsg, params object[] args)
         {
             if (!condition)
-                errors.Add(new Exception(String.Format(errorMsg,args)));
+                Errors.Add((String.Format("({0},{1}): {2}", node.Line, node.CharPositionInLine, String.Format(errorMsg, args))));
+            return condition;
         }
 
-        public void AddError(string error, params object[] args)
+        public void AddError(ASTNode node, string errorMsg, params object[] args)
         {
-            errors.Add(new Exception(String.Format(error,args)));
+            Errors.Add((String.Format("({0},{1}): {2}", node.Line, node.CharPositionInLine, String.Format(errorMsg, args))));
+        }
+
+        public void PrintErrors(TextWriter tw)
+        {
+            foreach (var exception in Errors)
+            {
+                tw.WriteLine(exception);
+            }
         }
     }
 }

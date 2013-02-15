@@ -15,34 +15,35 @@ namespace TigerCompiler
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Tiger Compiler version 0.6");
+            Console.WriteLine("Copyright (C) 2012-2013 Frank E. Perez & Alex R. Coto\n");
             if (args.Length > 0 && File.Exists(args[0]))
                 Environment.Exit(Compile(args[0])); 
             else
-                Console.WriteLine("La ruta no es valida o el archivo no existe");
+                Console.WriteLine("(0,0) File {0} cannot be found.",args[0]);
         }
 
         private static int Compile(string filename)
         {
             ICharStream characters = new ANTLRFileStream(filename);
-            TigerLexer lexer = new TigerLexer(characters);
+            var lexer = new TigerLexer(characters);
             ITokenStream tokens = new CommonTokenStream(lexer);
-            TigerParser parser = new TigerParser(tokens);
+            var parser = new TigerParser(tokens);
 
-            parser.TraceDestination = Console.Out;
+            //parser.TraceDestination = Console.Out;
             var result = parser.program();
 
-            if (parser.NumberOfSyntaxErrors > 0)
-            {
-                Console.WriteLine("Entrada incorrecta. {0} error(es) cometido(s)", parser.NumberOfSyntaxErrors);
+            if (parser.NumberOfSyntaxErrors > 0 || lexer.Error)
                 return 1;
-            }
 
             ((ProgramNode) result.Tree).CheckSemantics(Scope.DefaultGlobalScope,Scope.DefaultGlobalScope.Reporter);
 
-            if (Scope.DefaultGlobalScope.Reporter.errors.Count >0)
+            if (Scope.DefaultGlobalScope.Reporter.Errors.Count >0)
             {
+                Scope.DefaultGlobalScope.Reporter.PrintErrors(Console.Out);
                 return 1;
             }
+
             var generator = new CodeGenerator(Environment.CurrentDirectory+ Path.DirectorySeparatorChar + filename,
                                               new[] {"print","printi", "printline", "flush", 
                                                      "getchar", "getline", "ord", "chr", "size",
@@ -51,6 +52,7 @@ namespace TigerCompiler
             generator.GenerateCode((ASTNode)result.Tree);
             generator.SaveBin();
 
+            Console.WriteLine("The program has compiled successfully.");
             return 0;
 
         }

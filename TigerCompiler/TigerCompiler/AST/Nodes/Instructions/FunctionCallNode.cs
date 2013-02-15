@@ -21,9 +21,9 @@ namespace TigerCompiler.AST.Nodes.Instructions
             var func = scope.ResolveVarOrFunction(FunctionName);
 
             if (func == null)
-                report.AddError("Undefined function {0}.", FunctionName);
+                report.AddError(this,"Undefined function {0}.", FunctionName);
             else if (func is VariableInfo)
-                report.AddError("Cannot invoke a variable.");
+                report.AddError(this,"Cannot invoke a variable.");
             else ReturnType = ((FunctionInfo) func).ReturnType; // Procedures will hold void as a return type.
         }
 

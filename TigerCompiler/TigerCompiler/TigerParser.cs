@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g 2013-02-15 10:59:48
+// $ANTLR 3.4 C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g 2013-02-15 15:58:54
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -1492,7 +1492,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: e2, e1, type_id
+				// elements: type_id, e2, e1
 				// token labels: 
 				// rule labels: retval, e1, e2
 				// token list labels: 
@@ -1703,7 +1703,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: ID, field_list
+				// elements: field_list, ID
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -1963,7 +1963,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: thenx, ifx, elsex
+				// elements: ifx, thenx, elsex
 				// token labels: 
 				// rule labels: ifx, retval, thenx, elsex
 				// token list labels: 
@@ -2182,7 +2182,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: limit, something, FOR, init, var
+				// elements: var, limit, something, FOR, init
 				// token labels: var
 				// rule labels: limit, retval, init, something
 				// token list labels: 
@@ -2298,7 +2298,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: expr_seq, declaration_list, LET
+				// elements: declaration_list, expr_seq, LET
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -2426,7 +2426,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_expr_seq();
 
 	// $ANTLR start "expr_seq"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:1: expr_seq : expr ( ';' ! expr )* ;
+	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:1: expr_seq : expr ( ';' expr )* -> ^( EXPRESSION_SEQ ( expr )+ ) ;
 	[GrammarRule("expr_seq")]
 	private AstParserRuleReturnScope<object, IToken> expr_seq()
 	{
@@ -2443,24 +2443,24 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		AstParserRuleReturnScope<object, IToken> expr69 = default(AstParserRuleReturnScope<object, IToken>);
 
 		object char_literal68_tree = default(object);
+		RewriteRuleITokenStream stream_57=new RewriteRuleITokenStream(adaptor,"token 57");
+		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
 		try { DebugEnterRule(GrammarFileName, "expr_seq");
-		DebugLocation(149, 29);
+		DebugLocation(149, 54);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:9: ( expr ( ';' ! expr )* )
+			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:9: ( expr ( ';' expr )* -> ^( EXPRESSION_SEQ ( expr )+ ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:12: expr ( ';' ! expr )*
+			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:12: expr ( ';' expr )*
 			{
-			root_0 = (object)adaptor.Nil();
-
 			DebugLocation(149, 12);
 			PushFollow(Follow._expr_in_expr_seq1203);
 			expr67=expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, expr67.Tree);
+			if (state.backtracking == 0) stream_expr.Add(expr67.Tree);
 			DebugLocation(149, 17);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:17: ( ';' ! expr )*
+			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:17: ( ';' expr )*
 			try { DebugEnterSubRule(14);
 			while (true)
 			{
@@ -2479,16 +2479,18 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:18: ';' ! expr
+					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:18: ';' expr
 					{
-					DebugLocation(149, 21);
-					char_literal68=(IToken)Match(input,57,Follow._57_in_expr_seq1206); if (state.failed) return retval;
-					DebugLocation(149, 23);
-					PushFollow(Follow._expr_in_expr_seq1209);
+					DebugLocation(149, 18);
+					char_literal68=(IToken)Match(input,57,Follow._57_in_expr_seq1206); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_57.Add(char_literal68);
+
+					DebugLocation(149, 22);
+					PushFollow(Follow._expr_in_expr_seq1208);
 					expr69=expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, expr69.Tree);
+					if (state.backtracking == 0) stream_expr.Add(expr69.Tree);
 
 					}
 					break;
@@ -2503,6 +2505,51 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(14); }
 
+
+
+			{
+			// AST REWRITE
+			// elements: expr
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if (state.backtracking == 0) {
+			retval.Tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
+
+			root_0 = (object)adaptor.Nil();
+			// 149:29: -> ^( EXPRESSION_SEQ ( expr )+ )
+			{
+				DebugLocation(149, 32);
+				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:32: ^( EXPRESSION_SEQ ( expr )+ )
+				{
+				object root_1 = (object)adaptor.Nil();
+				DebugLocation(149, 34);
+				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXPRESSION_SEQ, "EXPRESSION_SEQ"), root_1);
+
+				DebugLocation(149, 49);
+				if (!(stream_expr.HasNext))
+				{
+					throw new RewriteEarlyExitException();
+				}
+				while ( stream_expr.HasNext )
+				{
+					DebugLocation(149, 49);
+					adaptor.AddChild(root_1, stream_expr.NextTree());
+
+				}
+				stream_expr.Reset();
+
+				adaptor.AddChild(root_0, root_1);
+				}
+
+			}
+
+			retval.Tree = root_0;
+			}
+			}
 
 			}
 
@@ -2526,7 +2573,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			LeaveRule("expr_seq", 9);
 			LeaveRule_expr_seq();
 		}
-		DebugLocation(149, 29);
+		DebugLocation(149, 54);
 		} finally { DebugExitRule(GrammarFileName, "expr_seq"); }
 		return retval;
 
@@ -2565,7 +2612,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			root_0 = (object)adaptor.Nil();
 
 			DebugLocation(151, 12);
-			PushFollow(Follow._expr_in_expr_list1219);
+			PushFollow(Follow._expr_in_expr_list1226);
 			expr70=expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -2593,9 +2640,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:151:18: ',' ! expr
 					{
 					DebugLocation(151, 21);
-					char_literal71=(IToken)Match(input,55,Follow._55_in_expr_list1222); if (state.failed) return retval;
+					char_literal71=(IToken)Match(input,55,Follow._55_in_expr_list1229); if (state.failed) return retval;
 					DebugLocation(151, 23);
-					PushFollow(Follow._expr_in_expr_list1225);
+					PushFollow(Follow._expr_in_expr_list1232);
 					expr72=expr();
 					PopFollow();
 					if (state.failed) return retval;
@@ -2689,15 +2736,15 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:154:4: ID EQUAL ! expr
 			{
 			DebugLocation(154, 4);
-			ID73=(IToken)Match(input,ID,Follow._ID_in_field_list1239); if (state.failed) return retval;
+			ID73=(IToken)Match(input,ID,Follow._ID_in_field_list1246); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			ID73_tree = (object)adaptor.Create(ID73);
 			adaptor.AddChild(root_0, ID73_tree);
 			}
 			DebugLocation(154, 12);
-			EQUAL74=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1241); if (state.failed) return retval;
+			EQUAL74=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1248); if (state.failed) return retval;
 			DebugLocation(154, 14);
-			PushFollow(Follow._expr_in_field_list1244);
+			PushFollow(Follow._expr_in_field_list1251);
 			expr75=expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -2728,17 +2775,17 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:154:21: ',' ! ID EQUAL ! expr
 					{
 					DebugLocation(154, 24);
-					char_literal76=(IToken)Match(input,55,Follow._55_in_field_list1248); if (state.failed) return retval;
+					char_literal76=(IToken)Match(input,55,Follow._55_in_field_list1255); if (state.failed) return retval;
 					DebugLocation(154, 26);
-					ID77=(IToken)Match(input,ID,Follow._ID_in_field_list1251); if (state.failed) return retval;
+					ID77=(IToken)Match(input,ID,Follow._ID_in_field_list1258); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					ID77_tree = (object)adaptor.Create(ID77);
 					adaptor.AddChild(root_0, ID77_tree);
 					}
 					DebugLocation(154, 34);
-					EQUAL78=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1253); if (state.failed) return retval;
+					EQUAL78=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1260); if (state.failed) return retval;
 					DebugLocation(154, 36);
-					PushFollow(Follow._expr_in_field_list1256);
+					PushFollow(Follow._expr_in_field_list1263);
 					expr79=expr();
 					PopFollow();
 					if (state.failed) return retval;
@@ -2818,7 +2865,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:10: ID ( array_or_member_access )?
 			{
 			DebugLocation(156, 10);
-			ID80=(IToken)Match(input,ID,Follow._ID_in_lvalue1267); if (state.failed) return retval; 
+			ID80=(IToken)Match(input,ID,Follow._ID_in_lvalue1274); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID80);
 
 			DebugLocation(156, 13);
@@ -2840,7 +2887,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:13: array_or_member_access
 				{
 				DebugLocation(156, 13);
-				PushFollow(Follow._array_or_member_access_in_lvalue1269);
+				PushFollow(Follow._array_or_member_access_in_lvalue1276);
 				array_or_member_access81=array_or_member_access();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2856,7 +2903,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: array_or_member_access, ID
+			// elements: ID, array_or_member_access
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2986,7 +3033,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:5: member_access
 				{
 				DebugLocation(160, 5);
-				PushFollow(Follow._member_access_in_array_or_member_access1294);
+				PushFollow(Follow._member_access_in_array_or_member_access1301);
 				member_access82=member_access();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2999,7 +3046,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:21: array_access
 				{
 				DebugLocation(160, 21);
-				PushFollow(Follow._array_access_in_array_or_member_access1298);
+				PushFollow(Follow._array_access_in_array_or_member_access1305);
 				array_access83=array_access();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3030,7 +3077,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:35: array_or_member_access
 				{
 				DebugLocation(160, 35);
-				PushFollow(Follow._array_or_member_access_in_array_or_member_access1301);
+				PushFollow(Follow._array_or_member_access_in_array_or_member_access1308);
 				array_or_member_access84=array_or_member_access();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3104,13 +3151,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			root_0 = (object)adaptor.Nil();
 
 			DebugLocation(164, 7);
-			DOT85=(IToken)Match(input,DOT,Follow._DOT_in_member_access1314); if (state.failed) return retval;
+			DOT85=(IToken)Match(input,DOT,Follow._DOT_in_member_access1321); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			DOT85_tree = (object)adaptor.Create(DOT85);
 			root_0 = (object)adaptor.BecomeRoot(DOT85_tree, root_0);
 			}
 			DebugLocation(164, 9);
-			ID86=(IToken)Match(input,ID,Follow._ID_in_member_access1317); if (state.failed) return retval;
+			ID86=(IToken)Match(input,ID,Follow._ID_in_member_access1324); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			ID86_tree = (object)adaptor.Create(ID86);
 			adaptor.AddChild(root_0, ID86_tree);
@@ -3179,17 +3226,17 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:168:4: '[' expr ']'
 			{
 			DebugLocation(168, 4);
-			char_literal87=(IToken)Match(input,58,Follow._58_in_array_access1329); if (state.failed) return retval; 
+			char_literal87=(IToken)Match(input,58,Follow._58_in_array_access1336); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_58.Add(char_literal87);
 
 			DebugLocation(168, 8);
-			PushFollow(Follow._expr_in_array_access1331);
+			PushFollow(Follow._expr_in_array_access1338);
 			expr88=expr();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_expr.Add(expr88.Tree);
 			DebugLocation(168, 13);
-			char_literal89=(IToken)Match(input,59,Follow._59_in_array_access1333); if (state.failed) return retval; 
+			char_literal89=(IToken)Match(input,59,Follow._59_in_array_access1340); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_59.Add(char_literal89);
 
 
@@ -3308,7 +3355,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:172:4: declaration
 					{
 					DebugLocation(172, 4);
-					PushFollow(Follow._declaration_in_declaration_list1354);
+					PushFollow(Follow._declaration_in_declaration_list1361);
 					declaration90=declaration();
 					PopFollow();
 					if (state.failed) return retval;
@@ -3495,7 +3542,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:176:3: type_declaration
 						{
 						DebugLocation(176, 3);
-						PushFollow(Follow._type_declaration_in_declaration1377);
+						PushFollow(Follow._type_declaration_in_declaration1384);
 						type_declaration91=type_declaration();
 						PopFollow();
 						if (state.failed) return retval;
@@ -3596,7 +3643,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:177:4: variable_declaration
 						{
 						DebugLocation(177, 4);
-						PushFollow(Follow._variable_declaration_in_declaration1392);
+						PushFollow(Follow._variable_declaration_in_declaration1399);
 						variable_declaration92=variable_declaration();
 						PopFollow();
 						if (state.failed) return retval;
@@ -3697,7 +3744,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:178:4: function_declaration
 						{
 						DebugLocation(178, 4);
-						PushFollow(Follow._function_declaration_in_declaration1407);
+						PushFollow(Follow._function_declaration_in_declaration1414);
 						function_declaration93=function_declaration();
 						PopFollow();
 						if (state.failed) return retval;
@@ -3927,21 +3974,21 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:182:4: 'type' type_id EQUAL type_id
 				{
 				DebugLocation(182, 4);
-				string_literal94=(IToken)Match(input,70,Follow._70_in_type_declaration1428); if (state.failed) return retval; 
+				string_literal94=(IToken)Match(input,70,Follow._70_in_type_declaration1435); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_70.Add(string_literal94);
 
 				DebugLocation(182, 11);
-				PushFollow(Follow._type_id_in_type_declaration1430);
+				PushFollow(Follow._type_id_in_type_declaration1437);
 				type_id95=type_id();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type_id.Add(type_id95.Tree);
 				DebugLocation(182, 19);
-				EQUAL96=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1432); if (state.failed) return retval; 
+				EQUAL96=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1439); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_EQUAL.Add(EQUAL96);
 
 				DebugLocation(182, 25);
-				PushFollow(Follow._type_id_in_type_declaration1434);
+				PushFollow(Follow._type_id_in_type_declaration1441);
 				type_id97=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3991,38 +4038,38 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:183:5: 'type' type_id EQUAL '{' type_fields '}'
 				{
 				DebugLocation(183, 5);
-				string_literal98=(IToken)Match(input,70,Follow._70_in_type_declaration1450); if (state.failed) return retval; 
+				string_literal98=(IToken)Match(input,70,Follow._70_in_type_declaration1457); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_70.Add(string_literal98);
 
 				DebugLocation(183, 12);
-				PushFollow(Follow._type_id_in_type_declaration1452);
+				PushFollow(Follow._type_id_in_type_declaration1459);
 				type_id99=type_id();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type_id.Add(type_id99.Tree);
 				DebugLocation(183, 20);
-				EQUAL100=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1454); if (state.failed) return retval; 
+				EQUAL100=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1461); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_EQUAL.Add(EQUAL100);
 
 				DebugLocation(183, 26);
-				char_literal101=(IToken)Match(input,72,Follow._72_in_type_declaration1456); if (state.failed) return retval; 
+				char_literal101=(IToken)Match(input,72,Follow._72_in_type_declaration1463); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_72.Add(char_literal101);
 
 				DebugLocation(183, 30);
-				PushFollow(Follow._type_fields_in_type_declaration1458);
+				PushFollow(Follow._type_fields_in_type_declaration1465);
 				type_fields102=type_fields();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type_fields.Add(type_fields102.Tree);
 				DebugLocation(183, 42);
-				char_literal103=(IToken)Match(input,73,Follow._73_in_type_declaration1460); if (state.failed) return retval; 
+				char_literal103=(IToken)Match(input,73,Follow._73_in_type_declaration1467); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_73.Add(char_literal103);
 
 
 
 				{
 				// AST REWRITE
-				// elements: type_fields, type_id
+				// elements: type_id, type_fields
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -4063,29 +4110,29 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:184:5: 'type' type_id EQUAL 'array' 'of' type_id
 				{
 				DebugLocation(184, 5);
-				string_literal104=(IToken)Match(input,70,Follow._70_in_type_declaration1476); if (state.failed) return retval; 
+				string_literal104=(IToken)Match(input,70,Follow._70_in_type_declaration1483); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_70.Add(string_literal104);
 
 				DebugLocation(184, 12);
-				PushFollow(Follow._type_id_in_type_declaration1478);
+				PushFollow(Follow._type_id_in_type_declaration1485);
 				type_id105=type_id();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type_id.Add(type_id105.Tree);
 				DebugLocation(184, 20);
-				EQUAL106=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1480); if (state.failed) return retval; 
+				EQUAL106=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1487); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_EQUAL.Add(EQUAL106);
 
 				DebugLocation(184, 26);
-				string_literal107=(IToken)Match(input,60,Follow._60_in_type_declaration1482); if (state.failed) return retval; 
+				string_literal107=(IToken)Match(input,60,Follow._60_in_type_declaration1489); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_60.Add(string_literal107);
 
 				DebugLocation(184, 34);
-				string_literal108=(IToken)Match(input,67,Follow._67_in_type_declaration1484); if (state.failed) return retval; 
+				string_literal108=(IToken)Match(input,67,Follow._67_in_type_declaration1491); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_67.Add(string_literal108);
 
 				DebugLocation(184, 39);
-				PushFollow(Follow._type_id_in_type_declaration1486);
+				PushFollow(Follow._type_id_in_type_declaration1493);
 				type_id109=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4201,11 +4248,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:188:3: 'var' ID ( ':' type_id )? ASSIGN expr
 			{
 			DebugLocation(188, 3);
-			string_literal110=(IToken)Match(input,71,Follow._71_in_variable_declaration1508); if (state.failed) return retval; 
+			string_literal110=(IToken)Match(input,71,Follow._71_in_variable_declaration1515); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_71.Add(string_literal110);
 
 			DebugLocation(188, 9);
-			ID111=(IToken)Match(input,ID,Follow._ID_in_variable_declaration1510); if (state.failed) return retval; 
+			ID111=(IToken)Match(input,ID,Follow._ID_in_variable_declaration1517); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID111);
 
 			DebugLocation(188, 12);
@@ -4227,11 +4274,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:188:13: ':' type_id
 				{
 				DebugLocation(188, 13);
-				char_literal112=(IToken)Match(input,56,Follow._56_in_variable_declaration1513); if (state.failed) return retval; 
+				char_literal112=(IToken)Match(input,56,Follow._56_in_variable_declaration1520); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_56.Add(char_literal112);
 
 				DebugLocation(188, 17);
-				PushFollow(Follow._type_id_in_variable_declaration1515);
+				PushFollow(Follow._type_id_in_variable_declaration1522);
 				type_id113=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4244,11 +4291,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(26); }
 
 			DebugLocation(188, 27);
-			ASSIGN114=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_variable_declaration1519); if (state.failed) return retval; 
+			ASSIGN114=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_variable_declaration1526); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ASSIGN.Add(ASSIGN114);
 
 			DebugLocation(188, 34);
-			PushFollow(Follow._expr_in_variable_declaration1521);
+			PushFollow(Follow._expr_in_variable_declaration1528);
 			expr115=expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4257,7 +4304,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: expr, type_id, ID
+			// elements: ID, expr, type_id
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4379,15 +4426,15 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:3: 'function' ID '(' ( type_fields )? ')' ( ':' type_id )? EQUAL expr
 			{
 			DebugLocation(191, 3);
-			string_literal116=(IToken)Match(input,64,Follow._64_in_function_declaration1543); if (state.failed) return retval; 
+			string_literal116=(IToken)Match(input,64,Follow._64_in_function_declaration1550); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_64.Add(string_literal116);
 
 			DebugLocation(191, 14);
-			ID117=(IToken)Match(input,ID,Follow._ID_in_function_declaration1545); if (state.failed) return retval; 
+			ID117=(IToken)Match(input,ID,Follow._ID_in_function_declaration1552); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID117);
 
 			DebugLocation(191, 17);
-			char_literal118=(IToken)Match(input,53,Follow._53_in_function_declaration1547); if (state.failed) return retval; 
+			char_literal118=(IToken)Match(input,53,Follow._53_in_function_declaration1554); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_53.Add(char_literal118);
 
 			DebugLocation(191, 21);
@@ -4409,7 +4456,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:21: type_fields
 				{
 				DebugLocation(191, 21);
-				PushFollow(Follow._type_fields_in_function_declaration1549);
+				PushFollow(Follow._type_fields_in_function_declaration1556);
 				type_fields119=type_fields();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4422,7 +4469,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(27); }
 
 			DebugLocation(191, 34);
-			char_literal120=(IToken)Match(input,54,Follow._54_in_function_declaration1552); if (state.failed) return retval; 
+			char_literal120=(IToken)Match(input,54,Follow._54_in_function_declaration1559); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_54.Add(char_literal120);
 
 			DebugLocation(191, 38);
@@ -4444,11 +4491,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:39: ':' type_id
 				{
 				DebugLocation(191, 39);
-				char_literal121=(IToken)Match(input,56,Follow._56_in_function_declaration1555); if (state.failed) return retval; 
+				char_literal121=(IToken)Match(input,56,Follow._56_in_function_declaration1562); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_56.Add(char_literal121);
 
 				DebugLocation(191, 43);
-				PushFollow(Follow._type_id_in_function_declaration1557);
+				PushFollow(Follow._type_id_in_function_declaration1564);
 				type_id122=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4461,11 +4508,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(28); }
 
 			DebugLocation(191, 53);
-			EQUAL123=(IToken)Match(input,EQUAL,Follow._EQUAL_in_function_declaration1561); if (state.failed) return retval; 
+			EQUAL123=(IToken)Match(input,EQUAL,Follow._EQUAL_in_function_declaration1568); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_EQUAL.Add(EQUAL123);
 
 			DebugLocation(191, 59);
-			PushFollow(Follow._expr_in_function_declaration1563);
+			PushFollow(Follow._expr_in_function_declaration1570);
 			expr124=expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4474,7 +4521,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: type_fields, expr, ID, type_id
+			// elements: expr, type_fields, type_id, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4594,7 +4641,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:193:12: ID
 			{
 			DebugLocation(193, 12);
-			ID125=(IToken)Match(input,ID,Follow._ID_in_type_id1592); if (state.failed) return retval; 
+			ID125=(IToken)Match(input,ID,Follow._ID_in_type_id1599); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID125);
 
 
@@ -4694,7 +4741,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			root_0 = (object)adaptor.Nil();
 
 			DebugLocation(196, 14);
-			PushFollow(Follow._type_field_in_type_fields1609);
+			PushFollow(Follow._type_field_in_type_fields1616);
 			type_field126=type_field();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4722,9 +4769,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:196:26: ',' ! type_field
 					{
 					DebugLocation(196, 29);
-					char_literal127=(IToken)Match(input,55,Follow._55_in_type_fields1612); if (state.failed) return retval;
+					char_literal127=(IToken)Match(input,55,Follow._55_in_type_fields1619); if (state.failed) return retval;
 					DebugLocation(196, 31);
-					PushFollow(Follow._type_field_in_type_fields1615);
+					PushFollow(Follow._type_field_in_type_fields1622);
 					type_field128=type_field();
 					PopFollow();
 					if (state.failed) return retval;
@@ -4807,15 +4854,15 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:198:13: ID ':' type_id
 			{
 			DebugLocation(198, 13);
-			ID129=(IToken)Match(input,ID,Follow._ID_in_type_field1625); if (state.failed) return retval; 
+			ID129=(IToken)Match(input,ID,Follow._ID_in_type_field1632); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID129);
 
 			DebugLocation(198, 16);
-			char_literal130=(IToken)Match(input,56,Follow._56_in_type_field1627); if (state.failed) return retval; 
+			char_literal130=(IToken)Match(input,56,Follow._56_in_type_field1634); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_56.Add(char_literal130);
 
 			DebugLocation(198, 20);
-			PushFollow(Follow._type_id_in_type_field1629);
+			PushFollow(Follow._type_id_in_type_field1636);
 			type_id131=type_id();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4824,7 +4871,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: ID, type_id
+			// elements: type_id, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -5179,69 +5226,69 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		public static readonly BitSet _texpr_in_texpr1184 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _expr_in_expr_seq1203 = new BitSet(new ulong[]{0x200000000000002UL});
 		public static readonly BitSet _57_in_expr_seq1206 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_expr_seq1209 = new BitSet(new ulong[]{0x200000000000002UL});
-		public static readonly BitSet _expr_in_expr_list1219 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _55_in_expr_list1222 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_expr_list1225 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _ID_in_field_list1239 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_field_list1241 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_field_list1244 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _55_in_field_list1248 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_field_list1251 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_field_list1253 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_field_list1256 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _ID_in_lvalue1267 = new BitSet(new ulong[]{0x400000000008002UL});
-		public static readonly BitSet _array_or_member_access_in_lvalue1269 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _member_access_in_array_or_member_access1294 = new BitSet(new ulong[]{0x400000000008002UL});
-		public static readonly BitSet _array_access_in_array_or_member_access1298 = new BitSet(new ulong[]{0x400000000008002UL});
-		public static readonly BitSet _array_or_member_access_in_array_or_member_access1301 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_member_access1314 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_member_access1317 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _58_in_array_access1329 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_array_access1331 = new BitSet(new ulong[]{0x800000000000000UL});
-		public static readonly BitSet _59_in_array_access1333 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _declaration_in_declaration_list1354 = new BitSet(new ulong[]{0x2UL,0xC1UL});
-		public static readonly BitSet _type_declaration_in_declaration1377 = new BitSet(new ulong[]{0x2UL,0x40UL});
-		public static readonly BitSet _variable_declaration_in_declaration1392 = new BitSet(new ulong[]{0x2UL,0x80UL});
-		public static readonly BitSet _function_declaration_in_declaration1407 = new BitSet(new ulong[]{0x2UL,0x1UL});
-		public static readonly BitSet _70_in_type_declaration1428 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1430 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_type_declaration1432 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1434 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _70_in_type_declaration1450 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1452 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_type_declaration1454 = new BitSet(new ulong[]{0x0UL,0x100UL});
-		public static readonly BitSet _72_in_type_declaration1456 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_fields_in_type_declaration1458 = new BitSet(new ulong[]{0x0UL,0x200UL});
-		public static readonly BitSet _73_in_type_declaration1460 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _70_in_type_declaration1476 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1478 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_type_declaration1480 = new BitSet(new ulong[]{0x1000000000000000UL});
-		public static readonly BitSet _60_in_type_declaration1482 = new BitSet(new ulong[]{0x0UL,0x8UL});
-		public static readonly BitSet _67_in_type_declaration1484 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1486 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _71_in_variable_declaration1508 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_variable_declaration1510 = new BitSet(new ulong[]{0x100000000000200UL});
-		public static readonly BitSet _56_in_variable_declaration1513 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_variable_declaration1515 = new BitSet(new ulong[]{0x200UL});
-		public static readonly BitSet _ASSIGN_in_variable_declaration1519 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_variable_declaration1521 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _64_in_function_declaration1543 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_function_declaration1545 = new BitSet(new ulong[]{0x20000000000000UL});
-		public static readonly BitSet _53_in_function_declaration1547 = new BitSet(new ulong[]{0x40000004000000UL});
-		public static readonly BitSet _type_fields_in_function_declaration1549 = new BitSet(new ulong[]{0x40000000000000UL});
-		public static readonly BitSet _54_in_function_declaration1552 = new BitSet(new ulong[]{0x100000000010000UL});
-		public static readonly BitSet _56_in_function_declaration1555 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_function_declaration1557 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_function_declaration1561 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_function_declaration1563 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_type_id1592 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_field_in_type_fields1609 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _55_in_type_fields1612 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_field_in_type_fields1615 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _ID_in_type_field1625 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_type_field1627 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_field1629 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expr_in_expr_seq1208 = new BitSet(new ulong[]{0x200000000000002UL});
+		public static readonly BitSet _expr_in_expr_list1226 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _55_in_expr_list1229 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_expr_list1232 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _ID_in_field_list1246 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_field_list1248 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_field_list1251 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _55_in_field_list1255 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_field_list1258 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_field_list1260 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_field_list1263 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _ID_in_lvalue1274 = new BitSet(new ulong[]{0x400000000008002UL});
+		public static readonly BitSet _array_or_member_access_in_lvalue1276 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _member_access_in_array_or_member_access1301 = new BitSet(new ulong[]{0x400000000008002UL});
+		public static readonly BitSet _array_access_in_array_or_member_access1305 = new BitSet(new ulong[]{0x400000000008002UL});
+		public static readonly BitSet _array_or_member_access_in_array_or_member_access1308 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_member_access1321 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_member_access1324 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _58_in_array_access1336 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_array_access1338 = new BitSet(new ulong[]{0x800000000000000UL});
+		public static readonly BitSet _59_in_array_access1340 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _declaration_in_declaration_list1361 = new BitSet(new ulong[]{0x2UL,0xC1UL});
+		public static readonly BitSet _type_declaration_in_declaration1384 = new BitSet(new ulong[]{0x2UL,0x40UL});
+		public static readonly BitSet _variable_declaration_in_declaration1399 = new BitSet(new ulong[]{0x2UL,0x80UL});
+		public static readonly BitSet _function_declaration_in_declaration1414 = new BitSet(new ulong[]{0x2UL,0x1UL});
+		public static readonly BitSet _70_in_type_declaration1435 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1437 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_type_declaration1439 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1441 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _70_in_type_declaration1457 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1459 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_type_declaration1461 = new BitSet(new ulong[]{0x0UL,0x100UL});
+		public static readonly BitSet _72_in_type_declaration1463 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_fields_in_type_declaration1465 = new BitSet(new ulong[]{0x0UL,0x200UL});
+		public static readonly BitSet _73_in_type_declaration1467 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _70_in_type_declaration1483 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1485 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_type_declaration1487 = new BitSet(new ulong[]{0x1000000000000000UL});
+		public static readonly BitSet _60_in_type_declaration1489 = new BitSet(new ulong[]{0x0UL,0x8UL});
+		public static readonly BitSet _67_in_type_declaration1491 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1493 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _71_in_variable_declaration1515 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_variable_declaration1517 = new BitSet(new ulong[]{0x100000000000200UL});
+		public static readonly BitSet _56_in_variable_declaration1520 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_variable_declaration1522 = new BitSet(new ulong[]{0x200UL});
+		public static readonly BitSet _ASSIGN_in_variable_declaration1526 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_variable_declaration1528 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _64_in_function_declaration1550 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_function_declaration1552 = new BitSet(new ulong[]{0x20000000000000UL});
+		public static readonly BitSet _53_in_function_declaration1554 = new BitSet(new ulong[]{0x40000004000000UL});
+		public static readonly BitSet _type_fields_in_function_declaration1556 = new BitSet(new ulong[]{0x40000000000000UL});
+		public static readonly BitSet _54_in_function_declaration1559 = new BitSet(new ulong[]{0x100000000010000UL});
+		public static readonly BitSet _56_in_function_declaration1562 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_function_declaration1564 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_function_declaration1568 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_function_declaration1570 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_type_id1599 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_field_in_type_fields1616 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _55_in_type_fields1619 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_field_in_type_fields1622 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _ID_in_type_field1632 = new BitSet(new ulong[]{0x100000000000000UL});
+		public static readonly BitSet _56_in_type_field1634 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_field1636 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _ID_in_synpred1_Tiger821 = new BitSet(new ulong[]{0x400000000000000UL});
 		public static readonly BitSet _58_in_synpred1_Tiger823 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
 		public static readonly BitSet _expr_in_synpred1_Tiger825 = new BitSet(new ulong[]{0x800000000000000UL});

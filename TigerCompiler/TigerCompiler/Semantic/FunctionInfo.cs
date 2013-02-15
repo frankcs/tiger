@@ -74,6 +74,13 @@ namespace TigerCompiler.Semantic
             //function exit(i : int)
             var exit = scope.DefineFunction("exit", true);
             exit.AddParameter("i", TypeInfo.Int);
+
+            //function getline():string
+            scope.DefineFunction("getline", TypeInfo.String);
+
+            //function printline(s:string)
+            var printline = scope.DefineFunction("printline");
+            printline.AddParameter("s", TypeInfo.String);
         }
     }
 }

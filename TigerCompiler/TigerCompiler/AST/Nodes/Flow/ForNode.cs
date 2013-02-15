@@ -8,16 +8,13 @@ namespace TigerCompiler.AST.Nodes.Flow
 {
     /// <summary>
     ///  FOR var=ID ASSIGN init=expr 'to' limit=expr 'do' something=expr -> ^(FOR $var $init $limit $something)
-    /// TODO: Create a scope for the loop variable?
     /// </summary>
     class ForNode : FlowControlNode
     {
         private Scope forScope;
         private VariableInfo loopVariable;
 
-        public ForNode(IToken payload) : base(payload)
-        {
-        }
+        public ForNode(IToken payload) : base(payload){}
 
         IdNode LoopVariableIDNode
         {
@@ -52,8 +49,6 @@ namespace TigerCompiler.AST.Nodes.Flow
             report.Assert(LoopVariableInitExpression, LoopVariableInitExpression.ReturnType == TypeInfo.Int,"The initialization expression for a for loop must return an integer value.");
             report.Assert(LoopVariableUpperLimitExpression, LoopVariableUpperLimitExpression.ReturnType == TypeInfo.Int, "The upper limit of a for loop must return an integer value.");
             report.Assert(DoExpression, DoExpression.ReturnType == TypeInfo.Void, "A for expression cannot return a value.");
-			
-
 
 			ReturnType = TypeInfo.Void;
 		}

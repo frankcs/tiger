@@ -1,4 +1,5 @@
 ﻿using System;
+using TigerCompiler.AST.Nodes;
 
 namespace TigerCompiler.Semantic.Types
 {
@@ -7,6 +8,7 @@ namespace TigerCompiler.Semantic.Types
         public PrimitiveTypeInfo(Type type)
         {
             ILType = type;
+            ResolutionStatus = TypeResolutionStatus.OK;
         }
 
         public override Type GetILType()
@@ -14,9 +16,14 @@ namespace TigerCompiler.Semantic.Types
             return ILType;
         }
 
-        public override void ResolveReferencedTypes(Scope scope)
+        public override bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter)
         {
-            ResolutionStatus = TypeResolutionStatus.OK;
+            return true;
+        }
+
+        public override string ToString()
+        {
+            return ILType.ToString();
         }
     }
 }

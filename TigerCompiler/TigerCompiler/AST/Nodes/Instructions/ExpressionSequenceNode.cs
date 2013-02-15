@@ -15,7 +15,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
         {
             base.CheckSemantics(scope, report);
 
-            ReturnType = HasBreak ? TypeInfo.Void : ((ASTNode) Children[Children.Count - 1]).ReturnType;
+            ReturnType = HasBreak || Children == null ? TypeInfo.Void : ((ASTNode) Children[Children.Count - 1]).ReturnType;
         }
     }
 }

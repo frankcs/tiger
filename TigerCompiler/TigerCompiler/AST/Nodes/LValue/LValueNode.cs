@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.Semantic;
@@ -17,10 +18,9 @@ namespace TigerCompiler.AST.Nodes.LValue
             base.CheckSemantics(scope,report);
 
             var variableInfo = scope.ResolveVarOrFunction(MainIDNode.Text) as VariableInfo;
-            if (variableInfo == null)
-                report.AddError("Unknown variable for the current scope ({0}).", MainIDNode.Text);
-            else
+            if (report.Assert(this, variableInfo != null, "Unknown variable for the current scope ({0}).", MainIDNode.Text))
             {
+                Debug.Assert(variableInfo != null, "variableInfo != null");
                 ReturnType = variableInfo.VariableType;
 
                 for (int i = 1; i < Children.Count; i++)
@@ -36,13 +36,13 @@ namespace TigerCompiler.AST.Nodes.LValue
                                 ReturnType = memberInfo;
                             else
                             {
-                                report.AddError("Unknown member.");
+                                report.AddError(this,"Unknown member.");
                                 break;
                             }
                         }
                         else
                         {
-                            report.AddError("Dot operator applied to an invalid type.");
+                            report.AddError(this,"Dot operator applied to an invalid type.");
                             break;
                         }
                     }
@@ -54,7 +54,7 @@ namespace TigerCompiler.AST.Nodes.LValue
                         }
                         else
                         {
-                            report.AddError("Trying to index on a non-array type.");
+                            report.AddError(this,"Trying to index on a non-array type.");
                             break;
                         }
                     }

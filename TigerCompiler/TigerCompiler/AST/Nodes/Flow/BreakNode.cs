@@ -27,7 +27,6 @@ namespace TigerCompiler.AST.Nodes.Flow
                 }
                 if (current is FunctionDeclarationNode || current is ProgramNode)
                 {
-                    //TODO: Is this right?
                     break;
                 }
                 if (current is ExpressionSequenceNode)

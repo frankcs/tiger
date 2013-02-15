@@ -24,7 +24,8 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
             {
                 var currentMember = Children[i];
                 var currentMemberTypeName = ((currentMember as ASTNode).Children[0] as TypeIDNode).TypeName;
-                record.AddMember(currentMember.Text, currentMemberTypeName);
+                var couldAddMember = record.AddMember(currentMember.Text, currentMemberTypeName);
+                report.Assert(this, couldAddMember, "Function parameters must have different names.");
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.Semantic;
+using TigerCompiler.Semantic.Types;
 
 namespace TigerCompiler.AST.Nodes.Declarations.Types
 {
@@ -15,9 +16,20 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
             get { return Children[0] as TypeIDNode; }
         }
 
-        public void ResolveReferencedTypes(Scope scope)
+        //protected new TypeInfo Type
+        //{
+        //    get
+        //    {
+        //        var type = Scope.ResolveType(NewTypeNode.TypeName);
+        //        if (type is AliasTypeInfo)
+        //            return (type as AliasTypeInfo).TargetType;
+        //        return type;
+        //    }
+        //}
+
+        public void ResolveReferencedTypes(Scope scope,ErrorReporter reporter)
         {
-            Scope.ResolveType(NewTypeNode.TypeName).ResolveReferencedTypes(scope);
+            scope.ResolveType(NewTypeNode.TypeName).ResolveReferencedTypes(this,scope,reporter);
         }
     }
 }

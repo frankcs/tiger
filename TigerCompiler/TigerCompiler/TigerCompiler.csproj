@@ -50,11 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AST\Nodes\Helpers\DeclarationListNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Logical\EqualityNode.cs" />
     <Compile Include="AST\TypeFieldsNode.cs" />
     <Compile Include="AST\Nodes\Declarations\Blocks\FunctionDeclarationBlockNode.cs" />
     <Compile Include="AST\Nodes\Declarations\Blocks\TypeDeclarationBlockNode.cs" />
     <Compile Include="AST\Nodes\Declarations\Blocks\VariableDeclarationBlockNode.cs" />
     <Compile Include="CodeGeneration\CodeGenerator.cs" />
+    <Compile Include="LexerExtensions.cs" />
+    <Compile Include="ParserExtensions.cs" />
     <Compile Include="Semantic\Types\AliasTypeInfo.cs" />
     <Compile Include="Semantic\Types\TypeResolutionStatus.cs" />
     <Compile Include="Semantic\Types\ArrayTypeInfo.cs" />
@@ -115,14 +118,12 @@
     <Compile Include="AST\Nodes\Instructions\InstructionNode.cs" />
     <Compile Include="AST\Nodes\Operations\Logical\LogicalOperationNode.cs" />
     <Compile Include="Semantic\ErrorReporter.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Semantic\ISymbol.cs" />
     <Compile Include="Semantic\Scope.cs" />
     <Compile Include="TigerCompiler.cs" />
     <Compile Include="TigerLexer.cs" />
     <Compile Include="TigerParser.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\RelationalOperationNode.cs" />
     <Compile Include="AST\Nodes\Operations\UnaryOperationNode.cs" />
     <Compile Include="Semantic\Types\TypeInfo.cs" />
     <Compile Include="Semantic\VariableInfo.cs" />
@@ -138,6 +139,12 @@
     <Content Include="test.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Tests\Success\int_aliasing_and_creation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\Fail\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

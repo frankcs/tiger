@@ -32,7 +32,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
         public override void CheckSemantics(Scope scope, ErrorReporter report)
         {
             _letScope = scope.CreateChildScope();
-
+            
             base.CheckSemantics(_letScope, report);
 
             //The return type is that of the last expression, or none if there aren't any.

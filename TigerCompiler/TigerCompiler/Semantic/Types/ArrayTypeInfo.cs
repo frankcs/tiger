@@ -1,4 +1,5 @@
 ﻿using System;
+using TigerCompiler.AST.Nodes;
 
 namespace TigerCompiler.Semantic.Types
 {
@@ -22,14 +23,20 @@ namespace TigerCompiler.Semantic.Types
             return ILType ?? (ILType = TargetType.GetILType().MakeArrayType());
         }
 
-        public override void ResolveReferencedTypes(Scope scope)
+        public override bool ResolveReferencedTypes(ASTNode node,Scope scope, ErrorReporter reporter)
         {
+            bool ok = false;
             ResolutionStatus = TypeResolutionStatus.Resolving;
             if (TargetType == null)
                 TargetType = scope.ResolveType(_targetTypeName);
-            if (TargetType.ResolutionStatus == TypeResolutionStatus.NotResolved)
-                TargetType.ResolveReferencedTypes(scope);
-            ResolutionStatus = TypeResolutionStatus.OK;
+            if (reporter.Assert(node,!IsNull(TargetType),"Unknown type: {0}.",_targetTypeName))
+            {
+                if (TargetType.ResolutionStatus == TypeResolutionStatus.NotResolved)
+                    ok = TargetType.ResolveReferencedTypes(node, scope, reporter);
+                ResolutionStatus = TypeResolutionStatus.OK;
+                return ok;
+            }
+            return false;
         }
     }
 }

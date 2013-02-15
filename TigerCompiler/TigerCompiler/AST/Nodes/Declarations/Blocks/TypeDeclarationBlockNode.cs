@@ -12,7 +12,7 @@ namespace TigerCompiler.AST.Nodes.Declarations.Blocks
             base.CheckSemantics(scope, report);
 
             foreach (TypeDeclarationNode node in Children)
-                node.ResolveReferencedTypes(scope);
+                node.ResolveReferencedTypes(scope,report);
         }
     }
 }

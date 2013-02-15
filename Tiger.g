@@ -136,7 +136,7 @@ texpr: 	  	STRING
 		| (ID '{') => (ID '{' field_list? '}') -> ^(RECORD_CREATION ID field_list?)
 		| (lvalue ASSIGN) => (lvalue ASSIGN expr) -> ^(ASSIGN lvalue expr)
 		| lvalue
-		| '(' expr_seq? ')' -> ^(EXPRESSION_SEQ expr_seq?)
+		| '('! expr_seq? ')'!
 		| ('if' expr 'then' expr 'else') => ('if' ifx=expr 'then' thenx=expr 'else' elsex=expr) -> ^(IF_THEN_ELSE $ifx $thenx $elsex)
 		| 'if' ifx=expr 'then' elsex=expr -> ^(IF_THEN $ifx $elsex)
 		| WHILE condition=expr 'do' something=expr -> ^(WHILE $condition $something)
@@ -146,7 +146,7 @@ texpr: 	  	STRING
 		| MINUS texpr -> ^(UMINUS texpr)
 		;
 
-expr_seq: 	expr (';'! expr)* ;
+expr_seq: 	expr (';' expr)* -> ^(EXPRESSION_SEQ expr+);
 
 expr_list:	expr (','! expr)*;
 		

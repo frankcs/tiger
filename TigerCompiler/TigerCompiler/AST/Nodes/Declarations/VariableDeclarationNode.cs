@@ -22,9 +22,9 @@ namespace TigerCompiler.AST.Nodes.Declarations
             get { return (ASTNode) Children[0]; }
         }
 
-        private ASTNode TypeID
+        private TypeIDNode TypeID
         {
-            get { return (ASTNode)((Children[1] is TypeIDNode)?Children[1]:null); } // TODO: Is this ok?
+            get { return (TypeIDNode)((Children[1] is TypeIDNode) ? Children[1] : null); }
         }
 
         private ASTNode InitialValue
@@ -36,20 +36,26 @@ namespace TigerCompiler.AST.Nodes.Declarations
         {
             base.CheckSemantics(scope,report);
 
-            if (TypeID != null)
+            if (TypeID == null)
             {
-                TypeInfo type = (scope.ResolveType(TypeID.Text));
-                report.Assert(this,InitialValue.ReturnType == type,"The initialization expression type ({0}) does not match with the specified type {1}.",InitialValue.ReturnType,TypeID.Text);
-                ReturnType = type;
-            }
-            else
-            {
-                report.Assert(this,InitialValue.ReturnType != TypeInfo.Unknown,"The variable type cannot be inferred from usage. Specify the type explicitly.");
+                report.Assert(this, InitialValue.ReturnType != TypeInfo.Unknown,
+                              "The variable type cannot be inferred from usage. Specify the type explicitly.");
                 ReturnType = InitialValue.ReturnType;
                 Debug.Assert(ReturnType != null);
             }
+            else
+            {
+                TypeInfo type = (scope.ResolveType(TypeID.TypeName));
+                if (report.Assert(this, !ReferenceEquals(type, null),"Cannot find type {0} in variable {1}'s declaration.",TypeID.TypeName,VariableID.Text))
+                {
+                    report.Assert(this, InitialValue.ReturnType == type,
+                              "The initial expression type \"{0}\" does not match with the specified type {1}.",
+                              InitialValue.ReturnType, TypeID.TypeName);
+                    ReturnType = type;
+                }
+            }
 
-            scope.DefineVariable(VariableID.Text, ReturnType);
+            scope.DefineVariable(VariableID.Text, InitialValue.ReturnType);
         }
     }
 }

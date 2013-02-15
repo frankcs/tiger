@@ -265,9 +265,6 @@ namespace TigerCompiler.CodeGeneration
 
             #endregion
 
-            #region ArrayTypeDecl
-            
-            #endregion
             node.GenerateCode(this);
 
             generator.Emit(OpCodes.Ldc_I4, 2000);
