@@ -1,4 +1,5 @@
-﻿using Antlr.Runtime;
+﻿using System.Reflection.Emit;
+using Antlr.Runtime;
 using TigerCompiler.Semantic;
 using TigerCompiler.Semantic.Types;
 
@@ -36,6 +37,20 @@ namespace TigerCompiler.AST.Nodes.Flow
         private ASTNode ElseExpression
         {
             get { return (ASTNode)Children[2]; }
+        }
+
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            Label elseeval = cg.IlGenerator.DefineLabel();
+            Label endofif = cg.IlGenerator.DefineLabel();
+
+            IfCondition.GenerateCode(cg);
+            cg.IlGenerator.Emit(OpCodes.Brfalse, elseeval);
+            ThenExpression.GenerateCode(cg);
+            cg.IlGenerator.Emit(OpCodes.Br, endofif);
+            cg.IlGenerator.MarkLabel(elseeval);
+            ElseExpression.GenerateCode(cg);
+            cg.IlGenerator.MarkLabel(endofif);
         }
     }
 }

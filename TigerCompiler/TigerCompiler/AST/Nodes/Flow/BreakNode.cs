@@ -1,4 +1,5 @@
-﻿using Antlr.Runtime;
+﻿using System.Reflection.Emit;
+using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Declarations;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.AST.Nodes.Instructions;
@@ -42,5 +43,10 @@ namespace TigerCompiler.AST.Nodes.Flow
         }
 
         private FlowControlNode EnclosingForOrWhile { get; set; }
+
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            cg.IlGenerator.Emit(OpCodes.Br, EnclosingForOrWhile.EndofCicle);
+        }
     }
 }

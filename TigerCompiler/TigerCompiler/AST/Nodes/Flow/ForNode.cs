@@ -38,8 +38,6 @@ namespace TigerCompiler.AST.Nodes.Flow
             get { return DoExpression.ReturnType != TypeInfo.Void && DoExpression.ReturnType != null; }
         }
 
-        public Label EndofCicle { get; private set; }
-
         public override void CheckSemantics(Scope scope, ErrorReporter report)
         {
             forScope =scope.CreateChildScope();
@@ -48,7 +46,7 @@ namespace TigerCompiler.AST.Nodes.Flow
 
             report.Assert(LoopVariableInitExpression, LoopVariableInitExpression.ReturnType == TypeInfo.Int,"The initialization expression for a for loop must return an integer value.");
             report.Assert(LoopVariableUpperLimitExpression, LoopVariableUpperLimitExpression.ReturnType == TypeInfo.Int, "The upper limit of a for loop must return an integer value.");
-            report.Assert(DoExpression, DoExpression.ReturnType == TypeInfo.Void, "A for expression cannot return a value.");
+            //report.Assert(DoExpression, DoExpression.ReturnType == TypeInfo.Void, "A for expression cannot return a value.");
 
 			ReturnType = TypeInfo.Void;
 		}
@@ -74,6 +72,8 @@ namespace TigerCompiler.AST.Nodes.Flow
             cg.IlGenerator.Emit(OpCodes.Bgt,EndofCicle);
             //Generate the body
             DoExpression.GenerateCode(cg);
+            if(BodyReturnsValue)
+                cg.IlGenerator.Emit(OpCodes.Pop);
             //Incresing the counter
             cg.IlGenerator.Emit(OpCodes.Ldloc, loopVariable.ILLocalVariable);
             cg.IlGenerator.Emit(OpCodes.Ldc_I4_1);

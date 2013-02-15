@@ -22,7 +22,8 @@ namespace TigerCompiler.CodeGeneration
         #region Constructors
         public CodeGenerator(string fileName, IEnumerable<string> builtIn)
         {
-
+            typecount = 0;
+            funccount = 0;
             string clearname = Path.GetFileNameWithoutExtension(fileName);
             EXEFileName = clearname + ".exe";
             ScopedGenerators= new Stack<ILGenerator>();
@@ -87,16 +88,26 @@ namespace TigerCompiler.CodeGeneration
         /// </summary>
         private Dictionary<string, MethodBuilder> BuiltInFunctiontoBuilder { get; set; }
 
+        private int funccount;
+        private int typecount;
+
         #endregion
 
         #region Methods
 
         #region Utilities
+        /// <summary>
+        /// Used to generate code for functions
+        /// </summary>
+        /// <param name="ilcg"></param>
         public void EnterGenerationScope(ILGenerator ilcg)
         {
             ScopedGenerators.Push(ilcg);
         }
 
+        /// <summary>
+        /// Used when code gen for functions is done
+        /// </summary>
         public void LeaveGenerationScope()
         {
             if(EntryPoint.GetILGenerator()==ScopedGenerators.Peek())
@@ -105,7 +116,20 @@ namespace TigerCompiler.CodeGeneration
         }
 
         /// <summary>
-        /// Genera código para la función de entrada del programa
+        /// Generates a function in the module and returns the handler
+        /// </summary>
+        /// <param name="returntype"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public MethodBuilder CreateFunction(Type returntype, Type[] parameters)
+        {
+            return ILModule.DefineGlobalMethod(GetNewFunctionName(), MethodAttributes.Public | MethodAttributes.Static,
+                                               returntype, parameters);
+
+        }
+
+        /// <summary>
+        /// Generate code for the entrypoint function
         /// </summary>
         public void GenerateCode(ASTNode node)
         {
@@ -279,6 +303,15 @@ namespace TigerCompiler.CodeGeneration
             ILAssembly.Save(EXEFileName);
         }
 
+        private string GetNewFunctionName()
+        {
+            return "function" + funccount;
+        }
+
+        private string GetNewTypeName()
+        {
+            return "type" + typecount;
+        }
         #endregion
 
         #region Generation

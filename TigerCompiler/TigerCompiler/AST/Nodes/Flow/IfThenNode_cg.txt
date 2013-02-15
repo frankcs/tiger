@@ -1,5 +1,5 @@
 ﻿************if expr0 then expr1*********************
--Crear la Etiqueta para el else para el fin de bloque: "endofiflabel"
+-Crear la Etiqueta para el fin de bloque: "endofiflabel"
 -Generar código para expr0
 -Si el resultado es cero or null got endofofif
 -Generar código para la expr1

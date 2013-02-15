@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using TigerCompiler.Semantic.Types;
 
 namespace TigerCompiler.Semantic
@@ -82,5 +83,7 @@ namespace TigerCompiler.Semantic
             var printline = scope.DefineFunction("printline");
             printline.AddParameter("s", TypeInfo.String);
         }
+
+        public MethodBuilder ILMethod { get; set; }
     }
 }

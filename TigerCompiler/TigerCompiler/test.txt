@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 ﻿for i := 1 to 10 do 
     i := 1
+=======
+﻿if 3 then 4 else "hello"
+	
+>>>>>>> 5f64bcc3677b94101b6d06eae11c21f435e99613
