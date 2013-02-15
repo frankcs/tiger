@@ -69,7 +69,8 @@ namespace TigerCompiler.AST.Nodes.Declarations
         {
             var funcinfo= (FunctionInfo) Scope.ResolveVarOrFunction(FunctionName);
             var parameters = funcinfo.Parameters.Values;
-            funcinfo.ILMethod= cg.CreateFunction(FunctionReturnType.GetILType(),funcinfo.Parameters.Keys)
+            //funcinfo.ILMethod = cg.CreateFunction(FunctionReturnType.GetILType(), funcinfo.Parameters.Keys);
+            //TODO
         }
         
 

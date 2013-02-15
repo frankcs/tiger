@@ -17,20 +17,20 @@ namespace TigerCompiler.AST.Nodes.Flow
         {
             base.CheckSemantics(scope, report);
 
-            report.Assert(this, IfExpression.ReturnType == TypeInfo.Int,"An if expression must return an integer value.");
+            report.Assert(this, IfCondition.ReturnType == TypeInfo.Int, "An if expression must return an integer value.");
             report.Assert(this,ThenExpression.ReturnType == TypeInfo.Void,"If-then must not return a value.");
 
             ReturnType = TypeInfo.Void;
         }
 
-        private ASTNode IfExpression
+        public ASTNode IfCondition
         {
-            get { return Children[0] as ASTNode; }
+            get { return (ASTNode) Children[0]; }
         }
 
-        private ASTNode ThenExpression
+        public ASTNode ThenExpression
         {
-            get { return Children[1] as ASTNode; }
+            get { return (ASTNode)Children[1]; }
         }
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
@@ -39,7 +39,7 @@ namespace TigerCompiler.AST.Nodes.Flow
             
             IfCondition.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Brfalse, endofif);
-            ThenExpresion.GenerateCode(cg);
+            ThenExpression.GenerateCode(cg);
             cg.IlGenerator.MarkLabel(endofif);
         }
     }

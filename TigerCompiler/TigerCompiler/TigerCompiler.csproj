@@ -66,7 +66,7 @@
     <Compile Include="Semantic\Types\PrimitiveTypeInfo.cs" />
     <Compile Include="Semantic\Types\RecordTypeInfo.cs" />
     <Compile Include="AST\Nodes\Operations\OperationNode.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\ComparisonNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Comparison\ComparisonNode.cs" />
     <Compile Include="AST\Nodes\LValue\DotNode.cs" />
     <Compile Include="AST\Nodes\Operations\Arithmetic\ArithmeticOperationNode.cs" />
     <Compile Include="AST\Nodes\LValue\LValueNode.cs" />
@@ -77,25 +77,25 @@
     <Compile Include="AST\Nodes\Instructions\AssignNode.cs" />
     <Compile Include="AST\Nodes\Flow\BreakNode.cs" />
     <Compile Include="AST\Nodes\Operations\Arithmetic\DivisionNode.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\EqualNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Equality\EqualNode.cs" />
     <Compile Include="AST\Nodes\Helpers\ExpressionListNode.cs" />
     <Compile Include="AST\Nodes\Flow\ForNode.cs" />
     <Compile Include="AST\Nodes\Instructions\FunctionCallNode.cs" />
     <Compile Include="AST\Nodes\Declarations\FunctionDeclarationNode.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\GreaterThanNode.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\GreaterThanOrEqualNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Comparison\GreaterThanNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Comparison\GreaterThanOrEqualNode.cs" />
     <Compile Include="AST\Nodes\Helpers\IdNode.cs" />
     <Compile Include="AST\Nodes\Flow\IfThenElseNode.cs" />
     <Compile Include="AST\Nodes\Flow\IfThenNode.cs" />
     <Compile Include="AST\Nodes\LValue\IndexingNode.cs" />
     <Compile Include="AST\Nodes\Operations\Constants\IntNode.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\LessThanNode.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\LessThanOrEqualNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Comparison\LessThanNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Comparison\LessThanOrEqualNode.cs" />
     <Compile Include="AST\Nodes\Instructions\LetNode.cs" />
     <Compile Include="AST\Nodes\Operations\Arithmetic\MinusNode.cs" />
     <Compile Include="AST\Nodes\Operations\Arithmetic\MultiplyNode.cs" />
     <Compile Include="AST\Nodes\Operations\Constants\NilNode.cs" />
-    <Compile Include="AST\Nodes\Operations\Logical\NotEqualNode.cs" />
+    <Compile Include="AST\Nodes\Operations\Equality\NotEqualNode.cs" />
     <Compile Include="AST\Nodes\Operations\Logical\OrNode.cs" />
     <Compile Include="AST\OurTreeAdaptor.cs" />
     <Compile Include="AST\Nodes\Operations\Arithmetic\PlusNode.cs" />
@@ -124,6 +124,7 @@
     <Compile Include="TigerCompiler.cs" />
     <Compile Include="TigerLexer.cs" />
     <Compile Include="TigerParser.cs" />
+    <Compile Include="AST\Nodes\Operations\Equality\EqualityNode.cs" />
     <Compile Include="AST\Nodes\Operations\UnaryOperationNode.cs" />
     <Compile Include="Semantic\Types\TypeInfo.cs" />
     <Compile Include="Semantic\VariableInfo.cs" />
@@ -137,7 +138,7 @@
   <ItemGroup>
     <Content Include="CodeGeneration\Ideas.txt" />
     <Content Include="test.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Tests\Success\int_aliasing_and_creation.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
