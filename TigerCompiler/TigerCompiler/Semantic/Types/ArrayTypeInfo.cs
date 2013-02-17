@@ -15,11 +15,6 @@ namespace TigerCompiler.Semantic.Types
 
         public override Type GetILType()
         {
-            // No funciona asi. Al parecer, lo siguiente es valido:
-            //  type a = array of b
-            //  type b = array of a
-            // ...por lo cual, como no es posible tener el tipo del primero
-            // antes de crear el 2do, entonces no se puede usar MakeArrayType.
             return ILType ?? (ILType = TargetType.GetILType().MakeArrayType());
         }
 

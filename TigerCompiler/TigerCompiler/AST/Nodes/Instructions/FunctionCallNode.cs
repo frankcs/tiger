@@ -1,4 +1,5 @@
-﻿using Antlr.Runtime;
+﻿using System.Reflection.Emit;
+using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.Semantic;
 
@@ -35,6 +36,13 @@ namespace TigerCompiler.AST.Nodes.Instructions
         public ExpressionListNode ExpressionList
         {
             get { return (ExpressionListNode)Children[1]; }
+        }
+
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            var func = (FunctionInfo)Scope.ResolveVarOrFunction(FunctionName);
+            ExpressionList.GenerateCode(cg);
+            cg.IlGenerator.Emit(OpCodes.Call,func.ILMethod);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using TigerCompiler.AST.Nodes;
 using TigerCompiler.Semantic.Symbols;
 
@@ -69,5 +70,7 @@ namespace TigerCompiler.Semantic.Types
         {
              return ReferenceEquals(t, null); 
         }
+
+        public TypeBuilder ILTypeBuilder { get; set; }
     }
 }

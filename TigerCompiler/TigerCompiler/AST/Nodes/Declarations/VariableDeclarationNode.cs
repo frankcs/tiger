@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Reflection.Emit;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.Semantic;
@@ -56,6 +57,16 @@ namespace TigerCompiler.AST.Nodes.Declarations
             }
 
             scope.DefineVariable(VariableID.Text, InitialValue.ReturnType);
+        }
+
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            
+            var varinfo = (VariableInfo)Scope.ResolveVarOrFunction(VariableID.Text);
+            varinfo.ILLocalVariable = cg.IlGenerator.DeclareLocal(varinfo.VariableType.GetILType());
+            InitialValue.GenerateCode(cg);
+            cg.IlGenerator.Emit(OpCodes.Ldloca,varinfo.ILLocalVariable);
+             
         }
     }
 }

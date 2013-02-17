@@ -128,6 +128,11 @@ namespace TigerCompiler.CodeGeneration
 
         }
 
+        public TypeBuilder CreateType()
+        {
+            return ILModule.DefineType(GetNewTypeName());
+        }
+
         /// <summary>
         /// Generate code for the entrypoint function
         /// </summary>
@@ -289,6 +294,9 @@ namespace TigerCompiler.CodeGeneration
 
             #endregion
 
+            #region Testing Field Acces an Store
+            #endregion
+
             node.GenerateCode(this);
 
             generator.Emit(OpCodes.Ldc_I4, 2000);
@@ -305,11 +313,13 @@ namespace TigerCompiler.CodeGeneration
 
         private string GetNewFunctionName()
         {
+            funccount++;
             return "function" + funccount;
         }
 
         private string GetNewTypeName()
         {
+            typecount++;
             return "type" + typecount;
         }
         #endregion

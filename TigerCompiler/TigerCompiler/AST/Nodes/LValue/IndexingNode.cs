@@ -11,7 +11,7 @@ namespace TigerCompiler.AST.Nodes.LValue
         {
         }
 
-        private ASTNode IndexNode
+        public ASTNode IndexNode
         {
             get { return (ASTNode) Children[0]; }
         }

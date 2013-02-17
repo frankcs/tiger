@@ -11,6 +11,7 @@ namespace TigerCompiler.AST.Nodes.LValue
     {
         public LValueNode(IToken payload) : base(payload)
         {
+            
         }
 
         public override void CheckSemantics(Scope scope, ErrorReporter report)
@@ -66,7 +67,7 @@ namespace TigerCompiler.AST.Nodes.LValue
             }
         }
 
-        private IdNode MainIDNode
+        public IdNode MainIDNode
         {
             get { return Children[0] as IdNode; }
         }

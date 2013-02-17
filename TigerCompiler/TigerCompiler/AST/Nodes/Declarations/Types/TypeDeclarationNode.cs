@@ -11,7 +11,7 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
         {
         }
 
-        protected TypeIDNode NewTypeNode
+        public TypeIDNode NewTypeNode
         {
             get { return Children[0] as TypeIDNode; }
         }

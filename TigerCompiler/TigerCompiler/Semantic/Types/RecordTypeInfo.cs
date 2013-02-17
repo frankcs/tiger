@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using TigerCompiler.AST.Nodes;
 
 namespace TigerCompiler.Semantic.Types
 {
     public class RecordTypeInfo : TypeInfo
     {
+        public RecordTypeInfo()
+        {
+            FieldBuilders= new Dictionary<string, FieldBuilder>();
+        }
+
         private readonly Dictionary<string, string> _preFields = new Dictionary<string, string>();
         public readonly Dictionary<string, TypeInfo> Fields = new Dictionary<string, TypeInfo>();
 
@@ -27,7 +33,7 @@ namespace TigerCompiler.Semantic.Types
 
         public override Type GetILType()
         {
-            throw new NotImplementedException(); // FRANK
+            return ILTypeBuilder; // FRANK
         }
 
         public override bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter)
@@ -50,6 +56,10 @@ namespace TigerCompiler.Semantic.Types
             ResolutionStatus = ok? TypeResolutionStatus.OK : TypeResolutionStatus.Error;
             return ok;
         }
+
+        public ConstructorBuilder Constructor { get; set; }
+
+        public Dictionary<string, FieldBuilder> FieldBuilders { get; set; }
 
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.Semantic;
@@ -68,9 +70,17 @@ namespace TigerCompiler.AST.Nodes.Declarations
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
             var funcinfo= (FunctionInfo) Scope.ResolveVarOrFunction(FunctionName);
-            var parameters = funcinfo.Parameters.Values;
-            //funcinfo.ILMethod = cg.CreateFunction(FunctionReturnType.GetILType(), funcinfo.Parameters.Keys);
-            //TODO
+            var parameterstypes =
+                (from paramstypeinfos in funcinfo.Parameters.Values select paramstypeinfos.GetILType()).ToArray();
+
+            //create the function in the module
+            funcinfo.ILMethod = cg.CreateFunction(FunctionReturnType.GetILType(), parameterstypes);
+            //get it's ILGen
+            var innergenerator = funcinfo.ILMethod.GetILGenerator();
+            cg.EnterGenerationScope(innergenerator);
+            FunctionBody.GenerateCode(cg);
+            cg.IlGenerator.Emit(OpCodes.Ret);
+            cg.LeaveGenerationScope();
         }
         
 

@@ -1,1 +1,7 @@
-﻿if 3 then 4 else "hello"
+﻿let
+	type Person  = {Age: int, Name:string}
+	var a := 3
+	var b := Person {Age =22, Name="Frank"}	
+in
+	
+end
