@@ -20,7 +20,7 @@ namespace TigerCompiler.AST.Nodes.Operations.Logical
             cg.IlGenerator.Emit(OpCodes.Brtrue, rettrue);
             RightOperand.GenerateCode(cg);
             //if eval its 1 then ret 1 
-            cg.IlGenerator.Emit(OpCodes.Brfalse, rettrue);
+            cg.IlGenerator.Emit(OpCodes.Brtrue, rettrue);
             //ret 0 and jump to end
             cg.IlGenerator.Emit(OpCodes.Ldc_I4_0);
             cg.IlGenerator.Emit(OpCodes.Br, end);

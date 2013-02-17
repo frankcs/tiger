@@ -1,8 +1,13 @@
-﻿let
+﻿/*let
 	type Person  = {Age: int, Name:string}
 	type Student = {Person: Person, Career:string}
 	var b := Person {Age =22, Name="Frank"}	
 	var c := Student {Person= b, Career="Computer Science"}
+	function add (a:int):int= 5
 in
 	
 end
+*/
+
+printi("amalia"<>"amali0")
+

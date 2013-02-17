@@ -16,31 +16,16 @@ namespace TigerCompiler.AST.Nodes.Operations.Comparison
             base.GenerateCode(cg);
             if (LeftOperand.ReturnType == TypeInfo.Int)
             {
-                Label equal = cg.IlGenerator.DefineLabel();
+                Label return1 = cg.IlGenerator.DefineLabel();
                 Label end = cg.IlGenerator.DefineLabel();
 
-                LocalBuilder local0 = cg.IlGenerator.DeclareLocal(typeof(int));
-                LocalBuilder local1 = cg.IlGenerator.DeclareLocal(typeof(int));
-
-                //store the values
-                cg.IlGenerator.Emit(OpCodes.Stloc, local0);
-                cg.IlGenerator.Emit(OpCodes.Stloc, local1);
-
-                //reload
-                cg.IlGenerator.Emit(OpCodes.Ldloc, local0);
-                cg.IlGenerator.Emit(OpCodes.Ldloc, local1);
-
-                //if equal return 1
-                cg.IlGenerator.Emit(OpCodes.Beq, equal);
-
-                //reload
-                cg.IlGenerator.Emit(OpCodes.Ldloc, local0);
-                cg.IlGenerator.Emit(OpCodes.Ldloc, local1);
+                //if greater or equal return 1 if not 0
+                cg.IlGenerator.Emit(OpCodes.Bge, return1);
                 //compare and end
-                cg.IlGenerator.Emit(OpCodes.Cgt);
+                cg.IlGenerator.Emit(OpCodes.Ldc_I4_0);
                 cg.IlGenerator.Emit(OpCodes.Br,end);
 
-                cg.IlGenerator.MarkLabel(equal);
+                cg.IlGenerator.MarkLabel(return1);
                 cg.IlGenerator.Emit(OpCodes.Ldc_I4_1);
                 cg.IlGenerator.MarkLabel(end);
 

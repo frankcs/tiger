@@ -70,7 +70,7 @@ namespace TigerCompiler.AST.Nodes.Declarations
             var varinfo = (VariableInfo)Scope.ResolveVarOrFunction(VariableID.Text);
             varinfo.ILLocalVariable = cg.IlGenerator.DeclareLocal(varinfo.VariableType.GetILType());
             InitialValue.GenerateCode(cg);
-            cg.IlGenerator.Emit(OpCodes.Ldloca,varinfo.ILLocalVariable);
+            cg.IlGenerator.Emit(OpCodes.Stloc,varinfo.ILLocalVariable);
              
         }
     }

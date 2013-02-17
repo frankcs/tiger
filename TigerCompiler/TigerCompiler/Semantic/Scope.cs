@@ -14,8 +14,9 @@ namespace TigerCompiler.Semantic
             // Built-in types
             DefaultGlobalScope.TypeTable.Add("int", TypeInfo.Int);
             DefaultGlobalScope.TypeTable.Add("string", TypeInfo.String);
-
+            
             // Built-in functions
+            BuiltInFunctions= new List<KeyValuePair<string,FunctionInfo>>();
             FunctionInfo.DefineBuiltInFunctions(DefaultGlobalScope);
         }
 
@@ -172,6 +173,8 @@ namespace TigerCompiler.Semantic
             return Parent != null &&
                    (Parent.TypeTable.ContainsValue(type) || Parent.TypeIsVisibleInSomeParentScope(type));
         }
+
+        public static List<KeyValuePair<string, FunctionInfo>> BuiltInFunctions { get; private set; }
     }
 
 }

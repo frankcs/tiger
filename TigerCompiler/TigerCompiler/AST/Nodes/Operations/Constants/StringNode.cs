@@ -19,7 +19,7 @@ namespace TigerCompiler.AST.Nodes.Operations.Constants
         public override void GenerateCode(CodeGenerator cg)
         {
             base.GenerateCode(cg);
-            cg.IlGenerator.Emit(OpCodes.Ldstr, Text);
+            cg.IlGenerator.Emit(OpCodes.Ldstr, Text.Substring(1,Text.Length-2));
         }
     }
 }

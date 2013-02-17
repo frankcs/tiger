@@ -7,6 +7,7 @@ using System.Reflection.Emit;
 using System.IO;
 using System.Threading;
 using TigerCompiler.AST.Nodes;
+using TigerCompiler.Semantic;
 
 namespace TigerCompiler.CodeGeneration
 {
@@ -126,6 +127,12 @@ namespace TigerCompiler.CodeGeneration
             return ILModule.DefineGlobalMethod(GetNewFunctionName(), MethodAttributes.Public | MethodAttributes.Static,
                                                returntype, parameters);
 
+        }
+
+        private MethodBuilder CreateSTDFunction(Type returntype, Type[] parameters)
+        {
+            return StandardLibrary.DefineMethod(GetNewFunctionName(), MethodAttributes.Public | MethodAttributes.Static,
+                                               returntype, parameters);
         }
 
         public TypeBuilder CreateType()
@@ -333,134 +340,98 @@ namespace TigerCompiler.CodeGeneration
         /// </summary>
         private void GenerateCodeForBuiltInFunctions()
         {
-            foreach (var usedBuiltInFunctionName in UsedBuiltInFunctionNames)
+            foreach (var BuiltInFunction in Scope.BuiltInFunctions)
             {
-                MethodBuilder result = null;
-                switch (usedBuiltInFunctionName)
+                var parametertypes = (from paramtypeinfo in BuiltInFunction.Value.Parameters.Values
+                                     select paramtypeinfo.GetILType()).ToArray();
+                MethodBuilder builder = CreateSTDFunction(BuiltInFunction.Value.ReturnType.GetILType(), parametertypes);
+                ILGenerator funcgen = builder.GetILGenerator();
+                BuiltInFunction.Value.ILMethod = builder;
+
+                switch (BuiltInFunction.Key)
                 {
                     case "print":
-                        result = GeneratePrint();
+                        GeneratePrint(funcgen);
                         break;
                     case "printline":
-                        result = GeneratePrintline();
+                        GeneratePrintline(funcgen);
                         break;
                     case "printi":
-                        result = GeneratePrintI();
+                        GeneratePrintI(funcgen);
                         break;
                     case "flush":
-                        result = GenerateFlush();
+                        GenerateFlush(funcgen);
                         break;
                     case "getchar":
-                        result = GenerateGetChar();
+                        GenerateGetChar(funcgen);
                         break;
                     case "getline":
-                        result = GenerateGetLine();
+                        GenerateGetLine(funcgen);
                         break;
                     case "ord":
-                        result = GenerateOrd();
+                        GenerateOrd(funcgen);
                         break;
                     case "chr":
-                        result = GenerateChr();
+                        GenerateChr(funcgen);
                         break;
                     case "size":
-                        result = GenerateSize();
+                        GenerateSize(funcgen);
                         break;
                     case "substring":
-                        result = GenerateSubString();
+                        GenerateSubString(funcgen);
                         break;
                     case "concat":
-                        result = GenerateConcat();
+                        GenerateConcat(funcgen);
                         break;
                     case "not":
-                        result = GenerateNot();
+                        GenerateNot(funcgen);
                         break;
                     case "exit":
-                        result = GenerateExit();
+                        GenerateExit(funcgen);
                         break;
                     default:
-                        throw new Exception("Built-in Function Not Found");
+                        throw new Exception("Built-in Function code gen Not Found");
                 }
-                if (result != null)
-                    BuiltInFunctiontoBuilder.Add(usedBuiltInFunctionName, result);
             }
         }
 
-        private MethodBuilder GeneratePrint()
+        private void GeneratePrint(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("print",
-                                                                MethodAttributes.Public | MethodAttributes.Static, null,
-                                                                new Type[] { typeof(string) });
-            ILGenerator generator = builder.GetILGenerator();
-
             //Code Generation
             generator.Emit(OpCodes.Ldarg_0);                                                                        //load param0 to stack
             generator.Emit(OpCodes.Call, typeof(Console).GetMethod("Write", new Type[] { typeof(string) }, null));  //call Method Write of console
             generator.Emit(OpCodes.Ret);
-
-            return builder;
-
         }
 
-        private MethodBuilder GeneratePrintI()
+        private void GeneratePrintI(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("printi",
-                                                                MethodAttributes.Public | MethodAttributes.Static, null,
-                                                                new Type[] { typeof(int) });
-            ILGenerator generator = builder.GetILGenerator();
-
             //Code Generation
             generator.Emit(OpCodes.Ldarg_0);
             generator.Emit(OpCodes.Call, typeof(Console).GetMethod("Write", new Type[] { typeof(int) }, null));  //call Method Write of console
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GeneratePrintline()
+        private void GeneratePrintline(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("printline",
-                                                                MethodAttributes.Public | MethodAttributes.Static, null,
-                                                                new Type[] { typeof(string) });
-            ILGenerator generator = builder.GetILGenerator();
-
             //Code Generation
             generator.Emit(OpCodes.Ldarg_0);                                                                        //load param0 to stack
             generator.Emit(OpCodes.Call, typeof(Console).GetMethod("WriteLine", new Type[] { typeof(string) }, null));  //call Method Write of console
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateFlush()
+        private void GenerateFlush(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("flush",
-                                                                MethodAttributes.Public | MethodAttributes.Static, null,
-                                                                null);
-            ILGenerator generator = builder.GetILGenerator();
-
-            //Code Generation
+           //Code Generation
             //the idea is : Console.Out.Flush()
             MethodInfo consoledotout = typeof(Console).GetProperty("Out").GetGetMethod();                          //Save a method whose return type is the instance i need
             generator.Emit(OpCodes.Call, consoledotout);                                                            //this call pushhes into the stack the required instance
             MethodInfo flushontw = typeof(TextWriter).GetMethod("Flush");                                          //Get the method flush from TexWritter
             generator.Emit(OpCodes.Call, flushontw);                                                                 //With the instance on the stack call the required method
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateGetChar()
+        private void GenerateGetChar(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("getchar",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(string),
-                                                                null);
-            ILGenerator generator = builder.GetILGenerator();
-
             //Code Generation
             //the idea is : Char.ToString(Convert.ToChar(Console.Read()))
 
@@ -468,46 +439,30 @@ namespace TigerCompiler.CodeGeneration
             generator.Emit(OpCodes.Call, typeof(Convert).GetMethod("ToChar", new Type[] { typeof(int) }));     //convert it to Char
             generator.Emit(OpCodes.Call, typeof(Char).GetMethod("ToString", new Type[] { typeof(char) }));  //convert it to string
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateGetLine()
+        private void GenerateGetLine(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("getline",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(string),
-                                                                null);
-            ILGenerator generator = builder.GetILGenerator();
-
-            //Code Generation
+           //Code Generation
             //the idea is : Console.ReadLine()
             generator.Emit(OpCodes.Call, typeof(Console).GetMethod("ReadLine"));                           //read the string
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateOrd()
+        private void GenerateOrd(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("ord",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(int),
-                                                                new Type[] { typeof(string) });
-            ILGenerator generator = builder.GetILGenerator();
-
-            //Code Generation
+           //Code Generation
             //The idea is: Ask if the empty string or null to return -1
             //if not at lest has one char
             //get the first char with the char property
             //Use Convert to get th ASCII code
             Label nulloremptytargetsite = generator.DefineLabel();
-            MethodInfo nullorempymethod = typeof(string).GetMethod("IsNullOrEmpty", new Type[] { typeof(string) });
+            MethodInfo nulloremptymethod = typeof(string).GetMethod("IsNullOrEmpty", new Type[] { typeof(string) });
             MethodInfo convertChartoint = typeof(Convert).GetMethod("ToInt32", new Type[] { typeof(char) });
             PropertyInfo chars = typeof(string).GetProperty("Chars");
 
             generator.Emit(OpCodes.Ldarg_0);
-            generator.Emit(OpCodes.Call, nullorempymethod);
+            generator.Emit(OpCodes.Call, nulloremptymethod);
             generator.Emit(OpCodes.Brtrue_S, nulloremptytargetsite);
 
             generator.Emit(OpCodes.Ldarg_0);
@@ -520,18 +475,10 @@ namespace TigerCompiler.CodeGeneration
             generator.MarkLabel(nulloremptytargetsite);
             generator.Emit(OpCodes.Ldc_I4_M1);
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateChr()
+        private void GenerateChr(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("chr",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(string),
-                                                                new Type[] { typeof(int) });
-            ILGenerator generator = builder.GetILGenerator();
-
             //The idea is: chek for the argument to see if it's in range
             //if not jump to code that throws an IndexOutOfRange Exception
             //else return the required string
@@ -568,26 +515,17 @@ namespace TigerCompiler.CodeGeneration
             generator.Emit(OpCodes.Newobj, excep);
             generator.Emit(OpCodes.Throw);
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateSize()
+        private void GenerateSize(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("size",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(int),
-                                                                new Type[] { typeof(string) });
-            ILGenerator generator = builder.GetILGenerator();
+            
             MethodInfo getlenght = typeof(string).GetProperty("Length").GetGetMethod();
 
             //the idea is : string.length
             generator.Emit(OpCodes.Ldarg_0);
             generator.Emit(OpCodes.Call, getlenght);
             generator.Emit(OpCodes.Ret);
-
-            return builder;
-
         }
 
         /// <summary>
@@ -595,13 +533,9 @@ namespace TigerCompiler.CodeGeneration
         /// I'm just calling it
         /// </summary>
         /// <returns></returns>
-        private MethodBuilder GenerateSubString()
+        private void GenerateSubString(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("substring",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(string),
-                                                                new Type[] { typeof(string), typeof(int), typeof(int) });
-            ILGenerator generator = builder.GetILGenerator();
+          
             MethodInfo substring = typeof(string).GetMethod("Substring", new Type[] { typeof(int), typeof(int) });
 
             //idea: string.Substring(i,n)
@@ -611,17 +545,12 @@ namespace TigerCompiler.CodeGeneration
             generator.Emit(OpCodes.Ldarg_2);
             generator.Emit(OpCodes.Call, substring);
             generator.Emit(OpCodes.Ret);
-
-            return builder;
+            
         }
 
-        private MethodBuilder GenerateConcat()
+        private void GenerateConcat(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("concat",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(string),
-                                                                new Type[] { typeof(string), typeof(string) });
-            ILGenerator generator = builder.GetILGenerator();
+          
             MethodInfo concat = typeof(string).GetMethod("Concat", new Type[] { typeof(string), typeof(string) });
 
             //idea: string.Concat(str1,str2)
@@ -630,17 +559,11 @@ namespace TigerCompiler.CodeGeneration
             generator.Emit(OpCodes.Ldarg_1);
             generator.Emit(OpCodes.Call, concat);
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateNot()
+        private void GenerateNot(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("not",
-                                                                MethodAttributes.Public | MethodAttributes.Static, typeof(int),
-                                                                new Type[] { typeof(int) });
-            ILGenerator generator = builder.GetILGenerator();
+          
             Label argiszero = generator.DefineLabel();
 
             generator.Emit(OpCodes.Ldarg_0);
@@ -651,23 +574,15 @@ namespace TigerCompiler.CodeGeneration
             generator.MarkLabel(argiszero);
             generator.Emit(OpCodes.Ldc_I4_1);
             generator.Emit(OpCodes.Ret);
-
-            return builder;
         }
 
-        private MethodBuilder GenerateExit()
+        private void GenerateExit(ILGenerator generator)
         {
-            //Initialization for method builder and ILgenerator 
-            MethodBuilder builder = StandardLibrary.DefineMethod("exit",
-                                                                MethodAttributes.Public | MethodAttributes.Static, null,
-                                                                new Type[] { typeof(int) });
-            ILGenerator generator = builder.GetILGenerator();
             MethodInfo exit = typeof (Environment).GetMethod("Exit", new Type[] {typeof (int)});
 
             generator.Emit(OpCodes.Ldarg_0);
             generator.Emit(OpCodes.Call,exit);
             generator.Emit(OpCodes.Ret);
-            return builder;
         }
         #endregion
 
