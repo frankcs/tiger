@@ -58,7 +58,7 @@ namespace TigerCompiler.Semantic
             size.AddParameter("s", TypeInfo.String);
 
             //function substring(s:string,f:int,n:int):string
-            var substring = scope.DefineFunction("s", TypeInfo.String, true);
+            var substring = scope.DefineFunction("substring", TypeInfo.String, true);
             substring.AddParameter("s", TypeInfo.String);
             substring.AddParameter("f", TypeInfo.Int);
             substring.AddParameter("n", TypeInfo.Int);

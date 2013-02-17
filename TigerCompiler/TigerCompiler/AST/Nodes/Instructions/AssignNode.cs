@@ -13,27 +13,39 @@ namespace TigerCompiler.AST.Nodes.Instructions
     /// </summary>
     class AssignNode : InstructionNode
     {
-        public AssignNode(IToken payload) : base(payload)
-        {
-        }
+        public AssignNode(IToken payload) : base(payload) { }
 
-        public override void CheckSemantics(Semantic.Scope scope, Semantic.ErrorReporter report)
+        public override void CheckSemantics(Scope scope, ErrorReporter report)
         {
             base.CheckSemantics(scope, report);
 
-            report.Assert(this, !LValue.ReturnType.IsReadOnly, "Cannot assign a value to {0}. It is read-only.", LValue.Children[0].Text);
+            if (report.Assert(this, CanBeAssignedTo, "Cannot assign a value to {0}. It is a read-only variable or a function.", LValue.Children[0].Text))
+            {
+                report.Assert(Expression, TypeInfo.IsNull(LValue.ReturnType) || Expression.ReturnType == LValue.ReturnType,
+                              "Expression and variable types do not match.");
+            }
 
             ReturnType = TypeInfo.Void;
         }
 
         LValueNode LValue
         {
-            get{return Children[0] as LValueNode;}
+            get { return Children[0] as LValueNode; }
         }
 
         ASTNode Expression
         {
             get { return Children[1] as ASTNode; }
+        }
+		
+		bool CanBeAssignedTo
+        {
+            get
+            {
+                var variable = Scope.ResolveVarOrFunction(LValue.Children[0].Text) as VariableInfo;
+
+                return variable != null && !variable.IsReadOnly;
+            }
         }
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)

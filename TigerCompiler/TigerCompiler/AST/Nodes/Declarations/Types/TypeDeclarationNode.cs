@@ -16,6 +16,14 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
             get { return Children[0] as TypeIDNode; }
         }
 
+        public override void CheckSemantics(Scope scope, ErrorReporter report)
+        {
+            base.CheckSemantics(scope, report);
+
+            var type = scope.ResolveType(NewTypeNode.TypeName);
+            report.Assert(this, TypeInfo.IsNull(type) || !type.IsReadOnly, "Cannot overwrite type {0}. It is read-only.", NewTypeNode.TypeName);
+        }
+
         //protected new TypeInfo Type
         //{
         //    get
@@ -29,7 +37,9 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
 
         public void ResolveReferencedTypes(Scope scope,ErrorReporter reporter)
         {
-            scope.ResolveType(NewTypeNode.TypeName).ResolveReferencedTypes(this,scope,reporter);
+            var type = scope.ResolveType(NewTypeNode.TypeName);
+            var noCycles = type.ResolveReferencedTypes(this, scope, reporter);
+            reporter.Assert(this, noCycles, "Invalid type detected. Check for invalid type references, or cyclic type definitions.");
         }
     }
 }

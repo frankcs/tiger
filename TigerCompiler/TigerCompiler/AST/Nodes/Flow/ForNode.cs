@@ -44,8 +44,8 @@ namespace TigerCompiler.AST.Nodes.Flow
             loopVariable = forScope.DefineVariable(LoopVariableIDNode.Text, TypeInfo.Int, true);
             base.CheckSemantics(forScope, report);
 
-            report.Assert(LoopVariableInitExpression, LoopVariableInitExpression.ReturnType == TypeInfo.Int,"The initialization expression for a for loop must return an integer value.");
-            report.Assert(LoopVariableUpperLimitExpression, LoopVariableUpperLimitExpression.ReturnType == TypeInfo.Int, "The upper limit of a for loop must return an integer value.");
+            report.Assert(LoopVariableInitExpression, LoopVariableInitExpression.ReturnType == TypeInfo.Int,"The initialization expression of a for loop must return an integer value.");
+            report.Assert(this, LoopVariableUpperLimitExpression.ReturnType == TypeInfo.Int, "The upper bound expression of a for loop must return an integer value.");
             //report.Assert(DoExpression, DoExpression.ReturnType == TypeInfo.Void, "A for expression cannot return a value.");
 
 			ReturnType = TypeInfo.Void;

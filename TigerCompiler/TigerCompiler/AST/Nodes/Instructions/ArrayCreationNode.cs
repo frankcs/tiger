@@ -20,10 +20,12 @@ namespace TigerCompiler.AST.Nodes.Instructions
             report.Assert(this, TypeNode.ReturnType != TypeInfo.Void, "Invalid type for array.");
             report.Assert(this, LengthExpression.ReturnType == TypeInfo.Int, "Array length must be an int.");
 
-            var arrayType = scope.ResolveType(TypeNode.TypeName);
-            if (arrayType == null)
+            var type = scope.ResolveType(TypeNode.TypeName);
+            var arrayType = (type is AliasTypeInfo) ? ((AliasTypeInfo) type).TargetType : type;
+
+            if (TypeInfo.IsNull(arrayType))
                 report.AddError(this,"Unknown type: {0}", TypeNode.TypeName);
-            else if (!(arrayType is ArrayTypeInfo))
+            else if (!((arrayType is ArrayTypeInfo || (arrayType is AliasTypeInfo && ((AliasTypeInfo)arrayType).TargetType is ArrayTypeInfo))))
                 report.AddError(this,"The type {0} is not an array.", TypeNode.TypeName);
             else
                 report.Assert(this, ((ArrayTypeInfo) arrayType).TargetType == InitExpression.ReturnType,

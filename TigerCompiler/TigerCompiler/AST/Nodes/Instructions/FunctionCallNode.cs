@@ -1,7 +1,9 @@
 ﻿using System.Reflection.Emit;
+using System.Diagnostics;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.Semantic;
+using TigerCompiler.Semantic.Types;
 
 namespace TigerCompiler.AST.Nodes.Instructions
 {
@@ -21,11 +23,21 @@ namespace TigerCompiler.AST.Nodes.Instructions
 
             var func = scope.ResolveVarOrFunction(FunctionName);
 
-            if (func == null)
-                report.AddError(this,"Undefined function {0}.", FunctionName);
-            else if (func is VariableInfo)
-                report.AddError(this,"Cannot invoke a variable.");
-            else ReturnType = ((FunctionInfo) func).ReturnType; // Procedures will hold void as a return type.
+            if (!report.Assert(this, func != null, "Undefined function {0}.", FunctionName) ||
+                !report.Assert(this, func is FunctionInfo, "Cannot invoke a variable.") ||
+                !report.Assert(this, ((FunctionInfo) func).Parameters.Count == ExpressionList.ChildCount,
+                               "Calling function with wrong amount of parameters.")) return;
+
+            var functionInfo = (FunctionInfo) func;
+
+            int i = 0;
+            foreach (var parameter in functionInfo.Parameters)
+            {
+                var paramExpression = (ASTNode) ExpressionList.Children[i++];
+                report.Assert(paramExpression, paramExpression.ReturnType == parameter.Value,
+                              "Function parameter and expression types do not match.");
+            }
+            ReturnType = functionInfo.ReturnType; // Procedures will hold void as a return type.
         }
 
         public string FunctionName

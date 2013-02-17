@@ -27,10 +27,15 @@ namespace TigerCompiler.AST
 
             if (Children!=null)
             {
-                for (int i = 0; i < Children.Count; i+=2)
+                for (int i = 0; i < Children.Count; i++)
                 {
                     var paramTypeName = ((TypeIDNode) ((ASTNode) Children[i]).Children[0]).TypeName;
-                    Parameters.Add(Children[i].Text,scope.ResolveType(paramTypeName));
+
+                    if (report.Assert(Children[i] as ASTNode, !Parameters.ContainsKey(Children[i].Text),
+                                   "There is already a parameter named {0} on the function.",Children[i].Text))
+                    {
+                        Parameters.Add(Children[i].Text, scope.ResolveType(paramTypeName));
+                    }
                 }
             }
         }

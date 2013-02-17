@@ -15,7 +15,7 @@ namespace TigerCompiler.AST.Nodes.Operations.Arithmetic
         {
             base.CheckSemantics(scope, report);
 
-            report.Assert(this,Operand.ReturnType == TypeInfo.Int, "Operand must be an integer.");
+            report.Assert((ASTNode) Children[0],Operand.ReturnType == TypeInfo.Int, "The expression of the unary minus must be an integer.");
 
             ReturnType = TypeInfo.Int;
         }

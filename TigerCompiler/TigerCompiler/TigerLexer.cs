@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g 2013-02-15 15:58:55
+// $ANTLR 3.4 F:\\Alex\\Tiger.g 2013-02-16 15:18:55
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -119,7 +119,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 
 		OnCreated();
 	}
-	public override string GrammarFileName { get { return "C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g"; } }
+	public override string GrammarFileName { get { return "F:\\Alex\\Tiger.g"; } }
 
 
 	partial void OnCreated();
@@ -140,9 +140,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = AND;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:7:5: ( '&' )
+			// F:\\Alex\\Tiger.g:7:5: ( '&' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:7:7: '&'
+			// F:\\Alex\\Tiger.g:7:7: '&'
 			{
 			DebugLocation(7, 7);
 			Match('&'); 
@@ -175,9 +175,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:8:8: ( ':=' )
+			// F:\\Alex\\Tiger.g:8:8: ( ':=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:8:10: ':='
+			// F:\\Alex\\Tiger.g:8:10: ':='
 			{
 			DebugLocation(8, 10);
 			Match(":="); 
@@ -211,9 +211,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = BREAK;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:9:7: ( 'break' )
+			// F:\\Alex\\Tiger.g:9:7: ( 'break' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:9:9: 'break'
+			// F:\\Alex\\Tiger.g:9:9: 'break'
 			{
 			DebugLocation(9, 9);
 			Match("break"); 
@@ -247,9 +247,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DIV;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:10:5: ( '/' )
+			// F:\\Alex\\Tiger.g:10:5: ( '/' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:10:7: '/'
+			// F:\\Alex\\Tiger.g:10:7: '/'
 			{
 			DebugLocation(10, 7);
 			Match('/'); 
@@ -282,9 +282,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DOT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:11:5: ( '.' )
+			// F:\\Alex\\Tiger.g:11:5: ( '.' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:11:7: '.'
+			// F:\\Alex\\Tiger.g:11:7: '.'
 			{
 			DebugLocation(11, 7);
 			Match('.'); 
@@ -317,9 +317,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:12:7: ( '=' )
+			// F:\\Alex\\Tiger.g:12:7: ( '=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:12:9: '='
+			// F:\\Alex\\Tiger.g:12:9: '='
 			{
 			DebugLocation(12, 9);
 			Match('='); 
@@ -352,9 +352,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FOR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:13:5: ( 'for' )
+			// F:\\Alex\\Tiger.g:13:5: ( 'for' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:13:7: 'for'
+			// F:\\Alex\\Tiger.g:13:7: 'for'
 			{
 			DebugLocation(13, 7);
 			Match("for"); 
@@ -388,9 +388,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = GT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:14:4: ( '>' )
+			// F:\\Alex\\Tiger.g:14:4: ( '>' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:14:6: '>'
+			// F:\\Alex\\Tiger.g:14:6: '>'
 			{
 			DebugLocation(14, 6);
 			Match('>'); 
@@ -423,9 +423,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = GT_EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:15:10: ( '>=' )
+			// F:\\Alex\\Tiger.g:15:10: ( '>=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:15:12: '>='
+			// F:\\Alex\\Tiger.g:15:12: '>='
 			{
 			DebugLocation(15, 12);
 			Match(">="); 
@@ -459,9 +459,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LET;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:16:5: ( 'let' )
+			// F:\\Alex\\Tiger.g:16:5: ( 'let' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:16:7: 'let'
+			// F:\\Alex\\Tiger.g:16:7: 'let'
 			{
 			DebugLocation(16, 7);
 			Match("let"); 
@@ -495,9 +495,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:17:4: ( '<' )
+			// F:\\Alex\\Tiger.g:17:4: ( '<' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:17:6: '<'
+			// F:\\Alex\\Tiger.g:17:6: '<'
 			{
 			DebugLocation(17, 6);
 			Match('<'); 
@@ -530,9 +530,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LT_EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:18:10: ( '<=' )
+			// F:\\Alex\\Tiger.g:18:10: ( '<=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:18:12: '<='
+			// F:\\Alex\\Tiger.g:18:12: '<='
 			{
 			DebugLocation(18, 12);
 			Match("<="); 
@@ -566,9 +566,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MINUS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:19:7: ( '-' )
+			// F:\\Alex\\Tiger.g:19:7: ( '-' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:19:9: '-'
+			// F:\\Alex\\Tiger.g:19:9: '-'
 			{
 			DebugLocation(19, 9);
 			Match('-'); 
@@ -601,9 +601,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MUL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:20:5: ( '*' )
+			// F:\\Alex\\Tiger.g:20:5: ( '*' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:20:7: '*'
+			// F:\\Alex\\Tiger.g:20:7: '*'
 			{
 			DebugLocation(20, 7);
 			Match('*'); 
@@ -636,9 +636,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NIL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:21:5: ( 'nil' )
+			// F:\\Alex\\Tiger.g:21:5: ( 'nil' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:21:7: 'nil'
+			// F:\\Alex\\Tiger.g:21:7: 'nil'
 			{
 			DebugLocation(21, 7);
 			Match("nil"); 
@@ -672,9 +672,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NON_EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:22:11: ( '<>' )
+			// F:\\Alex\\Tiger.g:22:11: ( '<>' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:22:13: '<>'
+			// F:\\Alex\\Tiger.g:22:13: '<>'
 			{
 			DebugLocation(22, 13);
 			Match("<>"); 
@@ -708,9 +708,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = OR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:23:4: ( '|' )
+			// F:\\Alex\\Tiger.g:23:4: ( '|' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:23:6: '|'
+			// F:\\Alex\\Tiger.g:23:6: '|'
 			{
 			DebugLocation(23, 6);
 			Match('|'); 
@@ -743,9 +743,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PLUS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:24:6: ( '+' )
+			// F:\\Alex\\Tiger.g:24:6: ( '+' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:24:8: '+'
+			// F:\\Alex\\Tiger.g:24:8: '+'
 			{
 			DebugLocation(24, 8);
 			Match('+'); 
@@ -778,9 +778,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WHILE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:25:7: ( 'while' )
+			// F:\\Alex\\Tiger.g:25:7: ( 'while' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:25:9: 'while'
+			// F:\\Alex\\Tiger.g:25:9: 'while'
 			{
 			DebugLocation(25, 9);
 			Match("while"); 
@@ -814,9 +814,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__53;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:26:7: ( '(' )
+			// F:\\Alex\\Tiger.g:26:7: ( '(' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:26:9: '('
+			// F:\\Alex\\Tiger.g:26:9: '('
 			{
 			DebugLocation(26, 9);
 			Match('('); 
@@ -849,9 +849,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__54;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:27:7: ( ')' )
+			// F:\\Alex\\Tiger.g:27:7: ( ')' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:27:9: ')'
+			// F:\\Alex\\Tiger.g:27:9: ')'
 			{
 			DebugLocation(27, 9);
 			Match(')'); 
@@ -884,9 +884,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__55;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:28:7: ( ',' )
+			// F:\\Alex\\Tiger.g:28:7: ( ',' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:28:9: ','
+			// F:\\Alex\\Tiger.g:28:9: ','
 			{
 			DebugLocation(28, 9);
 			Match(','); 
@@ -919,9 +919,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__56;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:29:7: ( ':' )
+			// F:\\Alex\\Tiger.g:29:7: ( ':' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:29:9: ':'
+			// F:\\Alex\\Tiger.g:29:9: ':'
 			{
 			DebugLocation(29, 9);
 			Match(':'); 
@@ -954,9 +954,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__57;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:30:7: ( ';' )
+			// F:\\Alex\\Tiger.g:30:7: ( ';' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:30:9: ';'
+			// F:\\Alex\\Tiger.g:30:9: ';'
 			{
 			DebugLocation(30, 9);
 			Match(';'); 
@@ -989,9 +989,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__58;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:31:7: ( '[' )
+			// F:\\Alex\\Tiger.g:31:7: ( '[' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:31:9: '['
+			// F:\\Alex\\Tiger.g:31:9: '['
 			{
 			DebugLocation(31, 9);
 			Match('['); 
@@ -1024,9 +1024,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__59;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:32:7: ( ']' )
+			// F:\\Alex\\Tiger.g:32:7: ( ']' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:32:9: ']'
+			// F:\\Alex\\Tiger.g:32:9: ']'
 			{
 			DebugLocation(32, 9);
 			Match(']'); 
@@ -1059,9 +1059,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__60;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:33:7: ( 'array' )
+			// F:\\Alex\\Tiger.g:33:7: ( 'array' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:33:9: 'array'
+			// F:\\Alex\\Tiger.g:33:9: 'array'
 			{
 			DebugLocation(33, 9);
 			Match("array"); 
@@ -1095,9 +1095,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__61;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:34:7: ( 'do' )
+			// F:\\Alex\\Tiger.g:34:7: ( 'do' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:34:9: 'do'
+			// F:\\Alex\\Tiger.g:34:9: 'do'
 			{
 			DebugLocation(34, 9);
 			Match("do"); 
@@ -1131,9 +1131,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__62;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:35:7: ( 'else' )
+			// F:\\Alex\\Tiger.g:35:7: ( 'else' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:35:9: 'else'
+			// F:\\Alex\\Tiger.g:35:9: 'else'
 			{
 			DebugLocation(35, 9);
 			Match("else"); 
@@ -1167,9 +1167,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__63;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:36:7: ( 'end' )
+			// F:\\Alex\\Tiger.g:36:7: ( 'end' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:36:9: 'end'
+			// F:\\Alex\\Tiger.g:36:9: 'end'
 			{
 			DebugLocation(36, 9);
 			Match("end"); 
@@ -1203,9 +1203,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__64;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:37:7: ( 'function' )
+			// F:\\Alex\\Tiger.g:37:7: ( 'function' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:37:9: 'function'
+			// F:\\Alex\\Tiger.g:37:9: 'function'
 			{
 			DebugLocation(37, 9);
 			Match("function"); 
@@ -1239,9 +1239,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__65;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:38:7: ( 'if' )
+			// F:\\Alex\\Tiger.g:38:7: ( 'if' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:38:9: 'if'
+			// F:\\Alex\\Tiger.g:38:9: 'if'
 			{
 			DebugLocation(38, 9);
 			Match("if"); 
@@ -1275,9 +1275,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__66;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:39:7: ( 'in' )
+			// F:\\Alex\\Tiger.g:39:7: ( 'in' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:39:9: 'in'
+			// F:\\Alex\\Tiger.g:39:9: 'in'
 			{
 			DebugLocation(39, 9);
 			Match("in"); 
@@ -1311,9 +1311,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__67;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:40:7: ( 'of' )
+			// F:\\Alex\\Tiger.g:40:7: ( 'of' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:40:9: 'of'
+			// F:\\Alex\\Tiger.g:40:9: 'of'
 			{
 			DebugLocation(40, 9);
 			Match("of"); 
@@ -1347,9 +1347,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__68;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:41:7: ( 'then' )
+			// F:\\Alex\\Tiger.g:41:7: ( 'then' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:41:9: 'then'
+			// F:\\Alex\\Tiger.g:41:9: 'then'
 			{
 			DebugLocation(41, 9);
 			Match("then"); 
@@ -1383,9 +1383,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__69;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:42:7: ( 'to' )
+			// F:\\Alex\\Tiger.g:42:7: ( 'to' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:42:9: 'to'
+			// F:\\Alex\\Tiger.g:42:9: 'to'
 			{
 			DebugLocation(42, 9);
 			Match("to"); 
@@ -1419,9 +1419,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__70;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:43:7: ( 'type' )
+			// F:\\Alex\\Tiger.g:43:7: ( 'type' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:43:9: 'type'
+			// F:\\Alex\\Tiger.g:43:9: 'type'
 			{
 			DebugLocation(43, 9);
 			Match("type"); 
@@ -1455,9 +1455,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__71;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:44:7: ( 'var' )
+			// F:\\Alex\\Tiger.g:44:7: ( 'var' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:44:9: 'var'
+			// F:\\Alex\\Tiger.g:44:9: 'var'
 			{
 			DebugLocation(44, 9);
 			Match("var"); 
@@ -1491,9 +1491,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__72;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:45:7: ( '{' )
+			// F:\\Alex\\Tiger.g:45:7: ( '{' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:45:9: '{'
+			// F:\\Alex\\Tiger.g:45:9: '{'
 			{
 			DebugLocation(45, 9);
 			Match('{'); 
@@ -1526,9 +1526,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__73;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:46:7: ( '}' )
+			// F:\\Alex\\Tiger.g:46:7: ( '}' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:46:9: '}'
+			// F:\\Alex\\Tiger.g:46:9: '}'
 			{
 			DebugLocation(46, 9);
 			Match('}'); 
@@ -1561,9 +1561,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ID;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:70:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// F:\\Alex\\Tiger.g:70:5: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:70:7: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// F:\\Alex\\Tiger.g:70:7: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
 			DebugLocation(70, 7);
 			if ((input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z'))
@@ -1579,7 +1579,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			}
 
 			DebugLocation(70, 27);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:70:27: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// F:\\Alex\\Tiger.g:70:27: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -1598,7 +1598,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:
+					// F:\\Alex\\Tiger.g:
 					{
 					DebugLocation(70, 27);
 					input.Consume();
@@ -1646,12 +1646,12 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:76:5: ( ( '0' .. '9' )+ )
+			// F:\\Alex\\Tiger.g:76:5: ( ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:76:7: ( '0' .. '9' )+
+			// F:\\Alex\\Tiger.g:76:7: ( '0' .. '9' )+
 			{
 			DebugLocation(76, 7);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:76:7: ( '0' .. '9' )+
+			// F:\\Alex\\Tiger.g:76:7: ( '0' .. '9' )+
 			int cnt2=0;
 			try { DebugEnterSubRule(2);
 			while (true)
@@ -1671,7 +1671,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:
+					// F:\\Alex\\Tiger.g:
 					{
 					DebugLocation(76, 7);
 					input.Consume();
@@ -1724,12 +1724,12 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:79:5: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+			// F:\\Alex\\Tiger.g:79:5: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:79:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
+			// F:\\Alex\\Tiger.g:79:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
 			{
 			DebugLocation(79, 9);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:79:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
+			// F:\\Alex\\Tiger.g:79:9: ( ' ' | '\\t' | '\\n' | '\\r' )+
 			int cnt3=0;
 			try { DebugEnterSubRule(3);
 			while (true)
@@ -1749,7 +1749,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:
+					// F:\\Alex\\Tiger.g:
 					{
 					DebugLocation(79, 9);
 					input.Consume();
@@ -1804,15 +1804,15 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = COMMENT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:88:5: ( '/*' ( options {greedy=false; } : COMMENT | . )* '*/' )
+			// F:\\Alex\\Tiger.g:88:5: ( '/*' ( options {greedy=false; } : COMMENT | . )* '*/' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:88:9: '/*' ( options {greedy=false; } : COMMENT | . )* '*/'
+			// F:\\Alex\\Tiger.g:88:9: '/*' ( options {greedy=false; } : COMMENT | . )* '*/'
 			{
 			DebugLocation(88, 9);
 			Match("/*"); 
 
 			DebugLocation(88, 14);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:88:14: ( options {greedy=false; } : COMMENT | . )*
+			// F:\\Alex\\Tiger.g:88:14: ( options {greedy=false; } : COMMENT | . )*
 			try { DebugEnterSubRule(4);
 			while (true)
 			{
@@ -1861,7 +1861,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:88:41: COMMENT
+					// F:\\Alex\\Tiger.g:88:41: COMMENT
 					{
 					DebugLocation(88, 41);
 					mCOMMENT(); 
@@ -1870,7 +1870,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:88:49: .
+					// F:\\Alex\\Tiger.g:88:49: .
 					{
 					DebugLocation(88, 49);
 					MatchAny(); 
@@ -1892,7 +1892,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			Match("*/"); 
 
 			DebugLocation(88, 59);
-			_channel = Hidden;
+			Skip();
 
 			}
 
@@ -1922,14 +1922,14 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 			int _type = STRING;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:92:5: ( '\"' ( ESC_SEQ | PRINTABLE_CHARACTER )* '\"' )
+			// F:\\Alex\\Tiger.g:92:5: ( '\"' ( ESC_SEQ | PRINTABLE_CHARACTER )* '\"' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:92:7: '\"' ( ESC_SEQ | PRINTABLE_CHARACTER )* '\"'
+			// F:\\Alex\\Tiger.g:92:7: '\"' ( ESC_SEQ | PRINTABLE_CHARACTER )* '\"'
 			{
 			DebugLocation(92, 7);
 			Match('\"'); 
 			DebugLocation(92, 10);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:92:10: ( ESC_SEQ | PRINTABLE_CHARACTER )*
+			// F:\\Alex\\Tiger.g:92:10: ( ESC_SEQ | PRINTABLE_CHARACTER )*
 			try { DebugEnterSubRule(5);
 			while (true)
 			{
@@ -1952,7 +1952,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:92:12: ESC_SEQ
+					// F:\\Alex\\Tiger.g:92:12: ESC_SEQ
 					{
 					DebugLocation(92, 12);
 					mESC_SEQ(); 
@@ -1961,7 +1961,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:92:22: PRINTABLE_CHARACTER
+					// F:\\Alex\\Tiger.g:92:22: PRINTABLE_CHARACTER
 					{
 					DebugLocation(92, 22);
 					mPRINTABLE_CHARACTER(); 
@@ -2008,14 +2008,14 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		TraceIn("ESC_SEQ", 46);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:5: ( '\\\\' ( 'n' | 'r' | 't' | '\\\"' | ASCII_ESC | ( WS )? '\\\\' ) )
+			// F:\\Alex\\Tiger.g:98:5: ( '\\\\' ( 'n' | 'r' | 't' | '\\\"' | ASCII_ESC | ( WS )? '\\\\' ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:9: '\\\\' ( 'n' | 'r' | 't' | '\\\"' | ASCII_ESC | ( WS )? '\\\\' )
+			// F:\\Alex\\Tiger.g:98:9: '\\\\' ( 'n' | 'r' | 't' | '\\\"' | ASCII_ESC | ( WS )? '\\\\' )
 			{
 			DebugLocation(98, 9);
 			Match('\\'); 
 			DebugLocation(98, 14);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:14: ( 'n' | 'r' | 't' | '\\\"' | ASCII_ESC | ( WS )? '\\\\' )
+			// F:\\Alex\\Tiger.g:98:14: ( 'n' | 'r' | 't' | '\\\"' | ASCII_ESC | ( WS )? '\\\\' )
 			int alt7=6;
 			try { DebugEnterSubRule(7);
 			try { DebugEnterDecision(7, false);
@@ -2069,7 +2069,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:15: 'n'
+				// F:\\Alex\\Tiger.g:98:15: 'n'
 				{
 				DebugLocation(98, 15);
 				Match('n'); 
@@ -2078,7 +2078,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:19: 'r'
+				// F:\\Alex\\Tiger.g:98:19: 'r'
 				{
 				DebugLocation(98, 19);
 				Match('r'); 
@@ -2087,7 +2087,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:23: 't'
+				// F:\\Alex\\Tiger.g:98:23: 't'
 				{
 				DebugLocation(98, 23);
 				Match('t'); 
@@ -2096,7 +2096,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:27: '\\\"'
+				// F:\\Alex\\Tiger.g:98:27: '\\\"'
 				{
 				DebugLocation(98, 27);
 				Match('\"'); 
@@ -2105,7 +2105,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:32: ASCII_ESC
+				// F:\\Alex\\Tiger.g:98:32: ASCII_ESC
 				{
 				DebugLocation(98, 32);
 				mASCII_ESC(); 
@@ -2114,10 +2114,10 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:42: ( WS )? '\\\\'
+				// F:\\Alex\\Tiger.g:98:42: ( WS )? '\\\\'
 				{
 				DebugLocation(98, 42);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:42: ( WS )?
+				// F:\\Alex\\Tiger.g:98:42: ( WS )?
 				int alt6=2;
 				try { DebugEnterSubRule(6);
 				try { DebugEnterDecision(6, false);
@@ -2132,7 +2132,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:98:42: WS
+					// F:\\Alex\\Tiger.g:98:42: WS
 					{
 					DebugLocation(98, 42);
 					mWS(); 
@@ -2177,9 +2177,9 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		TraceIn("PRINTABLE_CHARACTER", 47);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:102:21: ( ( ( ' ' .. '!' ) | ( '#' .. '[' ) | ( ']' .. '~' ) ) )
+			// F:\\Alex\\Tiger.g:102:21: ( ( ( ' ' .. '!' ) | ( '#' .. '[' ) | ( ']' .. '~' ) ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:
+			// F:\\Alex\\Tiger.g:
 			{
 			DebugLocation(102, 21);
 			if ((input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='~'))
@@ -2219,7 +2219,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		TraceIn("ASCII_ESC", 48);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:5: ( '1' ( ( '2' ( '0' .. '7' ) ) | ( ( '0' | '1' ) ( '0' .. '9' ) ) ) | '0' ( '0' .. '9' ) ( '0' .. '9' ) )
+			// F:\\Alex\\Tiger.g:106:5: ( '1' ( ( '2' ( '0' .. '7' ) ) | ( ( '0' | '1' ) ( '0' .. '9' ) ) ) | '0' ( '0' .. '9' ) ( '0' .. '9' ) )
 			int alt9=2;
 			try { DebugEnterDecision(9, false);
 			int LA9_0 = input.LA(1);
@@ -2243,12 +2243,12 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:9: '1' ( ( '2' ( '0' .. '7' ) ) | ( ( '0' | '1' ) ( '0' .. '9' ) ) )
+				// F:\\Alex\\Tiger.g:106:9: '1' ( ( '2' ( '0' .. '7' ) ) | ( ( '0' | '1' ) ( '0' .. '9' ) ) )
 				{
 				DebugLocation(106, 9);
 				Match('1'); 
 				DebugLocation(106, 13);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:13: ( ( '2' ( '0' .. '7' ) ) | ( ( '0' | '1' ) ( '0' .. '9' ) ) )
+				// F:\\Alex\\Tiger.g:106:13: ( ( '2' ( '0' .. '7' ) ) | ( ( '0' | '1' ) ( '0' .. '9' ) ) )
 				int alt8=2;
 				try { DebugEnterSubRule(8);
 				try { DebugEnterDecision(8, false);
@@ -2273,12 +2273,12 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:14: ( '2' ( '0' .. '7' ) )
+					// F:\\Alex\\Tiger.g:106:14: ( '2' ( '0' .. '7' ) )
 					{
 					DebugLocation(106, 14);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:14: ( '2' ( '0' .. '7' ) )
+					// F:\\Alex\\Tiger.g:106:14: ( '2' ( '0' .. '7' ) )
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:15: '2' ( '0' .. '7' )
+					// F:\\Alex\\Tiger.g:106:15: '2' ( '0' .. '7' )
 					{
 					DebugLocation(106, 15);
 					Match('2'); 
@@ -2293,12 +2293,12 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:33: ( ( '0' | '1' ) ( '0' .. '9' ) )
+					// F:\\Alex\\Tiger.g:106:33: ( ( '0' | '1' ) ( '0' .. '9' ) )
 					{
 					DebugLocation(106, 33);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:33: ( ( '0' | '1' ) ( '0' .. '9' ) )
+					// F:\\Alex\\Tiger.g:106:33: ( ( '0' | '1' ) ( '0' .. '9' ) )
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:106:34: ( '0' | '1' ) ( '0' .. '9' )
+					// F:\\Alex\\Tiger.g:106:34: ( '0' | '1' ) ( '0' .. '9' )
 					{
 					DebugLocation(106, 34);
 					input.Consume();
@@ -2321,7 +2321,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:107:9: '0' ( '0' .. '9' ) ( '0' .. '9' )
+				// F:\\Alex\\Tiger.g:107:9: '0' ( '0' .. '9' ) ( '0' .. '9' )
 				{
 				DebugLocation(107, 9);
 				Match('0'); 
@@ -2348,7 +2348,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:8: ( AND | ASSIGN | BREAK | DIV | DOT | EQUAL | FOR | GT | GT_EQUAL | LET | LT | LT_EQUAL | MINUS | MUL | NIL | NON_EQUAL | OR | PLUS | WHILE | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | ID | INT | WS | COMMENT | STRING )
+		// F:\\Alex\\Tiger.g:1:8: ( AND | ASSIGN | BREAK | DIV | DOT | EQUAL | FOR | GT | GT_EQUAL | LET | LT | LT_EQUAL | MINUS | MUL | NIL | NON_EQUAL | OR | PLUS | WHILE | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | ID | INT | WS | COMMENT | STRING )
 		int alt10=45;
 		try { DebugEnterDecision(10, false);
 		try
@@ -2365,7 +2365,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 		{
 		case 1:
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:10: AND
+			// F:\\Alex\\Tiger.g:1:10: AND
 			{
 			DebugLocation(1, 10);
 			mAND(); 
@@ -2374,7 +2374,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 2:
 			DebugEnterAlt(2);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:14: ASSIGN
+			// F:\\Alex\\Tiger.g:1:14: ASSIGN
 			{
 			DebugLocation(1, 14);
 			mASSIGN(); 
@@ -2383,7 +2383,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 3:
 			DebugEnterAlt(3);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:21: BREAK
+			// F:\\Alex\\Tiger.g:1:21: BREAK
 			{
 			DebugLocation(1, 21);
 			mBREAK(); 
@@ -2392,7 +2392,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 4:
 			DebugEnterAlt(4);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:27: DIV
+			// F:\\Alex\\Tiger.g:1:27: DIV
 			{
 			DebugLocation(1, 27);
 			mDIV(); 
@@ -2401,7 +2401,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:31: DOT
+			// F:\\Alex\\Tiger.g:1:31: DOT
 			{
 			DebugLocation(1, 31);
 			mDOT(); 
@@ -2410,7 +2410,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:35: EQUAL
+			// F:\\Alex\\Tiger.g:1:35: EQUAL
 			{
 			DebugLocation(1, 35);
 			mEQUAL(); 
@@ -2419,7 +2419,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:41: FOR
+			// F:\\Alex\\Tiger.g:1:41: FOR
 			{
 			DebugLocation(1, 41);
 			mFOR(); 
@@ -2428,7 +2428,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:45: GT
+			// F:\\Alex\\Tiger.g:1:45: GT
 			{
 			DebugLocation(1, 45);
 			mGT(); 
@@ -2437,7 +2437,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:48: GT_EQUAL
+			// F:\\Alex\\Tiger.g:1:48: GT_EQUAL
 			{
 			DebugLocation(1, 48);
 			mGT_EQUAL(); 
@@ -2446,7 +2446,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:57: LET
+			// F:\\Alex\\Tiger.g:1:57: LET
 			{
 			DebugLocation(1, 57);
 			mLET(); 
@@ -2455,7 +2455,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:61: LT
+			// F:\\Alex\\Tiger.g:1:61: LT
 			{
 			DebugLocation(1, 61);
 			mLT(); 
@@ -2464,7 +2464,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 12:
 			DebugEnterAlt(12);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:64: LT_EQUAL
+			// F:\\Alex\\Tiger.g:1:64: LT_EQUAL
 			{
 			DebugLocation(1, 64);
 			mLT_EQUAL(); 
@@ -2473,7 +2473,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 13:
 			DebugEnterAlt(13);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:73: MINUS
+			// F:\\Alex\\Tiger.g:1:73: MINUS
 			{
 			DebugLocation(1, 73);
 			mMINUS(); 
@@ -2482,7 +2482,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 14:
 			DebugEnterAlt(14);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:79: MUL
+			// F:\\Alex\\Tiger.g:1:79: MUL
 			{
 			DebugLocation(1, 79);
 			mMUL(); 
@@ -2491,7 +2491,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 15:
 			DebugEnterAlt(15);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:83: NIL
+			// F:\\Alex\\Tiger.g:1:83: NIL
 			{
 			DebugLocation(1, 83);
 			mNIL(); 
@@ -2500,7 +2500,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 16:
 			DebugEnterAlt(16);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:87: NON_EQUAL
+			// F:\\Alex\\Tiger.g:1:87: NON_EQUAL
 			{
 			DebugLocation(1, 87);
 			mNON_EQUAL(); 
@@ -2509,7 +2509,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 17:
 			DebugEnterAlt(17);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:97: OR
+			// F:\\Alex\\Tiger.g:1:97: OR
 			{
 			DebugLocation(1, 97);
 			mOR(); 
@@ -2518,7 +2518,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 18:
 			DebugEnterAlt(18);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:100: PLUS
+			// F:\\Alex\\Tiger.g:1:100: PLUS
 			{
 			DebugLocation(1, 100);
 			mPLUS(); 
@@ -2527,7 +2527,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 19:
 			DebugEnterAlt(19);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:105: WHILE
+			// F:\\Alex\\Tiger.g:1:105: WHILE
 			{
 			DebugLocation(1, 105);
 			mWHILE(); 
@@ -2536,7 +2536,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 20:
 			DebugEnterAlt(20);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:111: T__53
+			// F:\\Alex\\Tiger.g:1:111: T__53
 			{
 			DebugLocation(1, 111);
 			mT__53(); 
@@ -2545,7 +2545,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 21:
 			DebugEnterAlt(21);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:117: T__54
+			// F:\\Alex\\Tiger.g:1:117: T__54
 			{
 			DebugLocation(1, 117);
 			mT__54(); 
@@ -2554,7 +2554,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 22:
 			DebugEnterAlt(22);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:123: T__55
+			// F:\\Alex\\Tiger.g:1:123: T__55
 			{
 			DebugLocation(1, 123);
 			mT__55(); 
@@ -2563,7 +2563,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 23:
 			DebugEnterAlt(23);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:129: T__56
+			// F:\\Alex\\Tiger.g:1:129: T__56
 			{
 			DebugLocation(1, 129);
 			mT__56(); 
@@ -2572,7 +2572,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 24:
 			DebugEnterAlt(24);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:135: T__57
+			// F:\\Alex\\Tiger.g:1:135: T__57
 			{
 			DebugLocation(1, 135);
 			mT__57(); 
@@ -2581,7 +2581,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 25:
 			DebugEnterAlt(25);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:141: T__58
+			// F:\\Alex\\Tiger.g:1:141: T__58
 			{
 			DebugLocation(1, 141);
 			mT__58(); 
@@ -2590,7 +2590,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 26:
 			DebugEnterAlt(26);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:147: T__59
+			// F:\\Alex\\Tiger.g:1:147: T__59
 			{
 			DebugLocation(1, 147);
 			mT__59(); 
@@ -2599,7 +2599,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 27:
 			DebugEnterAlt(27);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:153: T__60
+			// F:\\Alex\\Tiger.g:1:153: T__60
 			{
 			DebugLocation(1, 153);
 			mT__60(); 
@@ -2608,7 +2608,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 28:
 			DebugEnterAlt(28);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:159: T__61
+			// F:\\Alex\\Tiger.g:1:159: T__61
 			{
 			DebugLocation(1, 159);
 			mT__61(); 
@@ -2617,7 +2617,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 29:
 			DebugEnterAlt(29);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:165: T__62
+			// F:\\Alex\\Tiger.g:1:165: T__62
 			{
 			DebugLocation(1, 165);
 			mT__62(); 
@@ -2626,7 +2626,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 30:
 			DebugEnterAlt(30);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:171: T__63
+			// F:\\Alex\\Tiger.g:1:171: T__63
 			{
 			DebugLocation(1, 171);
 			mT__63(); 
@@ -2635,7 +2635,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 31:
 			DebugEnterAlt(31);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:177: T__64
+			// F:\\Alex\\Tiger.g:1:177: T__64
 			{
 			DebugLocation(1, 177);
 			mT__64(); 
@@ -2644,7 +2644,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 32:
 			DebugEnterAlt(32);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:183: T__65
+			// F:\\Alex\\Tiger.g:1:183: T__65
 			{
 			DebugLocation(1, 183);
 			mT__65(); 
@@ -2653,7 +2653,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 33:
 			DebugEnterAlt(33);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:189: T__66
+			// F:\\Alex\\Tiger.g:1:189: T__66
 			{
 			DebugLocation(1, 189);
 			mT__66(); 
@@ -2662,7 +2662,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 34:
 			DebugEnterAlt(34);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:195: T__67
+			// F:\\Alex\\Tiger.g:1:195: T__67
 			{
 			DebugLocation(1, 195);
 			mT__67(); 
@@ -2671,7 +2671,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 35:
 			DebugEnterAlt(35);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:201: T__68
+			// F:\\Alex\\Tiger.g:1:201: T__68
 			{
 			DebugLocation(1, 201);
 			mT__68(); 
@@ -2680,7 +2680,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 36:
 			DebugEnterAlt(36);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:207: T__69
+			// F:\\Alex\\Tiger.g:1:207: T__69
 			{
 			DebugLocation(1, 207);
 			mT__69(); 
@@ -2689,7 +2689,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 37:
 			DebugEnterAlt(37);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:213: T__70
+			// F:\\Alex\\Tiger.g:1:213: T__70
 			{
 			DebugLocation(1, 213);
 			mT__70(); 
@@ -2698,7 +2698,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:219: T__71
+			// F:\\Alex\\Tiger.g:1:219: T__71
 			{
 			DebugLocation(1, 219);
 			mT__71(); 
@@ -2707,7 +2707,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:225: T__72
+			// F:\\Alex\\Tiger.g:1:225: T__72
 			{
 			DebugLocation(1, 225);
 			mT__72(); 
@@ -2716,7 +2716,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:231: T__73
+			// F:\\Alex\\Tiger.g:1:231: T__73
 			{
 			DebugLocation(1, 231);
 			mT__73(); 
@@ -2725,7 +2725,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:237: ID
+			// F:\\Alex\\Tiger.g:1:237: ID
 			{
 			DebugLocation(1, 237);
 			mID(); 
@@ -2734,7 +2734,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 42:
 			DebugEnterAlt(42);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:240: INT
+			// F:\\Alex\\Tiger.g:1:240: INT
 			{
 			DebugLocation(1, 240);
 			mINT(); 
@@ -2743,7 +2743,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 43:
 			DebugEnterAlt(43);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:244: WS
+			// F:\\Alex\\Tiger.g:1:244: WS
 			{
 			DebugLocation(1, 244);
 			mWS(); 
@@ -2752,7 +2752,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 44:
 			DebugEnterAlt(44);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:247: COMMENT
+			// F:\\Alex\\Tiger.g:1:247: COMMENT
 			{
 			DebugLocation(1, 247);
 			mCOMMENT(); 
@@ -2761,7 +2761,7 @@ public partial class TigerLexer : Antlr.Runtime.Lexer
 			break;
 		case 45:
 			DebugEnterAlt(45);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:1:255: STRING
+			// F:\\Alex\\Tiger.g:1:255: STRING
 			{
 			DebugLocation(1, 255);
 			mSTRING(); 

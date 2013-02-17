@@ -13,6 +13,8 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
         public override void CheckSemantics(Semantic.Scope scope, Semantic.ErrorReporter report)
         {
             base.CheckSemantics(scope, report);
+            if (report.Assert(this, !scope.IsDefinedInCurrentScopeAsType(NewTypeNode.TypeName), "Type {0} is already defined in the current scope.", NewTypeNode.TypeName))
+
             scope.DefineArray(NewTypeNode.TypeName, TargetTypeNode.TypeName);
         }
 

@@ -23,14 +23,16 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
         {
             base.CheckSemantics(scope, report);
 
-            var record = scope.DefineRecord(NewTypeNode.TypeName);
+            if (report.Assert(this, !scope.IsDefinedInCurrentScopeAsType(NewTypeNode.TypeName), "Type {0} is already defined in the current scope.", NewTypeNode.TypeName))
+            {
+                var record = scope.DefineRecord(NewTypeNode.TypeName);
 
             for (int i = 1; i < Children.Count; i++)
             {
                 var currentMember = Children[i];
                 var currentMemberTypeName = ((currentMember as ASTNode).Children[0] as TypeIDNode).TypeName;
                 var couldAddMember = record.AddMember(currentMember.Text, currentMemberTypeName);
-                report.Assert(this, couldAddMember, "Function parameters must have different names.");
+                report.Assert(this, couldAddMember, "Record members must have different names.");
             }
         }
 

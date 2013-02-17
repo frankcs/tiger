@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
 using TigerCompiler.Semantic.Types;
 
 namespace TigerCompiler.Semantic
@@ -10,5 +11,13 @@ namespace TigerCompiler.Semantic
         public TypeInfo VariableType { get; set; }
 
         public LocalBuilder ILLocalVariable { get; set; }
+
+        public Dictionary<string,TypeInfo> Fields
+        {
+            get{
+                var recordTypeInfo = VariableType as RecordTypeInfo;
+                return recordTypeInfo != null ? recordTypeInfo.Fields : null;
+            }
+        }
     }
 }

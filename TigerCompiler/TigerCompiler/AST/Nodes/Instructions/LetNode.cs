@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Emit;
+using System.Diagnostics;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Declarations;
 using TigerCompiler.Semantic;
@@ -36,8 +37,10 @@ namespace TigerCompiler.AST.Nodes.Instructions
             
             base.CheckSemantics(_letScope, report);
 
-            //The return type is that of the last expression, or none if there aren't any.
-            ReturnType = Children.Count > 1 ? ((ASTNode)ExprSeqNode.Children[ExprSeqNode.Children.Count - 1]).ReturnType : TypeInfo.Void;
+            ReturnType = ExprSeqNode.ReturnType;
+
+            report.Assert(this, scope.TypeIsVisibleInSomeParentScope(ReturnType),
+                          "The return type of a let expression must be visible in the scope in which it was declared.");
         }
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)

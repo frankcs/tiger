@@ -49,8 +49,28 @@ namespace TigerCompiler.Semantic
         public VariableInfo DefineVariable(string variableName, TypeInfo type, bool readOnly = false)
         {
             var vinfo = new VariableInfo() { IsReadOnly = readOnly, VariableType = type};
-            SymbolTable.Add(variableName,vinfo);
+            SymbolTable[variableName] =vinfo;
             return vinfo;
+        }
+
+        /// <summary>
+        /// Returns true if a variable or function is defined in the current scope with the same name.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool IsDefinedInCurrentScopeAsVarOrFunc(string name)
+        {
+            return SymbolTable.ContainsKey(name);
+        }
+
+        /// <summary>
+        /// Returns true if there is a type declared with the same name in the current scope.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool IsDefinedInCurrentScopeAsType(string name)
+        {
+            return TypeTable.ContainsKey(name);
         }
 
         /// <summary>
@@ -63,7 +83,7 @@ namespace TigerCompiler.Semantic
         public FunctionInfo DefineFunction(string functionName, TypeInfo returnType, bool readOnly = false)
         {
             var finfo = new FunctionInfo(this) {IsReadOnly = readOnly, ReturnType = returnType};
-            SymbolTable.Add(functionName,finfo);
+            SymbolTable[functionName] = finfo;
             return finfo;
         }
 
@@ -76,7 +96,7 @@ namespace TigerCompiler.Semantic
         public FunctionInfo DefineFunction(string procedureName, bool readOnly = false)
         {
             var finfo = new FunctionInfo(this) { IsReadOnly = readOnly, ReturnType = TypeInfo.Void };
-            SymbolTable.Add(procedureName, finfo);
+            SymbolTable.Add(procedureName,finfo);
             return finfo;
         }
 
@@ -89,7 +109,7 @@ namespace TigerCompiler.Semantic
         public ArrayTypeInfo DefineArray(string typeName, string targetArrayTypeName)
         {
             var arInfo = new ArrayTypeInfo(targetArrayTypeName);
-            TypeTable.Add(typeName, arInfo);
+            TypeTable.Add(typeName,arInfo);
             return arInfo;
         }
 
@@ -102,7 +122,7 @@ namespace TigerCompiler.Semantic
         public RecordTypeInfo DefineRecord(string typeName)
         {
             var rinfo = new RecordTypeInfo();
-            TypeTable.Add(typeName,rinfo);
+            TypeTable.Add(typeName, rinfo);
             return rinfo;
         }
 
@@ -112,11 +132,10 @@ namespace TigerCompiler.Semantic
         /// <param name="alias">The alias to define.</param>
         /// <param name="typeName">The name of the type to create an alias for.</param>
         /// <returns></returns>
-        public TypeInfo DefineAlias(string alias, string typeName)
+        public void DefineAlias(string alias, string typeName)
         {
             var alInfo = new AliasTypeInfo(typeName);
             TypeTable.Add(alias,alInfo);
-            return alInfo;
         }
 
         /// <summary>
@@ -144,23 +163,15 @@ namespace TigerCompiler.Semantic
             //return aliasTypeInfo != null ? aliasTypeInfo.TargetType : typeInfo;
         }
 
-        //TODO: Use this?
-        public static Scope MergeScopes(Scope parentScope, params Scope[] scopes)
+        public bool TypeIsVisibleInSomeParentScope(TypeInfo type)
         {
-            var finalScope = parentScope.CreateChildScope();
-
-            foreach (var scope in scopes)
+            if (ReferenceEquals(this,Scope.DefaultGlobalScope))
             {
-                parentScope._childScopes.Remove(scope);
-                foreach (KeyValuePair<string, Symbol> symbol in scope.SymbolTable)
-                    finalScope.SymbolTable[symbol.Key] = symbol.Value;
-                foreach (KeyValuePair<string, TypeInfo> symbol in scope.TypeTable)
-                    finalScope.TypeTable[symbol.Key] = symbol.Value;
+                return true;
             }
-
-            return finalScope;
+            return Parent != null &&
+                   (Parent.TypeTable.ContainsValue(type) || Parent.TypeIsVisibleInSomeParentScope(type));
         }
-
     }
 
 }

@@ -36,25 +36,29 @@ namespace TigerCompiler.Semantic.Types
             return ILTypeBuilder; // FRANK
         }
 
+        public override bool IsNullable { get { return true; } set{throw new InvalidOperationException();} }
+
         public override bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter)
         {
-            bool ok = true;
+            if (ResolutionStatus != TypeResolutionStatus.NotResolved)
+                return true;
 
-            ResolutionStatus = TypeResolutionStatus.Resolving;
+            ResolutionStatus = TypeResolutionStatus.OK;
+
+            //ResolutionStatus = TypeResolutionStatus.Resolving;
 
             foreach (var nameTypeTuple in _preFields)
             {
                 var tmp = scope.ResolveType(nameTypeTuple.Value);
-                if (tmp != null)
-                {
-                    if (tmp.ResolutionStatus == TypeResolutionStatus.NotResolved)
-                        tmp.ResolveReferencedTypes(node, scope, reporter);
-                    Fields.Add(nameTypeTuple.Key, tmp);
-                }else ok = false;
+
+                if (!reporter.Assert(node, !IsNull(tmp), "Cannot find type {0} in current context.", nameTypeTuple.Value))
+                    continue;
+                if (tmp.ResolutionStatus == TypeResolutionStatus.NotResolved)
+                    tmp.ResolveReferencedTypes(node, scope, reporter);
+                Fields.Add(nameTypeTuple.Key, tmp);
             }
 
-            ResolutionStatus = ok? TypeResolutionStatus.OK : TypeResolutionStatus.Error;
-            return ok;
+            return true;
         }
 
         public ConstructorBuilder Constructor { get; set; }

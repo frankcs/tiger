@@ -34,20 +34,19 @@ namespace TigerCompiler.AST.Nodes.Declarations
             }
         }
 
-        private string FunctionName { get { return Children[0].Text; } }
+        public string FunctionName { get { return Children[0].Text; } }
 
         public Scope FunctionScope
         {
             get { return ((FunctionInfo) Scope.ResolveVarOrFunction(FunctionName)).FunctionScope; }
         } 
 
-        private TypeInfo FunctionReturnType
+        public TypeInfo FunctionReturnType
         {
             get
             {
-                if (Children[2] is TypeIDNode)
-                    return Scope.ResolveType((Children[2] as TypeIDNode).Text);
-                return TypeInfo.Void;
+                var typeIDNode = Children[2] as TypeIDNode;
+                return typeIDNode != null ? Scope.ResolveType(typeIDNode.TypeName) : TypeInfo.Void;
             }
         }
 
@@ -60,10 +59,15 @@ namespace TigerCompiler.AST.Nodes.Declarations
 
             Scope = scope;
 
-            var newFunc = scope.DefineFunction(FunctionName, FunctionReturnType);
-            foreach (KeyValuePair<string, TypeInfo> info in ParameterTypesNode.Parameters)
-                newFunc.AddParameter(info.Key, info.Value);
-
+            var func = scope.ResolveVarOrFunction(FunctionName) as FunctionInfo;
+            if (report.Assert(this, func == null || func.IsReadOnly, "Cannot overwrite {0} function.", FunctionName) && 
+                report.Assert(this, !scope.IsDefinedInCurrentScopeAsVarOrFunc(FunctionName),
+                                  "A function or variable named {0} is already defined in the current scope.", FunctionName))
+            {
+                var newFunc = scope.DefineFunction(FunctionName, FunctionReturnType);
+                foreach (KeyValuePair<string, TypeInfo> info in ParameterTypesNode.Parameters)
+                    newFunc.AddParameter(info.Key, info.Value);
+            }
             // The function body semantic check will be done by the parent block.
         }
 

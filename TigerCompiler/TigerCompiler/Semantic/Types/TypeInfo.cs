@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection.Emit;
+using System.Diagnostics;
 using TigerCompiler.AST.Nodes;
 using TigerCompiler.Semantic.Symbols;
 
@@ -10,7 +11,7 @@ namespace TigerCompiler.Semantic.Types
         static TypeInfo()
         {
             Int = new PrimitiveTypeInfo(typeof(int)){IsReadOnly = true};
-            String = new PrimitiveTypeInfo(typeof(string)) { IsReadOnly = true };
+            String = new PrimitiveTypeInfo(typeof(string)) { IsReadOnly = true, IsNullable = true};
             Void = new PrimitiveTypeInfo(typeof(void)) { IsReadOnly = true };
             Unknown = new PrimitiveTypeInfo(null) { IsReadOnly = true};
         }
@@ -40,6 +41,11 @@ namespace TigerCompiler.Semantic.Types
         /// </summary>
         public bool IsReadOnly { get; set; }
 
+        /// <summary>
+        /// Makes this value accept a nil value.
+        /// </summary>
+        public abstract bool IsNullable { get; set; }
+
         public TypeResolutionStatus ResolutionStatus { get; set; }
 
         /// <summary>
@@ -52,6 +58,23 @@ namespace TigerCompiler.Semantic.Types
 
         public static bool operator == (TypeInfo t1, TypeInfo t2)
         {
+            if (IsNull(t1) || IsNull(t2))
+                return true;
+            Debug.Assert(t1 != null, "t1 != null");
+            Debug.Assert(t2 != null, "t2 != null");
+            if ((t1.IsNullable && ReferenceEquals(t2, Unknown)) || (t2.IsNullable && ReferenceEquals(t1, Unknown)))
+                return true;
+            //if (t1 is RecordTypeInfo|| t1 is ArrayTypeInfo || ReferenceEquals(t1,String))
+            //{
+            //    if (ReferenceEquals(t2, Unknown))
+            //        return true;
+            //}
+            //else if ((t2 is RecordTypeInfo || t2 is ArrayTypeInfo || ReferenceEquals(t2, String)) &&
+            //         ReferenceEquals(t1, Unknown))
+            //{
+            //    return true;
+            //}
+
             var tt1 = t1 as AliasTypeInfo;
             var tt2 = t2 as AliasTypeInfo;
 
@@ -63,7 +86,7 @@ namespace TigerCompiler.Semantic.Types
 
         public static bool operator !=(TypeInfo t1, TypeInfo t2)
         {
-            return !(t1 == t2);
+            return !(ReferenceEquals(t1,t2));
         }
 
         public static bool IsNull(TypeInfo t)

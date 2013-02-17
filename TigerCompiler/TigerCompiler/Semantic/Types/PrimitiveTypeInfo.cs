@@ -16,6 +16,8 @@ namespace TigerCompiler.Semantic.Types
             return ILType;
         }
 
+        public override bool IsNullable { get; set; }
+
         public override bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter)
         {
             return true;
@@ -23,7 +25,7 @@ namespace TigerCompiler.Semantic.Types
 
         public override string ToString()
         {
-            return ILType.ToString();
+            return ILType == null? "" : ILType.ToString();
         }
     }
 }

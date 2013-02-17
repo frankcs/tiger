@@ -37,26 +37,31 @@ namespace TigerCompiler.AST.Nodes.Declarations
         {
             base.CheckSemantics(scope,report);
 
+
+
             if (TypeID == null)
             {
                 report.Assert(this, InitialValue.ReturnType != TypeInfo.Unknown,
                               "The variable type cannot be inferred from usage. Specify the type explicitly.");
+                report.Assert(this, InitialValue.ReturnType != TypeInfo.Void,
+                              "Initialization value expression must return a value.");
                 ReturnType = InitialValue.ReturnType;
-                Debug.Assert(ReturnType != null);
             }
             else
             {
                 TypeInfo type = (scope.ResolveType(TypeID.TypeName));
                 if (report.Assert(this, !ReferenceEquals(type, null),"Cannot find type {0} in variable {1}'s declaration.",TypeID.TypeName,VariableID.Text))
                 {
-                    report.Assert(this, InitialValue.ReturnType == type,
+                    report.Assert(this, type == InitialValue.ReturnType,
                               "The initial expression type \"{0}\" does not match with the specified type {1}.",
                               InitialValue.ReturnType, TypeID.TypeName);
                     ReturnType = type;
                 }
             }
 
-            scope.DefineVariable(VariableID.Text, InitialValue.ReturnType);
+            if (report.Assert(this, !scope.IsDefinedInCurrentScopeAsVarOrFunc(VariableID.Text),
+                          "A function or variable named {0} is already defined in the current scope.", VariableID.Text))
+                scope.DefineVariable(VariableID.Text, ReturnType);
         }
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)

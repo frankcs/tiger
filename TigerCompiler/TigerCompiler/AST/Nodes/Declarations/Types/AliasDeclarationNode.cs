@@ -13,6 +13,8 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
         {
             base.CheckSemantics(scope, report);
 
+            if (report.Assert(this, !scope.IsDefinedInCurrentScopeAsType(NewTypeNode.TypeName), "Type {0} is already defined in the current scope.", NewTypeNode.TypeName))
+
             scope.DefineAlias(NewTypeNode.TypeName, TargetTypeNode.TypeName);
         }
 

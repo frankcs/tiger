@@ -19,6 +19,8 @@ namespace TigerCompiler.Semantic.Types
             return TargetType.GetILType();
         }
 
+        public override bool IsNullable { get { return TargetType.IsNullable; } set { TargetType.IsNullable = value; } }
+
         public override bool ResolveReferencedTypes(ASTNode node, Scope scope, ErrorReporter reporter)
         {
             if (ResolutionStatus != TypeResolutionStatus.NotResolved) return ResolutionStatus == TypeResolutionStatus.OK;

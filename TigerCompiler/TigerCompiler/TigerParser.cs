@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g 2013-02-15 15:58:54
+// $ANTLR 3.4 F:\\Alex\\Tiger.g 2013-02-16 15:18:55
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -138,7 +138,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	}
 
 	public override string[] TokenNames { get { return TigerParser.tokenNames; } }
-	public override string GrammarFileName { get { return "C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g"; } }
+	public override string GrammarFileName { get { return "F:\\Alex\\Tiger.g"; } }
 
 
 	partial void OnCreated();
@@ -150,7 +150,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_program();
 
 	// $ANTLR start "program"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:110:1: program : expr EOF -> ^( PROGRAM expr ) ;
+	// F:\\Alex\\Tiger.g:110:1: program : expr EOF -> ^( PROGRAM expr ) ;
 	[GrammarRule("program")]
 	public AstParserRuleReturnScope<object, IToken> program()
 	{
@@ -172,9 +172,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		DebugLocation(110, 37);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:110:9: ( expr EOF -> ^( PROGRAM expr ) )
+			// F:\\Alex\\Tiger.g:110:9: ( expr EOF -> ^( PROGRAM expr ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:110:11: expr EOF
+			// F:\\Alex\\Tiger.g:110:11: expr EOF
 			{
 			DebugLocation(110, 11);
 			PushFollow(Follow._expr_in_program647);
@@ -204,7 +204,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			// 110:20: -> ^( PROGRAM expr )
 			{
 				DebugLocation(110, 23);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:110:23: ^( PROGRAM expr )
+				// F:\\Alex\\Tiger.g:110:23: ^( PROGRAM expr )
 				{
 				object root_1 = (object)adaptor.Nil();
 				DebugLocation(110, 25);
@@ -255,7 +255,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_expr();
 
 	// $ANTLR start "expr"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:112:1: expr : or_expr ;
+	// F:\\Alex\\Tiger.g:112:1: expr : or_expr ;
 	[GrammarRule("expr")]
 	private AstParserRuleReturnScope<object, IToken> expr()
 	{
@@ -273,9 +273,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		DebugLocation(112, 14);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:112:6: ( or_expr )
+			// F:\\Alex\\Tiger.g:112:6: ( or_expr )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:112:8: or_expr
+			// F:\\Alex\\Tiger.g:112:8: or_expr
 			{
 			root_0 = (object)adaptor.Nil();
 
@@ -319,7 +319,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_or_expr();
 
 	// $ANTLR start "or_expr"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:114:1: or_expr : and_exp ( OR ^ and_exp )* ;
+	// F:\\Alex\\Tiger.g:114:1: or_expr : and_exp ( OR ^ and_exp )* ;
 	[GrammarRule("or_expr")]
 	private AstParserRuleReturnScope<object, IToken> or_expr()
 	{
@@ -340,9 +340,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		DebugLocation(114, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:114:9: ( and_exp ( OR ^ and_exp )* )
+			// F:\\Alex\\Tiger.g:114:9: ( and_exp ( OR ^ and_exp )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:114:11: and_exp ( OR ^ and_exp )*
+			// F:\\Alex\\Tiger.g:114:11: and_exp ( OR ^ and_exp )*
 			{
 			root_0 = (object)adaptor.Nil();
 
@@ -353,7 +353,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, and_exp4.Tree);
 			DebugLocation(114, 19);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:114:19: ( OR ^ and_exp )*
+			// F:\\Alex\\Tiger.g:114:19: ( OR ^ and_exp )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -372,7 +372,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:114:20: OR ^ and_exp
+					// F:\\Alex\\Tiger.g:114:20: OR ^ and_exp
 					{
 					DebugLocation(114, 22);
 					OR5=(IToken)Match(input,OR,Follow._OR_in_or_expr676); if (state.failed) return retval;
@@ -434,7 +434,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_and_exp();
 
 	// $ANTLR start "and_exp"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:117:1: and_exp : comp_expr ( AND ^ comp_expr )* ;
+	// F:\\Alex\\Tiger.g:117:1: and_exp : comp_expr ( AND ^ comp_expr )* ;
 	[GrammarRule("and_exp")]
 	private AstParserRuleReturnScope<object, IToken> and_exp()
 	{
@@ -455,9 +455,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		DebugLocation(117, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:117:9: ( comp_expr ( AND ^ comp_expr )* )
+			// F:\\Alex\\Tiger.g:117:9: ( comp_expr ( AND ^ comp_expr )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:117:11: comp_expr ( AND ^ comp_expr )*
+			// F:\\Alex\\Tiger.g:117:11: comp_expr ( AND ^ comp_expr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
@@ -468,7 +468,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, comp_expr7.Tree);
 			DebugLocation(117, 21);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:117:21: ( AND ^ comp_expr )*
+			// F:\\Alex\\Tiger.g:117:21: ( AND ^ comp_expr )*
 			try { DebugEnterSubRule(2);
 			while (true)
 			{
@@ -487,7 +487,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:117:22: AND ^ comp_expr
+					// F:\\Alex\\Tiger.g:117:22: AND ^ comp_expr
 					{
 					DebugLocation(117, 25);
 					AND8=(IToken)Match(input,AND,Follow._AND_in_and_exp694); if (state.failed) return retval;
@@ -549,7 +549,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_comp_expr();
 
 	// $ANTLR start "comp_expr"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:120:1: comp_expr : arith_expr ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )* ;
+	// F:\\Alex\\Tiger.g:120:1: comp_expr : arith_expr ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )? ;
 	[GrammarRule("comp_expr")]
 	private AstParserRuleReturnScope<object, IToken> comp_expr()
 	{
@@ -580,9 +580,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		DebugLocation(120, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:2: ( arith_expr ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )* )
+			// F:\\Alex\\Tiger.g:121:2: ( arith_expr ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )? )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:4: arith_expr ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )*
+			// F:\\Alex\\Tiger.g:121:4: arith_expr ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )?
 			{
 			root_0 = (object)adaptor.Nil();
 
@@ -593,202 +593,193 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, arith_expr10.Tree);
 			DebugLocation(121, 14);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:14: ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )*
+			// F:\\Alex\\Tiger.g:121:14: ( ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr )?
+			int alt4=2;
 			try { DebugEnterSubRule(4);
-			while (true)
+			try { DebugEnterDecision(4, false);
+			switch (input.LA(1))
 			{
-				int alt4=2;
-				try { DebugEnterDecision(4, false);
+			case EQUAL:
+				{
+				alt4 = 1;
+				}
+				break;
+			case NON_EQUAL:
+				{
+				alt4 = 1;
+				}
+				break;
+			case LT:
+				{
+				alt4 = 1;
+				}
+				break;
+			case GT:
+				{
+				alt4 = 1;
+				}
+				break;
+			case LT_EQUAL:
+				{
+				alt4 = 1;
+				}
+				break;
+			case GT_EQUAL:
+				{
+				alt4 = 1;
+				}
+				break;
+			}
+
+			} finally { DebugExitDecision(4); }
+			switch (alt4)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// F:\\Alex\\Tiger.g:121:15: ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr
+				{
+				DebugLocation(121, 15);
+				// F:\\Alex\\Tiger.g:121:15: ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^)
+				int alt3=6;
+				try { DebugEnterSubRule(3);
+				try { DebugEnterDecision(3, false);
 				switch (input.LA(1))
 				{
 				case EQUAL:
 					{
-					alt4 = 1;
+					alt3 = 1;
 					}
 					break;
 				case NON_EQUAL:
 					{
-					alt4 = 1;
+					alt3 = 2;
 					}
 					break;
 				case LT:
 					{
-					alt4 = 1;
+					alt3 = 3;
 					}
 					break;
 				case GT:
 					{
-					alt4 = 1;
+					alt3 = 4;
 					}
 					break;
 				case LT_EQUAL:
 					{
-					alt4 = 1;
+					alt3 = 5;
 					}
 					break;
 				case GT_EQUAL:
 					{
-					alt4 = 1;
+					alt3 = 6;
 					}
 					break;
+				default:
+					{
+						if (state.backtracking>0) {state.failed=true; return retval;}
+						NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
+						DebugRecognitionException(nvae);
+						throw nvae;
+					}
 				}
 
-				} finally { DebugExitDecision(4); }
-				switch ( alt4 )
+				} finally { DebugExitDecision(3); }
+				switch (alt3)
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:15: ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^) arith_expr
+					// F:\\Alex\\Tiger.g:121:16: EQUAL ^
 					{
-					DebugLocation(121, 15);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:15: ( EQUAL ^| NON_EQUAL ^| LT ^| GT ^| LT_EQUAL ^| GT_EQUAL ^)
-					int alt3=6;
-					try { DebugEnterSubRule(3);
-					try { DebugEnterDecision(3, false);
-					switch (input.LA(1))
-					{
-					case EQUAL:
-						{
-						alt3 = 1;
-						}
-						break;
-					case NON_EQUAL:
-						{
-						alt3 = 2;
-						}
-						break;
-					case LT:
-						{
-						alt3 = 3;
-						}
-						break;
-					case GT:
-						{
-						alt3 = 4;
-						}
-						break;
-					case LT_EQUAL:
-						{
-						alt3 = 5;
-						}
-						break;
-					case GT_EQUAL:
-						{
-						alt3 = 6;
-						}
-						break;
-					default:
-						{
-							if (state.backtracking>0) {state.failed=true; return retval;}
-							NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
-							DebugRecognitionException(nvae);
-							throw nvae;
-						}
+					DebugLocation(121, 21);
+					EQUAL11=(IToken)Match(input,EQUAL,Follow._EQUAL_in_comp_expr713); if (state.failed) return retval;
+					if (state.backtracking == 0) {
+					EQUAL11_tree = (object)adaptor.Create(EQUAL11);
+					root_0 = (object)adaptor.BecomeRoot(EQUAL11_tree, root_0);
 					}
 
-					} finally { DebugExitDecision(3); }
-					switch (alt3)
+					}
+					break;
+				case 2:
+					DebugEnterAlt(2);
+					// F:\\Alex\\Tiger.g:121:25: NON_EQUAL ^
 					{
-					case 1:
-						DebugEnterAlt(1);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:16: EQUAL ^
-						{
-						DebugLocation(121, 21);
-						EQUAL11=(IToken)Match(input,EQUAL,Follow._EQUAL_in_comp_expr713); if (state.failed) return retval;
-						if (state.backtracking == 0) {
-						EQUAL11_tree = (object)adaptor.Create(EQUAL11);
-						root_0 = (object)adaptor.BecomeRoot(EQUAL11_tree, root_0);
-						}
-
-						}
-						break;
-					case 2:
-						DebugEnterAlt(2);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:25: NON_EQUAL ^
-						{
-						DebugLocation(121, 34);
-						NON_EQUAL12=(IToken)Match(input,NON_EQUAL,Follow._NON_EQUAL_in_comp_expr718); if (state.failed) return retval;
-						if (state.backtracking == 0) {
-						NON_EQUAL12_tree = (object)adaptor.Create(NON_EQUAL12);
-						root_0 = (object)adaptor.BecomeRoot(NON_EQUAL12_tree, root_0);
-						}
-
-						}
-						break;
-					case 3:
-						DebugEnterAlt(3);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:38: LT ^
-						{
-						DebugLocation(121, 40);
-						LT13=(IToken)Match(input,LT,Follow._LT_in_comp_expr723); if (state.failed) return retval;
-						if (state.backtracking == 0) {
-						LT13_tree = (object)adaptor.Create(LT13);
-						root_0 = (object)adaptor.BecomeRoot(LT13_tree, root_0);
-						}
-
-						}
-						break;
-					case 4:
-						DebugEnterAlt(4);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:44: GT ^
-						{
-						DebugLocation(121, 46);
-						GT14=(IToken)Match(input,GT,Follow._GT_in_comp_expr728); if (state.failed) return retval;
-						if (state.backtracking == 0) {
-						GT14_tree = (object)adaptor.Create(GT14);
-						root_0 = (object)adaptor.BecomeRoot(GT14_tree, root_0);
-						}
-
-						}
-						break;
-					case 5:
-						DebugEnterAlt(5);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:50: LT_EQUAL ^
-						{
-						DebugLocation(121, 58);
-						LT_EQUAL15=(IToken)Match(input,LT_EQUAL,Follow._LT_EQUAL_in_comp_expr733); if (state.failed) return retval;
-						if (state.backtracking == 0) {
-						LT_EQUAL15_tree = (object)adaptor.Create(LT_EQUAL15);
-						root_0 = (object)adaptor.BecomeRoot(LT_EQUAL15_tree, root_0);
-						}
-
-						}
-						break;
-					case 6:
-						DebugEnterAlt(6);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:121:62: GT_EQUAL ^
-						{
-						DebugLocation(121, 70);
-						GT_EQUAL16=(IToken)Match(input,GT_EQUAL,Follow._GT_EQUAL_in_comp_expr738); if (state.failed) return retval;
-						if (state.backtracking == 0) {
-						GT_EQUAL16_tree = (object)adaptor.Create(GT_EQUAL16);
-						root_0 = (object)adaptor.BecomeRoot(GT_EQUAL16_tree, root_0);
-						}
-
-						}
-						break;
+					DebugLocation(121, 34);
+					NON_EQUAL12=(IToken)Match(input,NON_EQUAL,Follow._NON_EQUAL_in_comp_expr718); if (state.failed) return retval;
+					if (state.backtracking == 0) {
+					NON_EQUAL12_tree = (object)adaptor.Create(NON_EQUAL12);
+					root_0 = (object)adaptor.BecomeRoot(NON_EQUAL12_tree, root_0);
+					}
 
 					}
-					} finally { DebugExitSubRule(3); }
+					break;
+				case 3:
+					DebugEnterAlt(3);
+					// F:\\Alex\\Tiger.g:121:38: LT ^
+					{
+					DebugLocation(121, 40);
+					LT13=(IToken)Match(input,LT,Follow._LT_in_comp_expr723); if (state.failed) return retval;
+					if (state.backtracking == 0) {
+					LT13_tree = (object)adaptor.Create(LT13);
+					root_0 = (object)adaptor.BecomeRoot(LT13_tree, root_0);
+					}
 
-					DebugLocation(121, 73);
-					PushFollow(Follow._arith_expr_in_comp_expr742);
-					arith_expr17=arith_expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, arith_expr17.Tree);
+					}
+					break;
+				case 4:
+					DebugEnterAlt(4);
+					// F:\\Alex\\Tiger.g:121:44: GT ^
+					{
+					DebugLocation(121, 46);
+					GT14=(IToken)Match(input,GT,Follow._GT_in_comp_expr728); if (state.failed) return retval;
+					if (state.backtracking == 0) {
+					GT14_tree = (object)adaptor.Create(GT14);
+					root_0 = (object)adaptor.BecomeRoot(GT14_tree, root_0);
+					}
+
+					}
+					break;
+				case 5:
+					DebugEnterAlt(5);
+					// F:\\Alex\\Tiger.g:121:50: LT_EQUAL ^
+					{
+					DebugLocation(121, 58);
+					LT_EQUAL15=(IToken)Match(input,LT_EQUAL,Follow._LT_EQUAL_in_comp_expr733); if (state.failed) return retval;
+					if (state.backtracking == 0) {
+					LT_EQUAL15_tree = (object)adaptor.Create(LT_EQUAL15);
+					root_0 = (object)adaptor.BecomeRoot(LT_EQUAL15_tree, root_0);
+					}
+
+					}
+					break;
+				case 6:
+					DebugEnterAlt(6);
+					// F:\\Alex\\Tiger.g:121:62: GT_EQUAL ^
+					{
+					DebugLocation(121, 70);
+					GT_EQUAL16=(IToken)Match(input,GT_EQUAL,Follow._GT_EQUAL_in_comp_expr738); if (state.failed) return retval;
+					if (state.backtracking == 0) {
+					GT_EQUAL16_tree = (object)adaptor.Create(GT_EQUAL16);
+					root_0 = (object)adaptor.BecomeRoot(GT_EQUAL16_tree, root_0);
+					}
 
 					}
 					break;
 
-				default:
-					goto loop4;
 				}
+				} finally { DebugExitSubRule(3); }
+
+				DebugLocation(121, 73);
+				PushFollow(Follow._arith_expr_in_comp_expr742);
+				arith_expr17=arith_expr();
+				PopFollow();
+				if (state.failed) return retval;
+				if (state.backtracking == 0) adaptor.AddChild(root_0, arith_expr17.Tree);
+
+				}
+				break;
+
 			}
-
-			loop4:
-				;
-
 			} finally { DebugExitSubRule(4); }
 
 
@@ -825,7 +816,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_arith_expr();
 
 	// $ANTLR start "arith_expr"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:124:1: arith_expr : term ( ( PLUS ^| MINUS ^) term )* ;
+	// F:\\Alex\\Tiger.g:124:1: arith_expr : term ( ( PLUS ^| MINUS ^) term )* ;
 	[GrammarRule("arith_expr")]
 	private AstParserRuleReturnScope<object, IToken> arith_expr()
 	{
@@ -848,9 +839,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		DebugLocation(124, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:125:2: ( term ( ( PLUS ^| MINUS ^) term )* )
+			// F:\\Alex\\Tiger.g:125:2: ( term ( ( PLUS ^| MINUS ^) term )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:125:4: term ( ( PLUS ^| MINUS ^) term )*
+			// F:\\Alex\\Tiger.g:125:4: term ( ( PLUS ^| MINUS ^) term )*
 			{
 			root_0 = (object)adaptor.Nil();
 
@@ -861,7 +852,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, term18.Tree);
 			DebugLocation(125, 8);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:125:8: ( ( PLUS ^| MINUS ^) term )*
+			// F:\\Alex\\Tiger.g:125:8: ( ( PLUS ^| MINUS ^) term )*
 			try { DebugEnterSubRule(6);
 			while (true)
 			{
@@ -884,10 +875,10 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:125:9: ( PLUS ^| MINUS ^) term
+					// F:\\Alex\\Tiger.g:125:9: ( PLUS ^| MINUS ^) term
 					{
 					DebugLocation(125, 9);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:125:9: ( PLUS ^| MINUS ^)
+					// F:\\Alex\\Tiger.g:125:9: ( PLUS ^| MINUS ^)
 					int alt5=2;
 					try { DebugEnterSubRule(5);
 					try { DebugEnterDecision(5, false);
@@ -913,7 +904,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:125:10: PLUS ^
+						// F:\\Alex\\Tiger.g:125:10: PLUS ^
 						{
 						DebugLocation(125, 14);
 						PLUS19=(IToken)Match(input,PLUS,Follow._PLUS_in_arith_expr758); if (state.failed) return retval;
@@ -926,7 +917,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:125:16: MINUS ^
+						// F:\\Alex\\Tiger.g:125:16: MINUS ^
 						{
 						DebugLocation(125, 21);
 						MINUS20=(IToken)Match(input,MINUS,Follow._MINUS_in_arith_expr761); if (state.failed) return retval;
@@ -995,7 +986,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_term();
 
 	// $ANTLR start "term"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:1: term : texpr ( ( MUL ^| DIV ^) texpr )* ;
+	// F:\\Alex\\Tiger.g:128:1: term : texpr ( ( MUL ^| DIV ^) texpr )* ;
 	[GrammarRule("term")]
 	private AstParserRuleReturnScope<object, IToken> term()
 	{
@@ -1018,9 +1009,9 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		DebugLocation(128, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:6: ( texpr ( ( MUL ^| DIV ^) texpr )* )
+			// F:\\Alex\\Tiger.g:128:6: ( texpr ( ( MUL ^| DIV ^) texpr )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:8: texpr ( ( MUL ^| DIV ^) texpr )*
+			// F:\\Alex\\Tiger.g:128:8: texpr ( ( MUL ^| DIV ^) texpr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
@@ -1031,7 +1022,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, texpr22.Tree);
 			DebugLocation(128, 13);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:13: ( ( MUL ^| DIV ^) texpr )*
+			// F:\\Alex\\Tiger.g:128:13: ( ( MUL ^| DIV ^) texpr )*
 			try { DebugEnterSubRule(8);
 			while (true)
 			{
@@ -1054,10 +1045,10 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:14: ( MUL ^| DIV ^) texpr
+					// F:\\Alex\\Tiger.g:128:14: ( MUL ^| DIV ^) texpr
 					{
 					DebugLocation(128, 14);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:14: ( MUL ^| DIV ^)
+					// F:\\Alex\\Tiger.g:128:14: ( MUL ^| DIV ^)
 					int alt7=2;
 					try { DebugEnterSubRule(7);
 					try { DebugEnterDecision(7, false);
@@ -1083,7 +1074,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:15: MUL ^
+						// F:\\Alex\\Tiger.g:128:15: MUL ^
 						{
 						DebugLocation(128, 18);
 						MUL23=(IToken)Match(input,MUL,Follow._MUL_in_term780); if (state.failed) return retval;
@@ -1096,7 +1087,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:128:20: DIV ^
+						// F:\\Alex\\Tiger.g:128:20: DIV ^
 						{
 						DebugLocation(128, 23);
 						DIV24=(IToken)Match(input,DIV,Follow._DIV_in_term783); if (state.failed) return retval;
@@ -1165,7 +1156,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_texpr();
 
 	// $ANTLR start "texpr"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:131:1: texpr : ( STRING | INT | NIL | ( ID '[' expr ']' 'of' )=> type_id '[' e1= expr ']' 'of' e2= expr -> ^( ARRAY_CREATION type_id $e1 $e2) | ( ID '(' )=> ( ID '(' ( expr_list )? ')' ) -> ^( FUNCTION_CALL ID ^( EXPRESSION_LIST ( expr_list )? ) ) | ( ID '{' )=> ( ID '{' ( field_list )? '}' ) -> ^( RECORD_CREATION ID ( field_list )? ) | ( lvalue ASSIGN )=> ( lvalue ASSIGN expr ) -> ^( ASSIGN lvalue expr ) | lvalue | '(' ( expr_seq )? ')' -> ^( EXPRESSION_SEQ ( expr_seq )? ) | ( 'if' expr 'then' expr 'else' )=> ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr ) -> ^( IF_THEN_ELSE $ifx $thenx $elsex) | 'if' ifx= expr 'then' elsex= expr -> ^( IF_THEN $ifx $elsex) | WHILE condition= expr 'do' something= expr -> ^( WHILE $condition $something) | FOR var= ID ASSIGN init= expr 'to' limit= expr 'do' something= expr -> ^( FOR $var $init $limit $something) | BREAK | LET declaration_list 'in' ( expr_seq )? 'end' -> ^( LET declaration_list ( expr_seq )? ) | MINUS texpr -> ^( UMINUS texpr ) );
+	// F:\\Alex\\Tiger.g:131:1: texpr : ( STRING | INT | NIL | ( ID '[' expr ']' 'of' )=> type_id '[' e1= expr ']' 'of' e2= expr -> ^( ARRAY_CREATION type_id $e1 $e2) | ( ID '(' )=> ( ID '(' ( expr_list )? ')' ) -> ^( FUNCTION_CALL ID ^( EXPRESSION_LIST ( expr_list )? ) ) | ( ID '{' )=> ( ID '{' ( field_list )? '}' ) -> ^( RECORD_CREATION ID ( field_list )? ) | ( lvalue ASSIGN )=> ( lvalue ASSIGN expr ) -> ^( ASSIGN lvalue expr ) | lvalue | '(' ( expr )? ( ';' expr )* ')' -> ^( EXPRESSION_SEQ ( expr )* ) | ( 'if' expr 'then' expr 'else' )=> ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr ) -> ^( IF_THEN_ELSE $ifx $thenx $elsex) | 'if' ifx= expr 'then' elsex= expr -> ^( IF_THEN $ifx $elsex) | WHILE condition= expr 'do' something= expr -> ^( WHILE $condition $something) | FOR var= ID ASSIGN init= expr 'to' limit= expr 'do' something= expr -> ^( FOR $var $init $limit $something) | BREAK | LET ( declaration )+ 'in' ( expr ( ';' expr )* )? 'end' -> ^( LET ^( DECL_LIST ( declaration )+ ) ^( EXPRESSION_SEQ ( expr )* ) ) | MINUS texpr -> ^( UMINUS texpr ) );
 	[GrammarRule("texpr")]
 	private AstParserRuleReturnScope<object, IToken> texpr()
 	{
@@ -1193,22 +1184,24 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		IToken ASSIGN42 = default(IToken);
 		IToken char_literal45 = default(IToken);
 		IToken char_literal47 = default(IToken);
-		IToken string_literal48 = default(IToken);
-		IToken string_literal49 = default(IToken);
+		IToken char_literal49 = default(IToken);
 		IToken string_literal50 = default(IToken);
 		IToken string_literal51 = default(IToken);
 		IToken string_literal52 = default(IToken);
-		IToken WHILE53 = default(IToken);
+		IToken string_literal53 = default(IToken);
 		IToken string_literal54 = default(IToken);
-		IToken FOR55 = default(IToken);
-		IToken ASSIGN56 = default(IToken);
-		IToken string_literal57 = default(IToken);
-		IToken string_literal58 = default(IToken);
-		IToken BREAK59 = default(IToken);
-		IToken LET60 = default(IToken);
-		IToken string_literal62 = default(IToken);
+		IToken WHILE55 = default(IToken);
+		IToken string_literal56 = default(IToken);
+		IToken FOR57 = default(IToken);
+		IToken ASSIGN58 = default(IToken);
+		IToken string_literal59 = default(IToken);
+		IToken string_literal60 = default(IToken);
+		IToken BREAK61 = default(IToken);
+		IToken LET62 = default(IToken);
 		IToken string_literal64 = default(IToken);
-		IToken MINUS65 = default(IToken);
+		IToken char_literal66 = default(IToken);
+		IToken string_literal68 = default(IToken);
+		IToken MINUS69 = default(IToken);
 		AstParserRuleReturnScope<object, IToken> e1 = default(AstParserRuleReturnScope<object, IToken>);
 		AstParserRuleReturnScope<object, IToken> e2 = default(AstParserRuleReturnScope<object, IToken>);
 		AstParserRuleReturnScope<object, IToken> ifx = default(AstParserRuleReturnScope<object, IToken>);
@@ -1224,10 +1217,12 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		AstParserRuleReturnScope<object, IToken> lvalue41 = default(AstParserRuleReturnScope<object, IToken>);
 		AstParserRuleReturnScope<object, IToken> expr43 = default(AstParserRuleReturnScope<object, IToken>);
 		AstParserRuleReturnScope<object, IToken> lvalue44 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> expr_seq46 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> declaration_list61 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> expr_seq63 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> texpr66 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr46 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr48 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> declaration63 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr65 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr67 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> texpr70 = default(AstParserRuleReturnScope<object, IToken>);
 
 		object var_tree = default(object);
 		object STRING26_tree = default(object);
@@ -1245,28 +1240,31 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		object ASSIGN42_tree = default(object);
 		object char_literal45_tree = default(object);
 		object char_literal47_tree = default(object);
-		object string_literal48_tree = default(object);
-		object string_literal49_tree = default(object);
+		object char_literal49_tree = default(object);
 		object string_literal50_tree = default(object);
 		object string_literal51_tree = default(object);
 		object string_literal52_tree = default(object);
-		object WHILE53_tree = default(object);
+		object string_literal53_tree = default(object);
 		object string_literal54_tree = default(object);
-		object FOR55_tree = default(object);
-		object ASSIGN56_tree = default(object);
-		object string_literal57_tree = default(object);
-		object string_literal58_tree = default(object);
-		object BREAK59_tree = default(object);
-		object LET60_tree = default(object);
-		object string_literal62_tree = default(object);
+		object WHILE55_tree = default(object);
+		object string_literal56_tree = default(object);
+		object FOR57_tree = default(object);
+		object ASSIGN58_tree = default(object);
+		object string_literal59_tree = default(object);
+		object string_literal60_tree = default(object);
+		object BREAK61_tree = default(object);
+		object LET62_tree = default(object);
 		object string_literal64_tree = default(object);
-		object MINUS65_tree = default(object);
+		object char_literal66_tree = default(object);
+		object string_literal68_tree = default(object);
+		object MINUS69_tree = default(object);
 		RewriteRuleITokenStream stream_67=new RewriteRuleITokenStream(adaptor,"token 67");
 		RewriteRuleITokenStream stream_66=new RewriteRuleITokenStream(adaptor,"token 66");
 		RewriteRuleITokenStream stream_69=new RewriteRuleITokenStream(adaptor,"token 69");
 		RewriteRuleITokenStream stream_59=new RewriteRuleITokenStream(adaptor,"token 59");
 		RewriteRuleITokenStream stream_68=new RewriteRuleITokenStream(adaptor,"token 68");
 		RewriteRuleITokenStream stream_58=new RewriteRuleITokenStream(adaptor,"token 58");
+		RewriteRuleITokenStream stream_57=new RewriteRuleITokenStream(adaptor,"token 57");
 		RewriteRuleITokenStream stream_WHILE=new RewriteRuleITokenStream(adaptor,"token WHILE");
 		RewriteRuleITokenStream stream_ASSIGN=new RewriteRuleITokenStream(adaptor,"token ASSIGN");
 		RewriteRuleITokenStream stream_FOR=new RewriteRuleITokenStream(adaptor,"token FOR");
@@ -1281,66 +1279,65 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_LET=new RewriteRuleITokenStream(adaptor,"token LET");
 		RewriteRuleITokenStream stream_73=new RewriteRuleITokenStream(adaptor,"token 73");
 		RewriteRuleITokenStream stream_61=new RewriteRuleITokenStream(adaptor,"token 61");
-		RewriteRuleSubtreeStream stream_declaration_list=new RewriteRuleSubtreeStream(adaptor,"rule declaration_list");
+		RewriteRuleSubtreeStream stream_declaration=new RewriteRuleSubtreeStream(adaptor,"rule declaration");
 		RewriteRuleSubtreeStream stream_lvalue=new RewriteRuleSubtreeStream(adaptor,"rule lvalue");
 		RewriteRuleSubtreeStream stream_field_list=new RewriteRuleSubtreeStream(adaptor,"rule field_list");
 		RewriteRuleSubtreeStream stream_texpr=new RewriteRuleSubtreeStream(adaptor,"rule texpr");
 		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
 		RewriteRuleSubtreeStream stream_type_id=new RewriteRuleSubtreeStream(adaptor,"rule type_id");
-		RewriteRuleSubtreeStream stream_expr_seq=new RewriteRuleSubtreeStream(adaptor,"rule expr_seq");
 		RewriteRuleSubtreeStream stream_expr_list=new RewriteRuleSubtreeStream(adaptor,"rule expr_list");
 		try { DebugEnterRule(GrammarFileName, "texpr");
 		DebugLocation(131, 2);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:131:6: ( STRING | INT | NIL | ( ID '[' expr ']' 'of' )=> type_id '[' e1= expr ']' 'of' e2= expr -> ^( ARRAY_CREATION type_id $e1 $e2) | ( ID '(' )=> ( ID '(' ( expr_list )? ')' ) -> ^( FUNCTION_CALL ID ^( EXPRESSION_LIST ( expr_list )? ) ) | ( ID '{' )=> ( ID '{' ( field_list )? '}' ) -> ^( RECORD_CREATION ID ( field_list )? ) | ( lvalue ASSIGN )=> ( lvalue ASSIGN expr ) -> ^( ASSIGN lvalue expr ) | lvalue | '(' ( expr_seq )? ')' -> ^( EXPRESSION_SEQ ( expr_seq )? ) | ( 'if' expr 'then' expr 'else' )=> ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr ) -> ^( IF_THEN_ELSE $ifx $thenx $elsex) | 'if' ifx= expr 'then' elsex= expr -> ^( IF_THEN $ifx $elsex) | WHILE condition= expr 'do' something= expr -> ^( WHILE $condition $something) | FOR var= ID ASSIGN init= expr 'to' limit= expr 'do' something= expr -> ^( FOR $var $init $limit $something) | BREAK | LET declaration_list 'in' ( expr_seq )? 'end' -> ^( LET declaration_list ( expr_seq )? ) | MINUS texpr -> ^( UMINUS texpr ) )
-			int alt13=16;
-			try { DebugEnterDecision(13, false);
+			// F:\\Alex\\Tiger.g:131:6: ( STRING | INT | NIL | ( ID '[' expr ']' 'of' )=> type_id '[' e1= expr ']' 'of' e2= expr -> ^( ARRAY_CREATION type_id $e1 $e2) | ( ID '(' )=> ( ID '(' ( expr_list )? ')' ) -> ^( FUNCTION_CALL ID ^( EXPRESSION_LIST ( expr_list )? ) ) | ( ID '{' )=> ( ID '{' ( field_list )? '}' ) -> ^( RECORD_CREATION ID ( field_list )? ) | ( lvalue ASSIGN )=> ( lvalue ASSIGN expr ) -> ^( ASSIGN lvalue expr ) | lvalue | '(' ( expr )? ( ';' expr )* ')' -> ^( EXPRESSION_SEQ ( expr )* ) | ( 'if' expr 'then' expr 'else' )=> ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr ) -> ^( IF_THEN_ELSE $ifx $thenx $elsex) | 'if' ifx= expr 'then' elsex= expr -> ^( IF_THEN $ifx $elsex) | WHILE condition= expr 'do' something= expr -> ^( WHILE $condition $something) | FOR var= ID ASSIGN init= expr 'to' limit= expr 'do' something= expr -> ^( FOR $var $init $limit $something) | BREAK | LET ( declaration )+ 'in' ( expr ( ';' expr )* )? 'end' -> ^( LET ^( DECL_LIST ( declaration )+ ) ^( EXPRESSION_SEQ ( expr )* ) ) | MINUS texpr -> ^( UMINUS texpr ) )
+			int alt16=16;
+			try { DebugEnterDecision(16, false);
 			switch (input.LA(1))
 			{
 			case STRING:
 				{
-				alt13 = 1;
+				alt16 = 1;
 				}
 				break;
 			case INT:
 				{
-				alt13 = 2;
+				alt16 = 2;
 				}
 				break;
 			case NIL:
 				{
-				alt13 = 3;
+				alt16 = 3;
 				}
 				break;
 			case ID:
 				{
-				int LA13_4 = input.LA(2);
+				int LA16_4 = input.LA(2);
 
 				if ((EvaluatePredicate(synpred1_Tiger_fragment)))
 				{
-					alt13 = 4;
+					alt16 = 4;
 				}
 				else if ((EvaluatePredicate(synpred2_Tiger_fragment)))
 				{
-					alt13 = 5;
+					alt16 = 5;
 				}
 				else if ((EvaluatePredicate(synpred3_Tiger_fragment)))
 				{
-					alt13 = 6;
+					alt16 = 6;
 				}
 				else if ((EvaluatePredicate(synpred4_Tiger_fragment)))
 				{
-					alt13 = 7;
+					alt16 = 7;
 				}
 				else if ((true))
 				{
-					alt13 = 8;
+					alt16 = 8;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 13, 4, input);
+					NoViableAltException nvae = new NoViableAltException("", 16, 4, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -1348,25 +1345,25 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 53:
 				{
-				alt13 = 9;
+				alt16 = 9;
 				}
 				break;
 			case 65:
 				{
-				int LA13_6 = input.LA(2);
+				int LA16_6 = input.LA(2);
 
 				if ((EvaluatePredicate(synpred5_Tiger_fragment)))
 				{
-					alt13 = 10;
+					alt16 = 10;
 				}
 				else if ((true))
 				{
-					alt13 = 11;
+					alt16 = 11;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 13, 6, input);
+					NoViableAltException nvae = new NoViableAltException("", 16, 6, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -1374,44 +1371,44 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case WHILE:
 				{
-				alt13 = 12;
+				alt16 = 12;
 				}
 				break;
 			case FOR:
 				{
-				alt13 = 13;
+				alt16 = 13;
 				}
 				break;
 			case BREAK:
 				{
-				alt13 = 14;
+				alt16 = 14;
 				}
 				break;
 			case LET:
 				{
-				alt13 = 15;
+				alt16 = 15;
 				}
 				break;
 			case MINUS:
 				{
-				alt13 = 16;
+				alt16 = 16;
 				}
 				break;
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 13, 0, input);
+					NoViableAltException nvae = new NoViableAltException("", 16, 0, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(13); }
-			switch (alt13)
+			} finally { DebugExitDecision(16); }
+			switch (alt16)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:131:12: STRING
+				// F:\\Alex\\Tiger.g:131:12: STRING
 				{
 				root_0 = (object)adaptor.Nil();
 
@@ -1426,7 +1423,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:132:5: INT
+				// F:\\Alex\\Tiger.g:132:5: INT
 				{
 				root_0 = (object)adaptor.Nil();
 
@@ -1441,7 +1438,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:133:5: NIL
+				// F:\\Alex\\Tiger.g:133:5: NIL
 				{
 				root_0 = (object)adaptor.Nil();
 
@@ -1456,7 +1453,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:134:5: ( ID '[' expr ']' 'of' )=> type_id '[' e1= expr ']' 'of' e2= expr
+				// F:\\Alex\\Tiger.g:134:5: ( ID '[' expr ']' 'of' )=> type_id '[' e1= expr ']' 'of' e2= expr
 				{
 				DebugLocation(134, 31);
 				PushFollow(Follow._type_id_in_texpr834);
@@ -1492,7 +1489,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: type_id, e2, e1
+				// elements: e2, type_id, e1
 				// token labels: 
 				// rule labels: retval, e1, e2
 				// token list labels: 
@@ -1508,7 +1505,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 134:68: -> ^( ARRAY_CREATION type_id $e1 $e2)
 				{
 					DebugLocation(134, 71);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:134:71: ^( ARRAY_CREATION type_id $e1 $e2)
+					// F:\\Alex\\Tiger.g:134:71: ^( ARRAY_CREATION type_id $e1 $e2)
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(134, 73);
@@ -1534,12 +1531,12 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:5: ( ID '(' )=> ( ID '(' ( expr_list )? ')' )
+				// F:\\Alex\\Tiger.g:135:5: ( ID '(' )=> ( ID '(' ( expr_list )? ')' )
 				{
 				DebugLocation(135, 15);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:15: ( ID '(' ( expr_list )? ')' )
+				// F:\\Alex\\Tiger.g:135:15: ( ID '(' ( expr_list )? ')' )
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:16: ID '(' ( expr_list )? ')'
+				// F:\\Alex\\Tiger.g:135:16: ID '(' ( expr_list )? ')'
 				{
 				DebugLocation(135, 16);
 				ID33=(IToken)Match(input,ID,Follow._ID_in_texpr876); if (state.failed) return retval; 
@@ -1550,7 +1547,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				if (state.backtracking == 0) stream_53.Add(char_literal34);
 
 				DebugLocation(135, 23);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:23: ( expr_list )?
+				// F:\\Alex\\Tiger.g:135:23: ( expr_list )?
 				int alt9=2;
 				try { DebugEnterSubRule(9);
 				try { DebugEnterDecision(9, false);
@@ -1565,7 +1562,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:23: expr_list
+					// F:\\Alex\\Tiger.g:135:23: expr_list
 					{
 					DebugLocation(135, 23);
 					PushFollow(Follow._expr_list_in_texpr880);
@@ -1591,7 +1588,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: expr_list, ID
+				// elements: ID, expr_list
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -1605,7 +1602,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 135:39: -> ^( FUNCTION_CALL ID ^( EXPRESSION_LIST ( expr_list )? ) )
 				{
 					DebugLocation(135, 42);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:42: ^( FUNCTION_CALL ID ^( EXPRESSION_LIST ( expr_list )? ) )
+					// F:\\Alex\\Tiger.g:135:42: ^( FUNCTION_CALL ID ^( EXPRESSION_LIST ( expr_list )? ) )
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(135, 44);
@@ -1614,14 +1611,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					DebugLocation(135, 58);
 					adaptor.AddChild(root_1, stream_ID.NextNode());
 					DebugLocation(135, 61);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:61: ^( EXPRESSION_LIST ( expr_list )? )
+					// F:\\Alex\\Tiger.g:135:61: ^( EXPRESSION_LIST ( expr_list )? )
 					{
 					object root_2 = (object)adaptor.Nil();
 					DebugLocation(135, 63);
 					root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXPRESSION_LIST, "EXPRESSION_LIST"), root_2);
 
 					DebugLocation(135, 79);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:79: ( expr_list )?
+					// F:\\Alex\\Tiger.g:135:79: ( expr_list )?
 					if (stream_expr_list.HasNext)
 					{
 						DebugLocation(135, 79);
@@ -1646,12 +1643,12 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:5: ( ID '{' )=> ( ID '{' ( field_list )? '}' )
+				// F:\\Alex\\Tiger.g:136:5: ( ID '{' )=> ( ID '{' ( field_list )? '}' )
 				{
 				DebugLocation(136, 17);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:17: ( ID '{' ( field_list )? '}' )
+				// F:\\Alex\\Tiger.g:136:17: ( ID '{' ( field_list )? '}' )
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:18: ID '{' ( field_list )? '}'
+				// F:\\Alex\\Tiger.g:136:18: ID '{' ( field_list )? '}'
 				{
 				DebugLocation(136, 18);
 				ID37=(IToken)Match(input,ID,Follow._ID_in_texpr914); if (state.failed) return retval; 
@@ -1662,7 +1659,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				if (state.backtracking == 0) stream_72.Add(char_literal38);
 
 				DebugLocation(136, 25);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:25: ( field_list )?
+				// F:\\Alex\\Tiger.g:136:25: ( field_list )?
 				int alt10=2;
 				try { DebugEnterSubRule(10);
 				try { DebugEnterDecision(10, false);
@@ -1677,7 +1674,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:25: field_list
+					// F:\\Alex\\Tiger.g:136:25: field_list
 					{
 					DebugLocation(136, 25);
 					PushFollow(Follow._field_list_in_texpr918);
@@ -1717,7 +1714,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 136:42: -> ^( RECORD_CREATION ID ( field_list )? )
 				{
 					DebugLocation(136, 45);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:45: ^( RECORD_CREATION ID ( field_list )? )
+					// F:\\Alex\\Tiger.g:136:45: ^( RECORD_CREATION ID ( field_list )? )
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(136, 47);
@@ -1726,7 +1723,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					DebugLocation(136, 63);
 					adaptor.AddChild(root_1, stream_ID.NextNode());
 					DebugLocation(136, 66);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:66: ( field_list )?
+					// F:\\Alex\\Tiger.g:136:66: ( field_list )?
 					if (stream_field_list.HasNext)
 					{
 						DebugLocation(136, 66);
@@ -1748,12 +1745,12 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:137:5: ( lvalue ASSIGN )=> ( lvalue ASSIGN expr )
+				// F:\\Alex\\Tiger.g:137:5: ( lvalue ASSIGN )=> ( lvalue ASSIGN expr )
 				{
 				DebugLocation(137, 24);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:137:24: ( lvalue ASSIGN expr )
+				// F:\\Alex\\Tiger.g:137:24: ( lvalue ASSIGN expr )
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:137:25: lvalue ASSIGN expr
+				// F:\\Alex\\Tiger.g:137:25: lvalue ASSIGN expr
 				{
 				DebugLocation(137, 25);
 				PushFollow(Follow._lvalue_in_texpr948);
@@ -1778,7 +1775,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: lvalue, ASSIGN, expr
+				// elements: expr, ASSIGN, lvalue
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -1792,7 +1789,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 137:45: -> ^( ASSIGN lvalue expr )
 				{
 					DebugLocation(137, 48);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:137:48: ^( ASSIGN lvalue expr )
+					// F:\\Alex\\Tiger.g:137:48: ^( ASSIGN lvalue expr )
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(137, 50);
@@ -1816,7 +1813,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:138:5: lvalue
+				// F:\\Alex\\Tiger.g:138:5: lvalue
 				{
 				root_0 = (object)adaptor.Nil();
 
@@ -1831,14 +1828,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:139:5: '(' ( expr_seq )? ')'
+				// F:\\Alex\\Tiger.g:139:5: '(' ( expr )? ( ';' expr )* ')'
 				{
 				DebugLocation(139, 5);
 				char_literal45=(IToken)Match(input,53,Follow._53_in_texpr975); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_53.Add(char_literal45);
 
 				DebugLocation(139, 9);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:139:9: ( expr_seq )?
+				// F:\\Alex\\Tiger.g:139:9: ( expr )?
 				int alt11=2;
 				try { DebugEnterSubRule(11);
 				try { DebugEnterDecision(11, false);
@@ -1853,14 +1850,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:139:9: expr_seq
+					// F:\\Alex\\Tiger.g:139:9: expr
 					{
 					DebugLocation(139, 9);
-					PushFollow(Follow._expr_seq_in_texpr977);
-					expr_seq46=expr_seq();
+					PushFollow(Follow._expr_in_texpr977);
+					expr46=expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) stream_expr_seq.Add(expr_seq46.Tree);
+					if (state.backtracking == 0) stream_expr.Add(expr46.Tree);
 
 					}
 					break;
@@ -1868,15 +1865,61 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				}
 				} finally { DebugExitSubRule(11); }
 
-				DebugLocation(139, 19);
-				char_literal47=(IToken)Match(input,54,Follow._54_in_texpr980); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_54.Add(char_literal47);
+				DebugLocation(139, 15);
+				// F:\\Alex\\Tiger.g:139:15: ( ';' expr )*
+				try { DebugEnterSubRule(12);
+				while (true)
+				{
+					int alt12=2;
+					try { DebugEnterDecision(12, false);
+					int LA12_0 = input.LA(1);
+
+					if ((LA12_0==57))
+					{
+						alt12 = 1;
+					}
+
+
+					} finally { DebugExitDecision(12); }
+					switch ( alt12 )
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// F:\\Alex\\Tiger.g:139:16: ';' expr
+						{
+						DebugLocation(139, 16);
+						char_literal47=(IToken)Match(input,57,Follow._57_in_texpr981); if (state.failed) return retval; 
+						if (state.backtracking == 0) stream_57.Add(char_literal47);
+
+						DebugLocation(139, 20);
+						PushFollow(Follow._expr_in_texpr983);
+						expr48=expr();
+						PopFollow();
+						if (state.failed) return retval;
+						if (state.backtracking == 0) stream_expr.Add(expr48.Tree);
+
+						}
+						break;
+
+					default:
+						goto loop12;
+					}
+				}
+
+				loop12:
+					;
+
+				} finally { DebugExitSubRule(12); }
+
+				DebugLocation(139, 27);
+				char_literal49=(IToken)Match(input,54,Follow._54_in_texpr987); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_54.Add(char_literal49);
 
 
 
 				{
 				// AST REWRITE
-				// elements: expr_seq
+				// elements: expr
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -1887,24 +1930,24 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 139:23: -> ^( EXPRESSION_SEQ ( expr_seq )? )
+				// 139:31: -> ^( EXPRESSION_SEQ ( expr )* )
 				{
-					DebugLocation(139, 26);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:139:26: ^( EXPRESSION_SEQ ( expr_seq )? )
+					DebugLocation(139, 34);
+					// F:\\Alex\\Tiger.g:139:34: ^( EXPRESSION_SEQ ( expr )* )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(139, 28);
+					DebugLocation(139, 36);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXPRESSION_SEQ, "EXPRESSION_SEQ"), root_1);
 
-					DebugLocation(139, 43);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:139:43: ( expr_seq )?
-					if (stream_expr_seq.HasNext)
+					DebugLocation(139, 51);
+					// F:\\Alex\\Tiger.g:139:51: ( expr )*
+					while ( stream_expr.HasNext )
 					{
-						DebugLocation(139, 43);
-						adaptor.AddChild(root_1, stream_expr_seq.NextTree());
+						DebugLocation(139, 51);
+						adaptor.AddChild(root_1, stream_expr.NextTree());
 
 					}
-					stream_expr_seq.Reset();
+					stream_expr.Reset();
 
 					adaptor.AddChild(root_0, root_1);
 					}
@@ -1919,39 +1962,39 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:140:5: ( 'if' expr 'then' expr 'else' )=> ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr )
+				// F:\\Alex\\Tiger.g:140:5: ( 'if' expr 'then' expr 'else' )=> ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr )
 				{
 				DebugLocation(140, 39);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:140:39: ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr )
+				// F:\\Alex\\Tiger.g:140:39: ( 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr )
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:140:40: 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr
+				// F:\\Alex\\Tiger.g:140:40: 'if' ifx= expr 'then' thenx= expr 'else' elsex= expr
 				{
 				DebugLocation(140, 40);
-				string_literal48=(IToken)Match(input,65,Follow._65_in_texpr1010); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_65.Add(string_literal48);
+				string_literal50=(IToken)Match(input,65,Follow._65_in_texpr1017); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_65.Add(string_literal50);
 
 				DebugLocation(140, 48);
-				PushFollow(Follow._expr_in_texpr1014);
+				PushFollow(Follow._expr_in_texpr1021);
 				ifx=expr();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_expr.Add(ifx.Tree);
 				DebugLocation(140, 54);
-				string_literal49=(IToken)Match(input,68,Follow._68_in_texpr1016); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_68.Add(string_literal49);
+				string_literal51=(IToken)Match(input,68,Follow._68_in_texpr1023); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_68.Add(string_literal51);
 
 				DebugLocation(140, 66);
-				PushFollow(Follow._expr_in_texpr1020);
+				PushFollow(Follow._expr_in_texpr1027);
 				thenx=expr();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_expr.Add(thenx.Tree);
 				DebugLocation(140, 72);
-				string_literal50=(IToken)Match(input,62,Follow._62_in_texpr1022); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_62.Add(string_literal50);
+				string_literal52=(IToken)Match(input,62,Follow._62_in_texpr1029); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_62.Add(string_literal52);
 
 				DebugLocation(140, 84);
-				PushFollow(Follow._expr_in_texpr1026);
+				PushFollow(Follow._expr_in_texpr1033);
 				elsex=expr();
 				PopFollow();
 				if (state.failed) return retval;
@@ -1963,7 +2006,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: ifx, thenx, elsex
+				// elements: elsex, ifx, thenx
 				// token labels: 
 				// rule labels: ifx, retval, thenx, elsex
 				// token list labels: 
@@ -1980,7 +2023,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 140:91: -> ^( IF_THEN_ELSE $ifx $thenx $elsex)
 				{
 					DebugLocation(140, 94);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:140:94: ^( IF_THEN_ELSE $ifx $thenx $elsex)
+					// F:\\Alex\\Tiger.g:140:94: ^( IF_THEN_ELSE $ifx $thenx $elsex)
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(140, 96);
@@ -2006,24 +2049,24 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 11:
 				DebugEnterAlt(11);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:141:5: 'if' ifx= expr 'then' elsex= expr
+				// F:\\Alex\\Tiger.g:141:5: 'if' ifx= expr 'then' elsex= expr
 				{
 				DebugLocation(141, 5);
-				string_literal51=(IToken)Match(input,65,Follow._65_in_texpr1048); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_65.Add(string_literal51);
+				string_literal53=(IToken)Match(input,65,Follow._65_in_texpr1055); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_65.Add(string_literal53);
 
 				DebugLocation(141, 13);
-				PushFollow(Follow._expr_in_texpr1052);
+				PushFollow(Follow._expr_in_texpr1059);
 				ifx=expr();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_expr.Add(ifx.Tree);
 				DebugLocation(141, 19);
-				string_literal52=(IToken)Match(input,68,Follow._68_in_texpr1054); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_68.Add(string_literal52);
+				string_literal54=(IToken)Match(input,68,Follow._68_in_texpr1061); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_68.Add(string_literal54);
 
 				DebugLocation(141, 31);
-				PushFollow(Follow._expr_in_texpr1058);
+				PushFollow(Follow._expr_in_texpr1065);
 				elsex=expr();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2048,7 +2091,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 141:37: -> ^( IF_THEN $ifx $elsex)
 				{
 					DebugLocation(141, 40);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:141:40: ^( IF_THEN $ifx $elsex)
+					// F:\\Alex\\Tiger.g:141:40: ^( IF_THEN $ifx $elsex)
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(141, 42);
@@ -2072,24 +2115,24 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 12:
 				DebugEnterAlt(12);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:142:5: WHILE condition= expr 'do' something= expr
+				// F:\\Alex\\Tiger.g:142:5: WHILE condition= expr 'do' something= expr
 				{
 				DebugLocation(142, 5);
-				WHILE53=(IToken)Match(input,WHILE,Follow._WHILE_in_texpr1076); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_WHILE.Add(WHILE53);
+				WHILE55=(IToken)Match(input,WHILE,Follow._WHILE_in_texpr1083); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_WHILE.Add(WHILE55);
 
 				DebugLocation(142, 20);
-				PushFollow(Follow._expr_in_texpr1080);
+				PushFollow(Follow._expr_in_texpr1087);
 				condition=expr();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_expr.Add(condition.Tree);
 				DebugLocation(142, 26);
-				string_literal54=(IToken)Match(input,61,Follow._61_in_texpr1082); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_61.Add(string_literal54);
+				string_literal56=(IToken)Match(input,61,Follow._61_in_texpr1089); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_61.Add(string_literal56);
 
 				DebugLocation(142, 40);
-				PushFollow(Follow._expr_in_texpr1086);
+				PushFollow(Follow._expr_in_texpr1093);
 				something=expr();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2098,7 +2141,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: condition, something, WHILE
+				// elements: WHILE, something, condition
 				// token labels: 
 				// rule labels: retval, condition, something
 				// token list labels: 
@@ -2114,7 +2157,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 142:46: -> ^( WHILE $condition $something)
 				{
 					DebugLocation(142, 49);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:142:49: ^( WHILE $condition $something)
+					// F:\\Alex\\Tiger.g:142:49: ^( WHILE $condition $something)
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(142, 51);
@@ -2138,42 +2181,42 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 13:
 				DebugEnterAlt(13);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:143:5: FOR var= ID ASSIGN init= expr 'to' limit= expr 'do' something= expr
+				// F:\\Alex\\Tiger.g:143:5: FOR var= ID ASSIGN init= expr 'to' limit= expr 'do' something= expr
 				{
 				DebugLocation(143, 5);
-				FOR55=(IToken)Match(input,FOR,Follow._FOR_in_texpr1104); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_FOR.Add(FOR55);
+				FOR57=(IToken)Match(input,FOR,Follow._FOR_in_texpr1111); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_FOR.Add(FOR57);
 
 				DebugLocation(143, 12);
-				var=(IToken)Match(input,ID,Follow._ID_in_texpr1108); if (state.failed) return retval; 
+				var=(IToken)Match(input,ID,Follow._ID_in_texpr1115); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ID.Add(var);
 
 				DebugLocation(143, 16);
-				ASSIGN56=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_texpr1110); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_ASSIGN.Add(ASSIGN56);
+				ASSIGN58=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_texpr1117); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_ASSIGN.Add(ASSIGN58);
 
 				DebugLocation(143, 27);
-				PushFollow(Follow._expr_in_texpr1114);
+				PushFollow(Follow._expr_in_texpr1121);
 				init=expr();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_expr.Add(init.Tree);
 				DebugLocation(143, 33);
-				string_literal57=(IToken)Match(input,69,Follow._69_in_texpr1116); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_69.Add(string_literal57);
+				string_literal59=(IToken)Match(input,69,Follow._69_in_texpr1123); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_69.Add(string_literal59);
 
 				DebugLocation(143, 43);
-				PushFollow(Follow._expr_in_texpr1120);
+				PushFollow(Follow._expr_in_texpr1127);
 				limit=expr();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_expr.Add(limit.Tree);
 				DebugLocation(143, 49);
-				string_literal58=(IToken)Match(input,61,Follow._61_in_texpr1122); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_61.Add(string_literal58);
+				string_literal60=(IToken)Match(input,61,Follow._61_in_texpr1129); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_61.Add(string_literal60);
 
 				DebugLocation(143, 63);
-				PushFollow(Follow._expr_in_texpr1126);
+				PushFollow(Follow._expr_in_texpr1133);
 				something=expr();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2182,7 +2225,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: var, limit, something, FOR, init
+				// elements: limit, var, init, something, FOR
 				// token labels: var
 				// rule labels: limit, retval, init, something
 				// token list labels: 
@@ -2200,7 +2243,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 143:69: -> ^( FOR $var $init $limit $something)
 				{
 					DebugLocation(143, 72);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:143:72: ^( FOR $var $init $limit $something)
+					// F:\\Alex\\Tiger.g:143:72: ^( FOR $var $init $limit $something)
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(143, 74);
@@ -2228,77 +2271,166 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 14:
 				DebugEnterAlt(14);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:144:5: BREAK
+				// F:\\Alex\\Tiger.g:144:5: BREAK
 				{
 				root_0 = (object)adaptor.Nil();
 
 				DebugLocation(144, 5);
-				BREAK59=(IToken)Match(input,BREAK,Follow._BREAK_in_texpr1150); if (state.failed) return retval;
+				BREAK61=(IToken)Match(input,BREAK,Follow._BREAK_in_texpr1157); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				BREAK59_tree = (object)adaptor.Create(BREAK59);
-				adaptor.AddChild(root_0, BREAK59_tree);
+				BREAK61_tree = (object)adaptor.Create(BREAK61);
+				adaptor.AddChild(root_0, BREAK61_tree);
 				}
 
 				}
 				break;
 			case 15:
 				DebugEnterAlt(15);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:145:5: LET declaration_list 'in' ( expr_seq )? 'end'
+				// F:\\Alex\\Tiger.g:145:5: LET ( declaration )+ 'in' ( expr ( ';' expr )* )? 'end'
 				{
 				DebugLocation(145, 5);
-				LET60=(IToken)Match(input,LET,Follow._LET_in_texpr1156); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_LET.Add(LET60);
+				LET62=(IToken)Match(input,LET,Follow._LET_in_texpr1163); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_LET.Add(LET62);
 
 				DebugLocation(145, 9);
-				PushFollow(Follow._declaration_list_in_texpr1158);
-				declaration_list61=declaration_list();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_declaration_list.Add(declaration_list61.Tree);
-				DebugLocation(145, 26);
-				string_literal62=(IToken)Match(input,66,Follow._66_in_texpr1160); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_66.Add(string_literal62);
-
-				DebugLocation(145, 31);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:145:31: ( expr_seq )?
-				int alt12=2;
-				try { DebugEnterSubRule(12);
-				try { DebugEnterDecision(12, false);
-				int LA12_0 = input.LA(1);
-
-				if ((LA12_0==BREAK||LA12_0==FOR||LA12_0==ID||(LA12_0>=INT && LA12_0<=LET)||LA12_0==MINUS||LA12_0==NIL||LA12_0==STRING||LA12_0==WHILE||LA12_0==53||LA12_0==65))
+				// F:\\Alex\\Tiger.g:145:9: ( declaration )+
+				int cnt13=0;
+				try { DebugEnterSubRule(13);
+				while (true)
 				{
-					alt12 = 1;
+					int alt13=2;
+					try { DebugEnterDecision(13, false);
+					int LA13_0 = input.LA(1);
+
+					if ((LA13_0==64||(LA13_0>=70 && LA13_0<=71)))
+					{
+						alt13 = 1;
+					}
+
+
+					} finally { DebugExitDecision(13); }
+					switch (alt13)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// F:\\Alex\\Tiger.g:145:9: declaration
+						{
+						DebugLocation(145, 9);
+						PushFollow(Follow._declaration_in_texpr1165);
+						declaration63=declaration();
+						PopFollow();
+						if (state.failed) return retval;
+						if (state.backtracking == 0) stream_declaration.Add(declaration63.Tree);
+
+						}
+						break;
+
+					default:
+						if (cnt13 >= 1)
+							goto loop13;
+
+						if (state.backtracking>0) {state.failed=true; return retval;}
+						EarlyExitException eee13 = new EarlyExitException( 13, input );
+						DebugRecognitionException(eee13);
+						throw eee13;
+					}
+					cnt13++;
 				}
-				} finally { DebugExitDecision(12); }
-				switch (alt12)
+				loop13:
+					;
+
+				} finally { DebugExitSubRule(13); }
+
+				DebugLocation(145, 22);
+				string_literal64=(IToken)Match(input,66,Follow._66_in_texpr1168); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_66.Add(string_literal64);
+
+				DebugLocation(145, 27);
+				// F:\\Alex\\Tiger.g:145:27: ( expr ( ';' expr )* )?
+				int alt15=2;
+				try { DebugEnterSubRule(15);
+				try { DebugEnterDecision(15, false);
+				int LA15_0 = input.LA(1);
+
+				if ((LA15_0==BREAK||LA15_0==FOR||LA15_0==ID||(LA15_0>=INT && LA15_0<=LET)||LA15_0==MINUS||LA15_0==NIL||LA15_0==STRING||LA15_0==WHILE||LA15_0==53||LA15_0==65))
+				{
+					alt15 = 1;
+				}
+				} finally { DebugExitDecision(15); }
+				switch (alt15)
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:145:31: expr_seq
+					// F:\\Alex\\Tiger.g:145:28: expr ( ';' expr )*
 					{
-					DebugLocation(145, 31);
-					PushFollow(Follow._expr_seq_in_texpr1162);
-					expr_seq63=expr_seq();
+					DebugLocation(145, 28);
+					PushFollow(Follow._expr_in_texpr1171);
+					expr65=expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) stream_expr_seq.Add(expr_seq63.Tree);
+					if (state.backtracking == 0) stream_expr.Add(expr65.Tree);
+					DebugLocation(145, 33);
+					// F:\\Alex\\Tiger.g:145:33: ( ';' expr )*
+					try { DebugEnterSubRule(14);
+					while (true)
+					{
+						int alt14=2;
+						try { DebugEnterDecision(14, false);
+						int LA14_0 = input.LA(1);
+
+						if ((LA14_0==57))
+						{
+							alt14 = 1;
+						}
+
+
+						} finally { DebugExitDecision(14); }
+						switch ( alt14 )
+						{
+						case 1:
+							DebugEnterAlt(1);
+							// F:\\Alex\\Tiger.g:145:34: ';' expr
+							{
+							DebugLocation(145, 34);
+							char_literal66=(IToken)Match(input,57,Follow._57_in_texpr1174); if (state.failed) return retval; 
+							if (state.backtracking == 0) stream_57.Add(char_literal66);
+
+							DebugLocation(145, 38);
+							PushFollow(Follow._expr_in_texpr1176);
+							expr67=expr();
+							PopFollow();
+							if (state.failed) return retval;
+							if (state.backtracking == 0) stream_expr.Add(expr67.Tree);
+
+							}
+							break;
+
+						default:
+							goto loop14;
+						}
+					}
+
+					loop14:
+						;
+
+					} finally { DebugExitSubRule(14); }
+
 
 					}
 					break;
 
 				}
-				} finally { DebugExitSubRule(12); }
+				} finally { DebugExitSubRule(15); }
 
-				DebugLocation(145, 41);
-				string_literal64=(IToken)Match(input,63,Follow._63_in_texpr1165); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_63.Add(string_literal64);
+				DebugLocation(145, 47);
+				string_literal68=(IToken)Match(input,63,Follow._63_in_texpr1182); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_63.Add(string_literal68);
 
 
 
 				{
 				// AST REWRITE
-				// elements: declaration_list, expr_seq, LET
+				// elements: expr, LET, declaration
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -2309,26 +2441,56 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 145:47: -> ^( LET declaration_list ( expr_seq )? )
+				// 145:53: -> ^( LET ^( DECL_LIST ( declaration )+ ) ^( EXPRESSION_SEQ ( expr )* ) )
 				{
-					DebugLocation(145, 50);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:145:50: ^( LET declaration_list ( expr_seq )? )
+					DebugLocation(145, 56);
+					// F:\\Alex\\Tiger.g:145:56: ^( LET ^( DECL_LIST ( declaration )+ ) ^( EXPRESSION_SEQ ( expr )* ) )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(145, 52);
+					DebugLocation(145, 58);
 					root_1 = (object)adaptor.BecomeRoot(stream_LET.NextNode(), root_1);
 
-					DebugLocation(145, 56);
-					adaptor.AddChild(root_1, stream_declaration_list.NextTree());
-					DebugLocation(145, 73);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:145:73: ( expr_seq )?
-					if (stream_expr_seq.HasNext)
+					DebugLocation(145, 62);
+					// F:\\Alex\\Tiger.g:145:62: ^( DECL_LIST ( declaration )+ )
 					{
-						DebugLocation(145, 73);
-						adaptor.AddChild(root_1, stream_expr_seq.NextTree());
+					object root_2 = (object)adaptor.Nil();
+					DebugLocation(145, 64);
+					root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(DECL_LIST, "DECL_LIST"), root_2);
+
+					DebugLocation(145, 74);
+					if (!(stream_declaration.HasNext))
+					{
+						throw new RewriteEarlyExitException();
+					}
+					while ( stream_declaration.HasNext )
+					{
+						DebugLocation(145, 74);
+						adaptor.AddChild(root_2, stream_declaration.NextTree());
 
 					}
-					stream_expr_seq.Reset();
+					stream_declaration.Reset();
+
+					adaptor.AddChild(root_1, root_2);
+					}
+					DebugLocation(145, 88);
+					// F:\\Alex\\Tiger.g:145:88: ^( EXPRESSION_SEQ ( expr )* )
+					{
+					object root_2 = (object)adaptor.Nil();
+					DebugLocation(145, 90);
+					root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXPRESSION_SEQ, "EXPRESSION_SEQ"), root_2);
+
+					DebugLocation(145, 105);
+					// F:\\Alex\\Tiger.g:145:105: ( expr )*
+					while ( stream_expr.HasNext )
+					{
+						DebugLocation(145, 105);
+						adaptor.AddChild(root_2, stream_expr.NextTree());
+
+					}
+					stream_expr.Reset();
+
+					adaptor.AddChild(root_1, root_2);
+					}
 
 					adaptor.AddChild(root_0, root_1);
 					}
@@ -2343,18 +2505,18 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 16:
 				DebugEnterAlt(16);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:146:5: MINUS texpr
+				// F:\\Alex\\Tiger.g:146:5: MINUS texpr
 				{
 				DebugLocation(146, 5);
-				MINUS65=(IToken)Match(input,MINUS,Follow._MINUS_in_texpr1182); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_MINUS.Add(MINUS65);
+				MINUS69=(IToken)Match(input,MINUS,Follow._MINUS_in_texpr1208); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_MINUS.Add(MINUS69);
 
 				DebugLocation(146, 11);
-				PushFollow(Follow._texpr_in_texpr1184);
-				texpr66=texpr();
+				PushFollow(Follow._texpr_in_texpr1210);
+				texpr70=texpr();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_texpr.Add(texpr66.Tree);
+				if (state.backtracking == 0) stream_texpr.Add(texpr70.Tree);
 
 
 				{
@@ -2373,7 +2535,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				// 146:17: -> ^( UMINUS texpr )
 				{
 					DebugLocation(146, 20);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:146:20: ^( UMINUS texpr )
+					// F:\\Alex\\Tiger.g:146:20: ^( UMINUS texpr )
 					{
 					object root_1 = (object)adaptor.Nil();
 					DebugLocation(146, 22);
@@ -2422,244 +2584,86 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	}
 	// $ANTLR end "texpr"
 
-	partial void EnterRule_expr_seq();
-	partial void LeaveRule_expr_seq();
-
-	// $ANTLR start "expr_seq"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:1: expr_seq : expr ( ';' expr )* -> ^( EXPRESSION_SEQ ( expr )+ ) ;
-	[GrammarRule("expr_seq")]
-	private AstParserRuleReturnScope<object, IToken> expr_seq()
-	{
-		EnterRule_expr_seq();
-		EnterRule("expr_seq", 9);
-		TraceIn("expr_seq", 9);
-		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
-		retval.Start = (IToken)input.LT(1);
-
-		object root_0 = default(object);
-
-		IToken char_literal68 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> expr67 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> expr69 = default(AstParserRuleReturnScope<object, IToken>);
-
-		object char_literal68_tree = default(object);
-		RewriteRuleITokenStream stream_57=new RewriteRuleITokenStream(adaptor,"token 57");
-		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
-		try { DebugEnterRule(GrammarFileName, "expr_seq");
-		DebugLocation(149, 54);
-		try
-		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:9: ( expr ( ';' expr )* -> ^( EXPRESSION_SEQ ( expr )+ ) )
-			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:12: expr ( ';' expr )*
-			{
-			DebugLocation(149, 12);
-			PushFollow(Follow._expr_in_expr_seq1203);
-			expr67=expr();
-			PopFollow();
-			if (state.failed) return retval;
-			if (state.backtracking == 0) stream_expr.Add(expr67.Tree);
-			DebugLocation(149, 17);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:17: ( ';' expr )*
-			try { DebugEnterSubRule(14);
-			while (true)
-			{
-				int alt14=2;
-				try { DebugEnterDecision(14, false);
-				int LA14_0 = input.LA(1);
-
-				if ((LA14_0==57))
-				{
-					alt14 = 1;
-				}
-
-
-				} finally { DebugExitDecision(14); }
-				switch ( alt14 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:18: ';' expr
-					{
-					DebugLocation(149, 18);
-					char_literal68=(IToken)Match(input,57,Follow._57_in_expr_seq1206); if (state.failed) return retval; 
-					if (state.backtracking == 0) stream_57.Add(char_literal68);
-
-					DebugLocation(149, 22);
-					PushFollow(Follow._expr_in_expr_seq1208);
-					expr69=expr();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) stream_expr.Add(expr69.Tree);
-
-					}
-					break;
-
-				default:
-					goto loop14;
-				}
-			}
-
-			loop14:
-				;
-
-			} finally { DebugExitSubRule(14); }
-
-
-
-			{
-			// AST REWRITE
-			// elements: expr
-			// token labels: 
-			// rule labels: retval
-			// token list labels: 
-			// rule list labels: 
-			// wildcard labels: 
-			if (state.backtracking == 0) {
-			retval.Tree = root_0;
-			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
-
-			root_0 = (object)adaptor.Nil();
-			// 149:29: -> ^( EXPRESSION_SEQ ( expr )+ )
-			{
-				DebugLocation(149, 32);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:149:32: ^( EXPRESSION_SEQ ( expr )+ )
-				{
-				object root_1 = (object)adaptor.Nil();
-				DebugLocation(149, 34);
-				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(EXPRESSION_SEQ, "EXPRESSION_SEQ"), root_1);
-
-				DebugLocation(149, 49);
-				if (!(stream_expr.HasNext))
-				{
-					throw new RewriteEarlyExitException();
-				}
-				while ( stream_expr.HasNext )
-				{
-					DebugLocation(149, 49);
-					adaptor.AddChild(root_1, stream_expr.NextTree());
-
-				}
-				stream_expr.Reset();
-
-				adaptor.AddChild(root_0, root_1);
-				}
-
-			}
-
-			retval.Tree = root_0;
-			}
-			}
-
-			}
-
-			retval.Stop = (IToken)input.LT(-1);
-
-			if (state.backtracking == 0) {
-			retval.Tree = (object)adaptor.RulePostProcessing(root_0);
-			adaptor.SetTokenBoundaries(retval.Tree, retval.Start, retval.Stop);
-			}
-		}
-		catch (RecognitionException re)
-		{
-			ReportError(re);
-			Recover(input,re);
-		retval.Tree = (object)adaptor.ErrorNode(input, retval.Start, input.LT(-1), re);
-
-		}
-		finally
-		{
-			TraceOut("expr_seq", 9);
-			LeaveRule("expr_seq", 9);
-			LeaveRule_expr_seq();
-		}
-		DebugLocation(149, 54);
-		} finally { DebugExitRule(GrammarFileName, "expr_seq"); }
-		return retval;
-
-	}
-	// $ANTLR end "expr_seq"
-
 	partial void EnterRule_expr_list();
 	partial void LeaveRule_expr_list();
 
 	// $ANTLR start "expr_list"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:151:1: expr_list : expr ( ',' ! expr )* ;
+	// F:\\Alex\\Tiger.g:149:1: expr_list : expr ( ',' ! expr )* ;
 	[GrammarRule("expr_list")]
 	private AstParserRuleReturnScope<object, IToken> expr_list()
 	{
 		EnterRule_expr_list();
-		EnterRule("expr_list", 10);
-		TraceIn("expr_list", 10);
+		EnterRule("expr_list", 9);
+		TraceIn("expr_list", 9);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken char_literal71 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> expr70 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> expr72 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken char_literal72 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> expr71 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr73 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object char_literal71_tree = default(object);
+		object char_literal72_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "expr_list");
-		DebugLocation(151, 28);
+		DebugLocation(149, 28);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:151:10: ( expr ( ',' ! expr )* )
+			// F:\\Alex\\Tiger.g:149:10: ( expr ( ',' ! expr )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:151:12: expr ( ',' ! expr )*
+			// F:\\Alex\\Tiger.g:149:12: expr ( ',' ! expr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(151, 12);
-			PushFollow(Follow._expr_in_expr_list1226);
-			expr70=expr();
+			DebugLocation(149, 12);
+			PushFollow(Follow._expr_in_expr_list1228);
+			expr71=expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, expr70.Tree);
-			DebugLocation(151, 17);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:151:17: ( ',' ! expr )*
-			try { DebugEnterSubRule(15);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, expr71.Tree);
+			DebugLocation(149, 17);
+			// F:\\Alex\\Tiger.g:149:17: ( ',' ! expr )*
+			try { DebugEnterSubRule(17);
 			while (true)
 			{
-				int alt15=2;
-				try { DebugEnterDecision(15, false);
-				int LA15_0 = input.LA(1);
+				int alt17=2;
+				try { DebugEnterDecision(17, false);
+				int LA17_0 = input.LA(1);
 
-				if ((LA15_0==55))
+				if ((LA17_0==55))
 				{
-					alt15 = 1;
+					alt17 = 1;
 				}
 
 
-				} finally { DebugExitDecision(15); }
-				switch ( alt15 )
+				} finally { DebugExitDecision(17); }
+				switch ( alt17 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:151:18: ',' ! expr
+					// F:\\Alex\\Tiger.g:149:18: ',' ! expr
 					{
-					DebugLocation(151, 21);
-					char_literal71=(IToken)Match(input,55,Follow._55_in_expr_list1229); if (state.failed) return retval;
-					DebugLocation(151, 23);
-					PushFollow(Follow._expr_in_expr_list1232);
-					expr72=expr();
+					DebugLocation(149, 21);
+					char_literal72=(IToken)Match(input,55,Follow._55_in_expr_list1231); if (state.failed) return retval;
+					DebugLocation(149, 23);
+					PushFollow(Follow._expr_in_expr_list1234);
+					expr73=expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, expr72.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, expr73.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop15;
+					goto loop17;
 				}
 			}
 
-			loop15:
+			loop17:
 				;
 
-			} finally { DebugExitSubRule(15); }
+			} finally { DebugExitSubRule(17); }
 
 
 			}
@@ -2680,11 +2684,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("expr_list", 10);
-			LeaveRule("expr_list", 10);
+			TraceOut("expr_list", 9);
+			LeaveRule("expr_list", 9);
 			LeaveRule_expr_list();
 		}
-		DebugLocation(151, 28);
+		DebugLocation(149, 28);
 		} finally { DebugExitRule(GrammarFileName, "expr_list"); }
 		return retval;
 
@@ -2695,114 +2699,114 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_field_list();
 
 	// $ANTLR start "field_list"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:153:1: field_list : ( ID EQUAL ! expr ) ( ',' ! ID EQUAL ! expr )* ;
+	// F:\\Alex\\Tiger.g:151:1: field_list : ( ID EQUAL ! expr ) ( ',' ! ID EQUAL ! expr )* ;
 	[GrammarRule("field_list")]
 	private AstParserRuleReturnScope<object, IToken> field_list()
 	{
 		EnterRule_field_list();
-		EnterRule("field_list", 11);
-		TraceIn("field_list", 11);
+		EnterRule("field_list", 10);
+		TraceIn("field_list", 10);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken ID73 = default(IToken);
-		IToken EQUAL74 = default(IToken);
-		IToken char_literal76 = default(IToken);
-		IToken ID77 = default(IToken);
-		IToken EQUAL78 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> expr75 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> expr79 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken ID74 = default(IToken);
+		IToken EQUAL75 = default(IToken);
+		IToken char_literal77 = default(IToken);
+		IToken ID78 = default(IToken);
+		IToken EQUAL79 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> expr76 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> expr80 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ID73_tree = default(object);
-		object EQUAL74_tree = default(object);
-		object char_literal76_tree = default(object);
-		object ID77_tree = default(object);
-		object EQUAL78_tree = default(object);
+		object ID74_tree = default(object);
+		object EQUAL75_tree = default(object);
+		object char_literal77_tree = default(object);
+		object ID78_tree = default(object);
+		object EQUAL79_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "field_list");
-		DebugLocation(153, 41);
+		DebugLocation(151, 41);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:153:11: ( ( ID EQUAL ! expr ) ( ',' ! ID EQUAL ! expr )* )
+			// F:\\Alex\\Tiger.g:151:11: ( ( ID EQUAL ! expr ) ( ',' ! ID EQUAL ! expr )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:154:3: ( ID EQUAL ! expr ) ( ',' ! ID EQUAL ! expr )*
+			// F:\\Alex\\Tiger.g:152:3: ( ID EQUAL ! expr ) ( ',' ! ID EQUAL ! expr )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(154, 3);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:154:3: ( ID EQUAL ! expr )
+			DebugLocation(152, 3);
+			// F:\\Alex\\Tiger.g:152:3: ( ID EQUAL ! expr )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:154:4: ID EQUAL ! expr
+			// F:\\Alex\\Tiger.g:152:4: ID EQUAL ! expr
 			{
-			DebugLocation(154, 4);
-			ID73=(IToken)Match(input,ID,Follow._ID_in_field_list1246); if (state.failed) return retval;
+			DebugLocation(152, 4);
+			ID74=(IToken)Match(input,ID,Follow._ID_in_field_list1248); if (state.failed) return retval;
 			if (state.backtracking == 0) {
-			ID73_tree = (object)adaptor.Create(ID73);
-			adaptor.AddChild(root_0, ID73_tree);
+			ID74_tree = (object)adaptor.Create(ID74);
+			adaptor.AddChild(root_0, ID74_tree);
 			}
-			DebugLocation(154, 12);
-			EQUAL74=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1248); if (state.failed) return retval;
-			DebugLocation(154, 14);
-			PushFollow(Follow._expr_in_field_list1251);
-			expr75=expr();
+			DebugLocation(152, 12);
+			EQUAL75=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1250); if (state.failed) return retval;
+			DebugLocation(152, 14);
+			PushFollow(Follow._expr_in_field_list1253);
+			expr76=expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) adaptor.AddChild(root_0, expr75.Tree);
+			if (state.backtracking == 0) adaptor.AddChild(root_0, expr76.Tree);
 
 			}
 
-			DebugLocation(154, 20);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:154:20: ( ',' ! ID EQUAL ! expr )*
-			try { DebugEnterSubRule(16);
+			DebugLocation(152, 20);
+			// F:\\Alex\\Tiger.g:152:20: ( ',' ! ID EQUAL ! expr )*
+			try { DebugEnterSubRule(18);
 			while (true)
 			{
-				int alt16=2;
-				try { DebugEnterDecision(16, false);
-				int LA16_0 = input.LA(1);
+				int alt18=2;
+				try { DebugEnterDecision(18, false);
+				int LA18_0 = input.LA(1);
 
-				if ((LA16_0==55))
+				if ((LA18_0==55))
 				{
-					alt16 = 1;
+					alt18 = 1;
 				}
 
 
-				} finally { DebugExitDecision(16); }
-				switch ( alt16 )
+				} finally { DebugExitDecision(18); }
+				switch ( alt18 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:154:21: ',' ! ID EQUAL ! expr
+					// F:\\Alex\\Tiger.g:152:21: ',' ! ID EQUAL ! expr
 					{
-					DebugLocation(154, 24);
-					char_literal76=(IToken)Match(input,55,Follow._55_in_field_list1255); if (state.failed) return retval;
-					DebugLocation(154, 26);
-					ID77=(IToken)Match(input,ID,Follow._ID_in_field_list1258); if (state.failed) return retval;
+					DebugLocation(152, 24);
+					char_literal77=(IToken)Match(input,55,Follow._55_in_field_list1257); if (state.failed) return retval;
+					DebugLocation(152, 26);
+					ID78=(IToken)Match(input,ID,Follow._ID_in_field_list1260); if (state.failed) return retval;
 					if (state.backtracking == 0) {
-					ID77_tree = (object)adaptor.Create(ID77);
-					adaptor.AddChild(root_0, ID77_tree);
+					ID78_tree = (object)adaptor.Create(ID78);
+					adaptor.AddChild(root_0, ID78_tree);
 					}
-					DebugLocation(154, 34);
-					EQUAL78=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1260); if (state.failed) return retval;
-					DebugLocation(154, 36);
-					PushFollow(Follow._expr_in_field_list1263);
-					expr79=expr();
+					DebugLocation(152, 34);
+					EQUAL79=(IToken)Match(input,EQUAL,Follow._EQUAL_in_field_list1262); if (state.failed) return retval;
+					DebugLocation(152, 36);
+					PushFollow(Follow._expr_in_field_list1265);
+					expr80=expr();
 					PopFollow();
 					if (state.failed) return retval;
-					if (state.backtracking == 0) adaptor.AddChild(root_0, expr79.Tree);
+					if (state.backtracking == 0) adaptor.AddChild(root_0, expr80.Tree);
 
 					}
 					break;
 
 				default:
-					goto loop16;
+					goto loop18;
 				}
 			}
 
-			loop16:
+			loop18:
 				;
 
-			} finally { DebugExitSubRule(16); }
+			} finally { DebugExitSubRule(18); }
 
 
 			}
@@ -2823,11 +2827,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("field_list", 11);
-			LeaveRule("field_list", 11);
+			TraceOut("field_list", 10);
+			LeaveRule("field_list", 10);
 			LeaveRule_field_list();
 		}
-		DebugLocation(154, 41);
+		DebugLocation(152, 41);
 		} finally { DebugExitRule(GrammarFileName, "field_list"); }
 		return retval;
 
@@ -2838,66 +2842,66 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_lvalue();
 
 	// $ANTLR start "lvalue"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:1: lvalue : ID ( array_or_member_access )? -> ^( LVALUE ID ( array_or_member_access )? ) ;
+	// F:\\Alex\\Tiger.g:154:1: lvalue : ID ( array_or_member_access )? -> ^( LVALUE ID ( array_or_member_access )? ) ;
 	[GrammarRule("lvalue")]
 	private AstParserRuleReturnScope<object, IToken> lvalue()
 	{
 		EnterRule_lvalue();
-		EnterRule("lvalue", 12);
-		TraceIn("lvalue", 12);
+		EnterRule("lvalue", 11);
+		TraceIn("lvalue", 11);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken ID80 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> array_or_member_access81 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken ID81 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> array_or_member_access82 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object ID80_tree = default(object);
+		object ID81_tree = default(object);
 		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
 		RewriteRuleSubtreeStream stream_array_or_member_access=new RewriteRuleSubtreeStream(adaptor,"rule array_or_member_access");
 		try { DebugEnterRule(GrammarFileName, "lvalue");
-		DebugLocation(156, 1);
+		DebugLocation(154, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:8: ( ID ( array_or_member_access )? -> ^( LVALUE ID ( array_or_member_access )? ) )
+			// F:\\Alex\\Tiger.g:154:8: ( ID ( array_or_member_access )? -> ^( LVALUE ID ( array_or_member_access )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:10: ID ( array_or_member_access )?
+			// F:\\Alex\\Tiger.g:154:10: ID ( array_or_member_access )?
 			{
-			DebugLocation(156, 10);
-			ID80=(IToken)Match(input,ID,Follow._ID_in_lvalue1274); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_ID.Add(ID80);
+			DebugLocation(154, 10);
+			ID81=(IToken)Match(input,ID,Follow._ID_in_lvalue1276); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_ID.Add(ID81);
 
-			DebugLocation(156, 13);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:13: ( array_or_member_access )?
-			int alt17=2;
-			try { DebugEnterSubRule(17);
-			try { DebugEnterDecision(17, false);
-			int LA17_0 = input.LA(1);
+			DebugLocation(154, 13);
+			// F:\\Alex\\Tiger.g:154:13: ( array_or_member_access )?
+			int alt19=2;
+			try { DebugEnterSubRule(19);
+			try { DebugEnterDecision(19, false);
+			int LA19_0 = input.LA(1);
 
-			if ((LA17_0==DOT||LA17_0==58))
+			if ((LA19_0==DOT||LA19_0==58))
 			{
-				alt17 = 1;
+				alt19 = 1;
 			}
-			} finally { DebugExitDecision(17); }
-			switch (alt17)
+			} finally { DebugExitDecision(19); }
+			switch (alt19)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:13: array_or_member_access
+				// F:\\Alex\\Tiger.g:154:13: array_or_member_access
 				{
-				DebugLocation(156, 13);
-				PushFollow(Follow._array_or_member_access_in_lvalue1276);
-				array_or_member_access81=array_or_member_access();
+				DebugLocation(154, 13);
+				PushFollow(Follow._array_or_member_access_in_lvalue1278);
+				array_or_member_access82=array_or_member_access();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_array_or_member_access.Add(array_or_member_access81.Tree);
+				if (state.backtracking == 0) stream_array_or_member_access.Add(array_or_member_access82.Tree);
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(17); }
+			} finally { DebugExitSubRule(19); }
 
 
 
@@ -2914,22 +2918,22 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 156:37: -> ^( LVALUE ID ( array_or_member_access )? )
+			// 154:37: -> ^( LVALUE ID ( array_or_member_access )? )
 			{
-				DebugLocation(156, 40);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:40: ^( LVALUE ID ( array_or_member_access )? )
+				DebugLocation(154, 40);
+				// F:\\Alex\\Tiger.g:154:40: ^( LVALUE ID ( array_or_member_access )? )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(156, 42);
+				DebugLocation(154, 42);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(LVALUE, "LVALUE"), root_1);
 
-				DebugLocation(156, 49);
+				DebugLocation(154, 49);
 				adaptor.AddChild(root_1, stream_ID.NextNode());
-				DebugLocation(156, 52);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:156:52: ( array_or_member_access )?
+				DebugLocation(154, 52);
+				// F:\\Alex\\Tiger.g:154:52: ( array_or_member_access )?
 				if (stream_array_or_member_access.HasNext)
 				{
-					DebugLocation(156, 52);
+					DebugLocation(154, 52);
 					adaptor.AddChild(root_1, stream_array_or_member_access.NextTree());
 
 				}
@@ -2962,11 +2966,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("lvalue", 12);
-			LeaveRule("lvalue", 12);
+			TraceOut("lvalue", 11);
+			LeaveRule("lvalue", 11);
 			LeaveRule_lvalue();
 		}
-		DebugLocation(157, 1);
+		DebugLocation(155, 1);
 		} finally { DebugExitRule(GrammarFileName, "lvalue"); }
 		return retval;
 
@@ -2977,117 +2981,117 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_array_or_member_access();
 
 	// $ANTLR start "array_or_member_access"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:159:1: array_or_member_access : ( member_access | array_access ) ( array_or_member_access )? ;
+	// F:\\Alex\\Tiger.g:157:1: array_or_member_access : ( member_access | array_access ) ( array_or_member_access )? ;
 	[GrammarRule("array_or_member_access")]
 	private AstParserRuleReturnScope<object, IToken> array_or_member_access()
 	{
 		EnterRule_array_or_member_access();
-		EnterRule("array_or_member_access", 13);
-		TraceIn("array_or_member_access", 13);
+		EnterRule("array_or_member_access", 12);
+		TraceIn("array_or_member_access", 12);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		AstParserRuleReturnScope<object, IToken> member_access82 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> array_access83 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> array_or_member_access84 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> member_access83 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> array_access84 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> array_or_member_access85 = default(AstParserRuleReturnScope<object, IToken>);
 
 		try { DebugEnterRule(GrammarFileName, "array_or_member_access");
-		DebugLocation(159, 1);
+		DebugLocation(157, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:2: ( ( member_access | array_access ) ( array_or_member_access )? )
+			// F:\\Alex\\Tiger.g:158:2: ( ( member_access | array_access ) ( array_or_member_access )? )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:4: ( member_access | array_access ) ( array_or_member_access )?
+			// F:\\Alex\\Tiger.g:158:4: ( member_access | array_access ) ( array_or_member_access )?
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(160, 4);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:4: ( member_access | array_access )
-			int alt18=2;
-			try { DebugEnterSubRule(18);
-			try { DebugEnterDecision(18, false);
-			int LA18_0 = input.LA(1);
+			DebugLocation(158, 4);
+			// F:\\Alex\\Tiger.g:158:4: ( member_access | array_access )
+			int alt20=2;
+			try { DebugEnterSubRule(20);
+			try { DebugEnterDecision(20, false);
+			int LA20_0 = input.LA(1);
 
-			if ((LA18_0==DOT))
+			if ((LA20_0==DOT))
 			{
-				alt18 = 1;
+				alt20 = 1;
 			}
-			else if ((LA18_0==58))
+			else if ((LA20_0==58))
 			{
-				alt18 = 2;
+				alt20 = 2;
 			}
 			else
 			{
 				if (state.backtracking>0) {state.failed=true; return retval;}
-				NoViableAltException nvae = new NoViableAltException("", 18, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 20, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(18); }
-			switch (alt18)
+			} finally { DebugExitDecision(20); }
+			switch (alt20)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:5: member_access
+				// F:\\Alex\\Tiger.g:158:5: member_access
 				{
-				DebugLocation(160, 5);
-				PushFollow(Follow._member_access_in_array_or_member_access1301);
-				member_access82=member_access();
+				DebugLocation(158, 5);
+				PushFollow(Follow._member_access_in_array_or_member_access1303);
+				member_access83=member_access();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, member_access82.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, member_access83.Tree);
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:21: array_access
+				// F:\\Alex\\Tiger.g:158:21: array_access
 				{
-				DebugLocation(160, 21);
-				PushFollow(Follow._array_access_in_array_or_member_access1305);
-				array_access83=array_access();
+				DebugLocation(158, 21);
+				PushFollow(Follow._array_access_in_array_or_member_access1307);
+				array_access84=array_access();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, array_access83.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, array_access84.Tree);
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(18); }
+			} finally { DebugExitSubRule(20); }
 
-			DebugLocation(160, 35);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:35: ( array_or_member_access )?
-			int alt19=2;
-			try { DebugEnterSubRule(19);
-			try { DebugEnterDecision(19, false);
-			int LA19_0 = input.LA(1);
+			DebugLocation(158, 35);
+			// F:\\Alex\\Tiger.g:158:35: ( array_or_member_access )?
+			int alt21=2;
+			try { DebugEnterSubRule(21);
+			try { DebugEnterDecision(21, false);
+			int LA21_0 = input.LA(1);
 
-			if ((LA19_0==DOT||LA19_0==58))
+			if ((LA21_0==DOT||LA21_0==58))
 			{
-				alt19 = 1;
+				alt21 = 1;
 			}
-			} finally { DebugExitDecision(19); }
-			switch (alt19)
+			} finally { DebugExitDecision(21); }
+			switch (alt21)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:160:35: array_or_member_access
+				// F:\\Alex\\Tiger.g:158:35: array_or_member_access
 				{
-				DebugLocation(160, 35);
-				PushFollow(Follow._array_or_member_access_in_array_or_member_access1308);
-				array_or_member_access84=array_or_member_access();
+				DebugLocation(158, 35);
+				PushFollow(Follow._array_or_member_access_in_array_or_member_access1310);
+				array_or_member_access85=array_or_member_access();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, array_or_member_access84.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, array_or_member_access85.Tree);
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(19); }
+			} finally { DebugExitSubRule(21); }
 
 
 			}
@@ -3108,11 +3112,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("array_or_member_access", 13);
-			LeaveRule("array_or_member_access", 13);
+			TraceOut("array_or_member_access", 12);
+			LeaveRule("array_or_member_access", 12);
 			LeaveRule_array_or_member_access();
 		}
-		DebugLocation(161, 1);
+		DebugLocation(159, 1);
 		} finally { DebugExitRule(GrammarFileName, "array_or_member_access"); }
 		return retval;
 
@@ -3123,44 +3127,44 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_member_access();
 
 	// $ANTLR start "member_access"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:163:1: member_access : DOT ^ ID ;
+	// F:\\Alex\\Tiger.g:161:1: member_access : DOT ^ ID ;
 	[GrammarRule("member_access")]
 	private AstParserRuleReturnScope<object, IToken> member_access()
 	{
 		EnterRule_member_access();
-		EnterRule("member_access", 14);
-		TraceIn("member_access", 14);
+		EnterRule("member_access", 13);
+		TraceIn("member_access", 13);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken DOT85 = default(IToken);
-		IToken ID86 = default(IToken);
+		IToken DOT86 = default(IToken);
+		IToken ID87 = default(IToken);
 
-		object DOT85_tree = default(object);
-		object ID86_tree = default(object);
+		object DOT86_tree = default(object);
+		object ID87_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "member_access");
-		DebugLocation(163, 1);
+		DebugLocation(161, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:164:2: ( DOT ^ ID )
+			// F:\\Alex\\Tiger.g:162:2: ( DOT ^ ID )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:164:4: DOT ^ ID
+			// F:\\Alex\\Tiger.g:162:4: DOT ^ ID
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(164, 7);
-			DOT85=(IToken)Match(input,DOT,Follow._DOT_in_member_access1321); if (state.failed) return retval;
+			DebugLocation(162, 7);
+			DOT86=(IToken)Match(input,DOT,Follow._DOT_in_member_access1323); if (state.failed) return retval;
 			if (state.backtracking == 0) {
-			DOT85_tree = (object)adaptor.Create(DOT85);
-			root_0 = (object)adaptor.BecomeRoot(DOT85_tree, root_0);
+			DOT86_tree = (object)adaptor.Create(DOT86);
+			root_0 = (object)adaptor.BecomeRoot(DOT86_tree, root_0);
 			}
-			DebugLocation(164, 9);
-			ID86=(IToken)Match(input,ID,Follow._ID_in_member_access1324); if (state.failed) return retval;
+			DebugLocation(162, 9);
+			ID87=(IToken)Match(input,ID,Follow._ID_in_member_access1326); if (state.failed) return retval;
 			if (state.backtracking == 0) {
-			ID86_tree = (object)adaptor.Create(ID86);
-			adaptor.AddChild(root_0, ID86_tree);
+			ID87_tree = (object)adaptor.Create(ID87);
+			adaptor.AddChild(root_0, ID87_tree);
 			}
 
 			}
@@ -3181,11 +3185,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("member_access", 14);
-			LeaveRule("member_access", 14);
+			TraceOut("member_access", 13);
+			LeaveRule("member_access", 13);
 			LeaveRule_member_access();
 		}
-		DebugLocation(165, 1);
+		DebugLocation(163, 1);
 		} finally { DebugExitRule(GrammarFileName, "member_access"); }
 		return retval;
 
@@ -3196,48 +3200,48 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_array_access();
 
 	// $ANTLR start "array_access"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:167:1: array_access : '[' expr ']' -> ^( AT expr ) ;
+	// F:\\Alex\\Tiger.g:165:1: array_access : '[' expr ']' -> ^( AT expr ) ;
 	[GrammarRule("array_access")]
 	private AstParserRuleReturnScope<object, IToken> array_access()
 	{
 		EnterRule_array_access();
-		EnterRule("array_access", 15);
-		TraceIn("array_access", 15);
+		EnterRule("array_access", 14);
+		TraceIn("array_access", 14);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken char_literal87 = default(IToken);
-		IToken char_literal89 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> expr88 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken char_literal88 = default(IToken);
+		IToken char_literal90 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> expr89 = default(AstParserRuleReturnScope<object, IToken>);
 
-		object char_literal87_tree = default(object);
-		object char_literal89_tree = default(object);
+		object char_literal88_tree = default(object);
+		object char_literal90_tree = default(object);
 		RewriteRuleITokenStream stream_59=new RewriteRuleITokenStream(adaptor,"token 59");
 		RewriteRuleITokenStream stream_58=new RewriteRuleITokenStream(adaptor,"token 58");
 		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
 		try { DebugEnterRule(GrammarFileName, "array_access");
-		DebugLocation(167, 1);
+		DebugLocation(165, 1);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:168:2: ( '[' expr ']' -> ^( AT expr ) )
+			// F:\\Alex\\Tiger.g:166:2: ( '[' expr ']' -> ^( AT expr ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:168:4: '[' expr ']'
+			// F:\\Alex\\Tiger.g:166:4: '[' expr ']'
 			{
-			DebugLocation(168, 4);
-			char_literal87=(IToken)Match(input,58,Follow._58_in_array_access1336); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_58.Add(char_literal87);
+			DebugLocation(166, 4);
+			char_literal88=(IToken)Match(input,58,Follow._58_in_array_access1338); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_58.Add(char_literal88);
 
-			DebugLocation(168, 8);
-			PushFollow(Follow._expr_in_array_access1338);
-			expr88=expr();
+			DebugLocation(166, 8);
+			PushFollow(Follow._expr_in_array_access1340);
+			expr89=expr();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) stream_expr.Add(expr88.Tree);
-			DebugLocation(168, 13);
-			char_literal89=(IToken)Match(input,59,Follow._59_in_array_access1340); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_59.Add(char_literal89);
+			if (state.backtracking == 0) stream_expr.Add(expr89.Tree);
+			DebugLocation(166, 13);
+			char_literal90=(IToken)Match(input,59,Follow._59_in_array_access1342); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_59.Add(char_literal90);
 
 
 
@@ -3254,16 +3258,16 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 168:17: -> ^( AT expr )
+			// 166:17: -> ^( AT expr )
 			{
-				DebugLocation(168, 20);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:168:20: ^( AT expr )
+				DebugLocation(166, 20);
+				// F:\\Alex\\Tiger.g:166:20: ^( AT expr )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(168, 22);
+				DebugLocation(166, 22);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(AT, "AT"), root_1);
 
-				DebugLocation(168, 25);
+				DebugLocation(166, 25);
 				adaptor.AddChild(root_1, stream_expr.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -3293,179 +3297,28 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("array_access", 15);
-			LeaveRule("array_access", 15);
+			TraceOut("array_access", 14);
+			LeaveRule("array_access", 14);
 			LeaveRule_array_access();
 		}
-		DebugLocation(169, 1);
+		DebugLocation(167, 1);
 		} finally { DebugExitRule(GrammarFileName, "array_access"); }
 		return retval;
 
 	}
 	// $ANTLR end "array_access"
 
-	partial void EnterRule_declaration_list();
-	partial void LeaveRule_declaration_list();
-
-	// $ANTLR start "declaration_list"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:171:1: declaration_list : ( declaration )+ -> ^( DECL_LIST ( declaration )+ ) ;
-	[GrammarRule("declaration_list")]
-	private AstParserRuleReturnScope<object, IToken> declaration_list()
-	{
-		EnterRule_declaration_list();
-		EnterRule("declaration_list", 16);
-		TraceIn("declaration_list", 16);
-		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
-		retval.Start = (IToken)input.LT(1);
-
-		object root_0 = default(object);
-
-		AstParserRuleReturnScope<object, IToken> declaration90 = default(AstParserRuleReturnScope<object, IToken>);
-
-		RewriteRuleSubtreeStream stream_declaration=new RewriteRuleSubtreeStream(adaptor,"rule declaration");
-		try { DebugEnterRule(GrammarFileName, "declaration_list");
-		DebugLocation(171, 45);
-		try
-		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:171:17: ( ( declaration )+ -> ^( DECL_LIST ( declaration )+ ) )
-			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:172:3: ( declaration )+
-			{
-			DebugLocation(172, 3);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:172:3: ( declaration )+
-			int cnt20=0;
-			try { DebugEnterSubRule(20);
-			while (true)
-			{
-				int alt20=2;
-				try { DebugEnterDecision(20, false);
-				int LA20_0 = input.LA(1);
-
-				if ((LA20_0==64||(LA20_0>=70 && LA20_0<=71)))
-				{
-					alt20 = 1;
-				}
-
-
-				} finally { DebugExitDecision(20); }
-				switch (alt20)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:172:4: declaration
-					{
-					DebugLocation(172, 4);
-					PushFollow(Follow._declaration_in_declaration_list1361);
-					declaration90=declaration();
-					PopFollow();
-					if (state.failed) return retval;
-					if (state.backtracking == 0) stream_declaration.Add(declaration90.Tree);
-
-					}
-					break;
-
-				default:
-					if (cnt20 >= 1)
-						goto loop20;
-
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee20 = new EarlyExitException( 20, input );
-					DebugRecognitionException(eee20);
-					throw eee20;
-				}
-				cnt20++;
-			}
-			loop20:
-				;
-
-			} finally { DebugExitSubRule(20); }
-
-
-
-			{
-			// AST REWRITE
-			// elements: declaration
-			// token labels: 
-			// rule labels: retval
-			// token list labels: 
-			// rule list labels: 
-			// wildcard labels: 
-			if (state.backtracking == 0) {
-			retval.Tree = root_0;
-			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
-
-			root_0 = (object)adaptor.Nil();
-			// 172:18: -> ^( DECL_LIST ( declaration )+ )
-			{
-				DebugLocation(172, 21);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:172:21: ^( DECL_LIST ( declaration )+ )
-				{
-				object root_1 = (object)adaptor.Nil();
-				DebugLocation(172, 23);
-				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(DECL_LIST, "DECL_LIST"), root_1);
-
-				DebugLocation(172, 33);
-				if (!(stream_declaration.HasNext))
-				{
-					throw new RewriteEarlyExitException();
-				}
-				while ( stream_declaration.HasNext )
-				{
-					DebugLocation(172, 33);
-					adaptor.AddChild(root_1, stream_declaration.NextTree());
-
-				}
-				stream_declaration.Reset();
-
-				adaptor.AddChild(root_0, root_1);
-				}
-
-			}
-
-			retval.Tree = root_0;
-			}
-			}
-
-			}
-
-			retval.Stop = (IToken)input.LT(-1);
-
-			if (state.backtracking == 0) {
-			retval.Tree = (object)adaptor.RulePostProcessing(root_0);
-			adaptor.SetTokenBoundaries(retval.Tree, retval.Start, retval.Stop);
-			}
-		}
-		catch (RecognitionException re)
-		{
-			ReportError(re);
-			Recover(input,re);
-		retval.Tree = (object)adaptor.ErrorNode(input, retval.Start, input.LT(-1), re);
-
-		}
-		finally
-		{
-			TraceOut("declaration_list", 16);
-			LeaveRule("declaration_list", 16);
-			LeaveRule_declaration_list();
-		}
-		DebugLocation(172, 45);
-		} finally { DebugExitRule(GrammarFileName, "declaration_list"); }
-		return retval;
-
-	}
-	// $ANTLR end "declaration_list"
-
 	partial void EnterRule_declaration();
 	partial void LeaveRule_declaration();
 
 	// $ANTLR start "declaration"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:175:1: declaration : ( ( type_declaration )+ -> ^( TYPE_DECL_BLOCK ( type_declaration )+ ) | ( variable_declaration )+ -> ^( VAR_DECL_BLOCK ( variable_declaration )+ ) | ( function_declaration )+ -> ^( FUNC_DECL_BLOCK ( function_declaration )+ ) );
+	// F:\\Alex\\Tiger.g:170:1: declaration : ( ( type_declaration )+ -> ^( TYPE_DECL_BLOCK ( type_declaration )+ ) | ( variable_declaration )+ -> ^( VAR_DECL_BLOCK ( variable_declaration )+ ) | ( function_declaration )+ -> ^( FUNC_DECL_BLOCK ( function_declaration )+ ) );
 	[GrammarRule("declaration")]
 	private AstParserRuleReturnScope<object, IToken> declaration()
 	{
 		EnterRule_declaration();
-		EnterRule("declaration", 17);
-		TraceIn("declaration", 17);
+		EnterRule("declaration", 15);
+		TraceIn("declaration", 15);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
@@ -3479,148 +3332,47 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_function_declaration=new RewriteRuleSubtreeStream(adaptor,"rule function_declaration");
 		RewriteRuleSubtreeStream stream_type_declaration=new RewriteRuleSubtreeStream(adaptor,"rule type_declaration");
 		try { DebugEnterRule(GrammarFileName, "declaration");
-		DebugLocation(175, 68);
+		DebugLocation(170, 68);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:175:12: ( ( type_declaration )+ -> ^( TYPE_DECL_BLOCK ( type_declaration )+ ) | ( variable_declaration )+ -> ^( VAR_DECL_BLOCK ( variable_declaration )+ ) | ( function_declaration )+ -> ^( FUNC_DECL_BLOCK ( function_declaration )+ ) )
-			int alt24=3;
-			try { DebugEnterDecision(24, false);
+			// F:\\Alex\\Tiger.g:170:12: ( ( type_declaration )+ -> ^( TYPE_DECL_BLOCK ( type_declaration )+ ) | ( variable_declaration )+ -> ^( VAR_DECL_BLOCK ( variable_declaration )+ ) | ( function_declaration )+ -> ^( FUNC_DECL_BLOCK ( function_declaration )+ ) )
+			int alt25=3;
+			try { DebugEnterDecision(25, false);
 			switch (input.LA(1))
 			{
 			case 70:
 				{
-				alt24 = 1;
+				alt25 = 1;
 				}
 				break;
 			case 71:
 				{
-				alt24 = 2;
+				alt25 = 2;
 				}
 				break;
 			case 64:
 				{
-				alt24 = 3;
+				alt25 = 3;
 				}
 				break;
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 24, 0, input);
+					NoViableAltException nvae = new NoViableAltException("", 25, 0, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(24); }
-			switch (alt24)
+			} finally { DebugExitDecision(25); }
+			switch (alt25)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:176:3: ( type_declaration )+
+				// F:\\Alex\\Tiger.g:171:3: ( type_declaration )+
 				{
-				DebugLocation(176, 3);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:176:3: ( type_declaration )+
-				int cnt21=0;
-				try { DebugEnterSubRule(21);
-				while (true)
-				{
-					int alt21=2;
-					try { DebugEnterDecision(21, false);
-					int LA21_0 = input.LA(1);
-
-					if ((LA21_0==70))
-					{
-						alt21 = 1;
-					}
-
-
-					} finally { DebugExitDecision(21); }
-					switch (alt21)
-					{
-					case 1:
-						DebugEnterAlt(1);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:176:3: type_declaration
-						{
-						DebugLocation(176, 3);
-						PushFollow(Follow._type_declaration_in_declaration1384);
-						type_declaration91=type_declaration();
-						PopFollow();
-						if (state.failed) return retval;
-						if (state.backtracking == 0) stream_type_declaration.Add(type_declaration91.Tree);
-
-						}
-						break;
-
-					default:
-						if (cnt21 >= 1)
-							goto loop21;
-
-						if (state.backtracking>0) {state.failed=true; return retval;}
-						EarlyExitException eee21 = new EarlyExitException( 21, input );
-						DebugRecognitionException(eee21);
-						throw eee21;
-					}
-					cnt21++;
-				}
-				loop21:
-					;
-
-				} finally { DebugExitSubRule(21); }
-
-
-
-				{
-				// AST REWRITE
-				// elements: type_declaration
-				// token labels: 
-				// rule labels: retval
-				// token list labels: 
-				// rule list labels: 
-				// wildcard labels: 
-				if (state.backtracking == 0) {
-				retval.Tree = root_0;
-				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
-
-				root_0 = (object)adaptor.Nil();
-				// 176:21: -> ^( TYPE_DECL_BLOCK ( type_declaration )+ )
-				{
-					DebugLocation(176, 24);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:176:24: ^( TYPE_DECL_BLOCK ( type_declaration )+ )
-					{
-					object root_1 = (object)adaptor.Nil();
-					DebugLocation(176, 26);
-					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPE_DECL_BLOCK, "TYPE_DECL_BLOCK"), root_1);
-
-					DebugLocation(176, 42);
-					if (!(stream_type_declaration.HasNext))
-					{
-						throw new RewriteEarlyExitException();
-					}
-					while ( stream_type_declaration.HasNext )
-					{
-						DebugLocation(176, 42);
-						adaptor.AddChild(root_1, stream_type_declaration.NextTree());
-
-					}
-					stream_type_declaration.Reset();
-
-					adaptor.AddChild(root_0, root_1);
-					}
-
-				}
-
-				retval.Tree = root_0;
-				}
-				}
-
-				}
-				break;
-			case 2:
-				DebugEnterAlt(2);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:177:4: ( variable_declaration )+
-				{
-				DebugLocation(177, 4);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:177:4: ( variable_declaration )+
+				DebugLocation(171, 3);
+				// F:\\Alex\\Tiger.g:171:3: ( type_declaration )+
 				int cnt22=0;
 				try { DebugEnterSubRule(22);
 				while (true)
@@ -3629,7 +3381,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					try { DebugEnterDecision(22, false);
 					int LA22_0 = input.LA(1);
 
-					if ((LA22_0==71))
+					if ((LA22_0==70))
 					{
 						alt22 = 1;
 					}
@@ -3640,14 +3392,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:177:4: variable_declaration
+						// F:\\Alex\\Tiger.g:171:3: type_declaration
 						{
-						DebugLocation(177, 4);
-						PushFollow(Follow._variable_declaration_in_declaration1399);
-						variable_declaration92=variable_declaration();
+						DebugLocation(171, 3);
+						PushFollow(Follow._type_declaration_in_declaration1363);
+						type_declaration91=type_declaration();
 						PopFollow();
 						if (state.failed) return retval;
-						if (state.backtracking == 0) stream_variable_declaration.Add(variable_declaration92.Tree);
+						if (state.backtracking == 0) stream_type_declaration.Add(type_declaration91.Tree);
 
 						}
 						break;
@@ -3672,7 +3424,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: variable_declaration
+				// elements: type_declaration
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -3683,27 +3435,27 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 177:26: -> ^( VAR_DECL_BLOCK ( variable_declaration )+ )
+				// 171:21: -> ^( TYPE_DECL_BLOCK ( type_declaration )+ )
 				{
-					DebugLocation(177, 29);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:177:29: ^( VAR_DECL_BLOCK ( variable_declaration )+ )
+					DebugLocation(171, 24);
+					// F:\\Alex\\Tiger.g:171:24: ^( TYPE_DECL_BLOCK ( type_declaration )+ )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(177, 31);
-					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VAR_DECL_BLOCK, "VAR_DECL_BLOCK"), root_1);
+					DebugLocation(171, 26);
+					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPE_DECL_BLOCK, "TYPE_DECL_BLOCK"), root_1);
 
-					DebugLocation(177, 46);
-					if (!(stream_variable_declaration.HasNext))
+					DebugLocation(171, 42);
+					if (!(stream_type_declaration.HasNext))
 					{
 						throw new RewriteEarlyExitException();
 					}
-					while ( stream_variable_declaration.HasNext )
+					while ( stream_type_declaration.HasNext )
 					{
-						DebugLocation(177, 46);
-						adaptor.AddChild(root_1, stream_variable_declaration.NextTree());
+						DebugLocation(171, 42);
+						adaptor.AddChild(root_1, stream_type_declaration.NextTree());
 
 					}
-					stream_variable_declaration.Reset();
+					stream_type_declaration.Reset();
 
 					adaptor.AddChild(root_0, root_1);
 					}
@@ -3716,12 +3468,12 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				}
 				break;
-			case 3:
-				DebugEnterAlt(3);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:178:4: ( function_declaration )+
+			case 2:
+				DebugEnterAlt(2);
+				// F:\\Alex\\Tiger.g:172:4: ( variable_declaration )+
 				{
-				DebugLocation(178, 4);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:178:4: ( function_declaration )+
+				DebugLocation(172, 4);
+				// F:\\Alex\\Tiger.g:172:4: ( variable_declaration )+
 				int cnt23=0;
 				try { DebugEnterSubRule(23);
 				while (true)
@@ -3730,7 +3482,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					try { DebugEnterDecision(23, false);
 					int LA23_0 = input.LA(1);
 
-					if ((LA23_0==64))
+					if ((LA23_0==71))
 					{
 						alt23 = 1;
 					}
@@ -3741,14 +3493,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:178:4: function_declaration
+						// F:\\Alex\\Tiger.g:172:4: variable_declaration
 						{
-						DebugLocation(178, 4);
-						PushFollow(Follow._function_declaration_in_declaration1414);
-						function_declaration93=function_declaration();
+						DebugLocation(172, 4);
+						PushFollow(Follow._variable_declaration_in_declaration1378);
+						variable_declaration92=variable_declaration();
 						PopFollow();
 						if (state.failed) return retval;
-						if (state.backtracking == 0) stream_function_declaration.Add(function_declaration93.Tree);
+						if (state.backtracking == 0) stream_variable_declaration.Add(variable_declaration92.Tree);
 
 						}
 						break;
@@ -3773,6 +3525,107 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
+				// elements: variable_declaration
+				// token labels: 
+				// rule labels: retval
+				// token list labels: 
+				// rule list labels: 
+				// wildcard labels: 
+				if (state.backtracking == 0) {
+				retval.Tree = root_0;
+				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
+
+				root_0 = (object)adaptor.Nil();
+				// 172:26: -> ^( VAR_DECL_BLOCK ( variable_declaration )+ )
+				{
+					DebugLocation(172, 29);
+					// F:\\Alex\\Tiger.g:172:29: ^( VAR_DECL_BLOCK ( variable_declaration )+ )
+					{
+					object root_1 = (object)adaptor.Nil();
+					DebugLocation(172, 31);
+					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VAR_DECL_BLOCK, "VAR_DECL_BLOCK"), root_1);
+
+					DebugLocation(172, 46);
+					if (!(stream_variable_declaration.HasNext))
+					{
+						throw new RewriteEarlyExitException();
+					}
+					while ( stream_variable_declaration.HasNext )
+					{
+						DebugLocation(172, 46);
+						adaptor.AddChild(root_1, stream_variable_declaration.NextTree());
+
+					}
+					stream_variable_declaration.Reset();
+
+					adaptor.AddChild(root_0, root_1);
+					}
+
+				}
+
+				retval.Tree = root_0;
+				}
+				}
+
+				}
+				break;
+			case 3:
+				DebugEnterAlt(3);
+				// F:\\Alex\\Tiger.g:173:4: ( function_declaration )+
+				{
+				DebugLocation(173, 4);
+				// F:\\Alex\\Tiger.g:173:4: ( function_declaration )+
+				int cnt24=0;
+				try { DebugEnterSubRule(24);
+				while (true)
+				{
+					int alt24=2;
+					try { DebugEnterDecision(24, false);
+					int LA24_0 = input.LA(1);
+
+					if ((LA24_0==64))
+					{
+						alt24 = 1;
+					}
+
+
+					} finally { DebugExitDecision(24); }
+					switch (alt24)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// F:\\Alex\\Tiger.g:173:4: function_declaration
+						{
+						DebugLocation(173, 4);
+						PushFollow(Follow._function_declaration_in_declaration1393);
+						function_declaration93=function_declaration();
+						PopFollow();
+						if (state.failed) return retval;
+						if (state.backtracking == 0) stream_function_declaration.Add(function_declaration93.Tree);
+
+						}
+						break;
+
+					default:
+						if (cnt24 >= 1)
+							goto loop24;
+
+						if (state.backtracking>0) {state.failed=true; return retval;}
+						EarlyExitException eee24 = new EarlyExitException( 24, input );
+						DebugRecognitionException(eee24);
+						throw eee24;
+					}
+					cnt24++;
+				}
+				loop24:
+					;
+
+				} finally { DebugExitSubRule(24); }
+
+
+
+				{
+				// AST REWRITE
 				// elements: function_declaration
 				// token labels: 
 				// rule labels: retval
@@ -3784,23 +3637,23 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 178:26: -> ^( FUNC_DECL_BLOCK ( function_declaration )+ )
+				// 173:26: -> ^( FUNC_DECL_BLOCK ( function_declaration )+ )
 				{
-					DebugLocation(178, 29);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:178:29: ^( FUNC_DECL_BLOCK ( function_declaration )+ )
+					DebugLocation(173, 29);
+					// F:\\Alex\\Tiger.g:173:29: ^( FUNC_DECL_BLOCK ( function_declaration )+ )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(178, 31);
+					DebugLocation(173, 31);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(FUNC_DECL_BLOCK, "FUNC_DECL_BLOCK"), root_1);
 
-					DebugLocation(178, 47);
+					DebugLocation(173, 47);
 					if (!(stream_function_declaration.HasNext))
 					{
 						throw new RewriteEarlyExitException();
 					}
 					while ( stream_function_declaration.HasNext )
 					{
-						DebugLocation(178, 47);
+						DebugLocation(173, 47);
 						adaptor.AddChild(root_1, stream_function_declaration.NextTree());
 
 					}
@@ -3835,11 +3688,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("declaration", 17);
-			LeaveRule("declaration", 17);
+			TraceOut("declaration", 15);
+			LeaveRule("declaration", 15);
 			LeaveRule_declaration();
 		}
-		DebugLocation(178, 68);
+		DebugLocation(173, 68);
 		} finally { DebugExitRule(GrammarFileName, "declaration"); }
 		return retval;
 
@@ -3850,13 +3703,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_type_declaration();
 
 	// $ANTLR start "type_declaration"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:181:1: type_declaration : ( 'type' type_id EQUAL type_id -> ^( ALIAS_DECL type_id type_id ) | 'type' type_id EQUAL '{' type_fields '}' -> ^( RECORD_DECL type_id type_fields ) | 'type' type_id EQUAL 'array' 'of' type_id -> ^( ARRAY_TYPE_DECL type_id type_id ) );
+	// F:\\Alex\\Tiger.g:176:1: type_declaration : ( 'type' type_id EQUAL type_id -> ^( ALIAS_DECL type_id type_id ) | 'type' type_id EQUAL '{' ( type_fields )? '}' -> ^( RECORD_DECL type_id ( type_fields )? ) | 'type' type_id EQUAL 'array' 'of' type_id -> ^( ARRAY_TYPE_DECL type_id type_id ) );
 	[GrammarRule("type_declaration")]
 	private AstParserRuleReturnScope<object, IToken> type_declaration()
 	{
 		EnterRule_type_declaration();
-		EnterRule("type_declaration", 18);
-		TraceIn("type_declaration", 18);
+		EnterRule("type_declaration", 16);
+		TraceIn("type_declaration", 16);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
@@ -3898,45 +3751,45 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_type_fields=new RewriteRuleSubtreeStream(adaptor,"rule type_fields");
 		RewriteRuleSubtreeStream stream_type_id=new RewriteRuleSubtreeStream(adaptor,"rule type_id");
 		try { DebugEnterRule(GrammarFileName, "type_declaration");
-		DebugLocation(181, 2);
+		DebugLocation(176, 2);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:181:17: ( 'type' type_id EQUAL type_id -> ^( ALIAS_DECL type_id type_id ) | 'type' type_id EQUAL '{' type_fields '}' -> ^( RECORD_DECL type_id type_fields ) | 'type' type_id EQUAL 'array' 'of' type_id -> ^( ARRAY_TYPE_DECL type_id type_id ) )
-			int alt25=3;
-			try { DebugEnterDecision(25, false);
-			int LA25_0 = input.LA(1);
+			// F:\\Alex\\Tiger.g:176:17: ( 'type' type_id EQUAL type_id -> ^( ALIAS_DECL type_id type_id ) | 'type' type_id EQUAL '{' ( type_fields )? '}' -> ^( RECORD_DECL type_id ( type_fields )? ) | 'type' type_id EQUAL 'array' 'of' type_id -> ^( ARRAY_TYPE_DECL type_id type_id ) )
+			int alt27=3;
+			try { DebugEnterDecision(27, false);
+			int LA27_0 = input.LA(1);
 
-			if ((LA25_0==70))
+			if ((LA27_0==70))
 			{
-				int LA25_1 = input.LA(2);
+				int LA27_1 = input.LA(2);
 
-				if ((LA25_1==ID))
+				if ((LA27_1==ID))
 				{
-					int LA25_2 = input.LA(3);
+					int LA27_2 = input.LA(3);
 
-					if ((LA25_2==EQUAL))
+					if ((LA27_2==EQUAL))
 					{
 						switch (input.LA(4))
 						{
 						case 72:
 							{
-							alt25 = 2;
+							alt27 = 2;
 							}
 							break;
 						case 60:
 							{
-							alt25 = 3;
+							alt27 = 3;
 							}
 							break;
 						case ID:
 							{
-							alt25 = 1;
+							alt27 = 1;
 							}
 							break;
 						default:
 							{
 								if (state.backtracking>0) {state.failed=true; return retval;}
-								NoViableAltException nvae = new NoViableAltException("", 25, 3, input);
+								NoViableAltException nvae = new NoViableAltException("", 27, 3, input);
 								DebugRecognitionException(nvae);
 								throw nvae;
 							}
@@ -3946,7 +3799,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					else
 					{
 						if (state.backtracking>0) {state.failed=true; return retval;}
-						NoViableAltException nvae = new NoViableAltException("", 25, 2, input);
+						NoViableAltException nvae = new NoViableAltException("", 27, 2, input);
 						DebugRecognitionException(nvae);
 						throw nvae;
 					}
@@ -3954,7 +3807,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 25, 1, input);
+					NoViableAltException nvae = new NoViableAltException("", 27, 1, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -3962,33 +3815,33 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			else
 			{
 				if (state.backtracking>0) {state.failed=true; return retval;}
-				NoViableAltException nvae = new NoViableAltException("", 25, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 27, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(25); }
-			switch (alt25)
+			} finally { DebugExitDecision(27); }
+			switch (alt27)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:182:4: 'type' type_id EQUAL type_id
+				// F:\\Alex\\Tiger.g:177:4: 'type' type_id EQUAL type_id
 				{
-				DebugLocation(182, 4);
-				string_literal94=(IToken)Match(input,70,Follow._70_in_type_declaration1435); if (state.failed) return retval; 
+				DebugLocation(177, 4);
+				string_literal94=(IToken)Match(input,70,Follow._70_in_type_declaration1414); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_70.Add(string_literal94);
 
-				DebugLocation(182, 11);
-				PushFollow(Follow._type_id_in_type_declaration1437);
+				DebugLocation(177, 11);
+				PushFollow(Follow._type_id_in_type_declaration1416);
 				type_id95=type_id();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type_id.Add(type_id95.Tree);
-				DebugLocation(182, 19);
-				EQUAL96=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1439); if (state.failed) return retval; 
+				DebugLocation(177, 19);
+				EQUAL96=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1418); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_EQUAL.Add(EQUAL96);
 
-				DebugLocation(182, 25);
-				PushFollow(Follow._type_id_in_type_declaration1441);
+				DebugLocation(177, 25);
+				PushFollow(Follow._type_id_in_type_declaration1420);
 				type_id97=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4008,18 +3861,18 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 182:33: -> ^( ALIAS_DECL type_id type_id )
+				// 177:33: -> ^( ALIAS_DECL type_id type_id )
 				{
-					DebugLocation(182, 36);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:182:36: ^( ALIAS_DECL type_id type_id )
+					DebugLocation(177, 36);
+					// F:\\Alex\\Tiger.g:177:36: ^( ALIAS_DECL type_id type_id )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(182, 38);
+					DebugLocation(177, 38);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(ALIAS_DECL, "ALIAS_DECL"), root_1);
 
-					DebugLocation(182, 49);
+					DebugLocation(177, 49);
 					adaptor.AddChild(root_1, stream_type_id.NextTree());
-					DebugLocation(182, 57);
+					DebugLocation(177, 57);
 					adaptor.AddChild(root_1, stream_type_id.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -4035,34 +3888,59 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:183:5: 'type' type_id EQUAL '{' type_fields '}'
+				// F:\\Alex\\Tiger.g:178:5: 'type' type_id EQUAL '{' ( type_fields )? '}'
 				{
-				DebugLocation(183, 5);
-				string_literal98=(IToken)Match(input,70,Follow._70_in_type_declaration1457); if (state.failed) return retval; 
+				DebugLocation(178, 5);
+				string_literal98=(IToken)Match(input,70,Follow._70_in_type_declaration1436); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_70.Add(string_literal98);
 
-				DebugLocation(183, 12);
-				PushFollow(Follow._type_id_in_type_declaration1459);
+				DebugLocation(178, 12);
+				PushFollow(Follow._type_id_in_type_declaration1438);
 				type_id99=type_id();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type_id.Add(type_id99.Tree);
-				DebugLocation(183, 20);
-				EQUAL100=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1461); if (state.failed) return retval; 
+				DebugLocation(178, 20);
+				EQUAL100=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1440); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_EQUAL.Add(EQUAL100);
 
-				DebugLocation(183, 26);
-				char_literal101=(IToken)Match(input,72,Follow._72_in_type_declaration1463); if (state.failed) return retval; 
+				DebugLocation(178, 26);
+				char_literal101=(IToken)Match(input,72,Follow._72_in_type_declaration1442); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_72.Add(char_literal101);
 
-				DebugLocation(183, 30);
-				PushFollow(Follow._type_fields_in_type_declaration1465);
-				type_fields102=type_fields();
-				PopFollow();
-				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_type_fields.Add(type_fields102.Tree);
-				DebugLocation(183, 42);
-				char_literal103=(IToken)Match(input,73,Follow._73_in_type_declaration1467); if (state.failed) return retval; 
+				DebugLocation(178, 30);
+				// F:\\Alex\\Tiger.g:178:30: ( type_fields )?
+				int alt26=2;
+				try { DebugEnterSubRule(26);
+				try { DebugEnterDecision(26, false);
+				int LA26_0 = input.LA(1);
+
+				if ((LA26_0==ID))
+				{
+					alt26 = 1;
+				}
+				} finally { DebugExitDecision(26); }
+				switch (alt26)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// F:\\Alex\\Tiger.g:178:30: type_fields
+					{
+					DebugLocation(178, 30);
+					PushFollow(Follow._type_fields_in_type_declaration1444);
+					type_fields102=type_fields();
+					PopFollow();
+					if (state.failed) return retval;
+					if (state.backtracking == 0) stream_type_fields.Add(type_fields102.Tree);
+
+					}
+					break;
+
+				}
+				} finally { DebugExitSubRule(26); }
+
+				DebugLocation(178, 43);
+				char_literal103=(IToken)Match(input,73,Follow._73_in_type_declaration1447); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_73.Add(char_literal103);
 
 
@@ -4080,19 +3958,26 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 183:46: -> ^( RECORD_DECL type_id type_fields )
+				// 178:47: -> ^( RECORD_DECL type_id ( type_fields )? )
 				{
-					DebugLocation(183, 49);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:183:49: ^( RECORD_DECL type_id type_fields )
+					DebugLocation(178, 50);
+					// F:\\Alex\\Tiger.g:178:50: ^( RECORD_DECL type_id ( type_fields )? )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(183, 51);
+					DebugLocation(178, 52);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(RECORD_DECL, "RECORD_DECL"), root_1);
 
-					DebugLocation(183, 63);
+					DebugLocation(178, 64);
 					adaptor.AddChild(root_1, stream_type_id.NextTree());
-					DebugLocation(183, 71);
-					adaptor.AddChild(root_1, stream_type_fields.NextTree());
+					DebugLocation(178, 72);
+					// F:\\Alex\\Tiger.g:178:72: ( type_fields )?
+					if (stream_type_fields.HasNext)
+					{
+						DebugLocation(178, 72);
+						adaptor.AddChild(root_1, stream_type_fields.NextTree());
+
+					}
+					stream_type_fields.Reset();
 
 					adaptor.AddChild(root_0, root_1);
 					}
@@ -4107,32 +3992,32 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:184:5: 'type' type_id EQUAL 'array' 'of' type_id
+				// F:\\Alex\\Tiger.g:179:5: 'type' type_id EQUAL 'array' 'of' type_id
 				{
-				DebugLocation(184, 5);
-				string_literal104=(IToken)Match(input,70,Follow._70_in_type_declaration1483); if (state.failed) return retval; 
+				DebugLocation(179, 5);
+				string_literal104=(IToken)Match(input,70,Follow._70_in_type_declaration1464); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_70.Add(string_literal104);
 
-				DebugLocation(184, 12);
-				PushFollow(Follow._type_id_in_type_declaration1485);
+				DebugLocation(179, 12);
+				PushFollow(Follow._type_id_in_type_declaration1466);
 				type_id105=type_id();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type_id.Add(type_id105.Tree);
-				DebugLocation(184, 20);
-				EQUAL106=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1487); if (state.failed) return retval; 
+				DebugLocation(179, 20);
+				EQUAL106=(IToken)Match(input,EQUAL,Follow._EQUAL_in_type_declaration1468); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_EQUAL.Add(EQUAL106);
 
-				DebugLocation(184, 26);
-				string_literal107=(IToken)Match(input,60,Follow._60_in_type_declaration1489); if (state.failed) return retval; 
+				DebugLocation(179, 26);
+				string_literal107=(IToken)Match(input,60,Follow._60_in_type_declaration1470); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_60.Add(string_literal107);
 
-				DebugLocation(184, 34);
-				string_literal108=(IToken)Match(input,67,Follow._67_in_type_declaration1491); if (state.failed) return retval; 
+				DebugLocation(179, 34);
+				string_literal108=(IToken)Match(input,67,Follow._67_in_type_declaration1472); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_67.Add(string_literal108);
 
-				DebugLocation(184, 39);
-				PushFollow(Follow._type_id_in_type_declaration1493);
+				DebugLocation(179, 39);
+				PushFollow(Follow._type_id_in_type_declaration1474);
 				type_id109=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4152,18 +4037,18 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 184:47: -> ^( ARRAY_TYPE_DECL type_id type_id )
+				// 179:47: -> ^( ARRAY_TYPE_DECL type_id type_id )
 				{
-					DebugLocation(184, 50);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:184:50: ^( ARRAY_TYPE_DECL type_id type_id )
+					DebugLocation(179, 50);
+					// F:\\Alex\\Tiger.g:179:50: ^( ARRAY_TYPE_DECL type_id type_id )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(184, 52);
+					DebugLocation(179, 52);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(ARRAY_TYPE_DECL, "ARRAY_TYPE_DECL"), root_1);
 
-					DebugLocation(184, 68);
+					DebugLocation(179, 68);
 					adaptor.AddChild(root_1, stream_type_id.NextTree());
-					DebugLocation(184, 76);
+					DebugLocation(179, 76);
 					adaptor.AddChild(root_1, stream_type_id.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -4195,11 +4080,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("type_declaration", 18);
-			LeaveRule("type_declaration", 18);
+			TraceOut("type_declaration", 16);
+			LeaveRule("type_declaration", 16);
 			LeaveRule_type_declaration();
 		}
-		DebugLocation(185, 2);
+		DebugLocation(180, 2);
 		} finally { DebugExitRule(GrammarFileName, "type_declaration"); }
 		return retval;
 
@@ -4210,13 +4095,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_variable_declaration();
 
 	// $ANTLR start "variable_declaration"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:187:1: variable_declaration : 'var' ID ( ':' type_id )? ASSIGN expr -> ^( VAR_DECL ID ( type_id )? expr ) ;
+	// F:\\Alex\\Tiger.g:182:1: variable_declaration : 'var' ID ( ':' type_id )? ASSIGN expr -> ^( VAR_DECL ID ( type_id )? expr ) ;
 	[GrammarRule("variable_declaration")]
 	private AstParserRuleReturnScope<object, IToken> variable_declaration()
 	{
 		EnterRule_variable_declaration();
-		EnterRule("variable_declaration", 19);
-		TraceIn("variable_declaration", 19);
+		EnterRule("variable_declaration", 17);
+		TraceIn("variable_declaration", 17);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
@@ -4240,45 +4125,45 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
 		RewriteRuleSubtreeStream stream_type_id=new RewriteRuleSubtreeStream(adaptor,"rule type_id");
 		try { DebugEnterRule(GrammarFileName, "variable_declaration");
-		DebugLocation(187, 69);
+		DebugLocation(182, 69);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:187:21: ( 'var' ID ( ':' type_id )? ASSIGN expr -> ^( VAR_DECL ID ( type_id )? expr ) )
+			// F:\\Alex\\Tiger.g:182:21: ( 'var' ID ( ':' type_id )? ASSIGN expr -> ^( VAR_DECL ID ( type_id )? expr ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:188:3: 'var' ID ( ':' type_id )? ASSIGN expr
+			// F:\\Alex\\Tiger.g:183:3: 'var' ID ( ':' type_id )? ASSIGN expr
 			{
-			DebugLocation(188, 3);
-			string_literal110=(IToken)Match(input,71,Follow._71_in_variable_declaration1515); if (state.failed) return retval; 
+			DebugLocation(183, 3);
+			string_literal110=(IToken)Match(input,71,Follow._71_in_variable_declaration1496); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_71.Add(string_literal110);
 
-			DebugLocation(188, 9);
-			ID111=(IToken)Match(input,ID,Follow._ID_in_variable_declaration1517); if (state.failed) return retval; 
+			DebugLocation(183, 9);
+			ID111=(IToken)Match(input,ID,Follow._ID_in_variable_declaration1498); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID111);
 
-			DebugLocation(188, 12);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:188:12: ( ':' type_id )?
-			int alt26=2;
-			try { DebugEnterSubRule(26);
-			try { DebugEnterDecision(26, false);
-			int LA26_0 = input.LA(1);
+			DebugLocation(183, 12);
+			// F:\\Alex\\Tiger.g:183:12: ( ':' type_id )?
+			int alt28=2;
+			try { DebugEnterSubRule(28);
+			try { DebugEnterDecision(28, false);
+			int LA28_0 = input.LA(1);
 
-			if ((LA26_0==56))
+			if ((LA28_0==56))
 			{
-				alt26 = 1;
+				alt28 = 1;
 			}
-			} finally { DebugExitDecision(26); }
-			switch (alt26)
+			} finally { DebugExitDecision(28); }
+			switch (alt28)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:188:13: ':' type_id
+				// F:\\Alex\\Tiger.g:183:13: ':' type_id
 				{
-				DebugLocation(188, 13);
-				char_literal112=(IToken)Match(input,56,Follow._56_in_variable_declaration1520); if (state.failed) return retval; 
+				DebugLocation(183, 13);
+				char_literal112=(IToken)Match(input,56,Follow._56_in_variable_declaration1501); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_56.Add(char_literal112);
 
-				DebugLocation(188, 17);
-				PushFollow(Follow._type_id_in_variable_declaration1522);
+				DebugLocation(183, 17);
+				PushFollow(Follow._type_id_in_variable_declaration1503);
 				type_id113=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4288,14 +4173,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 
 			}
-			} finally { DebugExitSubRule(26); }
+			} finally { DebugExitSubRule(28); }
 
-			DebugLocation(188, 27);
-			ASSIGN114=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_variable_declaration1526); if (state.failed) return retval; 
+			DebugLocation(183, 27);
+			ASSIGN114=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_variable_declaration1507); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ASSIGN.Add(ASSIGN114);
 
-			DebugLocation(188, 34);
-			PushFollow(Follow._expr_in_variable_declaration1528);
+			DebugLocation(183, 34);
+			PushFollow(Follow._expr_in_variable_declaration1509);
 			expr115=expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4304,7 +4189,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: ID, expr, type_id
+			// elements: type_id, expr, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4315,27 +4200,27 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 188:39: -> ^( VAR_DECL ID ( type_id )? expr )
+			// 183:39: -> ^( VAR_DECL ID ( type_id )? expr )
 			{
-				DebugLocation(188, 42);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:188:42: ^( VAR_DECL ID ( type_id )? expr )
+				DebugLocation(183, 42);
+				// F:\\Alex\\Tiger.g:183:42: ^( VAR_DECL ID ( type_id )? expr )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(188, 44);
+				DebugLocation(183, 44);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(VAR_DECL, "VAR_DECL"), root_1);
 
-				DebugLocation(188, 53);
+				DebugLocation(183, 53);
 				adaptor.AddChild(root_1, stream_ID.NextNode());
-				DebugLocation(188, 56);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:188:56: ( type_id )?
+				DebugLocation(183, 56);
+				// F:\\Alex\\Tiger.g:183:56: ( type_id )?
 				if (stream_type_id.HasNext)
 				{
-					DebugLocation(188, 56);
+					DebugLocation(183, 56);
 					adaptor.AddChild(root_1, stream_type_id.NextTree());
 
 				}
 				stream_type_id.Reset();
-				DebugLocation(188, 65);
+				DebugLocation(183, 65);
 				adaptor.AddChild(root_1, stream_expr.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -4365,11 +4250,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("variable_declaration", 19);
-			LeaveRule("variable_declaration", 19);
+			TraceOut("variable_declaration", 17);
+			LeaveRule("variable_declaration", 17);
 			LeaveRule_variable_declaration();
 		}
-		DebugLocation(188, 69);
+		DebugLocation(183, 69);
 		} finally { DebugExitRule(GrammarFileName, "variable_declaration"); }
 		return retval;
 
@@ -4380,13 +4265,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_function_declaration();
 
 	// $ANTLR start "function_declaration"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:190:1: function_declaration : 'function' ID '(' ( type_fields )? ')' ( ':' type_id )? EQUAL expr -> ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr ) ;
+	// F:\\Alex\\Tiger.g:185:1: function_declaration : 'function' ID '(' ( type_fields )? ')' ( ':' type_id )? EQUAL expr -> ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr ) ;
 	[GrammarRule("function_declaration")]
 	private AstParserRuleReturnScope<object, IToken> function_declaration()
 	{
 		EnterRule_function_declaration();
-		EnterRule("function_declaration", 20);
-		TraceIn("function_declaration", 20);
+		EnterRule("function_declaration", 18);
+		TraceIn("function_declaration", 18);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
@@ -4418,45 +4303,45 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
 		RewriteRuleSubtreeStream stream_type_id=new RewriteRuleSubtreeStream(adaptor,"rule type_id");
 		try { DebugEnterRule(GrammarFileName, "function_declaration");
-		DebugLocation(190, 127);
+		DebugLocation(185, 127);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:190:21: ( 'function' ID '(' ( type_fields )? ')' ( ':' type_id )? EQUAL expr -> ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr ) )
+			// F:\\Alex\\Tiger.g:185:21: ( 'function' ID '(' ( type_fields )? ')' ( ':' type_id )? EQUAL expr -> ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:3: 'function' ID '(' ( type_fields )? ')' ( ':' type_id )? EQUAL expr
+			// F:\\Alex\\Tiger.g:186:3: 'function' ID '(' ( type_fields )? ')' ( ':' type_id )? EQUAL expr
 			{
-			DebugLocation(191, 3);
-			string_literal116=(IToken)Match(input,64,Follow._64_in_function_declaration1550); if (state.failed) return retval; 
+			DebugLocation(186, 3);
+			string_literal116=(IToken)Match(input,64,Follow._64_in_function_declaration1531); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_64.Add(string_literal116);
 
-			DebugLocation(191, 14);
-			ID117=(IToken)Match(input,ID,Follow._ID_in_function_declaration1552); if (state.failed) return retval; 
+			DebugLocation(186, 14);
+			ID117=(IToken)Match(input,ID,Follow._ID_in_function_declaration1533); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID117);
 
-			DebugLocation(191, 17);
-			char_literal118=(IToken)Match(input,53,Follow._53_in_function_declaration1554); if (state.failed) return retval; 
+			DebugLocation(186, 17);
+			char_literal118=(IToken)Match(input,53,Follow._53_in_function_declaration1535); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_53.Add(char_literal118);
 
-			DebugLocation(191, 21);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:21: ( type_fields )?
-			int alt27=2;
-			try { DebugEnterSubRule(27);
-			try { DebugEnterDecision(27, false);
-			int LA27_0 = input.LA(1);
+			DebugLocation(186, 21);
+			// F:\\Alex\\Tiger.g:186:21: ( type_fields )?
+			int alt29=2;
+			try { DebugEnterSubRule(29);
+			try { DebugEnterDecision(29, false);
+			int LA29_0 = input.LA(1);
 
-			if ((LA27_0==ID))
+			if ((LA29_0==ID))
 			{
-				alt27 = 1;
+				alt29 = 1;
 			}
-			} finally { DebugExitDecision(27); }
-			switch (alt27)
+			} finally { DebugExitDecision(29); }
+			switch (alt29)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:21: type_fields
+				// F:\\Alex\\Tiger.g:186:21: type_fields
 				{
-				DebugLocation(191, 21);
-				PushFollow(Follow._type_fields_in_function_declaration1556);
+				DebugLocation(186, 21);
+				PushFollow(Follow._type_fields_in_function_declaration1537);
 				type_fields119=type_fields();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4466,36 +4351,36 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 
 			}
-			} finally { DebugExitSubRule(27); }
+			} finally { DebugExitSubRule(29); }
 
-			DebugLocation(191, 34);
-			char_literal120=(IToken)Match(input,54,Follow._54_in_function_declaration1559); if (state.failed) return retval; 
+			DebugLocation(186, 34);
+			char_literal120=(IToken)Match(input,54,Follow._54_in_function_declaration1540); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_54.Add(char_literal120);
 
-			DebugLocation(191, 38);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:38: ( ':' type_id )?
-			int alt28=2;
-			try { DebugEnterSubRule(28);
-			try { DebugEnterDecision(28, false);
-			int LA28_0 = input.LA(1);
+			DebugLocation(186, 38);
+			// F:\\Alex\\Tiger.g:186:38: ( ':' type_id )?
+			int alt30=2;
+			try { DebugEnterSubRule(30);
+			try { DebugEnterDecision(30, false);
+			int LA30_0 = input.LA(1);
 
-			if ((LA28_0==56))
+			if ((LA30_0==56))
 			{
-				alt28 = 1;
+				alt30 = 1;
 			}
-			} finally { DebugExitDecision(28); }
-			switch (alt28)
+			} finally { DebugExitDecision(30); }
+			switch (alt30)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:39: ':' type_id
+				// F:\\Alex\\Tiger.g:186:39: ':' type_id
 				{
-				DebugLocation(191, 39);
-				char_literal121=(IToken)Match(input,56,Follow._56_in_function_declaration1562); if (state.failed) return retval; 
+				DebugLocation(186, 39);
+				char_literal121=(IToken)Match(input,56,Follow._56_in_function_declaration1543); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_56.Add(char_literal121);
 
-				DebugLocation(191, 43);
-				PushFollow(Follow._type_id_in_function_declaration1564);
+				DebugLocation(186, 43);
+				PushFollow(Follow._type_id_in_function_declaration1545);
 				type_id122=type_id();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4505,14 +4390,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 				break;
 
 			}
-			} finally { DebugExitSubRule(28); }
+			} finally { DebugExitSubRule(30); }
 
-			DebugLocation(191, 53);
-			EQUAL123=(IToken)Match(input,EQUAL,Follow._EQUAL_in_function_declaration1568); if (state.failed) return retval; 
+			DebugLocation(186, 53);
+			EQUAL123=(IToken)Match(input,EQUAL,Follow._EQUAL_in_function_declaration1549); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_EQUAL.Add(EQUAL123);
 
-			DebugLocation(191, 59);
-			PushFollow(Follow._expr_in_function_declaration1570);
+			DebugLocation(186, 59);
+			PushFollow(Follow._expr_in_function_declaration1551);
 			expr124=expr();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4521,7 +4406,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: expr, type_fields, type_id, ID
+			// elements: type_id, expr, type_fields, ID
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4532,29 +4417,29 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 191:64: -> ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr )
+			// 186:64: -> ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr )
 			{
-				DebugLocation(191, 67);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:67: ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr )
+				DebugLocation(186, 67);
+				// F:\\Alex\\Tiger.g:186:67: ^( FUNCTION_DECL ID ^( TYPE_FIELDS ( type_fields )? ) ( type_id )? expr )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(191, 69);
+				DebugLocation(186, 69);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(FUNCTION_DECL, "FUNCTION_DECL"), root_1);
 
-				DebugLocation(191, 83);
+				DebugLocation(186, 83);
 				adaptor.AddChild(root_1, stream_ID.NextNode());
-				DebugLocation(191, 86);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:86: ^( TYPE_FIELDS ( type_fields )? )
+				DebugLocation(186, 86);
+				// F:\\Alex\\Tiger.g:186:86: ^( TYPE_FIELDS ( type_fields )? )
 				{
 				object root_2 = (object)adaptor.Nil();
-				DebugLocation(191, 88);
+				DebugLocation(186, 88);
 				root_2 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPE_FIELDS, "TYPE_FIELDS"), root_2);
 
-				DebugLocation(191, 100);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:100: ( type_fields )?
+				DebugLocation(186, 100);
+				// F:\\Alex\\Tiger.g:186:100: ( type_fields )?
 				if (stream_type_fields.HasNext)
 				{
-					DebugLocation(191, 100);
+					DebugLocation(186, 100);
 					adaptor.AddChild(root_2, stream_type_fields.NextTree());
 
 				}
@@ -4562,16 +4447,16 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 				adaptor.AddChild(root_1, root_2);
 				}
-				DebugLocation(191, 114);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:191:114: ( type_id )?
+				DebugLocation(186, 114);
+				// F:\\Alex\\Tiger.g:186:114: ( type_id )?
 				if (stream_type_id.HasNext)
 				{
-					DebugLocation(191, 114);
+					DebugLocation(186, 114);
 					adaptor.AddChild(root_1, stream_type_id.NextTree());
 
 				}
 				stream_type_id.Reset();
-				DebugLocation(191, 123);
+				DebugLocation(186, 123);
 				adaptor.AddChild(root_1, stream_expr.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -4601,11 +4486,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("function_declaration", 20);
-			LeaveRule("function_declaration", 20);
+			TraceOut("function_declaration", 18);
+			LeaveRule("function_declaration", 18);
 			LeaveRule_function_declaration();
 		}
-		DebugLocation(191, 127);
+		DebugLocation(186, 127);
 		} finally { DebugExitRule(GrammarFileName, "function_declaration"); }
 		return retval;
 
@@ -4616,13 +4501,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_type_id();
 
 	// $ANTLR start "type_id"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:193:1: type_id : ID -> ^( TYPE_ID ID ) ;
+	// F:\\Alex\\Tiger.g:188:1: type_id : ID -> ^( TYPE_ID ID ) ;
 	[GrammarRule("type_id")]
 	private AstParserRuleReturnScope<object, IToken> type_id()
 	{
 		EnterRule_type_id();
-		EnterRule("type_id", 21);
-		TraceIn("type_id", 21);
+		EnterRule("type_id", 19);
+		TraceIn("type_id", 19);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
@@ -4633,15 +4518,15 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		object ID125_tree = default(object);
 		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
 		try { DebugEnterRule(GrammarFileName, "type_id");
-		DebugLocation(193, 30);
+		DebugLocation(188, 30);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:193:9: ( ID -> ^( TYPE_ID ID ) )
+			// F:\\Alex\\Tiger.g:188:9: ( ID -> ^( TYPE_ID ID ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:193:12: ID
+			// F:\\Alex\\Tiger.g:188:12: ID
 			{
-			DebugLocation(193, 12);
-			ID125=(IToken)Match(input,ID,Follow._ID_in_type_id1599); if (state.failed) return retval; 
+			DebugLocation(188, 12);
+			ID125=(IToken)Match(input,ID,Follow._ID_in_type_id1580); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID125);
 
 
@@ -4659,16 +4544,16 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 193:15: -> ^( TYPE_ID ID )
+			// 188:15: -> ^( TYPE_ID ID )
 			{
-				DebugLocation(193, 18);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:193:18: ^( TYPE_ID ID )
+				DebugLocation(188, 18);
+				// F:\\Alex\\Tiger.g:188:18: ^( TYPE_ID ID )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(193, 20);
+				DebugLocation(188, 20);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPE_ID, "TYPE_ID"), root_1);
 
-				DebugLocation(193, 28);
+				DebugLocation(188, 28);
 				adaptor.AddChild(root_1, stream_ID.NextNode());
 
 				adaptor.AddChild(root_0, root_1);
@@ -4698,11 +4583,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("type_id", 21);
-			LeaveRule("type_id", 21);
+			TraceOut("type_id", 19);
+			LeaveRule("type_id", 19);
 			LeaveRule_type_id();
 		}
-		DebugLocation(193, 30);
+		DebugLocation(188, 30);
 		} finally { DebugExitRule(GrammarFileName, "type_id"); }
 		return retval;
 
@@ -4713,13 +4598,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_type_fields();
 
 	// $ANTLR start "type_fields"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:196:1: type_fields : type_field ( ',' ! type_field )* ;
+	// F:\\Alex\\Tiger.g:191:1: type_fields : type_field ( ',' ! type_field )* ;
 	[GrammarRule("type_fields")]
 	private AstParserRuleReturnScope<object, IToken> type_fields()
 	{
 		EnterRule_type_fields();
-		EnterRule("type_fields", 22);
-		TraceIn("type_fields", 22);
+		EnterRule("type_fields", 20);
+		TraceIn("type_fields", 20);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
@@ -4731,47 +4616,47 @@ public partial class TigerParser : Antlr.Runtime.Parser
 
 		object char_literal127_tree = default(object);
 		try { DebugEnterRule(GrammarFileName, "type_fields");
-		DebugLocation(196, 42);
+		DebugLocation(191, 42);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:196:12: ( type_field ( ',' ! type_field )* )
+			// F:\\Alex\\Tiger.g:191:12: ( type_field ( ',' ! type_field )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:196:14: type_field ( ',' ! type_field )*
+			// F:\\Alex\\Tiger.g:191:14: type_field ( ',' ! type_field )*
 			{
 			root_0 = (object)adaptor.Nil();
 
-			DebugLocation(196, 14);
-			PushFollow(Follow._type_field_in_type_fields1616);
+			DebugLocation(191, 14);
+			PushFollow(Follow._type_field_in_type_fields1597);
 			type_field126=type_field();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, type_field126.Tree);
-			DebugLocation(196, 25);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:196:25: ( ',' ! type_field )*
-			try { DebugEnterSubRule(29);
+			DebugLocation(191, 25);
+			// F:\\Alex\\Tiger.g:191:25: ( ',' ! type_field )*
+			try { DebugEnterSubRule(31);
 			while (true)
 			{
-				int alt29=2;
-				try { DebugEnterDecision(29, false);
-				int LA29_0 = input.LA(1);
+				int alt31=2;
+				try { DebugEnterDecision(31, false);
+				int LA31_0 = input.LA(1);
 
-				if ((LA29_0==55))
+				if ((LA31_0==55))
 				{
-					alt29 = 1;
+					alt31 = 1;
 				}
 
 
-				} finally { DebugExitDecision(29); }
-				switch ( alt29 )
+				} finally { DebugExitDecision(31); }
+				switch ( alt31 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:196:26: ',' ! type_field
+					// F:\\Alex\\Tiger.g:191:26: ',' ! type_field
 					{
-					DebugLocation(196, 29);
-					char_literal127=(IToken)Match(input,55,Follow._55_in_type_fields1619); if (state.failed) return retval;
-					DebugLocation(196, 31);
-					PushFollow(Follow._type_field_in_type_fields1622);
+					DebugLocation(191, 29);
+					char_literal127=(IToken)Match(input,55,Follow._55_in_type_fields1600); if (state.failed) return retval;
+					DebugLocation(191, 31);
+					PushFollow(Follow._type_field_in_type_fields1603);
 					type_field128=type_field();
 					PopFollow();
 					if (state.failed) return retval;
@@ -4781,14 +4666,14 @@ public partial class TigerParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					goto loop29;
+					goto loop31;
 				}
 			}
 
-			loop29:
+			loop31:
 				;
 
-			} finally { DebugExitSubRule(29); }
+			} finally { DebugExitSubRule(31); }
 
 
 			}
@@ -4809,11 +4694,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("type_fields", 22);
-			LeaveRule("type_fields", 22);
+			TraceOut("type_fields", 20);
+			LeaveRule("type_fields", 20);
 			LeaveRule_type_fields();
 		}
-		DebugLocation(196, 42);
+		DebugLocation(191, 42);
 		} finally { DebugExitRule(GrammarFileName, "type_fields"); }
 		return retval;
 
@@ -4824,13 +4709,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	partial void LeaveRule_type_field();
 
 	// $ANTLR start "type_field"
-	// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:198:1: type_field : ID ':' type_id -> ^( ID type_id ) ;
+	// F:\\Alex\\Tiger.g:193:1: type_field : ID ':' type_id -> ^( ID type_id ) ;
 	[GrammarRule("type_field")]
 	private AstParserRuleReturnScope<object, IToken> type_field()
 	{
 		EnterRule_type_field();
-		EnterRule("type_field", 23);
-		TraceIn("type_field", 23);
+		EnterRule("type_field", 21);
+		TraceIn("type_field", 21);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
@@ -4846,23 +4731,23 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
 		RewriteRuleSubtreeStream stream_type_id=new RewriteRuleSubtreeStream(adaptor,"rule type_id");
 		try { DebugEnterRule(GrammarFileName, "type_field");
-		DebugLocation(198, 43);
+		DebugLocation(193, 43);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:198:11: ( ID ':' type_id -> ^( ID type_id ) )
+			// F:\\Alex\\Tiger.g:193:11: ( ID ':' type_id -> ^( ID type_id ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:198:13: ID ':' type_id
+			// F:\\Alex\\Tiger.g:193:13: ID ':' type_id
 			{
-			DebugLocation(198, 13);
-			ID129=(IToken)Match(input,ID,Follow._ID_in_type_field1632); if (state.failed) return retval; 
+			DebugLocation(193, 13);
+			ID129=(IToken)Match(input,ID,Follow._ID_in_type_field1613); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(ID129);
 
-			DebugLocation(198, 16);
-			char_literal130=(IToken)Match(input,56,Follow._56_in_type_field1634); if (state.failed) return retval; 
+			DebugLocation(193, 16);
+			char_literal130=(IToken)Match(input,56,Follow._56_in_type_field1615); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_56.Add(char_literal130);
 
-			DebugLocation(198, 20);
-			PushFollow(Follow._type_id_in_type_field1636);
+			DebugLocation(193, 20);
+			PushFollow(Follow._type_id_in_type_field1617);
 			type_id131=type_id();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4882,16 +4767,16 @@ public partial class TigerParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 198:28: -> ^( ID type_id )
+			// 193:28: -> ^( ID type_id )
 			{
-				DebugLocation(198, 31);
-				// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:198:31: ^( ID type_id )
+				DebugLocation(193, 31);
+				// F:\\Alex\\Tiger.g:193:31: ^( ID type_id )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(198, 33);
+				DebugLocation(193, 33);
 				root_1 = (object)adaptor.BecomeRoot(stream_ID.NextNode(), root_1);
 
-				DebugLocation(198, 36);
+				DebugLocation(193, 36);
 				adaptor.AddChild(root_1, stream_type_id.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -4921,11 +4806,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("type_field", 23);
-			LeaveRule("type_field", 23);
+			TraceOut("type_field", 21);
+			LeaveRule("type_field", 21);
 			LeaveRule_type_field();
 		}
-		DebugLocation(198, 43);
+		DebugLocation(193, 43);
 		} finally { DebugExitRule(GrammarFileName, "type_field"); }
 		return retval;
 
@@ -4939,13 +4824,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	public void synpred1_Tiger_fragment()
 	{
 		EnterRule_synpred1_Tiger_fragment();
-		EnterRule("synpred1_Tiger_fragment", 24);
-		TraceIn("synpred1_Tiger_fragment", 24);
+		EnterRule("synpred1_Tiger_fragment", 22);
+		TraceIn("synpred1_Tiger_fragment", 22);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:134:5: ( ID '[' expr ']' 'of' )
+			// F:\\Alex\\Tiger.g:134:5: ( ID '[' expr ']' 'of' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:134:6: ID '[' expr ']' 'of'
+			// F:\\Alex\\Tiger.g:134:6: ID '[' expr ']' 'of'
 			{
 			DebugLocation(134, 6);
 			Match(input,ID,Follow._ID_in_synpred1_Tiger821); if (state.failed) return;
@@ -4966,8 +4851,8 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred1_Tiger_fragment", 24);
-			LeaveRule("synpred1_Tiger_fragment", 24);
+			TraceOut("synpred1_Tiger_fragment", 22);
+			LeaveRule("synpred1_Tiger_fragment", 22);
 			LeaveRule_synpred1_Tiger_fragment();
 		}
 	}
@@ -4980,13 +4865,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	public void synpred2_Tiger_fragment()
 	{
 		EnterRule_synpred2_Tiger_fragment();
-		EnterRule("synpred2_Tiger_fragment", 25);
-		TraceIn("synpred2_Tiger_fragment", 25);
+		EnterRule("synpred2_Tiger_fragment", 23);
+		TraceIn("synpred2_Tiger_fragment", 23);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:5: ( ID '(' )
+			// F:\\Alex\\Tiger.g:135:5: ( ID '(' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:135:6: ID '('
+			// F:\\Alex\\Tiger.g:135:6: ID '('
 			{
 			DebugLocation(135, 6);
 			Match(input,ID,Follow._ID_in_synpred2_Tiger870); if (state.failed) return;
@@ -4998,8 +4883,8 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred2_Tiger_fragment", 25);
-			LeaveRule("synpred2_Tiger_fragment", 25);
+			TraceOut("synpred2_Tiger_fragment", 23);
+			LeaveRule("synpred2_Tiger_fragment", 23);
 			LeaveRule_synpred2_Tiger_fragment();
 		}
 	}
@@ -5012,13 +4897,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	public void synpred3_Tiger_fragment()
 	{
 		EnterRule_synpred3_Tiger_fragment();
-		EnterRule("synpred3_Tiger_fragment", 26);
-		TraceIn("synpred3_Tiger_fragment", 26);
+		EnterRule("synpred3_Tiger_fragment", 24);
+		TraceIn("synpred3_Tiger_fragment", 24);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:5: ( ID '{' )
+			// F:\\Alex\\Tiger.g:136:5: ( ID '{' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:136:6: ID '{'
+			// F:\\Alex\\Tiger.g:136:6: ID '{'
 			{
 			DebugLocation(136, 6);
 			Match(input,ID,Follow._ID_in_synpred3_Tiger906); if (state.failed) return;
@@ -5030,8 +4915,8 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred3_Tiger_fragment", 26);
-			LeaveRule("synpred3_Tiger_fragment", 26);
+			TraceOut("synpred3_Tiger_fragment", 24);
+			LeaveRule("synpred3_Tiger_fragment", 24);
 			LeaveRule_synpred3_Tiger_fragment();
 		}
 	}
@@ -5044,13 +4929,13 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	public void synpred4_Tiger_fragment()
 	{
 		EnterRule_synpred4_Tiger_fragment();
-		EnterRule("synpred4_Tiger_fragment", 27);
-		TraceIn("synpred4_Tiger_fragment", 27);
+		EnterRule("synpred4_Tiger_fragment", 25);
+		TraceIn("synpred4_Tiger_fragment", 25);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:137:5: ( lvalue ASSIGN )
+			// F:\\Alex\\Tiger.g:137:5: ( lvalue ASSIGN )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:137:6: lvalue ASSIGN
+			// F:\\Alex\\Tiger.g:137:6: lvalue ASSIGN
 			{
 			DebugLocation(137, 6);
 			PushFollow(Follow._lvalue_in_synpred4_Tiger940);
@@ -5065,8 +4950,8 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("synpred4_Tiger_fragment", 27);
-			LeaveRule("synpred4_Tiger_fragment", 27);
+			TraceOut("synpred4_Tiger_fragment", 25);
+			LeaveRule("synpred4_Tiger_fragment", 25);
 			LeaveRule_synpred4_Tiger_fragment();
 		}
 	}
@@ -5079,38 +4964,38 @@ public partial class TigerParser : Antlr.Runtime.Parser
 	public void synpred5_Tiger_fragment()
 	{
 		EnterRule_synpred5_Tiger_fragment();
-		EnterRule("synpred5_Tiger_fragment", 28);
-		TraceIn("synpred5_Tiger_fragment", 28);
+		EnterRule("synpred5_Tiger_fragment", 26);
+		TraceIn("synpred5_Tiger_fragment", 26);
 		try
 		{
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:140:5: ( 'if' expr 'then' expr 'else' )
+			// F:\\Alex\\Tiger.g:140:5: ( 'if' expr 'then' expr 'else' )
 			DebugEnterAlt(1);
-			// C:\\Users\\Frank\\Desktop\\Alex\\Tiger.g:140:6: 'if' expr 'then' expr 'else'
+			// F:\\Alex\\Tiger.g:140:6: 'if' expr 'then' expr 'else'
 			{
 			DebugLocation(140, 6);
-			Match(input,65,Follow._65_in_synpred5_Tiger996); if (state.failed) return;
+			Match(input,65,Follow._65_in_synpred5_Tiger1003); if (state.failed) return;
 			DebugLocation(140, 11);
-			PushFollow(Follow._expr_in_synpred5_Tiger998);
+			PushFollow(Follow._expr_in_synpred5_Tiger1005);
 			expr();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(140, 16);
-			Match(input,68,Follow._68_in_synpred5_Tiger1000); if (state.failed) return;
+			Match(input,68,Follow._68_in_synpred5_Tiger1007); if (state.failed) return;
 			DebugLocation(140, 23);
-			PushFollow(Follow._expr_in_synpred5_Tiger1002);
+			PushFollow(Follow._expr_in_synpred5_Tiger1009);
 			expr();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(140, 28);
-			Match(input,62,Follow._62_in_synpred5_Tiger1004); if (state.failed) return;
+			Match(input,62,Follow._62_in_synpred5_Tiger1011); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred5_Tiger_fragment", 28);
-			LeaveRule("synpred5_Tiger_fragment", 28);
+			TraceOut("synpred5_Tiger_fragment", 26);
+			LeaveRule("synpred5_Tiger_fragment", 26);
 			LeaveRule_synpred5_Tiger_fragment();
 		}
 	}
@@ -5161,7 +5046,7 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		public static readonly BitSet _GT_in_comp_expr728 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
 		public static readonly BitSet _LT_EQUAL_in_comp_expr733 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
 		public static readonly BitSet _GT_EQUAL_in_comp_expr738 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _arith_expr_in_comp_expr742 = new BitSet(new ulong[]{0x2183010002UL});
+		public static readonly BitSet _arith_expr_in_comp_expr742 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _term_in_arith_expr755 = new BitSet(new ulong[]{0x8400000002UL});
 		public static readonly BitSet _PLUS_in_arith_expr758 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
 		public static readonly BitSet _MINUS_in_arith_expr761 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
@@ -5191,104 +5076,104 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		public static readonly BitSet _ASSIGN_in_texpr950 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
 		public static readonly BitSet _expr_in_texpr952 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _lvalue_in_texpr969 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _53_in_texpr975 = new BitSet(new ulong[]{0x68101464100800UL,0x2UL});
-		public static readonly BitSet _expr_seq_in_texpr977 = new BitSet(new ulong[]{0x40000000000000UL});
-		public static readonly BitSet _54_in_texpr980 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _65_in_texpr1010 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1014 = new BitSet(new ulong[]{0x0UL,0x10UL});
-		public static readonly BitSet _68_in_texpr1016 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1020 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_texpr1022 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1026 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _65_in_texpr1048 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1052 = new BitSet(new ulong[]{0x0UL,0x10UL});
-		public static readonly BitSet _68_in_texpr1054 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1058 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _WHILE_in_texpr1076 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1080 = new BitSet(new ulong[]{0x2000000000000000UL});
-		public static readonly BitSet _61_in_texpr1082 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1086 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _FOR_in_texpr1104 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_texpr1108 = new BitSet(new ulong[]{0x200UL});
-		public static readonly BitSet _ASSIGN_in_texpr1110 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1114 = new BitSet(new ulong[]{0x0UL,0x20UL});
-		public static readonly BitSet _69_in_texpr1116 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1120 = new BitSet(new ulong[]{0x2000000000000000UL});
-		public static readonly BitSet _61_in_texpr1122 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_texpr1126 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _BREAK_in_texpr1150 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LET_in_texpr1156 = new BitSet(new ulong[]{0x0UL,0xC1UL});
-		public static readonly BitSet _declaration_list_in_texpr1158 = new BitSet(new ulong[]{0x0UL,0x4UL});
-		public static readonly BitSet _66_in_texpr1160 = new BitSet(new ulong[]{0x8028101464100800UL,0x2UL});
-		public static readonly BitSet _expr_seq_in_texpr1162 = new BitSet(new ulong[]{0x8000000000000000UL});
-		public static readonly BitSet _63_in_texpr1165 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MINUS_in_texpr1182 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _texpr_in_texpr1184 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expr_in_expr_seq1203 = new BitSet(new ulong[]{0x200000000000002UL});
-		public static readonly BitSet _57_in_expr_seq1206 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_expr_seq1208 = new BitSet(new ulong[]{0x200000000000002UL});
-		public static readonly BitSet _expr_in_expr_list1226 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _55_in_expr_list1229 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_expr_list1232 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _ID_in_field_list1246 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_field_list1248 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_field_list1251 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _55_in_field_list1255 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_field_list1258 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_field_list1260 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_field_list1263 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _ID_in_lvalue1274 = new BitSet(new ulong[]{0x400000000008002UL});
-		public static readonly BitSet _array_or_member_access_in_lvalue1276 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _member_access_in_array_or_member_access1301 = new BitSet(new ulong[]{0x400000000008002UL});
-		public static readonly BitSet _array_access_in_array_or_member_access1305 = new BitSet(new ulong[]{0x400000000008002UL});
-		public static readonly BitSet _array_or_member_access_in_array_or_member_access1308 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_member_access1321 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_member_access1324 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _58_in_array_access1336 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_array_access1338 = new BitSet(new ulong[]{0x800000000000000UL});
-		public static readonly BitSet _59_in_array_access1340 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _declaration_in_declaration_list1361 = new BitSet(new ulong[]{0x2UL,0xC1UL});
-		public static readonly BitSet _type_declaration_in_declaration1384 = new BitSet(new ulong[]{0x2UL,0x40UL});
-		public static readonly BitSet _variable_declaration_in_declaration1399 = new BitSet(new ulong[]{0x2UL,0x80UL});
-		public static readonly BitSet _function_declaration_in_declaration1414 = new BitSet(new ulong[]{0x2UL,0x1UL});
-		public static readonly BitSet _70_in_type_declaration1435 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1437 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_type_declaration1439 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1441 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _70_in_type_declaration1457 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1459 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_type_declaration1461 = new BitSet(new ulong[]{0x0UL,0x100UL});
-		public static readonly BitSet _72_in_type_declaration1463 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_fields_in_type_declaration1465 = new BitSet(new ulong[]{0x0UL,0x200UL});
-		public static readonly BitSet _73_in_type_declaration1467 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _70_in_type_declaration1483 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1485 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_type_declaration1487 = new BitSet(new ulong[]{0x1000000000000000UL});
-		public static readonly BitSet _60_in_type_declaration1489 = new BitSet(new ulong[]{0x0UL,0x8UL});
-		public static readonly BitSet _67_in_type_declaration1491 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_declaration1493 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _71_in_variable_declaration1515 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_variable_declaration1517 = new BitSet(new ulong[]{0x100000000000200UL});
-		public static readonly BitSet _56_in_variable_declaration1520 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_variable_declaration1522 = new BitSet(new ulong[]{0x200UL});
-		public static readonly BitSet _ASSIGN_in_variable_declaration1526 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_variable_declaration1528 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _64_in_function_declaration1550 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _ID_in_function_declaration1552 = new BitSet(new ulong[]{0x20000000000000UL});
-		public static readonly BitSet _53_in_function_declaration1554 = new BitSet(new ulong[]{0x40000004000000UL});
-		public static readonly BitSet _type_fields_in_function_declaration1556 = new BitSet(new ulong[]{0x40000000000000UL});
-		public static readonly BitSet _54_in_function_declaration1559 = new BitSet(new ulong[]{0x100000000010000UL});
-		public static readonly BitSet _56_in_function_declaration1562 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_function_declaration1564 = new BitSet(new ulong[]{0x10000UL});
-		public static readonly BitSet _EQUAL_in_function_declaration1568 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_function_declaration1570 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_type_id1599 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_field_in_type_fields1616 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _55_in_type_fields1619 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_field_in_type_fields1622 = new BitSet(new ulong[]{0x80000000000002UL});
-		public static readonly BitSet _ID_in_type_field1632 = new BitSet(new ulong[]{0x100000000000000UL});
-		public static readonly BitSet _56_in_type_field1634 = new BitSet(new ulong[]{0x4000000UL});
-		public static readonly BitSet _type_id_in_type_field1636 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _53_in_texpr975 = new BitSet(new ulong[]{0x268101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr977 = new BitSet(new ulong[]{0x240000000000000UL});
+		public static readonly BitSet _57_in_texpr981 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr983 = new BitSet(new ulong[]{0x240000000000000UL});
+		public static readonly BitSet _54_in_texpr987 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _65_in_texpr1017 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1021 = new BitSet(new ulong[]{0x0UL,0x10UL});
+		public static readonly BitSet _68_in_texpr1023 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1027 = new BitSet(new ulong[]{0x4000000000000000UL});
+		public static readonly BitSet _62_in_texpr1029 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1033 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _65_in_texpr1055 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1059 = new BitSet(new ulong[]{0x0UL,0x10UL});
+		public static readonly BitSet _68_in_texpr1061 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1065 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _WHILE_in_texpr1083 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1087 = new BitSet(new ulong[]{0x2000000000000000UL});
+		public static readonly BitSet _61_in_texpr1089 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1093 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _FOR_in_texpr1111 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_texpr1115 = new BitSet(new ulong[]{0x200UL});
+		public static readonly BitSet _ASSIGN_in_texpr1117 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1121 = new BitSet(new ulong[]{0x0UL,0x20UL});
+		public static readonly BitSet _69_in_texpr1123 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1127 = new BitSet(new ulong[]{0x2000000000000000UL});
+		public static readonly BitSet _61_in_texpr1129 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1133 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _BREAK_in_texpr1157 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LET_in_texpr1163 = new BitSet(new ulong[]{0x0UL,0xC1UL});
+		public static readonly BitSet _declaration_in_texpr1165 = new BitSet(new ulong[]{0x0UL,0xC5UL});
+		public static readonly BitSet _66_in_texpr1168 = new BitSet(new ulong[]{0x8028101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1171 = new BitSet(new ulong[]{0x8200000000000000UL});
+		public static readonly BitSet _57_in_texpr1174 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_texpr1176 = new BitSet(new ulong[]{0x8200000000000000UL});
+		public static readonly BitSet _63_in_texpr1182 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MINUS_in_texpr1208 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _texpr_in_texpr1210 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expr_in_expr_list1228 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _55_in_expr_list1231 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_expr_list1234 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _ID_in_field_list1248 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_field_list1250 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_field_list1253 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _55_in_field_list1257 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_field_list1260 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_field_list1262 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_field_list1265 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _ID_in_lvalue1276 = new BitSet(new ulong[]{0x400000000008002UL});
+		public static readonly BitSet _array_or_member_access_in_lvalue1278 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _member_access_in_array_or_member_access1303 = new BitSet(new ulong[]{0x400000000008002UL});
+		public static readonly BitSet _array_access_in_array_or_member_access1307 = new BitSet(new ulong[]{0x400000000008002UL});
+		public static readonly BitSet _array_or_member_access_in_array_or_member_access1310 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_member_access1323 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_member_access1326 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _58_in_array_access1338 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_array_access1340 = new BitSet(new ulong[]{0x800000000000000UL});
+		public static readonly BitSet _59_in_array_access1342 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_declaration_in_declaration1363 = new BitSet(new ulong[]{0x2UL,0x40UL});
+		public static readonly BitSet _variable_declaration_in_declaration1378 = new BitSet(new ulong[]{0x2UL,0x80UL});
+		public static readonly BitSet _function_declaration_in_declaration1393 = new BitSet(new ulong[]{0x2UL,0x1UL});
+		public static readonly BitSet _70_in_type_declaration1414 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1416 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_type_declaration1418 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1420 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _70_in_type_declaration1436 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1438 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_type_declaration1440 = new BitSet(new ulong[]{0x0UL,0x100UL});
+		public static readonly BitSet _72_in_type_declaration1442 = new BitSet(new ulong[]{0x4000000UL,0x200UL});
+		public static readonly BitSet _type_fields_in_type_declaration1444 = new BitSet(new ulong[]{0x0UL,0x200UL});
+		public static readonly BitSet _73_in_type_declaration1447 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _70_in_type_declaration1464 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1466 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_type_declaration1468 = new BitSet(new ulong[]{0x1000000000000000UL});
+		public static readonly BitSet _60_in_type_declaration1470 = new BitSet(new ulong[]{0x0UL,0x8UL});
+		public static readonly BitSet _67_in_type_declaration1472 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_declaration1474 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _71_in_variable_declaration1496 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_variable_declaration1498 = new BitSet(new ulong[]{0x100000000000200UL});
+		public static readonly BitSet _56_in_variable_declaration1501 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_variable_declaration1503 = new BitSet(new ulong[]{0x200UL});
+		public static readonly BitSet _ASSIGN_in_variable_declaration1507 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_variable_declaration1509 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _64_in_function_declaration1531 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _ID_in_function_declaration1533 = new BitSet(new ulong[]{0x20000000000000UL});
+		public static readonly BitSet _53_in_function_declaration1535 = new BitSet(new ulong[]{0x40000004000000UL});
+		public static readonly BitSet _type_fields_in_function_declaration1537 = new BitSet(new ulong[]{0x40000000000000UL});
+		public static readonly BitSet _54_in_function_declaration1540 = new BitSet(new ulong[]{0x100000000010000UL});
+		public static readonly BitSet _56_in_function_declaration1543 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_function_declaration1545 = new BitSet(new ulong[]{0x10000UL});
+		public static readonly BitSet _EQUAL_in_function_declaration1549 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_function_declaration1551 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_type_id1580 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_field_in_type_fields1597 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _55_in_type_fields1600 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_field_in_type_fields1603 = new BitSet(new ulong[]{0x80000000000002UL});
+		public static readonly BitSet _ID_in_type_field1613 = new BitSet(new ulong[]{0x100000000000000UL});
+		public static readonly BitSet _56_in_type_field1615 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _type_id_in_type_field1617 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _ID_in_synpred1_Tiger821 = new BitSet(new ulong[]{0x400000000000000UL});
 		public static readonly BitSet _58_in_synpred1_Tiger823 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
 		public static readonly BitSet _expr_in_synpred1_Tiger825 = new BitSet(new ulong[]{0x800000000000000UL});
@@ -5300,11 +5185,11 @@ public partial class TigerParser : Antlr.Runtime.Parser
 		public static readonly BitSet _72_in_synpred3_Tiger908 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _lvalue_in_synpred4_Tiger940 = new BitSet(new ulong[]{0x200UL});
 		public static readonly BitSet _ASSIGN_in_synpred4_Tiger942 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _65_in_synpred5_Tiger996 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_synpred5_Tiger998 = new BitSet(new ulong[]{0x0UL,0x10UL});
-		public static readonly BitSet _68_in_synpred5_Tiger1000 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
-		public static readonly BitSet _expr_in_synpred5_Tiger1002 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_synpred5_Tiger1004 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _65_in_synpred5_Tiger1003 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_synpred5_Tiger1005 = new BitSet(new ulong[]{0x0UL,0x10UL});
+		public static readonly BitSet _68_in_synpred5_Tiger1007 = new BitSet(new ulong[]{0x28101464100800UL,0x2UL});
+		public static readonly BitSet _expr_in_synpred5_Tiger1009 = new BitSet(new ulong[]{0x4000000000000000UL});
+		public static readonly BitSet _62_in_synpred5_Tiger1011 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

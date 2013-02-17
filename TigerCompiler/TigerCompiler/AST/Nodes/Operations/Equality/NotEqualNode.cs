@@ -13,7 +13,7 @@ namespace TigerCompiler.AST.Nodes.Operations.Equality
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
             base.GenerateCode(cg);
-            //not wathever the equals gives
+            //not whatever the equals gives
             MethodBuilder not = ((FunctionInfo) Semantic.Scope.DefaultGlobalScope.ResolveVarOrFunction("not")).ILMethod;
             cg.IlGenerator.Emit(OpCodes.Call, not);
 

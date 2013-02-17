@@ -17,8 +17,8 @@ namespace TigerCompiler.AST.Nodes.Flow
         {
             base.CheckSemantics(scope, report);
 
-            report.Assert(this, IfCondition.ReturnType == TypeInfo.Int, "An if expression must return an integer value.");
-            report.Assert(this,ThenExpression.ReturnType == TypeInfo.Void,"If-then must not return a value.");
+            report.Assert(IfCondition, IfCondition.ReturnType == TypeInfo.Int, "The condition of an if expression must return an integer value.");
+            report.Assert(ThenExpression,ThenExpression.ReturnType == TypeInfo.Void,"The body of an if-then expression must not return a value.");
 
             ReturnType = TypeInfo.Void;
         }

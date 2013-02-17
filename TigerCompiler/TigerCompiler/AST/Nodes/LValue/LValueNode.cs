@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
 using TigerCompiler.Semantic;
@@ -11,7 +12,6 @@ namespace TigerCompiler.AST.Nodes.LValue
     {
         public LValueNode(IToken payload) : base(payload)
         {
-            
         }
 
         public override void CheckSemantics(Scope scope, ErrorReporter report)
@@ -32,12 +32,14 @@ namespace TigerCompiler.AST.Nodes.LValue
                         var recordTypeInfo = (ReturnType as RecordTypeInfo);
                         if (recordTypeInfo != null)
                         {
-                            var memberInfo = recordTypeInfo.Fields[((DotNode) tmp).MemberName];
-                            if (memberInfo != null)
-                                ReturnType = memberInfo;
+                            TypeInfo value;
+                            bool memberExists = recordTypeInfo.Fields.TryGetValue(((DotNode) tmp).MemberName,out value);
+                            if (memberExists)
+                                ReturnType = value;
                             else
                             {
                                 report.AddError(this,"Unknown member.");
+                                ReturnType = null;
                                 break;
                             }
                         }
@@ -70,6 +72,25 @@ namespace TigerCompiler.AST.Nodes.LValue
         public IdNode MainIDNode
         {
             get { return Children[0] as IdNode; }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(Children[0].Text);
+            for (int i = 1; i < Children.Count; i++)
+            {
+                var current = Children[i];
+                if (current is DotNode)
+                {
+                    sb.Append("." + (current as DotNode).MemberName);
+                } else if(current is IndexingNode)
+                {
+                    sb.Append("[" + (current as IndexingNode) + "]");
+                }
+            }
+            return sb.ToString();
         }
     }
 }

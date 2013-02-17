@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Antlr.Runtime;
+using TigerCompiler.Semantic;
 
 namespace TigerCompiler.AST.Nodes.Declarations.Blocks
 {
@@ -17,9 +19,24 @@ namespace TigerCompiler.AST.Nodes.Declarations.Blocks
                 // - Create a child scope for every function.
             base.CheckSemantics(scope, report);
 
-            // - Check the semantics of the bodies of the functions.
+            var names = new HashSet<string>();
             foreach (FunctionDeclarationNode declarationNode in Children)
-                declarationNode.FunctionBody.CheckSemantics(declarationNode.FunctionScope,report);
+            {
+                if (!report.Assert(declarationNode,!names.Contains(declarationNode.FunctionName),"Duplicate function names in the same function block."))
+                  return; // TODO: return?
+                names.Add(declarationNode.FunctionName);
+            }
+
+            // - Check the semantics of the bodies of the functions.
+            // - Verify that the function bodies return the right type.
+            foreach (FunctionDeclarationNode declarationNode in Children)
+            {
+                var varOrFunction = scope.ResolveVarOrFunction(declarationNode.FunctionName);
+                if (!(varOrFunction is FunctionInfo)) continue;
+                declarationNode.FunctionBody.CheckSemantics(declarationNode.FunctionScope, report);
+                report.Assert(declarationNode, declarationNode.FunctionBody.ReturnType == declarationNode.FunctionReturnType,
+                              "Function return type does not match declared type.");
+            }
         }
     }
 }
