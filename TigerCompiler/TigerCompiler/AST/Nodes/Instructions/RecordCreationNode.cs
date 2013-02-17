@@ -43,10 +43,22 @@ namespace TigerCompiler.AST.Nodes.Instructions
         {
             get { return (IdNode) Children[0];}
         }
+
+        public IEnumerable<ASTNode> InitializationExpressions
+        {
+            get
+            {
+                for (int i = 2; i < Children.Count; i = i + 2)
+                {
+                    if (i < Children.Count)
+                        yield return (ASTNode)Children[i];
+                }
+            }
+        }
 		
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var recordinfo = (RecordTypeInfo)Scope.ResolveVarOrFunction(TypeId);
+            var recordinfo = (RecordTypeInfo)Scope.ResolveType(TypeNode.Text);
             //Generate code for the initialization expr
             foreach (ASTNode initializationExpression in InitializationExpressions)
             {

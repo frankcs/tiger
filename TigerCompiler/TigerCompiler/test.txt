@@ -1,7 +1,8 @@
 ﻿let
 	type Person  = {Age: int, Name:string}
-	var a := 3
+	type Student = {Person: Person, Career:string}
 	var b := Person {Age =22, Name="Frank"}	
+	var c := Student {Person= b, Career="Computer Science"}
 in
 	
 end
