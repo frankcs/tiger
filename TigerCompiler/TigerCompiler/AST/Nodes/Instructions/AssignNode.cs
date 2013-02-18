@@ -52,7 +52,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
         {
             var varinfo = (VariableInfo) Scope.ResolveVarOrFunction(LValue.MainIDNode.Text);
             //si es una var sencilla genero código para Expression y asigno al ILLocal
-           
+            
             if(LValue.Children.Count==1){
                 Expression.GenerateCode(cg);
                 cg.IlGenerator.Emit(OpCodes.Stloc, varinfo.ILLocalVariable);
@@ -61,26 +61,47 @@ namespace TigerCompiler.AST.Nodes.Instructions
             {
                 //se carga el obj o arr
                 cg.IlGenerator.Emit(OpCodes.Ldloc, varinfo.ILLocalVariable);
-                Type itertype;
-                if (varinfo.VariableType is ArrayTypeInfo)
-                    itertype = ((ArrayTypeInfo)varinfo.VariableType).TargetType.GetILType();
-                else
-                    itertype = varinfo.VariableType.GetILType();
-                // Se va accediendo a los miembros
-                for (int i = 1; i < LValue.Children.Count-1; i++)
+                TypeInfo resolutedtype = varinfo.VariableType;
+                for (int i = 1; i < LValue.Children.Count; i++)
                 {
-                    if(LValue.Children[1] is IndexingNode)
+                    if(LValue.Children[i] is IndexingNode)
                     {
-                        //si es arr se accede
-                        var node = (IndexingNode) LValue.Children[i];
+                        var node = (IndexingNode)LValue.Children[i];
+                        Type targettype = ((ArrayTypeInfo)resolutedtype).TargetType.GetILType();
                         cg.IlGenerator.Emit(OpCodes.Ldc_I4, int.Parse(node.IndexNode.Text));
-                        cg.IlGenerator.Emit(OpCodes.Ldelem,itertype);
+
+                        if (i == LValue.Children.Count - 1)
+                        {
+                            //almacenar
+                            Expression.GenerateCode(cg);
+                            cg.IlGenerator.Emit(OpCodes.Stelem, targettype);
+                        }
+                        else //si es arr se accede
+                        {
+                            cg.IlGenerator.Emit(OpCodes.Ldelem, targettype);
+                            resolutedtype = ((ArrayTypeInfo)resolutedtype).TargetType;
+                        }
+
+
                     }
-                    if(LValue.Children[1] is DotNode)
+                    else
                     {
-                        var node = (DotNode)LValue.Children[i];
-                        FieldInfo member = itertype.GetField(node.MemberName);
-                        cg.IlGenerator.Emit(OpCodes.Ldfld);
+                        var membername = ((DotNode)LValue.Children[i]).MemberName;
+                        //resolver el field builder asoc al member
+                        var fieldbuilder = ((RecordTypeInfo)resolutedtype).FieldBuilders[membername];
+                        if (i == LValue.Children.Count - 1)
+                        {
+                            //almacenar
+                            Expression.GenerateCode(cg);
+                            cg.IlGenerator.Emit(OpCodes.Stfld, fieldbuilder);
+
+                        }
+                        else
+                        {
+                            //actualizar el resoluted type info
+                            resolutedtype = ((RecordTypeInfo) resolutedtype).Fields[membername];
+                            cg.IlGenerator.Emit(OpCodes.Ldfld, fieldbuilder);
+                        }
                     }
                 }
             }

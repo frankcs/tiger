@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Reflection.Emit;
 using System.Text;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
@@ -91,6 +92,43 @@ namespace TigerCompiler.AST.Nodes.LValue
                 }
             }
             return sb.ToString();
+        }
+
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            var varinfo = (VariableInfo)Scope.ResolveVarOrFunction(MainIDNode.Text);
+            //si es una var sencilla genero código para Expression y asigno al ILLocal
+
+            if (Children.Count == 1){
+                cg.IlGenerator.Emit(OpCodes.Ldloc, varinfo.ILLocalVariable);
+            }
+            else
+            {
+                //se carga el obj o arr
+                cg.IlGenerator.Emit(OpCodes.Ldloc, varinfo.ILLocalVariable);
+                TypeInfo resolutedtype = varinfo.VariableType;
+                for (int i = 1; i < Children.Count; i++)
+                {
+                    if (Children[i] is IndexingNode)
+                    {
+                        var node = (IndexingNode)Children[i];
+                        Type targettype = ((ArrayTypeInfo)resolutedtype).TargetType.GetILType();
+                        cg.IlGenerator.Emit(OpCodes.Ldc_I4, int.Parse(node.IndexNode.Text));
+                        //si es arr se accede
+                        cg.IlGenerator.Emit(OpCodes.Ldelem, targettype);
+                        resolutedtype = ((ArrayTypeInfo) resolutedtype).TargetType;
+                    }
+                    else
+                    {
+                        var membername = ((DotNode)Children[i]).MemberName;
+                        //resolver el field builder asoc al member
+                        var fieldbuilder = ((RecordTypeInfo)resolutedtype).FieldBuilders[membername];
+                        //actualizar el resoluted type info
+                        resolutedtype = ((RecordTypeInfo)resolutedtype).Fields[membername];
+                        cg.IlGenerator.Emit(OpCodes.Ldfld, fieldbuilder);
+                    }
+                }
+            }
         }
     }
 }

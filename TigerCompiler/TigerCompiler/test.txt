@@ -1,13 +1,19 @@
-﻿/*let
-	type Person  = {Age: int, Name:string}
-	type Student = {Person: Person, Career:string}
-	var b := Person {Age =22, Name="Frank"}	
-	var c := Student {Person= b, Career="Computer Science"}
-	function add (a:int):int= 5
+﻿let
+	type Person  = {Age: int, Name:string, Mother:Person}
+	type PersonArray = array of Person	
+	var a := Person {Age =22, Name="Mima", Mother= nil}	
+	var b := Person {Age =22, Name="Zunilda", Mother= a}	
+	var c := Person {Age =22, Name="Frank", Mother=b}	
+	var d := Person {Age =22, Name="Alex", Mother=nil}
+	var	e := PersonArray [5] of Person {Age =22, Name="Mima", Mother= nil}			
 in
-	
+	printline(e[1].Name);
+	e[1].Name:="Cheo";
+	e[2].Name:="Calabacn";
+	printline(e[1].Name);
+	printline(e[2].Name)
 end
-*/
 
-printi("amalia"<>"amali0")
+
+
 
