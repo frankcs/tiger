@@ -19,5 +19,7 @@ namespace TigerCompiler.Semantic
                 return recordTypeInfo != null ? recordTypeInfo.Fields : null;
             }
         }
+
+        public bool IsHiddingAnother { get; set; }
     }
 }

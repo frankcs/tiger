@@ -14,7 +14,7 @@ namespace TigerCompiler.AST.Nodes.Operations.Equality
         {
             base.GenerateCode(cg);
             //not whatever the equals gives
-            MethodBuilder not = ((FunctionInfo) Semantic.Scope.DefaultGlobalScope.ResolveVarOrFunction("not")).ILMethod;
+            MethodBuilder not = ((FunctionInfo) Semantic.Scope.DefaultGlobalScope.ResolveVarOrFunctionOnCodeGen("not")).ILMethod;
             cg.IlGenerator.Emit(OpCodes.Call, not);
 
             #region A mano

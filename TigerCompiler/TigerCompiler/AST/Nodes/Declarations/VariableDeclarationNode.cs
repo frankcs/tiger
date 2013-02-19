@@ -67,8 +67,9 @@ namespace TigerCompiler.AST.Nodes.Declarations
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
             
-            var varinfo = (VariableInfo)Scope.ResolveVarOrFunction(VariableID.Text);
+            var varinfo = (VariableInfo)Scope.ResolveVarforDecl(VariableID.Text);
             varinfo.ILLocalVariable = cg.IlGenerator.DeclareLocal(varinfo.VariableType.GetILType());
+            varinfo.IsHiddingAnother = false;
             InitialValue.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Stloc,varinfo.ILLocalVariable);
              

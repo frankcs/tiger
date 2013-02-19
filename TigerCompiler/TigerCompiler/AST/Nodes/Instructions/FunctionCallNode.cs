@@ -52,7 +52,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var func = (FunctionInfo)Scope.ResolveVarOrFunction(FunctionName);
+            var func = (FunctionInfo)Scope.ResolveVarOrFunctionOnCodeGen(FunctionName);
             ExpressionList.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Call,func.ILMethod);
         }

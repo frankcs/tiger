@@ -50,6 +50,8 @@ namespace TigerCompiler.Semantic
         public VariableInfo DefineVariable(string variableName, TypeInfo type, bool readOnly = false)
         {
             var vinfo = new VariableInfo() { IsReadOnly = readOnly, VariableType = type};
+            if(((VariableInfo)ResolveVarOrFunction(variableName)!= null))
+                vinfo.IsHiddingAnother=true;
             SymbolTable[variableName] =vinfo;
             return vinfo;
         }
@@ -144,11 +146,24 @@ namespace TigerCompiler.Semantic
         /// </summary>
         /// <param name="key">The variable or function name to look for.</param>
         /// <returns></returns>
-        public Symbol ResolveVarOrFunction(string key)
-        {
+        public Symbol ResolveVarOrFunction(string key){
+            
             return SymbolTable.ContainsKey(key) ? SymbolTable[key] : Parent != null ? Parent.ResolveVarOrFunction(key) : null;
         }
 
+        public Symbol ResolveVarOrFunctionOnCodeGen(string key)
+        {
+            //Fix var when hidding
+            var result = SymbolTable.ContainsKey(key) ? SymbolTable[key] : Parent != null ? Parent.ResolveVarOrFunction(key) : null;
+            if ((result is VariableInfo) && ((VariableInfo)result).IsHiddingAnother)
+                return Parent.ResolveVarOrFunctionOnCodeGen(key);
+            return result;
+        }
+
+        public Symbol ResolveVarforDecl(string key)
+        {
+            return SymbolTable.ContainsKey(key) ? SymbolTable[key] : null;
+        }
         /// <summary>
         /// Finds a type defined in this scope or any parent scope.
         /// </summary>

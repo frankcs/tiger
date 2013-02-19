@@ -73,7 +73,7 @@ namespace TigerCompiler.AST.Nodes.Declarations
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var funcinfo= (FunctionInfo) Scope.ResolveVarOrFunction(FunctionName);
+            var funcinfo= (FunctionInfo) Scope.ResolveVarOrFunctionOnCodeGen(FunctionName);
             var parameterstypes =
                 (from paramstypeinfos in funcinfo.Parameters.Values select paramstypeinfos.GetILType()).ToArray();
 
@@ -82,6 +82,20 @@ namespace TigerCompiler.AST.Nodes.Declarations
             //get it's ILGen
             var innergenerator = funcinfo.ILMethod.GetILGenerator();
             cg.EnterGenerationScope(innergenerator);
+
+            var paramarr = funcinfo.Parameters.ToArray();
+
+            for (int i = 0; i < paramarr.Length; i++)
+            {
+                var parameter = paramarr[i];
+                //get the variable for the param
+                var paramvarinfo = (VariableInfo)funcinfo.FunctionScope.ResolveVarOrFunctionOnCodeGen(parameter.Key);
+                //link the var with is Ilvariable
+                paramvarinfo.ILLocalVariable = cg.IlGenerator.DeclareLocal(parameter.Value.GetILType());
+                //load the argument
+                cg.IlGenerator.Emit(OpCodes.Ldarg,i);
+                cg.IlGenerator.Emit(OpCodes.Stloc,paramvarinfo.ILLocalVariable);
+            }
             FunctionBody.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Ret);
             cg.LeaveGenerationScope();

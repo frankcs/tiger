@@ -96,7 +96,7 @@ namespace TigerCompiler.AST.Nodes.LValue
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var varinfo = (VariableInfo)Scope.ResolveVarOrFunction(MainIDNode.Text);
+            var varinfo = (VariableInfo)Scope.ResolveVarOrFunctionOnCodeGen(MainIDNode.Text);
             //si es una var sencilla genero código para Expression y asigno al ILLocal
 
             if (Children.Count == 1){
@@ -113,7 +113,7 @@ namespace TigerCompiler.AST.Nodes.LValue
                     {
                         var node = (IndexingNode)Children[i];
                         Type targettype = ((ArrayTypeInfo)resolutedtype).TargetType.GetILType();
-                        cg.IlGenerator.Emit(OpCodes.Ldc_I4, int.Parse(node.IndexNode.Text));
+                        node.IndexNode.GenerateCode(cg);
                         //si es arr se accede
                         cg.IlGenerator.Emit(OpCodes.Ldelem, targettype);
                         resolutedtype = ((ArrayTypeInfo) resolutedtype).TargetType;

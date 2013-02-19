@@ -306,8 +306,8 @@ namespace TigerCompiler.CodeGeneration
 
             node.GenerateCode(this);
 
-            generator.Emit(OpCodes.Ldc_I4, 2000);
-            generator.Emit(OpCodes.Call, typeof(Thread).GetMethod("Sleep", new[] { typeof(int) }, null));
+            //generator.Emit(OpCodes.Ldc_I4, 2000);
+            //generator.Emit(OpCodes.Call, typeof(Thread).GetMethod("Sleep", new[] { typeof(int) }, null));
             generator.Emit(OpCodes.Ret);
         }
 
