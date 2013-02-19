@@ -20,6 +20,6 @@ namespace TigerCompiler.Semantic
             }
         }
 
-        public bool IsHiddingAnother { get; set; }
+        //public bool IsHidingAnother { get; set; }
     }
 }

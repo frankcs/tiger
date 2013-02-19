@@ -22,6 +22,8 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
 
             var type = scope.ResolveType(NewTypeNode.TypeName);
             report.Assert(this, TypeInfo.IsNull(type) || !type.IsReadOnly, "Cannot overwrite type {0}. It is read-only.", NewTypeNode.TypeName);
+            
+            NewTypeNode.CheckSemantics(scope,report);
         }
 
         //protected new TypeInfo Type

@@ -10,9 +10,12 @@ public partial class TigerLexer
 
     public override void EmitErrorMessage(string msg)
     {
-        Console.WriteLine(Regex.Replace(msg, @"line (\d+):(\d+)", m => "(" + m.Groups[1].Value + ", " + m.Groups[2].Value + ")"));
+        var indexOf = msg.IndexOf("line ");
+        msg = msg.Substring(indexOf);
+        msg = Regex.Replace(msg, @"line (\d+):(\d+)", m => "(" + m.Groups[1].Value + ", " + m.Groups[2].Value + "):")+".";
+        Console.WriteLine(msg);
         Error = true;
-        base.EmitErrorMessage(msg);
+        base.EmitErrorMessage(msg + ".");
     }
 
 }

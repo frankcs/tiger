@@ -50,7 +50,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var varinfo = (VariableInfo) Scope.ResolveVarOrFunctionOnCodeGen(LValue.MainIDNode.Text);
+            var varinfo = (VariableInfo) (LValue.MainIDNode.ReferencedThing);
             //si es una var sencilla genero código para Expression y asigno al ILLocal
             
             if(LValue.Children.Count==1){

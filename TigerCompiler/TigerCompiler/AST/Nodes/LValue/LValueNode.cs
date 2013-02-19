@@ -96,7 +96,7 @@ namespace TigerCompiler.AST.Nodes.LValue
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var varinfo = (VariableInfo)Scope.ResolveVarOrFunctionOnCodeGen(MainIDNode.Text);
+            var varinfo = (VariableInfo)(MainIDNode.ReferencedThing);
             //si es una var sencilla genero código para Expression y asigno al ILLocal
 
             if (Children.Count == 1){

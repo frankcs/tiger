@@ -62,14 +62,15 @@ namespace TigerCompiler.AST.Nodes.Declarations
             if (report.Assert(this, !scope.IsDefinedInCurrentScopeAsVarOrFunc(VariableID.Text),
                           "A function or variable named {0} is already defined in the current scope.", VariableID.Text))
                 scope.DefineVariable(VariableID.Text, ReturnType);
+
+            VariableID.CheckSemantics(scope,report);
         }
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            
-            var varinfo = (VariableInfo)Scope.ResolveVarforDecl(VariableID.Text);
+            var varinfo = (VariableInfo)((IdNode) VariableID).ReferencedThing;
             varinfo.ILLocalVariable = cg.IlGenerator.DeclareLocal(varinfo.VariableType.GetILType());
-            varinfo.IsHiddingAnother = false;
+//            varinfo.IsHidingAnother = false;
             InitialValue.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Stloc,varinfo.ILLocalVariable);
              

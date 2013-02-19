@@ -21,9 +21,9 @@ namespace TigerCompiler.AST.Nodes.Instructions
         {
             base.CheckSemantics(scope, report);
 
-            var func = scope.ResolveVarOrFunction(FunctionName);
+            var func = scope.ResolveVarOrFunction(FunctionIdNode.Text);
 
-            if (!report.Assert(this, func != null, "Undefined function {0}.", FunctionName) ||
+            if (!report.Assert(this, func != null, "Undefined function {0}.", FunctionIdNode.Text) ||
                 !report.Assert(this, func is FunctionInfo, "Cannot invoke a variable.") ||
                 !report.Assert(this, ((FunctionInfo) func).Parameters.Count == ExpressionList.ChildCount,
                                "Calling function with wrong amount of parameters.")) return;
@@ -40,9 +40,9 @@ namespace TigerCompiler.AST.Nodes.Instructions
             ReturnType = functionInfo.ReturnType; // Procedures will hold void as a return type.
         }
 
-        public string FunctionName
+        public IdNode FunctionIdNode
         {
-            get { return Children[0].Text; }
+            get { return Children[0] as IdNode; }
         }
 
         public ExpressionListNode ExpressionList
@@ -52,7 +52,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var func = (FunctionInfo)Scope.ResolveVarOrFunctionOnCodeGen(FunctionName);
+            var func = (FunctionInfo) FunctionIdNode.ReferencedThing;
             ExpressionList.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Call,func.ILMethod);
         }

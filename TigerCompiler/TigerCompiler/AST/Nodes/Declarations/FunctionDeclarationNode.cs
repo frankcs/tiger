@@ -24,6 +24,11 @@ namespace TigerCompiler.AST.Nodes.Declarations
             get { return Children[1] as TypeFieldsNode; }
         }
 
+        IdNode FunctionIDNode
+        {
+            get { return Children[0] as IdNode; }
+        }
+
         public ASTNode FunctionBody
         {
             get
@@ -34,11 +39,9 @@ namespace TigerCompiler.AST.Nodes.Declarations
             }
         }
 
-        public string FunctionName { get { return Children[0].Text; } }
-
         public Scope FunctionScope
         {
-            get { return ((FunctionInfo) Scope.ResolveVarOrFunction(FunctionName)).FunctionScope; }
+            get { return ((FunctionInfo) FunctionIDNode.ReferencedThing).FunctionScope; }
         } 
 
         public TypeInfo FunctionReturnType
@@ -69,11 +72,12 @@ namespace TigerCompiler.AST.Nodes.Declarations
                     newFunc.AddParameter(info.Key, info.Value);
             }
             // The function body semantic check will be done by the parent block.
+            FunctionIDNode.CheckSemantics(scope,report);
         }
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var funcinfo= (FunctionInfo) Scope.ResolveVarOrFunctionOnCodeGen(FunctionName);
+            var funcinfo= (FunctionInfo) FunctionIDNode.ReferencedThing;
             var parameterstypes =
                 (from paramstypeinfos in funcinfo.Parameters.Values select paramstypeinfos.GetILType()).ToArray();
 
@@ -89,7 +93,7 @@ namespace TigerCompiler.AST.Nodes.Declarations
             {
                 var parameter = paramarr[i];
                 //get the variable for the param
-                var paramvarinfo = (VariableInfo)funcinfo.FunctionScope.ResolveVarOrFunctionOnCodeGen(parameter.Key);
+                var paramvarinfo = (VariableInfo)funcinfo.FunctionScope.ResolveVarOrFunction(parameter.Key);
                 //link the var with is Ilvariable
                 paramvarinfo.ILLocalVariable = cg.IlGenerator.DeclareLocal(parameter.Value.GetILType());
                 //load the argument
@@ -100,7 +104,9 @@ namespace TigerCompiler.AST.Nodes.Declarations
             cg.IlGenerator.Emit(OpCodes.Ret);
             cg.LeaveGenerationScope();
         }
-        
 
+
+
+        public string FunctionName { get { return FunctionIDNode.Text; } }
     }
 }
