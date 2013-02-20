@@ -95,10 +95,10 @@ namespace TigerCompiler.AST.Nodes.Declarations
                 //get the variable for the param
                 var paramvarinfo = (VariableInfo)funcinfo.FunctionScope.ResolveVarOrFunction(parameter.Key);
                 //link the var with is Ilvariable
-                paramvarinfo.ILLocalVariable = cg.IlGenerator.DeclareLocal(parameter.Value.GetILType());
+                paramvarinfo.ILLocalVariable = cg.CreateTigerVar(parameter.Value.GetILType());
                 //load the argument
                 cg.IlGenerator.Emit(OpCodes.Ldarg,i);
-                cg.IlGenerator.Emit(OpCodes.Stloc,paramvarinfo.ILLocalVariable);
+                cg.IlGenerator.Emit(OpCodes.Stsfld,paramvarinfo.ILLocalVariable);
             }
             FunctionBody.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Ret);

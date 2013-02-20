@@ -32,8 +32,7 @@ namespace TigerCompiler.CodeGeneration
             ILAssembly = AppDomain.CurrentDomain.DefineDynamicAssembly(assemName, AssemblyBuilderAccess.Save,
                                                                        Path.GetDirectoryName(fileName));
             ILModule = ILAssembly.DefineDynamicModule(clearname, EXEFileName);
-            EntryPoint = ILModule.DefineGlobalMethod("Main", MethodAttributes.Public | MethodAttributes.Static,
-                                                     null, null);
+            
             UsedBuiltInFunctionNames = builtIn;
             BuiltInFunctiontoBuilder = new Dictionary<string, MethodBuilder>();
 
@@ -41,6 +40,10 @@ namespace TigerCompiler.CodeGeneration
             StandardLibrary = ILModule.DefineType("StandardLibrary", TypeAttributes.Public | TypeAttributes.Class);
             GenerateCodeForBuiltInFunctions();
             StandardLibrary.CreateType();
+
+            //Creating the Program class
+            Program = ILModule.DefineType("Program", TypeAttributes.Public | TypeAttributes.Class);
+            EntryPoint = Program.DefineMethod("Main", MethodAttributes.Public | MethodAttributes.Static);
 
             EnterGenerationScope(EntryPoint.GetILGenerator()); 
         }
@@ -75,6 +78,11 @@ namespace TigerCompiler.CodeGeneration
         public TypeBuilder StandardLibrary { get; private set; }
 
         /// <summary>
+        /// A type for laying the code for the Tiger Program
+        /// </summary>
+        public TypeBuilder Program { get; private set; }
+
+        /// <summary>
         /// Output executable file name
         /// </summary>
         string EXEFileName { get; set; }
@@ -91,6 +99,7 @@ namespace TigerCompiler.CodeGeneration
 
         private int funccount;
         private int typecount;
+        private int tigervarcount;
 
         #endregion
 
@@ -117,27 +126,42 @@ namespace TigerCompiler.CodeGeneration
         }
 
         /// <summary>
-        /// Generates a function in the module and returns the handler
+        /// Generates a function in the Program Class and returns the handler
         /// </summary>
         /// <param name="returntype"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
         public MethodBuilder CreateFunction(Type returntype, Type[] parameters)
         {
-            return ILModule.DefineGlobalMethod(GetNewFunctionName(), MethodAttributes.Public | MethodAttributes.Static,
+            return Program.DefineMethod(GetNewFunctionName(), MethodAttributes.Public | MethodAttributes.Static,
                                                returntype, parameters);
 
         }
 
+        /// <summary>
+        /// Generate a function in the StandardLibrary
+        /// </summary>
+        /// <param name="returntype"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         private MethodBuilder CreateSTDFunction(Type returntype, Type[] parameters)
         {
             return StandardLibrary.DefineMethod(GetNewFunctionName(), MethodAttributes.Public | MethodAttributes.Static,
                                                returntype, parameters);
         }
 
+        /// <summary>
+        /// Generates a type in the module
+        /// </summary>
+        /// <returns></returns>
         public TypeBuilder CreateType()
         {
             return ILModule.DefineType(GetNewTypeName());
+        }
+
+        public FieldBuilder CreateTigerVar(Type type)
+        {
+            return Program.DefineField(GetNewTigerVarName(), type, FieldAttributes.Static | FieldAttributes.Public);
         }
 
         /// <summary>
@@ -309,6 +333,7 @@ namespace TigerCompiler.CodeGeneration
             //generator.Emit(OpCodes.Ldc_I4, 2000);
             //generator.Emit(OpCodes.Call, typeof(Thread).GetMethod("Sleep", new[] { typeof(int) }, null));
             generator.Emit(OpCodes.Ret);
+            Program.CreateType();
         }
 
         public void SaveBin()
@@ -328,6 +353,12 @@ namespace TigerCompiler.CodeGeneration
         {
             typecount++;
             return "type" + typecount;
+        }
+
+        private string GetNewTigerVarName()
+        {
+            tigervarcount++;
+            return "local" + typecount;
         }
         #endregion
 

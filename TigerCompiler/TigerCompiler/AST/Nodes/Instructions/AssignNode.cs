@@ -55,12 +55,12 @@ namespace TigerCompiler.AST.Nodes.Instructions
             
             if(LValue.Children.Count==1){
                 Expression.GenerateCode(cg);
-                cg.IlGenerator.Emit(OpCodes.Stloc, varinfo.ILLocalVariable);
+                cg.IlGenerator.Emit(OpCodes.Stsfld, varinfo.ILLocalVariable);
             }
             else
             {
                 //se carga el obj o arr
-                cg.IlGenerator.Emit(OpCodes.Ldloc, varinfo.ILLocalVariable);
+                cg.IlGenerator.Emit(OpCodes.Ldsfld, varinfo.ILLocalVariable);
                 TypeInfo resolutedtype = varinfo.VariableType;
                 for (int i = 1; i < LValue.Children.Count; i++)
                 {

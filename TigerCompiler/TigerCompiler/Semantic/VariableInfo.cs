@@ -10,7 +10,7 @@ namespace TigerCompiler.Semantic
 
         public TypeInfo VariableType { get; set; }
 
-        public LocalBuilder ILLocalVariable { get; set; }
+        public FieldBuilder ILLocalVariable { get; set; }
 
         public Dictionary<string,TypeInfo> Fields
         {

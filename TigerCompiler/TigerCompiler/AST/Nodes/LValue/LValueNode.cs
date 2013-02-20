@@ -100,12 +100,12 @@ namespace TigerCompiler.AST.Nodes.LValue
             //si es una var sencilla genero código para Expression y asigno al ILLocal
 
             if (Children.Count == 1){
-                cg.IlGenerator.Emit(OpCodes.Ldloc, varinfo.ILLocalVariable);
+                cg.IlGenerator.Emit(OpCodes.Ldsfld, varinfo.ILLocalVariable);
             }
             else
             {
                 //se carga el obj o arr
-                cg.IlGenerator.Emit(OpCodes.Ldloc, varinfo.ILLocalVariable);
+                cg.IlGenerator.Emit(OpCodes.Ldsfld, varinfo.ILLocalVariable);
                 TypeInfo resolutedtype = varinfo.VariableType;
                 for (int i = 1; i < Children.Count; i++)
                 {

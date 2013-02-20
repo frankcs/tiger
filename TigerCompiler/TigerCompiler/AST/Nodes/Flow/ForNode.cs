@@ -56,18 +56,18 @@ namespace TigerCompiler.AST.Nodes.Flow
             Label beginoffor = cg.IlGenerator.DefineLabel();
             EndofCicle = cg.IlGenerator.DefineLabel();
             //define the iteration variable and hook it with it's varinfo
-            loopVariable.ILLocalVariable = cg.IlGenerator.DeclareLocal(typeof(int));
+            loopVariable.ILLocalVariable = cg.CreateTigerVar(typeof(int));
             LocalBuilder upperbound = cg.IlGenerator.DeclareLocal(typeof(int));
 
             //starting th generation
             LoopVariableInitExpression.GenerateCode(cg);
-            cg.IlGenerator.Emit(OpCodes.Stloc, loopVariable.ILLocalVariable);
+            cg.IlGenerator.Emit(OpCodes.Stsfld, loopVariable.ILLocalVariable);
             LoopVariableUpperLimitExpression.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Stloc, upperbound);
             //mark the begin of the cicle
             cg.IlGenerator.MarkLabel(beginoffor);
             //do the comparison
-            cg.IlGenerator.Emit(OpCodes.Ldloc, loopVariable.ILLocalVariable);
+            cg.IlGenerator.Emit(OpCodes.Ldsfld, loopVariable.ILLocalVariable);
             cg.IlGenerator.Emit(OpCodes.Ldloc, upperbound);
             cg.IlGenerator.Emit(OpCodes.Bgt,EndofCicle);
             //Generate the body
@@ -75,10 +75,10 @@ namespace TigerCompiler.AST.Nodes.Flow
             if(BodyReturnsValue)
                 cg.IlGenerator.Emit(OpCodes.Pop);
             //Incresing the counter
-            cg.IlGenerator.Emit(OpCodes.Ldloc, loopVariable.ILLocalVariable);
+            cg.IlGenerator.Emit(OpCodes.Ldsfld, loopVariable.ILLocalVariable);
             cg.IlGenerator.Emit(OpCodes.Ldc_I4_1);
             cg.IlGenerator.Emit(OpCodes.Add);
-            cg.IlGenerator.Emit(OpCodes.Stloc, loopVariable.ILLocalVariable);
+            cg.IlGenerator.Emit(OpCodes.Stsfld, loopVariable.ILLocalVariable);
             cg.IlGenerator.Emit(OpCodes.Br, beginoffor);
             cg.IlGenerator.MarkLabel(EndofCicle);
         }
