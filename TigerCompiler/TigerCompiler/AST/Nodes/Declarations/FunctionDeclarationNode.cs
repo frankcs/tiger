@@ -24,7 +24,7 @@ namespace TigerCompiler.AST.Nodes.Declarations
             get { return Children[1] as TypeFieldsNode; }
         }
 
-        IdNode FunctionIDNode
+        public IdNode FunctionIDNode
         {
             get { return Children[0] as IdNode; }
         }
@@ -80,11 +80,6 @@ namespace TigerCompiler.AST.Nodes.Declarations
             
             var funcinfo= (FunctionInfo) FunctionIDNode.ReferencedThing;
             funcinfo.Locals = new List<KeyValuePair<string, VariableInfo>>(FunctionScope.GetLocals());
-            var parameterstypes =
-                (from paramstypeinfos in funcinfo.Parameters.Values select paramstypeinfos.GetILType()).ToArray();
-
-            //create the function in the module
-            funcinfo.ILMethod = cg.CreateFunction(FunctionReturnType.GetILType(), parameterstypes);
             //get it's ILGen
             var innergenerator = funcinfo.ILMethod.GetILGenerator();
             cg.EnterGenerationScope(innergenerator);

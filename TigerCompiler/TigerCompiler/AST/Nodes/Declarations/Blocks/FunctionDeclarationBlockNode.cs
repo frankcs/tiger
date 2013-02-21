@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Antlr.Runtime;
 using TigerCompiler.Semantic;
 
@@ -37,6 +38,20 @@ namespace TigerCompiler.AST.Nodes.Declarations.Blocks
                 report.Assert(declarationNode, declarationNode.FunctionBody.ReturnType == declarationNode.FunctionReturnType,
                               "Function return type does not match declared type.");
             }
+        }
+
+        public override void GenerateCode(CodeGeneration.CodeGenerator cg)
+        {
+            foreach (FunctionDeclarationNode declarationNode in Children)
+            {
+                var funcinfo = (FunctionInfo)declarationNode.FunctionIDNode.ReferencedThing;
+                var parameterstypes =
+                (from paramstypeinfos in funcinfo.Parameters.Values select paramstypeinfos.GetILType()).ToArray();
+
+                //create the function in the module
+                funcinfo.ILMethod = cg.CreateFunction(declarationNode.FunctionReturnType.GetILType(), parameterstypes);
+            }
+            base.GenerateCode(cg);
         }
     }
 }
