@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
 using System.Diagnostics;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes.Helpers;
@@ -53,8 +54,28 @@ namespace TigerCompiler.AST.Nodes.Instructions
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
             var func = (FunctionInfo) FunctionIdNode.ReferencedThing;
+            List<KeyValuePair<string, VariableInfo>> locals = null;
+            List<LocalBuilder> localblist = null;
+            if (func.Locals != null)
+            {
+                locals = new List<KeyValuePair<string, VariableInfo>>(func.Locals);
+                localblist = new List<LocalBuilder>();
+                foreach (var local in locals)
+                {
+                    LocalBuilder localb = cg.IlGenerator.DeclareLocal(local.Value.VariableType.GetILType());
+                    cg.IlGenerator.Emit(OpCodes.Ldsfld, local.Value.ILLocalVariable);
+                    cg.IlGenerator.Emit(OpCodes.Stloc, localb);
+                    localblist.Add(localb);
+                }
+            }
             ExpressionList.GenerateCode(cg);
             cg.IlGenerator.Emit(OpCodes.Call,func.ILMethod);
+            if (func.Locals != null)
+                for (int i = 0; i < locals.Count; i++)
+                {
+                    cg.IlGenerator.Emit(OpCodes.Ldloc, localblist[i]);
+                    cg.IlGenerator.Emit(OpCodes.Stsfld, locals[i].Value.ILLocalVariable);
+                }
         }
     }
 }

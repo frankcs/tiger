@@ -186,6 +186,17 @@ namespace TigerCompiler.Semantic
         }
 
         public static List<KeyValuePair<string, FunctionInfo>> BuiltInFunctions { get; private set; }
+
+        public IEnumerable<KeyValuePair<string, VariableInfo>> GetLocals()
+        {
+            foreach (KeyValuePair<string, Symbol> keyValuePair in SymbolTable)
+                if (keyValuePair.Value is VariableInfo)
+                    yield return new KeyValuePair<string, VariableInfo>(keyValuePair.Key,(keyValuePair.Value as VariableInfo));
+
+            foreach (Scope childScope in _childScopes)
+                foreach (var item in childScope.GetLocals())
+                    yield return item;
+        }
     }
 
 }

@@ -10,7 +10,7 @@
 		print("\n"));
 		print("\n"))
 function try(c:int) =
-if c=N then printboard()
+if c=N then (getline(); printboard())
 else for r := 0 to N-1
 do if row[r]=0 &
 diag1[r+c]=0 & diag2[r+7-c]=0

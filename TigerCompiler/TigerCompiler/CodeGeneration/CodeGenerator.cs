@@ -358,7 +358,7 @@ namespace TigerCompiler.CodeGeneration
         private string GetNewTigerVarName()
         {
             tigervarcount++;
-            return "local" + typecount;
+            return "local" + tigervarcount;
         }
         #endregion
 

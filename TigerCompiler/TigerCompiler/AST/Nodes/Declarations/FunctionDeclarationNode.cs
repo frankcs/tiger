@@ -77,7 +77,9 @@ namespace TigerCompiler.AST.Nodes.Declarations
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
+            
             var funcinfo= (FunctionInfo) FunctionIDNode.ReferencedThing;
+            funcinfo.Locals = new List<KeyValuePair<string, VariableInfo>>(FunctionScope.GetLocals());
             var parameterstypes =
                 (from paramstypeinfos in funcinfo.Parameters.Values select paramstypeinfos.GetILType()).ToArray();
 

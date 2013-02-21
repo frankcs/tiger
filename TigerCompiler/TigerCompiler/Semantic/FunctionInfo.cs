@@ -98,5 +98,7 @@ namespace TigerCompiler.Semantic
         }
 
         public MethodBuilder ILMethod { get; set; }
+
+        public List<KeyValuePair<string, VariableInfo>> Locals { get; set; }
     }
 }
