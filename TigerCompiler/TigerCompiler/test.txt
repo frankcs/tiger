@@ -1,13 +1,4 @@
-﻿let 
-	function returna():int= a()
-	function a():int=5
-in
-	printi(a());
-	getchar()
-end
-
-
-
+﻿(printline("\001"); getchar())
 
 
 /*let
