@@ -2,12 +2,12 @@
 /* Syntactic Error: Unexpected end of the input file. */
 
 let
-    var n := 0
-	type rec = {aaa:int}
-	function f(p: rec) = f(nil)
+    var a: string := nil
+	/*var b: string := if a=nil then a else "locol"*/
+	var c: string := if  nil=nil then "asda" else "asd"	
 in    
-	print("\nhello\032world");
-	getchar()
+	print(c);
+	getchar() 
 end
 
 /*let
