@@ -177,6 +177,10 @@ namespace TigerCompiler.Semantic
 
         public bool TypeIsVisibleInSomeParentScope(TypeInfo type)
         {
+            if (type is AliasTypeInfo)
+            {
+                type = ((AliasTypeInfo) type).TargetType;
+            }
             if (ReferenceEquals(TypeInfo.Void,type))
                 return true;
             if (ReferenceEquals(this,DefaultGlobalScope))

@@ -1,14 +1,7 @@
 ﻿
 /* Syntactic Error: Unexpected end of the input file. */
 
-let
-    var a: string := nil
-	/*var b: string := if a=nil then a else "locol"*/
-	var c: string := if  nil=nil then "asda" else "asd"	
-in    
-	print(c);
-	getchar() 
-end
+let var age : int := 22 in let type Integer = int type Entero = Integer var edad : Entero := age in 3; printline("call"); "string"; nil; edad end end
 
 /*let
 	type linked_list = { node : int, next : linked_list }
