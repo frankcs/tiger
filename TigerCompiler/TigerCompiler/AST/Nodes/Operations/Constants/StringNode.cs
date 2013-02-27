@@ -11,6 +11,9 @@ namespace TigerCompiler.AST.Nodes.Operations.Constants
     {
         public StringNode(IToken payload) : base(payload)
         {
+            ParsedText= Text.Substring(1, Text.Length - 2);
+            ParsedText = Regex.Replace(ParsedText, @"(\\\d\d\d)", new MatchEvaluator(ToAscii));
+            ParsedText = Regex.Unescape(ParsedText);
         }
 
         public override void CheckSemantics(Semantic.Scope scope, Semantic.ErrorReporter report)
@@ -18,13 +21,12 @@ namespace TigerCompiler.AST.Nodes.Operations.Constants
             ReturnType = TypeInfo.String;
         }
 
+        private string ParsedText { get; set; }
+
         public override void GenerateCode(CodeGenerator cg)
         {
-            string result = Text;
-            result = result.Substring(1, result.Length - 2);
-            result = Regex.Replace(result, @"(\\\d\d\d)", new MatchEvaluator(ToAscii));
-            result = Regex.Unescape(result);
-            cg.IlGenerator.Emit(OpCodes.Ldstr, result);
+            
+            cg.IlGenerator.Emit(OpCodes.Ldstr, ParsedText);
             
         }
 

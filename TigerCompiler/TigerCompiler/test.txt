@@ -3,8 +3,12 @@
 
 let
     var n := 0
-in
-    print("\n");
+	type rec = {aaa:int}
+	function f(p: rec) = f(nil)
+in    
+	print("\nhello\032world");
+	getchar()
+end
 
 /*let
 	type linked_list = { node : int, next : linked_list }
