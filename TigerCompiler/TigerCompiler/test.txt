@@ -1,18 +1,10 @@
-﻿/*Este programa imprime "second scope"*/
-let type r={hd:int, tl:x}
-	type x= y
-	type y= string
-	var x := "1"
-in	print("second scope");
-	let type x2 = y
-		type z = r
-		type y = int
-		var x2:=1
-		var z:z:= r{hd=1, tl="1"}
-	in 
-	end
-end
+﻿
+/* Syntactic Error: Unexpected end of the input file. */
 
+let
+    var n := 0
+in
+    print("\n");
 
 /*let
 	type linked_list = { node : int, next : linked_list }
