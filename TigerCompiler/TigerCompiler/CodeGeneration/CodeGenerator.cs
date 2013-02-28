@@ -21,7 +21,7 @@ namespace TigerCompiler.CodeGeneration
     public class CodeGenerator
     {
         #region Constructors
-        public CodeGenerator(string fileName, IEnumerable<string> builtIn)
+        public CodeGenerator(string fileName)
         {
             typecount = 0;
             funccount = 0;
@@ -29,11 +29,10 @@ namespace TigerCompiler.CodeGeneration
             EXEFileName = clearname + ".exe";
             ScopedGenerators= new Stack<ILGenerator>();
             AssemblyName assemName = new AssemblyName("TigerProgram");
-            ILAssembly = AppDomain.CurrentDomain.DefineDynamicAssembly(assemName, AssemblyBuilderAccess.Save,
+            ILAssembly = AppDomain.CurrentDomain.DefineDynamicAssembly(assemName, AssemblyBuilderAccess.RunAndSave,
                                                                        Path.GetDirectoryName(fileName));
             ILModule = ILAssembly.DefineDynamicModule(clearname, EXEFileName);
             
-            UsedBuiltInFunctionNames = builtIn;
             BuiltInFunctiontoBuilder = new Dictionary<string, MethodBuilder>();
 
             //Creating the Standard Library
@@ -86,11 +85,6 @@ namespace TigerCompiler.CodeGeneration
         /// Output executable file name
         /// </summary>
         string EXEFileName { get; set; }
-
-        /// <summary>
-        /// To know which function built in function should be generated
-        /// </summary>
-        private IEnumerable<string> UsedBuiltInFunctionNames { get; set; }
 
         /// <summary>
         /// To acces builders of built in functions by its name
