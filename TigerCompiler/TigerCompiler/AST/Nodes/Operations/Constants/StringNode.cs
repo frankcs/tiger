@@ -11,6 +11,9 @@ namespace TigerCompiler.AST.Nodes.Operations.Constants
     {
         public StringNode(IToken payload) : base(payload)
         {
+            ParsedText= Text.Substring(1, Text.Length - 2);
+            ParsedText = Regex.Replace(ParsedText, @"(\\\d\d\d)", new MatchEvaluator(ToAscii));
+            ParsedText = Regex.Unescape(ParsedText);
         }
 
         public override void CheckSemantics(Semantic.Scope scope, Semantic.ErrorReporter report)
@@ -18,39 +21,16 @@ namespace TigerCompiler.AST.Nodes.Operations.Constants
             ReturnType = TypeInfo.String;
         }
 
+        private string ParsedText { get; set; }
+
         public override void GenerateCode(CodeGenerator cg)
         {
-            string result = Text;
-            result = result.Substring(1, result.Length - 2);
-            result = Regex.Replace(result, @"(\\\\[\r\n\t ]+\\\\)", new MatchEvaluator(DeleteEvaluator));
-            result = Regex.Replace(result, @"(\\n)|(\\t)|(\\\\)|" + "(\\\\\")", new MatchEvaluator(Evaluator));
-            result = Regex.Replace(result, @"(\\\d\d\d)", new MatchEvaluator(AsciiEvaluator));
-            cg.IlGenerator.Emit(OpCodes.Ldstr, result);
+            
+            cg.IlGenerator.Emit(OpCodes.Ldstr, ParsedText);
             
         }
 
-        private string Evaluator(Match m)
-        {
-            if (m.Groups[0].Value == "\\n")
-                return "\n";
-            if (m.Groups[0].Value == "\\t")
-                return "\t";
-            if (m.Groups[0].Value == "\\\\")
-                return "\\";
-            if (m.Groups[0].Value == "\\\"")
-                return "\"";
-            //if (m.Groups[0].Value == "\"")
-            //    return "\"";
-
-            return null;
-        }
-
-        private string DeleteEvaluator(Match m)
-        {
-            return "";
-        }
-
-        private string AsciiEvaluator(Match m)
+        private string ToAscii(Match m)
         {
             return Convert.ToChar(int.Parse(m.Groups[0].Value.Substring(1))).ToString();
         }

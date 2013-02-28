@@ -44,7 +44,7 @@ namespace TigerCompiler.CodeGeneration
             //Creating the Program class
             Program = ILModule.DefineType("Program", TypeAttributes.Public | TypeAttributes.Class);
             EntryPoint = Program.DefineMethod("Main", MethodAttributes.Public | MethodAttributes.Static);
-
+            ILAssembly.SetEntryPoint(EntryPoint);
             EnterGenerationScope(EntryPoint.GetILGenerator()); 
         }
         #endregion
@@ -169,8 +169,9 @@ namespace TigerCompiler.CodeGeneration
         /// </summary>
         public void GenerateCode(ASTNode node)
         {
-            MethodInfo stringtoint = typeof(Convert).GetMethod("ToInt32", new[] { typeof(string) });
-            ILGenerator generator = EntryPoint.GetILGenerator();
+            #region Early testing
+            //MethodInfo stringtoint = typeof(Convert).GetMethod("ToInt32", new[] { typeof(string) });
+            //ILGenerator generator = EntryPoint.GetILGenerator();
 
             #region Testing built in functions
 
@@ -327,18 +328,59 @@ namespace TigerCompiler.CodeGeneration
 
             #region Testing Field Acces an Store
             #endregion
+            #endregion
 
+            //All the needed resources to handle exceptions
+            Type exception = typeof (Exception);
+            MethodInfo geterroroutput = typeof (Console).GetProperty("Error").GetGetMethod();
+            MethodInfo writeline = typeof (TextWriter).GetMethod("WriteLine", new [] {typeof(string) , typeof(object)});
+            MethodInfo readline = typeof(Console).GetMethod("ReadLine");
+            MethodInfo gettype = typeof (Exception).GetMethod("GetType");
+            MethodInfo exit = typeof (Environment).GetMethod("Exit", new [] {typeof(int)});
+    
+            LocalBuilder exceptioninstance = IlGenerator.DeclareLocal(exception);
+            
+
+            //To enclose all the generated code in an enormous try
+            IlGenerator.BeginExceptionBlock();
             node.GenerateCode(this);
+            
+            // To handle exceptions thrown by IL execution code
+            IlGenerator.BeginCatchBlock(exception);
+            //the launched exception will be in the top of the stack so we must store it 
+            IlGenerator.Emit(OpCodes.Stloc,exceptioninstance);
 
-            //generator.Emit(OpCodes.Ldc_I4, 2000);
-            //generator.Emit(OpCodes.Call, typeof(Thread).GetMethod("Sleep", new[] { typeof(int) }, null));
-            generator.Emit(OpCodes.Ret);
+            //Getting the std error output
+            IlGenerator.Emit(OpCodes.Call, geterroroutput);
+            //Get the parameters to report to the error output
+            IlGenerator.Emit(OpCodes.Ldstr, "\nException of type '{0}' was thrown");
+            IlGenerator.Emit(OpCodes.Ldloc,exceptioninstance);
+            IlGenerator.Emit(OpCodes.Call, gettype);
+
+            //Calling the writeline method of the error output
+            IlGenerator.Emit(OpCodes.Call, writeline);
+            
+            // Set a readline son the user can see the exception thrown, comment this line if there is any problem
+            //IlGenerator.EmitCall(OpCodes.Call, readline, null);
+
+            //Exiting with code 1
+            IlGenerator.Emit(OpCodes.Ldc_I4_1);
+            IlGenerator.Emit(OpCodes.Call, exit);
+
+            //Exception management is done
+            IlGenerator.EndExceptionBlock();
+
+            // No exception was thrown finish with exit code 0
+            IlGenerator.Emit(OpCodes.Ldc_I4_0);
+            IlGenerator.Emit(OpCodes.Call, exit);
+
+            // Don't forget the ret
+            IlGenerator.Emit(OpCodes.Ret);
             Program.CreateType();
         }
 
         public void SaveBin()
         {
-            ILAssembly.SetEntryPoint(EntryPoint);
             ILModule.CreateGlobalFunctions();
             ILAssembly.Save(EXEFileName);
         }

@@ -1,77 +1,17 @@
 ﻿let 
-	function returna():int= a()
-	function a():int=5
-in
-	printi(a());
-	getchar()
+	var age : int := 22 
+in 
+	let 
+		type Integer = int 
+		type Entero = Integer 
+		var edad : Entero := age 
+	in 
+		3; 
+		printline("call");
+		"string";
+		nil
+	end 
 end
-
-
-
-
-
-/*let
-	type linked_list = { node : int, next : linked_list }
-	var list := linked_list { node = -1, next = nil }
-	var head := list
-	var it : linked_list := nil
-	var n:= 0
-	
-	function read_int() : int =
-		let 
-			var i := 0
-			var buffer := getline()
-			
-			function is_digit(s : string) : int = 
-				ord(buffer)>=ord("0") & ord(buffer)<=ord("9")
-			
-			function skipto() =
-				while buffer=" " | buffer="\n" | buffer=""
-				do buffer := getline()
-		in 
-				skipto();
-				while is_digit(buffer)
-				do (
-					i := i*10+ord(buffer)-ord("0"); 
-					buffer := getline()
-				);
-				i
-		end
-	
-in
-	n:= read_int();
-	while n <> 16 do
-	(
-		list.next:= linked_list { node = n, next = nil };
-		list:= list.next;
-		n:= read_int()
-	);
-	it:= head.next;
-	while it <> nil do
-	(
-		printi(it.node);
-		print("\n");
-		it:= it.next
-	)
-end
-*/
-
-/*let
-	type Person  = {Age: int, Name:string, Mother:Person}
-	type PersonArray = array of Person	
-	var a := Person {Age =22, Name="Mima", Mother= nil}	
-	var b := Person {Age =22, Name="Zunilda", Mother= a}	
-	var c := Person {Age =22, Name="Frank", Mother=b}	
-	var d := Person {Age =22, Name="Alex", Mother=nil}
-	var	e := PersonArray [5] of Person {Age =22, Name="Mima", Mother= nil}			
-in
-	printline(e[1].Name);
-	e[1].Name:="Cheo";
-	e[2].Name:="Calabacn";
-	printline(e[1].Name);
-	printline(e[2].Name)
-end
-*/
 
 
 

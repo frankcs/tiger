@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using Antlr.Runtime;
 using TigerCompiler.AST.Nodes;
 using TigerCompiler.AST.Nodes.Helpers;

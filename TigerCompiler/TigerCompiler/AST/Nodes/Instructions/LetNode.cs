@@ -37,9 +37,9 @@ namespace TigerCompiler.AST.Nodes.Instructions
             
             base.CheckSemantics(_letScope, report);
 
-            ReturnType = ExprSeqNode.ReturnType;
+            ReturnType = ExprSeqNode != null ? ExprSeqNode.ReturnType : TypeInfo.Void;
 
-            report.Assert(this, scope.TypeIsVisibleInSomeParentScope(ReturnType),
+            report.Assert(this, _letScope.TypeIsVisibleInSomeParentScope(ReturnType),
                           "The return type of a let expression must be visible in the scope in which it was declared.");
         }
 

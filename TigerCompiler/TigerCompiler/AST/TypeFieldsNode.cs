@@ -25,17 +25,18 @@ namespace TigerCompiler.AST
 
             Parameters = new Dictionary<string, TypeInfo>();
 
-            if (Children!=null)
+            if (Children == null) return;
+            for (int i = 0; i < Children.Count; i++)
             {
-                for (int i = 0; i < Children.Count; i++)
-                {
-                    var paramTypeName = ((TypeIDNode) ((ASTNode) Children[i]).Children[0]).TypeName;
+                var paramTypeName = ((TypeIDNode) ((ASTNode) Children[i]).Children[0]).TypeName;
 
-                    if (report.Assert(Children[i] as ASTNode, !Parameters.ContainsKey(Children[i].Text),
-                                   "There is already a parameter named {0} on the function.",Children[i].Text))
-                    {
-                        Parameters.Add(Children[i].Text, scope.ResolveType(paramTypeName));
-                    }
+                if (report.Assert(Children[i] as ASTNode, !Parameters.ContainsKey(Children[i].Text),
+                                  "There is already a parameter named {0} on the function.",Children[i].Text))
+                {
+                    var resolvedType = scope.ResolveType(paramTypeName);
+                    report.Assert(Children[i] as ASTNode, !TypeInfo.IsNull(resolvedType),
+                                  "Type {0} does not exist in the current context.", paramTypeName);
+                    Parameters.Add(Children[i].Text, resolvedType);
                 }
             }
         }

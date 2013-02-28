@@ -58,6 +58,8 @@ namespace TigerCompiler.Semantic.Types
 
         public static bool operator == (TypeInfo t1, TypeInfo t2)
         {
+            if (ReferenceEquals(t1,Unknown) && ReferenceEquals(t2,Unknown))
+                return false;
             if (IsNull(t1) || IsNull(t2))
                 return true;
             Debug.Assert(t1 != null, "t1 != null");
