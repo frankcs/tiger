@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 let
 	var a:= 10
@@ -39,3 +40,22 @@ in
 	printi(a);
 	getchar()
 end
+=======
+﻿let 
+	var age : int := 22 
+in 
+	let 
+		type Integer = int 
+		type Entero = Integer 
+		var edad : Entero := age 
+	in 
+		3; 
+		printline("call");
+		"string";
+		nil
+	end 
+end
+
+
+
+>>>>>>> 72edcd36c3d62d30d85f5492b1fb3d2a7e673b01
