@@ -3,21 +3,21 @@
   <Class Name="TigerCompiler.AST.Nodes.Flow.WhileNode" Collapsed="true">
     <Position X="81.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAgAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAKAAAAAAAAAAAAAgAAAAAEAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Flow\WhileNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Logical.AndNode">
     <Position X="9.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Logical\AndNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Arithmetic.DivisionNode">
     <Position X="3" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Arithmetic\DivisionNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,7 +31,7 @@
   <Class Name="TigerCompiler.AST.Nodes.Declarations.FunctionDeclarationNode" Collapsed="true">
     <Position X="54.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAABCAAAAAAACAwAAAAAABAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAEAAIAAACAAAAAAACAwAAAAAABAAAAAA=</HashCode>
       <FileName>AST\Nodes\Declarations\FunctionDeclarationNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,14 +52,14 @@
   <Class Name="TigerCompiler.AST.Nodes.Flow.IfThenElseNode" Collapsed="true">
     <Position X="77.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAEAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAQAEAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAE=</HashCode>
       <FileName>AST\Nodes\Flow\IfThenElseNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Constants.IntNode">
     <Position X="70.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Constants\IntNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,28 +80,28 @@
   <Class Name="TigerCompiler.AST.Nodes.Instructions.LetNode" Collapsed="true">
     <Position X="63.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAEAAAAgAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAAAAAAAIAAAAAAAAEAAAAgAAAAAIAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Instructions\LetNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Arithmetic.MinusNode">
     <Position X="5.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Arithmetic\MinusNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Arithmetic.MultiplyNode">
     <Position X="0.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Arithmetic\MultiplyNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Constants.NilNode">
     <Position X="72.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Constants\NilNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -122,28 +122,28 @@
   <Class Name="TigerCompiler.AST.Nodes.Operations.Constants.StringNode">
     <Position X="75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAIAAAAAEAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Constants\StringNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Arithmetic.UnaryMinusNode">
     <Position X="27.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Arithmetic\UnaryMinusNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Declarations.VariableDeclarationNode" Collapsed="true">
     <Position X="52.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAACAAAAAAAAAAAAgAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAICAAAAAAAAAAAAgAgAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Declarations\VariableDeclarationNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.ASTNode" Collapsed="true">
     <Position X="43.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAgAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAACAIAAAAAAAAAAAAAgAAAAAAAAAEAAA=</HashCode>
       <FileName>AST\Nodes\ASTNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -158,7 +158,7 @@
     <Position X="15.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
-      <FileName>AST\Nodes\Operations\Logical\RelationalOperationNode.cs</FileName>
+      <FileName>AST\Nodes\Operations\Logical\EqualityNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Declarations.DeclarationNode">
@@ -178,7 +178,7 @@
   <Class Name="TigerCompiler.FlowControlNode">
     <Position X="81.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Flow\FlowControlNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -231,56 +231,56 @@
   <Class Name="TigerCompiler.AST.Nodes.Instructions.ExpressionSequenceNode" Collapsed="true">
     <Position X="57" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAgCAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Instructions\ExpressionSequenceNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Operations.Logical.OrNode">
     <Position X="12" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Operations\Logical\OrNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Instructions.FunctionCallNode" Collapsed="true">
     <Position X="66" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAACCAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAIAACAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Instructions\FunctionCallNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Instructions.AssignNode" Collapsed="true">
     <Position X="59.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAAAAAAICAAAAAAAAAAAAgAQAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Instructions\AssignNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Instructions.ArrayCreationNode" Collapsed="true">
     <Position X="68.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAAQAAAAAAAAAAAAAgAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAAYAAAAAAAAAAAAAgAgAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Instructions\ArrayCreationNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Flow.BreakNode" Collapsed="true">
     <Position X="84" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Flow\BreakNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Flow.ForNode" Collapsed="true">
     <Position X="86.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ADAAAAAAAAAAAAAAABAAAAAAAAAAAgAAQACAABAAAAA=</HashCode>
+      <HashCode>ADAABAAAAAAAAAAIABAAAAAAAAAAAgAAQACAABAAAAA=</HashCode>
       <FileName>AST\Nodes\Flow\ForNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Flow.IfThenNode" Collapsed="true">
     <Position X="79.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAE=</HashCode>
       <FileName>AST\Nodes\Flow\IfThenNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -301,14 +301,14 @@
   <Class Name="TigerCompiler.AST.Nodes.Declarations.Types.RecordDeclarationNode" Collapsed="true">
     <Position X="48" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Declarations\Types\RecordDeclarationNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.Declarations.Types.TypeDeclarationNode" Collapsed="true">
     <Position X="48" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Declarations\Types\TypeDeclarationNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -336,7 +336,7 @@
   <Class Name="TigerCompiler.AST.Nodes.Helpers.IdNode" Collapsed="true">
     <Position X="32.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Helpers\IdNode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -357,14 +357,14 @@
   <Class Name="TigerCompiler.AST.Nodes.Instructions.RecordCreationNode" Collapsed="true">
     <Position X="61.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAQgAgAAAAAAAAAAA=</HashCode>
       <FileName>AST\Nodes\Instructions\RecordCreationNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TigerCompiler.AST.Nodes.LValue.LValueNode" Collapsed="true">
     <Position X="35.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAMAAAAAAAAAAAAAgAAAAAAAAAAgAA=</HashCode>
       <FileName>AST\Nodes\LValue\LValueNode.cs</FileName>
     </TypeIdentifier>
   </Class>

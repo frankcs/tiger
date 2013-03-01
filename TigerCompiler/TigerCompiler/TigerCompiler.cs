@@ -17,16 +17,16 @@ namespace TigerCompiler
             if (args.Length > 0 && File.Exists(args[0]))
                 Environment.Exit(Compile(args[0]));
             else
-                Console.WriteLine("(0,0) File {0} cannot be found.",args[0]);
-            Environment.Exit(1);
+            {
+                Console.WriteLine("(0,0) File {0} cannot be found.", args[0]);
+                Environment.Exit(1);
+            }
         }
 
         private static int Compile(string filename)
         {
             if (!Path.IsPathRooted(filename))
-            {
                 filename = Path.Combine(Environment.CurrentDirectory, filename);
-            }
 
             ICharStream characters = new ANTLRFileStream(filename);
             var lexer = new TigerLexer(characters);
