@@ -1,17 +1,5 @@
-﻿let 
-	var age : int := 22 
-in 
-	let 
-		type Integer = int 
-		type Entero = Integer 
-		var edad : Entero := age 
-	in 
-		3; 
-		printline("call");
-		"string";
-		nil
-	end 
-end
-
-
-
+﻿for j:= 1 to 2 do 
+( 
+	4;
+	printi(j)
+)

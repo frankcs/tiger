@@ -11,7 +11,8 @@
     <RootNamespace>TigerCompiler</RootNamespace>
     <AssemblyName>TigerCompiler</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -130,6 +131,7 @@
     <Compile Include="Semantic\VariableInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="AST\ASTDiagram.cd" />
     <None Include="Semantic\SemanticCheckDiagram.cd" />
     <None Include="AST\Tiger.tokens" />
