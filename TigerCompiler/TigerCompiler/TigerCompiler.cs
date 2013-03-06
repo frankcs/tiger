@@ -12,19 +12,21 @@ namespace TigerCompiler
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Tiger Compiler version 0.6");
+            Console.WriteLine("Tiger Compiler version 1.0");
             Console.WriteLine("Copyright (C) 2012-2013 Frank E. Perez & Alex R. Coto\n");
             if (args.Length > 0 && File.Exists(args[0]))
                 Environment.Exit(Compile(args[0])); 
             else if (args.Length > 0)
-                Console.WriteLine("(0,0) File {0} cannot be found.",args[0]);
+            {
+                Console.WriteLine("(0,0) File {0} cannot be found.", args[0]);
+                Environment.Exit(1);
+            }
             else Console.WriteLine("(0,0) No file to compile.");
         }
 
         private static int Compile(string filename)
         {
             filename = Path.GetFullPath(filename);
-
             ICharStream characters = new ANTLRFileStream(filename);
             var lexer = new TigerLexer(characters);
             ITokenStream tokens = new CommonTokenStream(lexer);
@@ -44,15 +46,10 @@ namespace TigerCompiler
                 return 1;
             }
 
-            var generator = new CodeGenerator(filename,
-                                              new[] {"print","printi", "printline", "flush", 
-                                                     "getchar", "getline", "ord", "chr", "size",
-                                                     "substring","concat", "not", "exit"
-                                                    });
+            var generator = new CodeGenerator(filename);
+
             generator.GenerateCode((ASTNode)result.Tree);
             generator.SaveBin();
-
-            Console.WriteLine("The program has compiled successfully.");
             return 0;
         }
     }

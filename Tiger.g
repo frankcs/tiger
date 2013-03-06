@@ -107,7 +107,7 @@ ASCII_ESC
     ;
 
     
-program	:	expr EOF -> ^(PROGRAM expr);
+public program	:	expr EOF -> ^(PROGRAM expr);
 
 expr	:	or_expr;
 

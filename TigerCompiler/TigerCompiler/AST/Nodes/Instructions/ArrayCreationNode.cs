@@ -54,10 +54,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
 
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var arrayinfo = (TypeInfo)Scope.ResolveType(TypeNode.TypeName);
-            if (arrayinfo is AliasTypeInfo)
-                arrayinfo = (ArrayTypeInfo)((AliasTypeInfo)arrayinfo).TargetType;
-            arrayinfo = (ArrayTypeInfo) arrayinfo;
+            var arrayinfo = TypeInfo.ArrayFromTypeInfo(Scope.ResolveType(TypeNode.TypeName));
             //to get the length
             LocalBuilder length = cg.IlGenerator.DeclareLocal(typeof(int));
             LocalBuilder count = cg.IlGenerator.DeclareLocal(typeof(int));
@@ -73,7 +70,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
             cg.IlGenerator.Emit(OpCodes.Dup);
             //get the length
             cg.IlGenerator.Emit(OpCodes.Stloc, length);
-            cg.IlGenerator.Emit(OpCodes.Newarr, ((ArrayTypeInfo)arrayinfo).TargetType.GetILType());
+            cg.IlGenerator.Emit(OpCodes.Newarr, arrayinfo.TargetType.GetILType());
             cg.IlGenerator.Emit(OpCodes.Stloc, arr);
 
             //make the initialization loop
@@ -88,7 +85,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
             cg.IlGenerator.Emit(OpCodes.Ldloc, arr);
             cg.IlGenerator.Emit(OpCodes.Ldloc, count);
             InitExpression.GenerateCode(cg);
-            cg.IlGenerator.Emit(OpCodes.Stelem, ((ArrayTypeInfo)arrayinfo).TargetType.GetILType());
+            cg.IlGenerator.Emit(OpCodes.Stelem, arrayinfo.TargetType.GetILType());
 
             //increase count and jmp to begin
             cg.IlGenerator.Emit(OpCodes.Ldloc, count);

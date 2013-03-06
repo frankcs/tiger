@@ -58,16 +58,15 @@ namespace TigerCompiler.AST.Nodes.Instructions
 		
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
-            var recordinfo = (TypeInfo)Scope.ResolveType(TypeNode.Text);
-            if (recordinfo is AliasTypeInfo)
-                recordinfo = (RecordTypeInfo)((AliasTypeInfo)recordinfo).TargetType;
+            var recordinfo = TypeInfo.RecordFromTypeInfo(Scope.ResolveType(TypeNode.Text));
+            
             //Generate code for the initialization expr
             foreach (ASTNode initializationExpression in InitializationExpressions)
             {
                 initializationExpression.GenerateCode(cg);
             }
             //Creates the new obj
-            cg.IlGenerator.Emit(OpCodes.Newobj,((RecordTypeInfo)recordinfo).Constructor);
+            cg.IlGenerator.Emit(OpCodes.Newobj,recordinfo.Constructor);
         }
     }
 }

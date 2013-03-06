@@ -1,7 +1,0 @@
-﻿-To define functions use the the property ILModule and use the DefineGlobalMethod method to retrieve the builder for a given function
--To define a variable use the property ILGenerator to define a local
--To define a Type ILModule and DefineTypeMethod.
-
--t:=a.b[3].c
--Load the variable which id is "a" into the stack
--Determine wether the .b is a field acces or 

@@ -12,6 +12,8 @@ namespace TigerCompiler.Semantic.Types
             _targetTypeName = targetTypeName;
         }
 
+
+
         public TypeInfo TargetType { get; private set; }
     
         public override Type GetILType()

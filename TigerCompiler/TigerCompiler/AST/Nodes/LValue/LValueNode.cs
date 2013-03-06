@@ -30,7 +30,7 @@ namespace TigerCompiler.AST.Nodes.LValue
                     var tmp = Children[i];
                     if (tmp is DotNode)
                     {
-                        var recordTypeInfo = (ReturnType as RecordTypeInfo);
+                        var recordTypeInfo = TypeInfo.RecordFromTypeInfo(ReturnType);
                         if (recordTypeInfo != null)
                         {
                             TypeInfo value;
@@ -52,10 +52,10 @@ namespace TigerCompiler.AST.Nodes.LValue
                     }
                     else if (tmp is IndexingNode)
                     {
+                        if (ReturnType is AliasTypeInfo)
+                            ReturnType = (ReturnType as AliasTypeInfo).TargetType;
                         if (ReturnType is ArrayTypeInfo)
-                        {
                             ReturnType = ((ArrayTypeInfo) ReturnType).TargetType;
-                        }
                         else
                         {
                             report.AddError(this,"Trying to index on a non-array type.");
@@ -111,6 +111,7 @@ namespace TigerCompiler.AST.Nodes.LValue
                 {
                     if (Children[i] is IndexingNode)
                     {
+                        resolutedtype = TypeInfo.ArrayFromTypeInfo(resolutedtype);
                         var node = (IndexingNode)Children[i];
                         Type targettype = ((ArrayTypeInfo)resolutedtype).TargetType.GetILType();
                         node.IndexNode.GenerateCode(cg);
@@ -120,6 +121,7 @@ namespace TigerCompiler.AST.Nodes.LValue
                     }
                     else
                     {
+                        resolutedtype = TypeInfo.RecordFromTypeInfo(resolutedtype);
                         var membername = ((DotNode)Children[i]).MemberName;
                         //resolver el field builder asoc al member
                         var fieldbuilder = ((RecordTypeInfo)resolutedtype).FieldBuilders[membername];

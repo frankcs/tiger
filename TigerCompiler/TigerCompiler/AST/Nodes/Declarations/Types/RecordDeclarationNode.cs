@@ -41,7 +41,7 @@ namespace TigerCompiler.AST.Nodes.Declarations.Types
         public override void GenerateCode(CodeGeneration.CodeGenerator cg)
         {
             //get the type info
-            var typeinfo = (RecordTypeInfo)Scope.ResolveType(NewTypeNode.TypeName);
+            var typeinfo = TypeInfo.RecordFromTypeInfo(Scope.ResolveType(NewTypeNode.TypeName));
             //generate the fields
             var fields = new List<FieldBuilder>();
             var paramlist = new List<Type>();

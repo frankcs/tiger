@@ -64,6 +64,5 @@ namespace TigerCompiler.Semantic.Types
         public ConstructorBuilder Constructor { get; set; }
 
         public Dictionary<string, FieldBuilder> FieldBuilders { get; set; }
-
     }
 }

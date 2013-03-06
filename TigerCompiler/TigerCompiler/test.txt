@@ -1,5 +1,8 @@
-﻿for j:= 1 to 2 do 
-( 
-	4;
-	printi(j)
-)
+let
+	type b = array of int
+	type a = c
+	type c = b
+	var x:a:=b[10] of 2
+in
+	printi(x[3])
+end

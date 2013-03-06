@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using Antlr.Runtime;
@@ -67,7 +68,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
                     if(LValue.Children[i] is IndexingNode)
                     {
                         var node = (IndexingNode)LValue.Children[i];
-                        Type targettype = ((ArrayTypeInfo)resolutedtype).TargetType.GetILType();
+                        Type targettype = (TypeInfo.ArrayFromTypeInfo(resolutedtype)).TargetType.GetILType();
                         node.IndexNode.GenerateCode(cg);
 
                         if (i == LValue.Children.Count - 1)
@@ -79,16 +80,14 @@ namespace TigerCompiler.AST.Nodes.Instructions
                         else //si es arr se accede
                         {
                             cg.IlGenerator.Emit(OpCodes.Ldelem, targettype);
-                            resolutedtype = ((ArrayTypeInfo)resolutedtype).TargetType;
+                            resolutedtype = (TypeInfo.ArrayFromTypeInfo(resolutedtype)).TargetType;
                         }
-
-
                     }
                     else
                     {
                         var membername = ((DotNode)LValue.Children[i]).MemberName;
                         //resolver el field builder asoc al member
-                        var fieldbuilder = ((RecordTypeInfo)resolutedtype).FieldBuilders[membername];
+                        var fieldbuilder = (TypeInfo.RecordFromTypeInfo(resolutedtype)).FieldBuilders[membername];
                         if (i == LValue.Children.Count - 1)
                         {
                             //almacenar
@@ -99,7 +98,7 @@ namespace TigerCompiler.AST.Nodes.Instructions
                         else
                         {
                             //actualizar el resoluted type info
-                            resolutedtype = ((RecordTypeInfo) resolutedtype).Fields[membername];
+                            resolutedtype = (TypeInfo.RecordFromTypeInfo(resolutedtype)).Fields[membername];
                             cg.IlGenerator.Emit(OpCodes.Ldfld, fieldbuilder);
                         }
                     }

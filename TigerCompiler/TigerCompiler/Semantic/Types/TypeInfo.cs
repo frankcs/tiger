@@ -20,6 +20,20 @@ namespace TigerCompiler.Semantic.Types
         public static readonly PrimitiveTypeInfo String;
         public static readonly PrimitiveTypeInfo Void;
 
+        public static RecordTypeInfo RecordFromTypeInfo(TypeInfo ti)
+        {
+            if (ti is AliasTypeInfo)
+                return ((AliasTypeInfo) ti).TargetType as RecordTypeInfo;
+            return ti as RecordTypeInfo;
+        }
+
+        public static ArrayTypeInfo ArrayFromTypeInfo(TypeInfo ti)
+        {
+            if (ti is AliasTypeInfo)
+                return ((AliasTypeInfo) ti).TargetType as ArrayTypeInfo;
+            return ti as ArrayTypeInfo;
+        }
+
         /// <summary>
         /// An expression returns an unknown type when type inference does not work.
         /// TODO: Does this propagate? What happens then?

@@ -15,7 +15,7 @@ namespace TigerCompiler.Semantic
         public Dictionary<string,TypeInfo> Fields
         {
             get{
-                var recordTypeInfo = VariableType as RecordTypeInfo;
+                var recordTypeInfo = TypeInfo.RecordFromTypeInfo(VariableType);
                 return recordTypeInfo != null ? recordTypeInfo.Fields : null;
             }
         }
