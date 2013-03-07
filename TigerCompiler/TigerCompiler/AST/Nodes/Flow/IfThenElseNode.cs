@@ -18,8 +18,8 @@ namespace TigerCompiler.AST.Nodes.Flow
         {
             base.CheckSemantics(scope, report);
 
-            report.Assert(this,IfCondition.ReturnType == TypeInfo.Int,"An if expression must return int, not {0}.",IfCondition.ReturnType);
-            report.Assert(this,ThenExpression.ReturnType == ElseExpression.ReturnType,"The if and else expression types do not match ({0};{1}).",ThenExpression.ReturnType,ElseExpression.ReturnType);
+            report.Assert(this,IfCondition.ReturnType == TypeInfo.Int,"An if expression must return int.");
+            report.Assert(this,ThenExpression.ReturnType == ElseExpression.ReturnType,"The if and else expression types do not match.");
 
             ReturnType = ThenExpression.ReturnType;
         }

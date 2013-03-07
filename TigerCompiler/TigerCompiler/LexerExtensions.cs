@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 public partial class TigerLexer
 {
     public bool Error = false;
+    private int HIDDEN { get { return Hidden; } }
 
     public override void EmitErrorMessage(string msg)
     {
@@ -17,5 +18,10 @@ public partial class TigerLexer
         Error = true;
         base.EmitErrorMessage(msg + ".");
     }
+
+    //public override void ReportError(Antlr.Runtime.RecognitionException e)
+    //{
+    //    throw e;
+    //}
 
 }

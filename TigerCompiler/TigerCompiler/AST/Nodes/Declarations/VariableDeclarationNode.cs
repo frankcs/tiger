@@ -53,8 +53,8 @@ namespace TigerCompiler.AST.Nodes.Declarations
                 if (report.Assert(this, !ReferenceEquals(type, null),"Cannot find type {0} in variable {1}'s declaration.",TypeID.TypeName,VariableID.Text))
                 {
                     report.Assert(this, type == InitialValue.ReturnType,
-                              "The initial expression type \"{0}\" does not match with the specified type {1}.",
-                              InitialValue.ReturnType, TypeID.TypeName);
+                              "The initial expression type does not match with the specified type {0}.",
+                              TypeID.TypeName);
                     ReturnType = type;
                 }
             }

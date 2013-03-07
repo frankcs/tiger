@@ -123,12 +123,12 @@
     <Compile Include="Semantic\ISymbol.cs" />
     <Compile Include="Semantic\Scope.cs" />
     <Compile Include="TigerCompiler.cs" />
-    <Compile Include="TigerLexer.cs" />
-    <Compile Include="TigerParser.cs" />
     <Compile Include="AST\Nodes\Operations\Equality\EqualityNode.cs" />
     <Compile Include="AST\Nodes\Operations\UnaryOperationNode.cs" />
     <Compile Include="Semantic\Types\TypeInfo.cs" />
     <Compile Include="Semantic\VariableInfo.cs" />
+    <Compile Include="TigerLexer.cs" />
+    <Compile Include="TigerParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AST\ASTDiagram.cd" />

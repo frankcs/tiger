@@ -1,8 +1,6 @@
-let
-	type b = array of int
-	type a = c
-	type c = b
-	var x:a:=b[10] of 2
+/*Error: VarDeclaration con tipo de Value != tipo declarado*/
+let 
+	var a:string:= "abc\13a"
 in
-	printi(x[3])
+	a
 end
